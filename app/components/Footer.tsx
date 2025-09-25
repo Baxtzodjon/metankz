@@ -14,11 +14,11 @@ const Footer = () => {
 
             <div className="container py-20 flex flex-col gap-[49px]">
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-start lg:items-center justify-between flex-col">
 
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-6 mb-8 sm:mb-0">
 
-                        <div className="flex items-center gap-[60px]">
+                        <div className="flex items-center flex-wrap gap-7 sm:gap-10 lg:gap-[60px]">
 
                             <Link href="/"><Image src="/icons/createx_white_logo.svg" alt="Createx Logo" width={130} height={22} /></Link>
 
@@ -48,13 +48,13 @@ const Footer = () => {
 
                             <div className="flex items-center gap-0">
 
-                                <input type="email" placeholder="Your email address" className="w-[364px] h-11 bg-[#FFFFFF1F] border border-solid border-[#FFFFFF33] rounded-l pl-4 outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-black text-sm font-normal" />
+                                <input type="email" placeholder="Your email address" className="max-w-full w-full sm:w-[364px] h-11 bg-[#FFFFFF1F] border border-solid border-[#FFFFFF33] rounded-l pl-4 outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-black text-sm font-normal" />
 
-                                <button className="w-[131px] h-11 bg-primary rounded-tr-[4px] rounded-br-[4px] text-white text-sm font-bold uppercase transition-default hover:bg-active">subscribe</button>
+                                <button className="px-[19px] py-[11px] bg-primary rounded-tr-[4px] rounded-br-[4px] text-white text-sm font-bold uppercase transition-default hover:bg-active">subscribe</button>
 
                             </div>
 
-                            <p className="text-white text-xs font-normal leading-[150%] opacity-60">*Subscribe to our newsletter to receive communications and early updates from Createx <br /> Construction Bureau.</p>
+                            <p className="text-white text-xs font-normal leading-[150%] opacity-60">*Subscribe to our newsletter to receive communications and early updates from Createx <br className="hidden sm:block" /> Construction Bureau.</p>
 
                         </div>
 
@@ -62,7 +62,7 @@ const Footer = () => {
 
                 </div>
 
-                <div className="flex items-center gap-[125px]">
+                <div className="flex items-start lg:items-center gap-10 lg:gap-[125px] flex-col">
 
                     <div className="flex flex-col gap-[13px]">
 
@@ -95,7 +95,7 @@ const Footer = () => {
                             </span> */}
 
                             {contactInfo.map(({ type, label, value, href }) => (
-                                <span key={type} className="flex items-center gap-1">
+                                <span key={type} className="flex gap-1">
                                     <span className="text-white text-base font-normal">{label}</span>
 
                                     {type === "address" ? (
@@ -149,29 +149,33 @@ const Footer = () => {
 
                     </div> */}
 
-                    {footerLinks.map(({ title, links }) => (
-                        <div key={title} className="flex flex-col gap-[13px]">
+                    <div className="flex items-center gap-8">
 
-                            <h6 className="text-white text-base font-bold uppercase">{title}</h6>
+                        {footerLinks.map(({ title, links }) => (
+                            <div key={title} className="flex flex-col gap-[13px]">
 
-                            <div className="flex flex-col gap-1">
+                                <h6 className="text-white text-base font-bold uppercase">{title}</h6>
 
-                                {links.map(({ href, label }) => (
+                                <div className="flex flex-col gap-1">
 
-                                    <Link key={href} href={href} className="text-white text-base font-normal opacity-60 transition-default hover:text-white hover:opacity-100">
-                                        {label}
-                                    </Link>
+                                    {links.map(({ href, label }) => (
 
-                                ))}
+                                        <Link key={href} href={href} className="text-white text-base font-normal opacity-60 transition-default hover:text-white hover:opacity-100">
+                                            {label}
+                                        </Link>
+
+                                    ))}
+
+                                </div>
 
                             </div>
+                        ))}
 
-                        </div>
-                    ))}
+                    </div>
 
                 </div>
 
-                <small className="text-white text-xs font-normal flex items-center gap-1 mt-[11px]">©&nbsp;All rights reserved. Made with <FaRegHeart className="w-4 h-4 text-primary" /> <span>by Baxtzod</span></small>
+                <small className="text-white text-xs font-normal flex gap-1 mt-[11px]">©&nbsp;All rights reserved. Made with <FaRegHeart className="w-4 h-4 text-primary" /><span>by Baxtzod</span></small>
 
             </div>
 
