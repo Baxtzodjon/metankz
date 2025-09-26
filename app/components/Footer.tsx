@@ -14,13 +14,13 @@ const Footer = () => {
 
             <div className="container py-20 flex flex-col gap-[49px]">
 
-                <div className="flex items-start lg:items-center justify-between flex-col">
+                <div className="flex items-start lg:items-center justify-between flex-col md:flex-row md:gap-[30px]">
 
-                    <div className="flex flex-col gap-6 mb-8 sm:mb-0">
+                    <div className="flex flex-col gap-6 mb-8">
 
                         <div className="flex items-center flex-wrap gap-7 sm:gap-10 lg:gap-[60px]">
 
-                            <Link href="/"><Image src="/icons/createx_white_logo.svg" alt="Createx Logo" width={130} height={22} /></Link>
+                            <Link href="/"><Image src="/icons/createx_white_logo.svg" alt="Createx Logo" width={130} height={22} className="max-w-full lg:w-[100px] lg:h-[17px] xl:w-[130px] xl:h-[22px]" /></Link>
 
                             <div className="flex items-center gap-4">
 
@@ -48,7 +48,7 @@ const Footer = () => {
 
                             <div className="flex items-center gap-0">
 
-                                <input type="email" placeholder="Your email address" className="max-w-full w-full sm:w-[364px] h-11 bg-[#FFFFFF1F] border border-solid border-[#FFFFFF33] rounded-l pl-4 outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-black text-sm font-normal" />
+                                <input type="email" placeholder="Your email address" className="max-w-full w-full sm:w-[364px] md:w-full lg:w-[364px] h-11 bg-[#FFFFFF1F] border border-solid border-[#FFFFFF33] rounded-l pl-4 outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-black text-sm font-normal" />
 
                                 <button className="px-[19px] py-[11px] bg-primary rounded-tr-[4px] rounded-br-[4px] text-white text-sm font-bold uppercase transition-default hover:bg-active">subscribe</button>
 
@@ -62,7 +62,7 @@ const Footer = () => {
 
                 </div>
 
-                <div className="flex items-start lg:items-center gap-10 lg:gap-[125px] flex-col">
+                <div className="flex items-start lg:items-center gap-10 md:gap-8 lg:gap-[125px] flex-col sm:flex-row">
 
                     <div className="flex flex-col gap-[13px]">
 
@@ -99,7 +99,7 @@ const Footer = () => {
                                     <span className="text-white text-base font-normal">{label}</span>
 
                                     {type === "address" ? (
-                                        <address className="text-white text-base font-normal not-italic opacity-60">
+                                        <address className="sm:max-w-[120px] md:max-w-none text-white text-base font-normal not-italic opacity-60">
                                             {value}
                                         </address>
                                     ) : (
@@ -149,7 +149,7 @@ const Footer = () => {
 
                     </div> */}
 
-                    <div className="flex items-center gap-8">
+                    <div className="flex items-center gap-8 lg:gap-[125px]">
 
                         {footerLinks.map(({ title, links }) => (
                             <div key={title} className="flex flex-col gap-[13px]">

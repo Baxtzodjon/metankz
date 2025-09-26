@@ -33,3 +33,19 @@ body {
     @apply transition-all duration-300 ease-in-out;
   }
 }
+
+@layer utilities {
+  @keyframes fillProgress {
+    0% {
+      width: 0%;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+
+  .animate-fill {
+    animation: fillProgress 5s linear forwards;
+  }
+}

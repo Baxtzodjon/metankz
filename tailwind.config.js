@@ -39,10 +39,15 @@ module.exports = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)' },
         },
+        fillBar: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
       },
       animation: {
         'slide-in-left': 'slide-in-left 0.3s ease-in-out forwards',
         'slide-out-left': 'slide-out-left 0.3s ease-in-out forwards',
+        fill: 'fillBar 5s linear forwards',
       },
     },
   },
