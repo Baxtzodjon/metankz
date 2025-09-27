@@ -1,9 +1,9 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
-import SwiperCore from 'swiper';
+import type { Swiper as SwiperClass } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -35,46 +35,29 @@ const slides = [
 
 
 const HeroSlider: React.FC = () => {
+    const swiperRef = useRef<SwiperClass | null>(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handlePaginationClick = (index: number) => {
+        if (!swiperRef.current) return;
+        swiperRef.current.slideToLoop(index);
+    };
+
     useEffect(() => {
-        const swiperEl = (document.querySelector('.swiper') as any)?.swiper;
+        const swiper = swiperRef.current;
+        if (!swiper) return;
 
-        const updateCustomPagination = () => {
-            const realIndex = swiperEl?.realIndex ?? 0;
-            const paginationItems = document.querySelectorAll('.custom-pagination > div');
-
-            paginationItems.forEach((item, index) => {
-                const h3 = item.querySelector('h3');
-                const lineWrapper = item.querySelector('div');
-                const progressBar = item.querySelector('.progress-bar') as HTMLElement;
-
-                if (!h3 || !lineWrapper || !progressBar) return;
-
-                if (index === realIndex) {
-                    h3.classList.replace('opacity-60', 'opacity-100');
-                    lineWrapper.classList.replace('opacity-30', 'opacity-100');
-
-                    progressBar.classList.remove('animate-fill');
-                    void progressBar.offsetWidth;
-                    progressBar.classList.add('animate-fill');
-                } else {
-                    h3.classList.replace('opacity-100', 'opacity-60');
-                    lineWrapper.classList.replace('opacity-100', 'opacity-30');
-                    progressBar.classList.remove('animate-fill');
-                    progressBar.style.width = '0%';
-                }
-            });
+        const handleSlideChange = () => {
+            setActiveIndex(swiper.realIndex);
         };
 
-        const paginationItems = document.querySelectorAll('.custom-pagination > div');
-        paginationItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                if (swiperEl?.realIndex === index) return;
-                swiperEl?.slideToLoop(index);
-            });
-        });
+        swiper.on("slideChange", handleSlideChange);
+        swiper.on("init", handleSlideChange);
 
-        swiperEl?.on('slideChange', updateCustomPagination);
-        swiperEl?.on('init', updateCustomPagination);
+        return () => {
+            swiper.off("slideChange", handleSlideChange);
+            swiper.off("init", handleSlideChange);
+        };
     }, []);
 
     return (
@@ -89,60 +72,38 @@ const HeroSlider: React.FC = () => {
                     prevEl: '.slider-btn-prev',
                 }}
                 modules={[Navigation, Autoplay]}
-                className="relative w-full h-[988px]"
+                className="relative w-full"
+                onSwiper={(swiper: SwiperClass) => {
+                    swiperRef.current = swiper;
+                    setActiveIndex(swiper.realIndex);
+                }}
             >
                 {slides.map((slides, index) => (
 
                     <SwiperSlide key={index}>
 
                         <div
-                            className="bg-cover bg-center h-[988px]"
+                            className="bg-cover bg-center bg-no-repeat"
                             style={{ backgroundImage: `url('${slides.image}')` }}
                         >
 
-                            <div className="container pt-[220px] pb-[354px]">
+                            <div className="container py-[100px] sm:py-[200px] md:pt-[200px] md:pb-[320px] lg:pt-[220px] lg:pb-[354px]">
 
                                 <div className="flex flex-col gap-[61px]">
 
                                     <div className="flex flex-col gap-6">
 
-                                        <h2 className="max-w-[577px] text-white text-7xl leading-[130%] font-bold uppercase">Create<span className="text-[#ff5a30]">x</span> construction</h2>
+                                        <h2 className="max-w-[577px] text-white text-[35px] leading-[45px] sm:text-6xl sm:leading-[75px] md:text-7xl md:leading-[130%] font-bold uppercase">Create<span className="text-[#ff5a30]">x</span> construction</h2>
 
-                                        <p className="max-w-[595px] text-white text-[20px] font-normal">{slides.content}</p>
+                                        <p className="max-w-[595px] text-white text-base sm:text-[20px] sm:leading-[150%] font-normal">{slides.content}</p>
 
                                     </div>
 
-                                    <div className="flex items-center gap-6">
+                                    <div className="flex items-center flex-wrap gap-6">
 
                                         <button className="px-[39px] py-[15px] border border-white text-white text-base font-bold uppercase hover:bg-primary hover:border-primary rounded transition-default cursor-pointer">Learn More About Us</button>
 
                                         <button className="px-[39px] py-[15px] bg-primary text-white text-base font-bold uppercase hover:bg-[#fc3300] rounded transition-default cursor-pointer">Submit Request</button>
-
-                                    </div>
-
-                                </div>
-
-                                <div className="pt-[179px] z-30"> {/* absolute bottom-[120px] left-[145px] */}
-
-                                    <div className="custom-pagination flex gap-1 z-30">
-
-                                        {[1, 2, 3, 4].map((n, i) => (
-                                            <div key={i} className="cursor-pointer" data-slide={i}>
-
-                                                <h3 className="text-white text-[28px] font-bold opacity-60 transition-opacity duration-300">
-
-                                                    {String(n).padStart(2, '0')}
-
-                                                </h3>
-
-                                                <div className="relative w-[178px] h-[2px] bg-white/30 overflow-hidden opacity-30 transition-opacity duration-300">
-
-                                                    <div className="progress-bar absolute top-0 left-0 h-full w-0"></div>
-
-                                                </div>
-
-                                            </div>
-                                        ))}
 
                                     </div>
 
@@ -155,13 +116,17 @@ const HeroSlider: React.FC = () => {
                     </SwiperSlide>
                 ))}
 
-                <div className="absolute inset-y-1/2 left-4 z-10 -translate-y-1/2">
+                <div className="hidden xl:block xl:absolute inset-y-1/2 left-4 z-10 -translate-y-1/2">
 
-                    <button className="slider-btn-prev flex items-center justify-center w-12 h-12 bg-white/50 hover:bg-white rounded-full cursor-pointer"><Image src="/icons/prev_arrow.svg" alt="Previous" width={24} height={24} /></button>
+                    <button className="slider-btn-prev flex items-center justify-center w-12 h-12 bg-white/50 hover:bg-white rounded-full cursor-pointer">
+
+                        <Image src="/icons/prev_arrow.svg" alt="Previous" width={24} height={24} />
+
+                    </button>
 
                 </div>
 
-                <div className="absolute inset-y-1/2 right-4 z-10 -translate-y-1/2">
+                <div className="hidden xl:block xl:absolute inset-y-1/2 right-4 z-10 -translate-y-1/2">
 
                     <button className="slider-btn-next flex items-center justify-center w-12 h-12 bg-white/50 hover:bg-white rounded-full cursor-pointer">
 
@@ -172,6 +137,30 @@ const HeroSlider: React.FC = () => {
                 </div>
 
             </Swiper>
+
+            <div className="sm:block hidden z-30 absolute left-[15px] xl:left-[145px] sm:bottom-10 md:bottom-[100px] lg:bottom-[120px]">
+                
+                <div className="custom-pagination flex gap-1">
+
+                    {slides.map((_, i) => (
+
+                        <div key={i} className="cursor-pointer" onClick={() => handlePaginationClick(i)}>
+
+                            <h3 className={`text-white text-[28px] font-bold transition-opacity duration-300 ${i === activeIndex ? "opacity-100" : "opacity-60"}`}>{String(i + 1).padStart(2, "0")}</h3>
+
+                            <div className={`relative w-[150px] md:w-[178px] h-[3px] md:h-[2px] bg-white/30 overflow-hidden transition-opacity duration-300 ${i === activeIndex ? "opacity-100" : "opacity-30"}`}>
+
+                                <div className={`progress-bar absolute top-0 left-0 h-full bg-white transition-all duration-[5000ms] ease-linear ${i === activeIndex ? "w-full" : "w-0"}`}></div>
+
+                            </div>
+
+                        </div>
+
+                    ))}
+
+                </div>
+
+            </div>
 
         </section>
     );
