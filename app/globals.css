@@ -49,3 +49,7 @@ body {
     animation: fillProgress 5s linear forwards;
   }
 }
+
+.anim {
+  transition: background-color .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
