@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Texts from "./Texts";
+import KnowForm from "./KnowForm";
 
 const missionTexts = [
     {
@@ -52,6 +53,8 @@ const MissionBlock = () => {
                     ))}
 
                 </ul>
+
+                <KnowForm />
 
             </div>
 
