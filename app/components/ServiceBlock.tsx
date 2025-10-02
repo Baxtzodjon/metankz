@@ -1,6 +1,30 @@
 "use client"
 
+import Image from "next/image";
 import Texts from "./Texts";
+
+const services = [
+    {
+        icon: "/icons/icon_construction.svg",
+        title: "Construction",
+        bgImage: 'https://live.verstaem.online/createx/img/services-1.jpg',
+    },
+    {
+        icon: "/icons/icon_plan.svg",
+        title: "Project Development",
+        bgImage: 'https://live.verstaem.online/createx/img/services-1.jpg',
+    },
+    {
+        icon: "/icons/icon_painting.svg",
+        title: "Interior Design",
+        bgImage: 'https://live.verstaem.online/createx/img/services-1.jpg',
+    },
+    {
+        icon: "/icons/icon_painting.svg",
+        title: "Repairs",
+        bgImage: 'https://live.verstaem.online/createx/img/services-1.jpg',
+    },
+];
 
 const ServiceBlock = () => {
     return (
@@ -14,80 +38,54 @@ const ServiceBlock = () => {
 
                 </div>
 
-                {/* <ul className="flex items-center justify-center gap-7.5">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px] mb-20">
 
-                    <li className="">
+                    {services.map((service, index) => (
 
-                        <a href="#" className="">
+                        <li
+                            className="relative group block max-w-full w-[285px] h-[285px] rounded-[4px] border border-[#e5e8ed] bg-white shadow-soft-multi overflow-hidden"
+                            key={index}
+                        >
+                            {/* Затемнение (имитация ::after) */}
+                            <div className="absolute inset-0 z-[5] bg-[rgba(30,33,44,0.6)] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 pointer-events-none"></div>
 
+                            {/* Фоновое изображение (имитация ::before) */}
                             <div
-                                className="w-[285px] h-[285px] bg-white rounded-sm border border-solid border-[#E5E8ED] flex items-center justify-center flex-col gap-6 shadow-soft-multi text-[#1E212C] hover:text-white hover:bg-[rgba(30,33,44,0.6)]">
+                                className="absolute inset-0 z-[3] bg-cover bg-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 pointer-events-none"
+                                style={{ backgroundImage: `url(${service.bgImage})` }}
+                            ></div>
 
-                                <img src="/icons/icon_construction.svg" alt="Icon Construction" aria-hidden="true" />
+                            <a href="#" className="block relative z-10 px-[10px] pt-[87px] pb-[90px]">
+                                
+                                <div className="relative z-10 flex flex-col items-center">
+                                    <Image
+                                        src={service.icon}
+                                        alt={`${service.title} Icon`}
+                                        width={52}
+                                        height={52}
+                                        className="mb-[23px] w-[52px] h-[52px] transition-colors duration-300 ease-in-out"
+                                        aria-hidden="true"
+                                    />
 
-                                    <h3 className="text-[20px] font-bold">Construction</h3>
+                                    <h3 className="text-ebony lg:text-lg xl:text-[20px] leading-[150%] font-bold group-hover:text-light transition-colors duration-300">
+                                        {service.title}
+                                    </h3>
 
-                            </div>
+                                </div>
 
-                        </a>
+                            </a>
 
-                    </li>
+                        </li>
 
-                    <li className="">
+                    ))}
 
-                        <a href="#" className="">
-
-                            <div className="w-[285px] h-[285px] bg-white rounded-sm border border-solid border-[#E5E8ED] flex items-center justify-center flex-col gap-6 shadow-soft-multi text-[#1E212C] hover:text-white hover:bg-[rgba(30,33,44,0.6)]">
-
-                                <img src="/icons/icon_plan.svg" alt="Icon Plan" aria-hidden="true" />
-
-                                    <h3 className="text-[20px] font-bold">Project Development</h3>
-
-                            </div>
-
-                        </a>
-
-                    </li>
-
-                    <li className="">
-
-                        <a href="#" className="">
-
-                            <div className="w-[285px] h-[285px] bg-white rounded-sm border border-solid border-[#E5E8ED] flex items-center justify-center flex-col gap-6 shadow-soft-multi text-[#1E212C] hover:text-white hover:bg-[rgba(30,33,44,0.6)]">
-
-                                <img src="/icons/icon_painting.svg" alt="Icon Painting" aria-hidden="true" />
-
-                                    <h3 className="text-[20px] font-bold">Interior Design</h3>
-
-                            </div>
-
-                        </a>
-
-                    </li>
-
-                    <li className="">
-
-                        <a href="#" className="">
-
-                            <div className="w-[285px] h-[285px] bg-white rounded-sm border border-solid border-[#E5E8ED] flex items-center justify-center flex-col gap-6 shadow-soft-multi text-[#1E212C] hover:text-white hover:bg-[rgba(30,33,44,0.6)]">
-
-                                <img src="/icons/icon_painting.svg" alt="Icon Painting" aria-hidden="true" />
-
-                                    <h3 className="text-[20px] font-bold">Repairs</h3>
-
-                            </div>
-
-                        </a>
-
-                    </li>
-
-                </ul> */}
+                </ul>
 
                 <div className="flex items-center justify-center gap-10">
 
                     <h4 className="text-[#1E212C] text-[28px] font-bold">Learn more about our services</h4>
 
-                    <a href="#" className="py-[15px] px-[39px] bg-[#FF5A30] rounded-sm text-white text-sm font-bold uppercase hover:bg-[#fc3300] transition duration-300 ease-in-out cursor-pointer">View services</a>
+                    <a href="#" className="py-[15px] px-[39px] bg-[#FF5A30] rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-[#fc3300] transition duration-300 ease-in-out cursor-pointer">View services</a>
 
                 </div>
 

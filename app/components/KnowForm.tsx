@@ -8,7 +8,7 @@ const formFields = [
 
 const KnowForm = () => {
     return (
-        <form action="#" className="relative top-[200px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-between flex-col gap-8 bg-white shadow-soft-multi_sec w-full py-12 px-[60px]">
+        <form action="#" className="relative top-[235px] sm:top-[330px] lg:top-[200px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-between flex-col gap-8 bg-light shadow-soft-multi_sec w-full px-[15px] py-[10px] sm:py-12 sm:px-[60px]">
 
             <h2 className="text-ebony text-[28px] leading-[150%] font-bold text-center">Want to know more? Ask us a question:</h2>
 
