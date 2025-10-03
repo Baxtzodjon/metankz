@@ -116,7 +116,7 @@ const HeroSlider: React.FC = () => {
                     </SwiperSlide>
                 ))}
 
-                <div className="hidden xl:block xl:absolute inset-y-1/2 left-4 z-10 -translate-y-1/2">
+                <div className="hidden xl:block xl:absolute inset-y-1/2 left-8 z-10 -translate-y-1/2">
 
                     <button className="slider-btn-prev flex items-center justify-center w-12 h-12 bg-white/50 hover:bg-white rounded-full cursor-pointer">
 
@@ -126,7 +126,7 @@ const HeroSlider: React.FC = () => {
 
                 </div>
 
-                <div className="hidden xl:block xl:absolute inset-y-1/2 right-4 z-10 -translate-y-1/2">
+                <div className="hidden xl:block xl:absolute inset-y-1/2 right-8 z-10 -translate-y-1/2">
 
                     <button className="slider-btn-next flex items-center justify-center w-12 h-12 bg-white/50 hover:bg-white rounded-full cursor-pointer">
 

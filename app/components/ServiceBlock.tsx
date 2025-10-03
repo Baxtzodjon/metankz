@@ -81,9 +81,9 @@ const ServiceBlock = () => {
 
                 </ul>
 
-                <div className="flex items-center justify-center gap-10">
+                <div className="flex items-center justify-start sm:justify-center flex-wrap sm:flex-nowrap gap-[10px] md:gap-10">
 
-                    <h4 className="text-[#1E212C] text-[28px] font-bold">Learn more about our services</h4>
+                    <h4 className="max-w-none sm:max-w-[50%] md:max-w-none text-[#1E212C] text-[28px] font-bold">Learn more about our services</h4>
 
                     <a href="#" className="py-[15px] px-[39px] bg-[#FF5A30] rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-[#fc3300] transition duration-300 ease-in-out cursor-pointer">View services</a>
 

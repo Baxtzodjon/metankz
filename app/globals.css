@@ -81,3 +81,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+@media (max-width: 576px) {
+  .services-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
