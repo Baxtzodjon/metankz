@@ -67,7 +67,7 @@ const ServiceBlock = () => {
                                         aria-hidden="true"
                                     />
 
-                                    <h3 className="text-ebony lg:text-lg xl:text-[20px] leading-[150%] font-bold group-hover:text-light transition-colors duration-300">
+                                    <h3 className="text-ebony lg:text-lg xl:text-xl leading-[150%] font-bold group-hover:text-light transition-colors duration-300">
                                         {service.title}
                                     </h3>
 
@@ -83,9 +83,9 @@ const ServiceBlock = () => {
 
                 <div className="flex items-center justify-start sm:justify-center flex-wrap sm:flex-nowrap gap-[10px] md:gap-10">
 
-                    <h4 className="max-w-none sm:max-w-[50%] md:max-w-none text-[#1E212C] text-[28px] font-bold">Learn more about our services</h4>
+                    <h4 className="max-w-none sm:max-w-[50%] md:max-w-none text-ebony text-[28px] font-bold">Learn more about our services</h4>
 
-                    <a href="#" className="py-[15px] px-[39px] bg-[#FF5A30] rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-[#fc3300] transition duration-300 ease-in-out cursor-pointer">View services</a>
+                    <a href="#" className="py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-active transition-default cursor-pointer">View services</a>
 
                 </div>
 
