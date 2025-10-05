@@ -3,13 +3,14 @@
 import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import type { Swiper as SwiperClass } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 
 const PortfolioSection = () => {
-    const swiperRef = useRef(null);
+    const swiperRef = useRef<SwiperClass | null>(null);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
 
@@ -46,7 +47,7 @@ const PortfolioSection = () => {
         },
     ];
 
-    const onSwiperInit = (swiper: any) => {
+    const onSwiperInit = (swiper: SwiperClass) => {
         swiperRef.current = swiper;
         setIsBeginning(swiper.isBeginning);
         setIsEnd(swiper.isEnd);
