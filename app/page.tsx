@@ -6,6 +6,7 @@ import ServiceBlock from "./components/ServiceBlock";
 import PortfolioSection from "./components/PortfolioSection";
 import Partners from "./components/Partners";
 import Testimonials from "./components/Testimonials";
+import Facts from "./components/Facts";
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
       <Partners />
 
       <Testimonials />
+
+      <Facts />
 
     </main>
   );

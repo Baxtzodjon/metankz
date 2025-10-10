@@ -37,11 +37,11 @@ const slidesTestimonials = [
 
 const Testimonials = () => {
     return (
-        <section className="pt-[97px] bg-athens">
+        <section className="py-10 md:pt-[97px] md:pb-0 bg-athens">
 
             <div className="container flex justify-between relative">
 
-                <div className="max-w-[612px]">
+                <div className="w-full max-w-none sm:max-w-[450px] lg:max-w-[612px]">
 
                     <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold mb-[60px]">What our clients are saying</h2>
 
@@ -110,7 +110,7 @@ const Testimonials = () => {
 
                 </div>
                 
-                <Image src={"/images/portfolio_first.jpg"} alt="Testimonials Image" width={495} height={550} aria-hidden="true" className="max-w-full w-[380px] xl:w-[495px] xl:h-[550px] object-cover relative z-[5] -mb-[60px]" />
+                <Image src={"/images/portfolio_first.jpg"} alt="Testimonials Image" width={495} height={550} aria-hidden="true" className="max-w-full w-[300px] h-[527px] lg:w-[380px] lg:h-[441px] xl:w-[495px] xl:h-[550px] object-cover relative z-[5] -mb-[60px] hidden md:block" />
 
             </div>
 
