@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image";
+import Texts from "./Texts";
 
 const partnersLogo = [
     {
@@ -35,7 +36,9 @@ const Partners = () => {
 
             <div className="container">
 
-                <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center mb-[60px]">Supported by 12+ partners</h2>
+                {/* <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center mb-[60px]">Supported by 12+ partners</h2> */}
+
+                <Texts title="Supported by 12+ partners" className="mb-[60px]" />
 
                 <ul className="grid grid-cols-6 gap-y-10 gap-x-[30px] lg:gap-x-10">
 

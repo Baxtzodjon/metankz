@@ -58,7 +58,7 @@ const Header = () => {
 
                 </div>
 
-                <div className="hidden lg:flex items-center gap-9">
+                <div className="hidden lg:flex items-center lg:gap-3 xl:gap-9">
 
                     {navContacts.map(({ href, label, telEmail, icon, altText }) => (
                         <a key={href} href={href} className="flex items-center gap-[13px]">

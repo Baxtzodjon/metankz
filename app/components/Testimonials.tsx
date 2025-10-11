@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 
 import Image from "next/image";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+import Texts from "./Texts";
 
 const slidesTestimonials = [
     {
@@ -43,7 +44,9 @@ const Testimonials = () => {
 
                 <div className="w-full max-w-none sm:max-w-[450px] lg:max-w-[612px]">
 
-                    <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold mb-[60px]">What our clients are saying</h2>
+                    {/* <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold mb-[60px]">What our clients are saying</h2> */}
+
+                    <Texts title="What our clients are saying" className="text-start mb-[60px]" />
 
                     <Swiper
                         modules={[Navigation, Autoplay]}

@@ -7,6 +7,7 @@ export interface HeaderLink {
 }
 
 export const navLinks: HeaderLink[] = [
+    { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services" },
     { href: "/work", label: "Work" },

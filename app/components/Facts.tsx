@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from "react";
+import Texts from "./Texts";
 
 // Тип для одного факта
 interface FactItem {
@@ -134,7 +135,9 @@ const Facts: React.FC = () => {
 
             <div className="container">
 
-                <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center mb-[62px]">Some facts and figures</h2>
+                {/* <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center mb-[62px]">Some facts and figures</h2> */}
+
+                <Texts title="Some facts and figures" className="mb-[62px]" />
 
                 <ul className="p-0 block sm:grid sm:grid-cols-2 md:grid-cols-4 mx-auto max-w-[736px] gap-12">
 
