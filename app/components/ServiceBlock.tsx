@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Texts from "./Texts";
+import BtnText from "./BtnText";
 
 const services = [
     {
@@ -81,13 +82,15 @@ const ServiceBlock = () => {
 
                 </ul>
 
-                <div className="flex items-center justify-start sm:justify-center flex-wrap sm:flex-nowrap gap-[10px] md:gap-10">
+                {/* <div className="flex items-center justify-start sm:justify-center flex-wrap sm:flex-nowrap gap-[10px] md:gap-10">
 
                     <h4 className="max-w-none sm:max-w-[50%] md:max-w-none text-ebony text-[28px] font-bold">Learn more about our services</h4>
 
                     <a href="#" className="py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-active transition-default cursor-pointer">View services</a>
 
-                </div>
+                </div> */}
+
+                <BtnText title="Learn more about our services" link="View services" />
 
             </div>
 

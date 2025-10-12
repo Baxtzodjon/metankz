@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
+import BtnText from './BtnText';
 
 const PortfolioSection = () => {
     const swiperRef = useRef<SwiperClass | null>(null);
@@ -150,13 +151,15 @@ const PortfolioSection = () => {
 
                 </div>
 
-                <div className="flex items-center justify-start sm:justify-center flex-wrap sm:flex-nowrap gap-[10px] md:gap-10 mt-20">
+                {/* <div className="flex items-center justify-start sm:justify-center flex-wrap sm:flex-nowrap gap-[10px] md:gap-10 mt-20">
 
                     <h4 className="max-w-none sm:max-w-[50%] md:max-w-none text-ebony text-[28px] font-bold">Explore all our works</h4>
 
                     <a href="#" className="py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-active transition-default cursor-pointer">View portfolio</a>
 
-                </div>
+                </div> */}
+
+                <BtnText title="Explore all our works" link="View portfolio" className="mt-20" />
 
             </div>
 

@@ -73,6 +73,12 @@ body {
   }
 }
 
+@layer utilities {
+  .contacts_shadow {
+    box-shadow: 0 60px 80px -20px rgba(30, 33, 44, .16), 0 26px 24px -10px rgba(30, 33, 44, .1), 0 12px 10px -6px rgba(30, 33, 44, .08), 0 4px 4px -4px rgba(30, 33, 44, .05);
+  }
+}
+
 .services-section {
   padding-top: 212px;
   padding-bottom: 80px;
