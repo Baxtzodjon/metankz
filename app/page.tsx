@@ -8,6 +8,7 @@ import Partners from "./components/Partners";
 import Testimonials from "./components/Testimonials";
 import Facts from "./components/Facts";
 import RecentNews from "./components/RecentNews";
+import ContactsSection from "./components/ContactsSection";
 
 export default function Home() {
   return (
@@ -30,6 +31,8 @@ export default function Home() {
       <Facts />
 
       <RecentNews />
+
+      <ContactsSection />
 
     </main>
   );
