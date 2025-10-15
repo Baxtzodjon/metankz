@@ -3,6 +3,7 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ContactsSection from "./components/ContactsSection";
 
 export const ubuntu = Ubuntu({
   subsets: ['latin'],
@@ -55,6 +56,8 @@ export default function RootLayout({
         <Header />
 
         {children}
+
+        <ContactsSection />
 
         <Footer />
       </body>
