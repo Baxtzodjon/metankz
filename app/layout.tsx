@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ContactsSection from "./components/ContactsSection";
+import ScrollToTopBtn from "./components/ScrollToTopBtn";
 
 export const ubuntu = Ubuntu({
   subsets: ['latin'],
@@ -58,6 +59,8 @@ export default function RootLayout({
         {children}
 
         <ContactsSection />
+
+        <ScrollToTopBtn />
 
         <Footer />
       </body>

@@ -94,3 +94,9 @@ body {
     padding-bottom: 40px;
   }
 }
+
+@layer utilities {
+  .scroll-btn {
+    right: calc((100% - 1230px)/ 2);
+  }
+}
