@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 import Image from 'next/image';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import BtnText from './BtnText';
+import { motion } from 'motion/react';
 
 const PortfolioSection = () => {
     const swiperRef = useRef<SwiperClass | null>(null);
@@ -64,7 +65,12 @@ const PortfolioSection = () => {
 
             <div className="container">
 
-                <div className="flex items-end justify-between flex-wrap sm:flex-nowrap mb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                    viewport={{ once: true }}
+                    className="flex items-end justify-between flex-wrap sm:flex-nowrap mb-12">
 
                     <h2 className="max-w-none lg:max-w-[710px] text-ebony text-[28px] sm:text-[40px] lg:text-[46px] leading-10 sm:leading-[55px] lg:leading-[130%] font-bold mb-[15px] pb-0 lg:pb-3 lg:m-0">Browse our selected projects and learn more about our work</h2>
 
@@ -86,7 +92,7 @@ const PortfolioSection = () => {
 
                     </div>
 
-                </div>
+                </motion.div>
 
                 <div className="relative w-full overflow-hidden z-[1]">
 
@@ -120,7 +126,13 @@ const PortfolioSection = () => {
 
                                 <SwiperSlide key={item.id}>
 
-                                    <a href="#" className="group flex flex-col overflow-hidden rounded shadow-soft-multi_sec bg-light transition-default">
+                                    <motion.a
+                                        href="#" className="group flex flex-col overflow-hidden rounded shadow-soft-multi_sec bg-light transition-default"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.5, ease: 'easeOut', delay: item.id * 0.1 }}
+                                    >
 
                                         <Image
                                             className="max-w-full w-full"
@@ -130,7 +142,13 @@ const PortfolioSection = () => {
                                             height={245}
                                         />
 
-                                        <div className="flex items-center flex-col pt-[16px] pb-[23px] px-[10px]">
+                                        <motion.div
+                                            className="flex items-center flex-col pt-[16px] pb-[23px] px-[10px]"
+                                            initial={{ opacity: 0, y: 15 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
+                                        >
 
                                             <h3 className="text-ebony text-lg xl:text-xl leading-[150%] font-bold mb-[5px]">{item.title}</h3>
 
@@ -138,9 +156,9 @@ const PortfolioSection = () => {
 
                                             <div className="mt-6 mb-0 md:mb-[-72px] border border-current rounded pt-[13px] pb-[13px] px-[31px] font-bold text-sm tracking-wider uppercase text-primary group-hover:mb-0 transition-default will-change-[margin]">View Project</div>
 
-                                        </div>
+                                        </motion.div>
 
-                                    </a>
+                                    </motion.a>
 
                                 </SwiperSlide>
 

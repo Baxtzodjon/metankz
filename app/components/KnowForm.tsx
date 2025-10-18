@@ -1,5 +1,7 @@
 "use client"
 
+import { motion } from "motion/react";
+
 const formFields = [
     { label: 'Name', type: 'text', placeholder: 'Your name' },
     { label: 'Phone', type: 'tel', placeholder: 'Your phone' },
@@ -8,9 +10,27 @@ const formFields = [
 
 const KnowForm = () => {
     return (
-        <form action="#" className="relative top-[235px] sm:top-[330px] lg:top-[200px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-between flex-col gap-8 bg-light shadow-soft-multi_sec w-full px-[15px] py-[10px] sm:py-12 sm:px-[60px]">
+        <motion.form
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+                visible: {
+                    transition: {
+                        staggerChildren: 0.15,
+                        delayChildren: 0.2,
+                    },
+                },
+            }}
+            action="#" className="relative top-[235px] sm:top-[330px] lg:top-[200px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-between flex-col gap-8 bg-light shadow-soft-multi_sec w-full px-[15px] py-[10px] sm:py-12 sm:px-[60px]">
 
-            <h2 className="text-ebony text-[28px] leading-[150%] font-bold text-center">Want to know more? Ask us a question:</h2>
+            <motion.h2 className="text-ebony text-[28px] leading-[150%] font-bold text-center"
+                variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >Want to know more? Ask us a question:</motion.h2>
 
             {/* <div className="flex items-end flex-wrap gap-6">
 
@@ -37,7 +57,7 @@ const KnowForm = () => {
             </div> */}
 
             <div className="flex items-center justify-center flex-wrap lg:flex-nowrap gap-6">
-                
+
                 {formFields.map((field, index) => {
                     let wrapperClass = 'w-full';
 
@@ -48,7 +68,13 @@ const KnowForm = () => {
                     }
 
                     return (
-                        <label key={index} className={`flex flex-col ${wrapperClass}`}>
+                        <motion.label key={index} className={`flex flex-col ${wrapperClass}`}
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                        >
                             <span className="text-gray text-sm leading-[150%] font-normal mb-2">
                                 {field.label}
                             </span>
@@ -57,20 +83,25 @@ const KnowForm = () => {
                                 placeholder={field.placeholder}
                                 className="w-full h-[44px] bg-[#F4F5F6] border border-[#d7dadd] rounded pl-[15px] outline-none focus:outline-2 focus:outline-primary focus:outline-offset-2 text-sm leading-[150%] font-normal"
                             />
-                        </label>
+                        </motion.label>
                     );
                 })}
-                
-                <button
+
+                <motion.button
                     type="submit"
                     className="w-full h-[44px] sm:w-[205px] md:w-[48%] lg:w-[104px] bg-primary rounded text-light text-sm font-bold uppercase hover:bg-active transition-default m-0 sm:mt-7 cursor-pointer" /* lg:py-[11px] lg:px-[29px] */
+                    variants={{
+                        hidden: { opacity: 0, scale: 0.95 },
+                        visible: { opacity: 1, scale: 1 },
+                    }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                     Send
-                </button>
+                </motion.button>
 
             </div>
 
-        </form>
+        </motion.form>
     );
 };
 

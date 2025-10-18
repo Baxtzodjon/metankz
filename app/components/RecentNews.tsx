@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Texts from "./Texts";
 import BtnText from "./BtnText";
+import { motion } from "motion/react";
 
 const articles = [
     {
@@ -29,7 +30,20 @@ const articles = [
         category: "Company News",
         paragraphVisible: false,
     },
-]
+];
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            delay: i * 0.2,
+            ease: "easeOut" as const,
+        },
+    }),
+};
 
 const RecentNews = () => {
     return (
@@ -37,18 +51,35 @@ const RecentNews = () => {
 
             <div className="container">
 
-                <Texts title="Recent News" className="mb-[60px]" />
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                >
+                    
+                    <Texts title="Recent News" className="mb-[60px]" />
+
+                </motion.div>
 
                 <ul className="p-0 m-0 grid grid-cols-12 grid-rows-none lg:grid-rows-[255px_255px] gap-[30px] mb-20">
 
                     {articles.map((article, index) => (
-                        <li
+                        <motion.li
                             key={index}
                             className={
                                 index === 0
                                     ? "col-span-12 lg:col-span-7 row-auto lg:row-span-2"
                                     : "col-span-12 lg:col-span-5"
                             }
+                            custom={index}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={cardVariants}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ type: "spring", stiffness: 300 }}
                         >
                             <article className="overflow-hidden rounded h-full shadow-soft-multi_sec bg-light">
 
@@ -99,8 +130,8 @@ const RecentNews = () => {
                                 </div>
 
                             </article>
-                            
-                        </li>
+
+                        </motion.li>
                     ))}
 
                 </ul>

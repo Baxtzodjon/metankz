@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Texts from "./Texts";
+import { motion } from "motion/react";
 
 const partnersLogo = [
     {
@@ -30,6 +31,31 @@ const partnersLogo = [
     },
 ];
 
+// container variant for staggered animation
+const containerVariants = {
+    hidden: {},
+    show: {
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2,
+        },
+    },
+};
+
+// item variant for each logo
+const itemVariants = {
+    hidden: { opacity: 0, scale: 0.9, y: 10 },
+    show: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            ease: "easeOut" as const,
+        },
+    },
+};
+
 const Partners = () => {
     return (
         <section className="py-20 bg-athens">
@@ -38,13 +64,31 @@ const Partners = () => {
 
                 {/* <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center mb-[60px]">Supported by 12+ partners</h2> */}
 
-                <Texts title="Supported by 12+ partners" className="mb-[60px]" />
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className="flex items-center justify-center flex-col gap-6"
+                >
 
-                <ul className="grid grid-cols-6 gap-y-10 gap-x-[30px] lg:gap-x-10">
+                    <Texts title="Supported by 12+ partners" className="mb-[60px]" />
+                    
+                </motion.div>
+
+                <motion.ul
+                    className="grid grid-cols-6 gap-y-10 gap-x-[30px] lg:gap-x-10"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
 
                     {partnersLogo.map((item) => (
 
-                        <li key={item.id} className="flex justify-center col-span-3 xl:col-span-1">
+                        <motion.li
+                            key={item.id}
+                            variants={itemVariants} className="flex justify-center col-span-3 xl:col-span-1">
 
                             <a href="#">
 
@@ -52,11 +96,11 @@ const Partners = () => {
 
                             </a>
 
-                        </li>
+                        </motion.li>
 
                     ))}
 
-                </ul>
+                </motion.ul>
 
             </div>
 

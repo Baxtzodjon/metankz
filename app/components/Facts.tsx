@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Texts from "./Texts";
+import { motion } from "motion/react";
 
 // Тип для одного факта
 interface FactItem {
@@ -137,22 +138,47 @@ const Facts: React.FC = () => {
 
                 {/* <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center mb-[62px]">Some facts and figures</h2> */}
 
-                <Texts title="Some facts and figures" className="mb-[62px]" />
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className="flex items-center justify-center flex-col gap-6"
+                >
+
+                    <Texts title="Some facts and figures" className="mb-[62px]" />
+
+                </motion.div>
 
                 <ul className="p-0 block sm:grid sm:grid-cols-2 md:grid-cols-4 mx-auto max-w-[736px] gap-12">
 
                     {factsData.map((fact, index) => (
-                        <li className="mb-[30px]" key={index}>
+                        <motion.li
+                            key={index}
+                            className="mb-[30px]"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.2 }}
+                            viewport={{ once: true }}
+                        >
 
                             <div className="flex items-center flex-col">
 
-                                <AnimatedCircle fact={fact} />
+                                <motion.div
+                                    whileHover={{ scale: 1.08 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    transition={{ type: "spring", stiffness: 300 }}
+                                >
+
+                                    <AnimatedCircle fact={fact} />
+
+                                </motion.div>
 
                                 <span className="block text-ebony text-sm leading-[150%] font-normal text-center">{fact.text}</span>
 
                             </div>
 
-                        </li>
+                        </motion.li>
                     ))}
 
                 </ul>

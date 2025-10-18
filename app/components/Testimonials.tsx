@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import Image from "next/image";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import Texts from "./Texts";
+import { motion } from "motion/react";
 
 const slidesTestimonials = [
     {
@@ -42,7 +43,12 @@ const Testimonials = () => {
 
             <div className="container flex justify-between relative">
 
-                <div className="w-full max-w-none sm:max-w-[450px] lg:max-w-[612px]">
+                <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                className="w-full max-w-none sm:max-w-[450px] lg:max-w-[612px]">
 
                     {/* <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold mb-[60px]">What our clients are saying</h2> */}
 
@@ -68,7 +74,11 @@ const Testimonials = () => {
 
                         {slidesTestimonials.map((slide) => (
                             <SwiperSlide key={slide.id}>
-                                <div>
+                                <motion.div
+                                 initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, ease: "easeOut" }}>
 
                                     <div>
 
@@ -88,7 +98,7 @@ const Testimonials = () => {
 
                                     </div>
 
-                                </div>
+                                </motion.div>
 
                             </SwiperSlide>
                         ))}
@@ -111,9 +121,19 @@ const Testimonials = () => {
 
                     </Swiper>
 
-                </div>
-                
-                <Image src={"/images/portfolio_first.jpg"} alt="Testimonials Image" width={495} height={550} aria-hidden="true" className="max-w-full w-[300px] h-[527px] lg:w-[380px] lg:h-[441px] xl:w-[495px] xl:h-[550px] object-cover relative z-[5] -mb-[60px] hidden md:block" />
+                </motion.div>
+
+                <motion.div
+                    className="hidden md:block"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                >
+
+                    <Image src={"/images/portfolio_first.jpg"} alt="Testimonials Image" width={495} height={550} aria-hidden="true" className="max-w-full w-[300px] h-[527px] lg:w-[380px] lg:h-[441px] xl:w-[495px] xl:h-[550px] object-cover relative z-[5] -mb-[60px]" />
+
+                </motion.div>
 
             </div>
 

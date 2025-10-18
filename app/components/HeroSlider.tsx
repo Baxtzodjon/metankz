@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import Image from 'next/image';
+import { motion } from 'motion/react';
 
 const slides = [
     {
@@ -32,7 +33,6 @@ const slides = [
         image: 'https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1600&q=80',
     },
 ];
-
 
 const HeroSlider: React.FC = () => {
     const swiperRef = useRef<SwiperClass | null>(null);
@@ -82,41 +82,65 @@ const HeroSlider: React.FC = () => {
 
                     <SwiperSlide key={index}>
 
-                        <div
+                        <motion.div
                             className="bg-cover bg-center bg-no-repeat"
                             style={{ backgroundImage: `url('${slides.image}')` }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1 }}
                         >
 
                             <div className="container py-[100px] sm:py-[200px] md:pt-[200px] md:pb-[320px] lg:pt-[220px] lg:pb-[354px]">
 
-                                <div className="flex flex-col gap-[61px]">
+                                <motion.div className="flex flex-col gap-[61px]"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.2 }}
+                                    viewport={{ once: true }}
+                                >
 
                                     <div className="flex flex-col gap-6">
 
-                                        <h2 className="max-w-[577px] text-white text-[35px] leading-[45px] sm:text-6xl sm:leading-[75px] md:text-7xl md:leading-[130%] font-bold uppercase">Create<span className="text-[#ff5a30]">x</span> construction</h2>
+                                        <motion.h2 className="max-w-[577px] text-white text-[35px] leading-[45px] sm:text-6xl sm:leading-[75px] md:text-7xl md:leading-[130%] font-bold uppercase"
+                                            initial={{ opacity: 0, x: -50 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 0.8, delay: 0.4 }}
+                                        >Create<span className="text-primary">x</span> construction</motion.h2>
 
-                                        <p className="max-w-[595px] text-white text-base sm:text-[20px] sm:leading-[150%] font-normal">{slides.content}</p>
+                                        <motion.p className="max-w-[595px] text-white text-base sm:text-[20px] sm:leading-[150%] font-normal"
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.8, delay: 0.6 }}
+                                        >{slides.content}</motion.p>
 
                                     </div>
 
-                                    <div className="flex items-center flex-wrap gap-6">
+                                    <motion.div className="flex items-center flex-wrap gap-6"
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.8, delay: 0.8 }}
+                                    >
 
                                         <button className="px-[39px] py-[15px] border border-white text-white text-base font-bold uppercase hover:bg-primary hover:border-primary rounded transition-default cursor-pointer">Learn More About Us</button>
 
                                         <button className="px-[39px] py-[15px] bg-primary text-white text-base font-bold uppercase hover:bg-[#fc3300] rounded transition-default cursor-pointer">Submit Request</button>
 
-                                    </div>
+                                    </motion.div>
 
-                                </div>
+                                </motion.div>
 
                             </div>
 
-                        </div>
+                        </motion.div>
 
                     </SwiperSlide>
                 ))}
 
-                <div className="hidden xl:block xl:absolute inset-y-1/2 left-8 z-10 -translate-y-1/2">
+                <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="hidden xl:block xl:absolute inset-y-1/2 left-8 z-10 -translate-y-1/2">
 
                     <button className="slider-btn-prev flex items-center justify-center w-12 h-12 bg-white/50 hover:bg-white rounded-full cursor-pointer">
 
@@ -124,9 +148,13 @@ const HeroSlider: React.FC = () => {
 
                     </button>
 
-                </div>
+                </motion.div>
 
-                <div className="hidden xl:block xl:absolute inset-y-1/2 right-8 z-10 -translate-y-1/2">
+                <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                    className="hidden xl:block xl:absolute inset-y-1/2 right-8 z-10 -translate-y-1/2">
 
                     <button className="slider-btn-next flex items-center justify-center w-12 h-12 bg-white/50 hover:bg-white rounded-full cursor-pointer">
 
@@ -134,12 +162,12 @@ const HeroSlider: React.FC = () => {
 
                     </button>
 
-                </div>
+                </motion.div>
 
             </Swiper>
 
             <div className="sm:block hidden z-30 absolute left-[15px] xl:left-[145px] sm:bottom-10 md:bottom-[100px] lg:bottom-[120px]">
-                
+
                 <div className="custom-pagination flex gap-1">
 
                     {slides.map((_, i) => (

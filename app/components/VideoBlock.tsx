@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Texts from "./Texts";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 const VideoBlock = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -27,32 +28,56 @@ const VideoBlock = () => {
 
             <div className="container">
 
-                <div className="flex items-center justify-center flex-col gap-6">
+                <motion.div className="flex items-center justify-center flex-col gap-6"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                >
 
                     <Texts title="We are Createx Construction Bureau" description="We&nbsp;are rightfully considered to&nbsp;be&nbsp;the best
                         construction company in&nbsp;the USA." />
 
-                </div>
+                </motion.div>
 
-                <div className="relative overflow-hidden rounded h-[300px] sm:h-[500px] group">
+                <motion.div className="relative overflow-hidden rounded h-[300px] sm:h-[500px] group"
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                >
 
                     {!isPlaying && (
-                        <div className="absolute inset-0 z-20 bg-[#1E212C]/60 transition-opacity duration-300 ease-in-out opacity-100" />
+                        <motion.div className="absolute inset-0 z-20 bg-[#1E212C]/60 transition-opacity duration-300 ease-in-out opacity-100"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.5 }}
+                        />
                     )}
 
                     {!isPlaying && (
-                        <button
-                            className="border-none p-0 cursor-pointer flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 rounded-full w-20 h-20 bg-primary hover:bg-active anim"
-                            aria-label="Play video" onClick={handlePlay}>
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
 
-                            <Image src={"/icons/play_btn.svg"} alt="Play Btn" width={26} height={26} className="w-[26px] h-[26px]" />
+                            <motion.button
+                                className="border-none p-0 cursor-pointer flex items-center justify-center rounded-full w-20 h-20 bg-primary hover:bg-active anim"
+                                aria-label="Play video"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                onClick={handlePlay}
+                            >
 
-                        </button>
+                                <Image src={"/icons/play_btn.svg"} alt="Play Btn" width={26} height={26} className="w-[26px] h-[26px]" />
+
+                            </motion.button>
+
+                        </div>
                     )}
 
                     <video ref={videoRef} className="w-full h-full object-cover" src="https://live.verstaem.online/createx/about-video.mp4" muted loop controls={isPlaying} preload="metadata" onClick={handlePause} onPause={() => setIsPlaying(false)}></video>
 
-                </div>
+                </motion.div>
 
             </div>
 

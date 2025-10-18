@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Texts from "./Texts";
 import BtnText from "./BtnText";
+import { motion } from "motion/react";
 
 const services = [
     {
@@ -33,19 +34,40 @@ const ServiceBlock = () => {
 
             <div className="container flex items-center justify-center flex-col gap-15">
 
-                <div className="flex items-center justify-center flex-col gap-6">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="flex items-center justify-center flex-col gap-6">
 
                     <Texts title="Our services" description="Createx Construction Bureau is&nbsp;a&nbsp;construction giant with a&nbsp;full range of&nbsp;construction services." />
 
-                </div>
+                </motion.div>
 
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px] mb-20">
+                <motion.ul
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={{
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.2,
+                            },
+                        },
+                    }}
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px] mb-20">
 
                     {services.map((service, index) => (
 
-                        <li
-                            className="relative group block max-w-full w-[285px] h-[285px] rounded-[4px] border border-[#e5e8ed] bg-white shadow-soft-multi overflow-hidden"
+                        <motion.li
                             key={index}
+                            variants={{
+                                hidden: { opacity: 0, scale: 0.95, y: 20 },
+                                visible: { opacity: 1, scale: 1, y: 0 },
+                            }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            className="relative group block max-w-full w-[285px] h-[285px] rounded-[4px] border border-[#e5e8ed] bg-white shadow-soft-multi overflow-hidden"
                         >
                             {/* Затемнение (имитация ::after) */}
                             <div className="absolute inset-0 z-[5] bg-[rgba(30,33,44,0.6)] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 pointer-events-none"></div>
@@ -57,7 +79,7 @@ const ServiceBlock = () => {
                             ></div>
 
                             <a href="#" className="block relative z-10 px-[10px] pt-[87px] pb-[90px]">
-                                
+
                                 <div className="relative z-10 flex flex-col items-center">
                                     <Image
                                         src={service.icon}
@@ -76,11 +98,11 @@ const ServiceBlock = () => {
 
                             </a>
 
-                        </li>
+                        </motion.li>
 
                     ))}
 
-                </ul>
+                </motion.ul>
 
                 {/* <div className="flex items-center justify-start sm:justify-center flex-wrap sm:flex-nowrap gap-[10px] md:gap-10">
 
