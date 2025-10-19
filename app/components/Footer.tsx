@@ -6,11 +6,18 @@ import { FaRegHeart } from "react-icons/fa";
 import { socialLinks } from "../data/socialLinks";
 import { footerLinks } from "../data/footerLinks";
 import { contactInfo } from "../data/contactInfo";
+import { motion } from "motion/react";
 
 const Footer = () => {
 
     return (
-        <footer className="w-full h-full bg-ebony">
+        <motion.footer
+            className="w-full h-full bg-ebony"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+        >
 
             <div className="container py-20 flex flex-col gap-[49px]">
 
@@ -18,7 +25,13 @@ const Footer = () => {
 
                     <div className="flex flex-col gap-6 mb-8">
 
-                        <div className="flex items-center flex-wrap gap-7 sm:gap-10 lg:gap-[60px]">
+                        <motion.div
+                            className="flex items-center flex-wrap gap-7 sm:gap-10 lg:gap-[60px]"
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
 
                             <Link href="/"><Image src="/icons/createx_white_logo.svg" alt="Createx Logo" width={130} height={22} className="max-w-full lg:w-[100px] lg:h-[17px] xl:w-[130px] xl:h-[22px]" /></Link>
 
@@ -34,13 +47,25 @@ const Footer = () => {
 
                             </div>
 
-                        </div>
+                        </motion.div>
 
-                        <p className="w-full max-w-[493px] text-white text-sm font-normal opacity-60">Createx Construction Bureau has been successfully operating in the USA construction market since 2000. We are proud to offer you quality construction and exemplary service. Our mission is to set the highest standards for construction sphere.</p>
+                        <motion.p
+                            className="w-full max-w-[493px] text-white/60 text-sm font-normal"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            viewport={{ once: true }}
+                        >Createx Construction Bureau has been successfully operating in the USA construction market since 2000. We are proud to offer you quality construction and exemplary service. Our mission is to set the highest standards for construction sphere.</motion.p>
 
                     </div>
 
-                    <form className="flex flex-col gap-6">
+                    <motion.form
+                        className="flex flex-col gap-6"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                    >
 
                         <h4 className="text-white text-2xl font-bold">Let’s stay in touch</h4>
 
@@ -48,21 +73,27 @@ const Footer = () => {
 
                             <div className="flex items-center gap-0">
 
-                                <input type="email" placeholder="Your email address" className="max-w-full w-full sm:w-[364px] md:w-full lg:w-[364px] h-11 bg-[#FFFFFF1F] border border-solid border-[#FFFFFF33] rounded-l pl-4 outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-black text-sm font-normal" />
+                                <input type="email" placeholder="Your email address" className="max-w-full w-full sm:w-[364px] md:w-full lg:w-[364px] h-11 bg-[#FFFFFF1F] border border-solid border-[#FFFFFF33] rounded-l pl-4 outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-black text-sm font-normal" required />
 
                                 <button className="px-[19px] py-[11px] bg-primary rounded-tr-[4px] rounded-br-[4px] text-white text-sm font-bold uppercase transition-default hover:bg-active">subscribe</button>
 
                             </div>
 
-                            <p className="text-white text-xs font-normal leading-[150%] opacity-60">*Subscribe to our newsletter to receive communications and early updates from Createx <br className="hidden sm:block" /> Construction Bureau.</p>
+                            <p className="text-white text-xs font-normal leading-[150%] opacity-60">*Subscribe to our newsletter to receive communications and early updates from Createx <br className="hidden sm:block" />Construction Bureau.</p>
 
                         </div>
 
-                    </form>
+                    </motion.form>
 
                 </div>
 
-                <div className="flex items-start lg:items-center gap-10 md:gap-8 lg:gap-[125px] flex-col sm:flex-row">
+                <motion.div
+                    className="flex items-start lg:items-center gap-10 md:gap-8 lg:gap-[125px] flex-col sm:flex-row"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                >
 
                     <div className="flex flex-col gap-[13px]">
 
@@ -173,13 +204,21 @@ const Footer = () => {
 
                     </div>
 
-                </div>
+                </motion.div>
 
-                <small className="text-white text-xs font-normal flex gap-1 mt-[11px]">©&nbsp;All rights reserved. Made with <FaRegHeart className="w-4 h-4 text-primary" /><span>by Baxtzod</span></small>
+                <motion.small
+                    className="text-white text-xs font-normal flex gap-1 mt-[11px]"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    viewport={{ once: true }}
+                >©&nbsp;All rights reserved. Made with
+                    <FaRegHeart className="w-4 h-4 text-primary" /><span>by Baxtzod</span>
+                </motion.small>
 
             </div>
 
-        </footer>
+        </motion.footer>
     );
 };
 
