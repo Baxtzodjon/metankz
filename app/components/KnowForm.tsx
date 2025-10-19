@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { useForm } from "react-hook-form";
+import { RegisterOptions } from "react-hook-form";
 
 type FormData = {
     name: string;
@@ -14,7 +15,7 @@ type FieldConfig = {
     label: string;
     type: string;
     placeholder: string;
-    validation?: any;
+    validation?: RegisterOptions<FormData, keyof FormData>;
 };
 
 const formFields: FieldConfig[] = [
