@@ -31,7 +31,6 @@ const formFields: FieldConfig[] = [
                 message: "Name can only contain letters",
             },
         },
-
     },
     {
         name: "phone",
@@ -146,6 +145,7 @@ const KnowForm = () => {
                             <input
                                 type={field.type}
                                 placeholder={field.placeholder}
+                                autoComplete={field.name}
                                 {...register(field.name, field.validation)}
                                 className={`w-full h-[44px] bg-[#F4F5F6] border border-[#d7dadd] rounded pl-[15px] outline-none focus:outline-2 focus:outline-primary focus:outline-offset-2 text-sm leading-[150%] font-normal ${errors[field.name]
                                         ? "border-red-500"

@@ -1,8 +1,7 @@
-"use client"
+"use client";
 
 import { motion, Variants } from "motion/react";
-import { useForm } from "react-hook-form";
-import { RegisterOptions } from "react-hook-form";
+import { useForm, RegisterOptions } from "react-hook-form";
 
 type ContactsFormData = {
     name: string;
@@ -22,10 +21,10 @@ type ContactsFieldConfig = {
 
 const formFields: ContactsFieldConfig[] = [
     {
-        label: 'Name*',
-        name: 'name',
-        type: 'text',
-        placeholder: 'Your name',
+        label: "Name*",
+        name: "name",
+        type: "text",
+        placeholder: "Your name",
         validation: {
             required: "Name is required",
             pattern: {
@@ -35,10 +34,10 @@ const formFields: ContactsFieldConfig[] = [
         },
     },
     {
-        label: 'Phone*',
-        name: 'phone',
-        type: 'tel',
-        placeholder: 'Your phone number',
+        label: "Phone*",
+        name: "phone",
+        type: "tel",
+        placeholder: "Your phone number",
         validation: {
             required: "Phone is required",
             pattern: {
@@ -48,22 +47,16 @@ const formFields: ContactsFieldConfig[] = [
         },
     },
     {
-        label: 'Email',
-        name: 'email',
-        type: 'email',
-        placeholder: 'Your working email',
-        validation: {
-            pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Enter a valid email address",
-            },
-        },
+        label: "Email",
+        name: "email",
+        type: "email",
+        placeholder: "Your working email",
     },
     {
-        label: 'Message*',
-        name: 'message',
-        type: 'textarea',
-        placeholder: 'Your message',
+        label: "Message*",
+        name: "message",
+        type: "textarea",
+        placeholder: "Your message",
         validation: {
             required: "Message is required",
             minLength: {
@@ -98,37 +91,40 @@ const ContactsSection = () => {
     };
 
     return (
-        <motion.section className="pt-[80px] pb-[77px] bg-[url('/images/contacts_bg.jpg')] bg-center bg-cover bg-no-repeat bg-ebony"
+        <motion.section
+            className="pt-[80px] pb-[77px] bg-[url('/images/contacts_bg.jpg')] bg-center bg-cover bg-no-repeat bg-ebony"
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
         >
-
-            <h2 className="absolute w-[1px] h-[1px] -m-[1px] p-0 overflow-hidden border-none [clip:rect(0_0_0_0)]">Contacts</h2>
+            <h2 className="absolute w-[1px] h-[1px] -m-[1px] p-0 overflow-hidden border-none [clip:rect(0_0_0_0)]">
+                Contacts
+            </h2>
 
             <div className="container flex justify-end">
-
-                <motion.form className="bg-light flex flex-col items-start border border-solid border-[#e5e8ed] rounded p-[15px] sm:py-12 sm:px-10 max-w-[495px] contacts_shadow"
+                <motion.form
                     onSubmit={handleSubmit(onSubmit)}
+                    className="bg-light flex flex-col items-start border border-solid border-[#e5e8ed] rounded p-[15px] sm:py-12 sm:px-10 max-w-[495px] contacts_shadow"
                     variants={fieldVariants}
                     initial="hidden"
                     animate="show"
                 >
-
-                    <motion.h3 className="mb-6 w-full text-[28px] leading-[150%] font-bold text-center text-ebony">A quick way to discuss details</motion.h3>
+                    <motion.h3 className="mb-6 w-full text-[28px] leading-[150%] font-bold text-center text-ebony">
+                        A quick way to discuss details
+                    </motion.h3>
 
                     {formFields.map((field, idx) => (
-
                         <motion.label
                             key={idx}
                             className="flex flex-col items-start w-full mb-5"
                             variants={fieldVariants}
                         >
+                            <span className="mb-2 text-gray-600 text-sm leading-[150%]">
+                                {field.label}
+                            </span>
 
-                            <span className="mb-2 text-gray-600 text-sm leading-[150%]">{field.label}</span>
-
-                            {field.type === 'textarea' ? (
+                            {field.type === "textarea" ? (
                                 <textarea
                                     {...register(field.name, field.validation)}
                                     placeholder={field.placeholder}
@@ -147,42 +143,44 @@ const ContactsSection = () => {
                             )}
 
                             {errors[field.name] && (
-                                <span className="text-red-500 text-xs mt-1">
+                                <span className="text-xs text-red-500 mt-1">
                                     {(errors[field.name]?.message as string) || ""}
                                 </span>
                             )}
-
                         </motion.label>
                     ))}
 
-                    <motion.label className="mb-[22px] focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-1"
+                    {/* Checkbox field */}
+                    <motion.label
+                        className="mb-[22px] focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-1 w-full relative"
                         variants={fieldVariants}
                     >
-
-                        <input type="checkbox"
+                        <input
+                            type="checkbox"
                             {...register("consent", { required: "You must agree before submitting." })}
-                            className="peer absolute opacity-0" />
-
-                        <span className="relative inline-block pl-[27px] text-gray text-sm leading-[150%] before:content-[''] before:absolute before:-left-[1px] before:top-[1px] before:inline-block before:border before:border-primary before:rounded-[3px] before:w-4 before:h-4 before:transition-default peer-checked:before:bg-primary after:content-[''] after:absolute after:-left-[1px] after:top-[1px] after:w-4 after:h-4 after:bg-[url('/icons/check.svg')] after:bg-center after:bg-[length:10px_8px] after:bg-no-repeat after:opacity-0 after:transition-default peer-checked:after:opacity-100">I agree to receive communications from Createx Construction Bureau.</span>
+                            className="peer absolute opacity-0"
+                        />
+                        <span className="relative inline-block pl-[27px] text-gray text-sm leading-[150%] before:content-[''] before:absolute before:-left-[1px] before:top-[1px] before:inline-block before:border before:border-primary before:rounded-[3px] before:w-4 before:h-4 before:transition-default peer-checked:before:bg-primary after:content-[''] after:absolute after:-left-[1px] after:top-[1px] after:w-4 after:h-4 after:bg-[url('/icons/check.svg')] after:bg-center after:bg-[length:10px_8px] after:bg-no-repeat after:opacity-0 after:transition-default peer-checked:after:opacity-100">
+                            I agree to receive communications from Createx Construction Bureau.
+                        </span>
 
                         {errors.consent && (
                             <span className="block text-xs text-red-500 mt-1 ml-[27px]">
                                 {(errors.consent?.message as string) || ""}
                             </span>
                         )}
-
                     </motion.label>
 
                     <motion.div className="w-full text-center" variants={fieldVariants}>
-
-                        <button className="py-[12px] px-[31px] bg-primary rounded text-light text-sm leading-5 tracking-wider font-bold uppercase hover:bg-active transition-default" type="submit">Send Request</button>
-
+                        <button
+                            className="py-[12px] px-[31px] bg-primary rounded text-light text-sm leading-5 tracking-wider font-bold uppercase hover:bg-active transition-default"
+                            type="submit"
+                        >
+                            Send Request
+                        </button>
                     </motion.div>
-
                 </motion.form>
-
             </div>
-
         </motion.section>
     );
 };

@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
-import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ContactsSection from "./components/ContactsSection";
-import ScrollToTopBtn from "./components/ScrollToTopBtn";
+import "../globals.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import ScrollToTopBtn from "../components/ScrollToTopBtn";
+import ConditionalContacts from "../containers/ConditionalContacts";
+import { NextIntlClientProvider } from "next-intl";
+import React from "react";
+import { notFound } from "next/navigation";
+import { getMessages } from "next-intl/server";
 
 export const ubuntu = Ubuntu({
   subsets: ['latin'],
@@ -46,23 +50,43 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://metankz.com"),
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return [{ locale: 'ru' }, { locale: 'uz' }, { locale: 'en' }, { locale: 'kz' },];
+}
+
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }> | { locale: string };
+}) {
+  const resolvedParams = await params;
+  const { locale } = resolvedParams;
+
+  let messages;
+
+  try {
+    messages = await getMessages({ locale });
+  } catch (error) {
+    console.error("Ошибка при загрузке сообщений:", error);
+    notFound();
+  }
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${ubuntu.variable}`}>
-        <Header />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Header />
 
-        {children}
+          {children}
 
-        <ContactsSection />
+          <ConditionalContacts />
 
-        <ScrollToTopBtn />
+          <ScrollToTopBtn />
 
-        <Footer />
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

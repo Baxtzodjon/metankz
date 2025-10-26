@@ -12,7 +12,7 @@ export const footerLinks: FooterLink[] = [
         links: [
             { href: "/about", label: "About Us" },
             { href: "/available-positions", label: "Available Positions" },
-            { href: "/contacts", label: "Contacts" },
+            { href: "/contact", label: "Contacts" },
         ],
     },
     {

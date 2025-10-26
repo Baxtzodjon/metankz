@@ -1,0 +1,38 @@
+{
+    "Header": {
+        "nav": {
+            "home": "Bosh sahifa",
+            "about": "Biz haqimizda",
+            "services": "Xizmatlar",
+            "work": "Loyihalar",
+            "news": "Yangiliklar",
+            "contact": "Aloqa"
+        },
+        "contacts": {
+            "call": "Qo'ng'iroq",
+            "talk": "Bizga yozing"
+        }
+    },
+    "HeroSlider": {
+        "slide1": {
+            "title": "Toza energiya – toza kelajak",
+            "content": "Metan KZ — zamonaviy metan yoqilg'i shoxobchalari tarmog'i. Xavfsiz va ekologik yoqilg'i bilan mamlakatni quvvatlaymiz."
+        },
+        "slide2": {
+            "title": "Tejamkorlik va sifat birgalikda",
+            "content": "Metan oddiy yoqilg'idan arzonroq, dvigatel esa sokinroq va uzoqroq ishlaydi. Har kuni foydani his eting."
+        },
+        "slide3": {
+            "title": "Yashil kelajakka yo'l",
+            "content": "Metanni tanlab, siz CO₂ chiqindilarini kamaytirasiz va tabiatni asrashga hissa qo'shasiz."
+        },
+        "slide4": {
+            "title": "Metan KZ — Aqlli yoqilg'i",
+            "content": "Butun O'zbekiston bo'ylab zamonaviy AYoQSh tarmog'i. Texnologiya, qulaylik va ekologiya bir joyda."
+        },
+        "buttons": {
+            "learnMore": "Biz haqimizda batafsil ma’lumot",
+            "submitRequest": "So'rov yuborish"
+        }
+    }
+}

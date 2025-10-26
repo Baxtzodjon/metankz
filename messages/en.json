@@ -1,0 +1,38 @@
+{
+    "Header": {
+        "nav": {
+            "home": "Home",
+            "about": "About Us",
+            "services": "Services",
+            "work": "Work",
+            "news": "News",
+            "contact": "Contacts"
+        },
+        "contacts": {
+            "call": "Call us",
+            "talk": "Talk to us"
+        }
+    },
+    "HeroSlider": {
+        "slide1": {
+            "title": "Clean Energy of Kazakhstan",
+            "content": "Metan KZ — a next-generation CNG station network powering Kazakhstan with clean, safe fuel."
+        },
+        "slide2": {
+            "title": "Smart Savings Every Mile",
+            "content": "Methane costs less and helps your engine run longer and quieter. Real efficiency for real drivers."
+        },
+        "slide3": {
+            "title": "Driving Toward a Greener Future",
+            "content": "By choosing methane, you reduce CO₂ emissions and help protect Kazakhstan’s nature."
+        },
+        "slide4": {
+            "title": "Metan KZ — Fuel Up Smarter",
+            "content": "Nationwide network of eco-friendly CNG stations. Technology, safety, and sustainability combined."
+        },
+        "buttons": {
+            "learnMore": "Learn More About Us",
+            "submitRequest": "Submit Request"
+        }
+    }
+}

@@ -10,33 +10,14 @@ import 'swiper/css/navigation';
 
 import Image from 'next/image';
 import { motion } from 'motion/react';
-
-const slides = [
-    {
-        title: 'CREATEX CONSTRUCTION',
-        content: 'Cras ultrices leo vitae non viverra. Fringilla nisi quisque consequat, dignissim vitae proin ipsum sed. Pellentesque nec turpis purus eget pellentesque integer ipsum elementum felis. ',
-        image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80',
-    },
-    {
-        title: 'CREATEX CONSTRUCTION',
-        content: 'Cras ultrices leo vitae non viverra. Fringilla nisi quisque consequat, dignissim vitae proin ipsum sed. Pellentesque nec turpis purus eget pellentesque integer ipsum elementum felis. ',
-        image: 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1600&q=80',
-    },
-    {
-        title: 'CREATEX CONSTRUCTION',
-        content: 'Cras ultrices leo vitae non viverra. Fringilla nisi quisque consequat, dignissim vitae proin ipsum sed. Pellentesque nec turpis purus eget pellentesque integer ipsum elementum felis. ',
-        image: 'https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1600&q=80',
-    },
-    {
-        title: 'CREATEX CONSTRUCTION',
-        content: 'Cras ultrices leo vitae non viverra. Fringilla nisi quisque consequat, dignissim vitae proin ipsum sed. Pellentesque nec turpis purus eget pellentesque integer ipsum elementum felis. ',
-        image: 'https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1600&q=80',
-    },
-];
+import { useTranslations } from "next-intl";
+import { Slide, slides } from '../data/slides';
 
 const HeroSlider: React.FC = () => {
     const swiperRef = useRef<SwiperClass | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
+
+    const t = useTranslations("HeroSlider");
 
     const handlePaginationClick = (index: number) => {
         if (!swiperRef.current) return;
@@ -78,19 +59,19 @@ const HeroSlider: React.FC = () => {
                     setActiveIndex(swiper.realIndex);
                 }}
             >
-                {slides.map((slides, index) => (
+                {slides.map((slide: Slide, index: number) => (
 
                     <SwiperSlide key={index}>
 
                         <motion.div
                             className="bg-cover bg-center bg-no-repeat"
-                            style={{ backgroundImage: `url('${slides.image}')` }}
+                            style={{ backgroundImage: `url('${slide.image}')` }}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1 }}
                         >
 
-                            <div className="container py-[100px] sm:py-[200px] md:pt-[200px] md:pb-[320px] lg:pt-[220px] lg:pb-[354px]">
+                            <div className="container h-[555px] sm:h-[130vh] py-[100px] sm:py-[200px] md:pt-[200px] md:pb-[320px] lg:pt-[220px] lg:pb-[354px]">
 
                                 <motion.div className="flex flex-col gap-[61px]"
                                     initial={{ opacity: 0, y: 50 }}
@@ -101,17 +82,17 @@ const HeroSlider: React.FC = () => {
 
                                     <div className="flex flex-col gap-6">
 
-                                        <motion.h2 className="max-w-[577px] text-white text-[35px] leading-[45px] sm:text-6xl sm:leading-[75px] md:text-7xl md:leading-[130%] font-bold uppercase"
+                                        <motion.h2 className="max-w-[577px] text-white text-[35px] leading-[45px] sm:text-6xl sm:leading-[75px] md:text-7xl md:leading-[130%] font-bold capitalize"
                                             initial={{ opacity: 0, x: -50 }}
                                             animate={{ opacity: 1, x: 0 }}
                                             transition={{ duration: 0.8, delay: 0.4 }}
-                                        >Create<span className="text-primary">x</span> construction</motion.h2>
+                                        >{t(slide.titleKey)}</motion.h2>
 
                                         <motion.p className="max-w-[595px] text-white text-base sm:text-[20px] sm:leading-[150%] font-normal"
                                             initial={{ opacity: 0, y: 20 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             transition={{ duration: 0.8, delay: 0.6 }}
-                                        >{slides.content}</motion.p>
+                                        >{t(slide.contentKey)}</motion.p>
 
                                     </div>
 
@@ -121,9 +102,9 @@ const HeroSlider: React.FC = () => {
                                         transition={{ duration: 0.8, delay: 0.8 }}
                                     >
 
-                                        <button className="px-[39px] py-[15px] border border-white text-white text-base font-bold uppercase hover:bg-primary hover:border-primary rounded transition-default cursor-pointer">Learn More About Us</button>
+                                        <button className="px-[39px] py-[15px] border border-white text-white text-base font-bold uppercase hover:bg-primary hover:border-primary rounded transition-default cursor-pointer">{t('buttons.learnMore')}</button>
 
-                                        <button className="px-[39px] py-[15px] bg-primary text-white text-base font-bold uppercase hover:bg-[#fc3300] rounded transition-default cursor-pointer">Submit Request</button>
+                                        <button className="px-[39px] py-[15px] bg-primary text-white text-base font-bold uppercase hover:bg-[#fc3300] rounded transition-default cursor-pointer">{t('buttons.submitRequest')}</button>
 
                                     </motion.div>
 

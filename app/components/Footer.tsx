@@ -7,8 +7,47 @@ import { socialLinks } from "../data/socialLinks";
 import { footerLinks } from "../data/footerLinks";
 import { contactInfo } from "../data/contactInfo";
 import { motion } from "motion/react";
+import { useForm } from "react-hook-form";
+import { RegisterOptions } from "react-hook-form";
+
+/* type FooterFormData = {
+    email: string;
+};
+
+type FooterFieldConfig = {
+    name: keyof FooterFormData;
+    type: "email";
+    placeholder: string;
+    validation?: RegisterOptions<FooterFormData, keyof FooterFormData>;
+};
+
+const formFields: FooterFieldConfig[] = [
+    {
+        name: 'email',
+        type: 'email',
+        placeholder: 'Your email address',
+        validation: {
+            required: "Email is required",
+            pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Enter a valid email address",
+            },
+        },
+    },
+]; */
 
 const Footer = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm({ mode: "onChange" });
+
+    const onSubmit = (data: RegisterOptions) => {
+        console.log("✅ Form submitted:", data);
+        reset();
+    };
 
     return (
         <motion.footer
@@ -61,6 +100,7 @@ const Footer = () => {
 
                     <motion.form
                         className="flex flex-col gap-6"
+                        onSubmit={handleSubmit(onSubmit)}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
@@ -73,9 +113,32 @@ const Footer = () => {
 
                             <div className="flex items-center gap-0">
 
-                                <input type="email" placeholder="Your email address" className="max-w-full w-full sm:w-[364px] md:w-full lg:w-[364px] h-11 bg-[#FFFFFF1F] border border-solid border-[#FFFFFF33] rounded-l pl-4 outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-black text-sm font-normal" required />
+                                <div className="flex flex-col">
 
-                                <button className="px-[19px] py-[11px] bg-primary rounded-tr-[4px] rounded-br-[4px] text-white text-sm font-bold uppercase transition-default hover:bg-active">subscribe</button>
+                                    <input
+                                        type={"email"}
+                                        {...register("email", { required: "Email is required", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Enter a valid email address" } })} placeholder="Your email address" autoComplete="email" className={`max-w-full w-full sm:w-[364px] md:w-full lg:w-[364px] h-11 bg-[#FFFFFF1F] border ${errors["email"] ? "border-red-500" : "border-[#FFFFFF33]"
+                                            } rounded-l pl-4 outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-light text-sm font-normal`} />
+
+                                    {errors["email"] && (
+                                        <span className="text-red-500 text-xs mt-1">
+                                            {(errors["email"]?.message as string) || ""}
+                                        </span>
+                                    )}
+
+                                </div>
+
+                                <div className="flex flex-col">
+
+                                    <button className="px-[19px] py-[11px] bg-primary rounded-tr-[4px] rounded-br-[4px] text-white text-sm font-bold uppercase transition-default hover:bg-active">subscribe</button>
+
+                                    {errors["email"] && (
+                                        <span className="text-red-500 text-xs mt-1 overflow-hidden pointer-events-none opacity-0">
+                                            {(errors["email"]?.message as string) || ""}
+                                        </span>
+                                    )}
+
+                                </div>
 
                             </div>
 

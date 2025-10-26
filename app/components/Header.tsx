@@ -8,11 +8,18 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 import { motion, AnimatePresence } from "motion/react";
 import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isAnimatingOut, setIsAnimatingOut] = useState(false);
     const pathname = usePathname();
+
+    const locale = useLocale();
+    const t = useTranslations("Header");
+
+    const cleanPath = pathname.replace(`/${locale}`, "") || "/";
 
     const toggleMenu = () => {
         if (menuOpen) {
@@ -45,18 +52,18 @@ const Header = () => {
         >
             <div className="container flex items-center justify-between pt-[23px] pb-[21px]">
 
-                <div className="flex items-center lg:gap-8 xl:gap-[60px]">
+                <div className="flex items-center lg:gap-6">
 
                     <Link href={"/"}>
 
-                        <Image src={"/icons/createx_logo.svg"} alt="Createx Logo" width={130} height={22} className="max-w-full lg:w-[100px] lg:h-[17px] xl:w-[130px] xl:h-[22px]" />
+                        <Image src={"/icons/createx_logo.svg"} alt="Createx Logo" width={130} height={22} className="max-w-full xl:w-[130px] xl:h-[22px]" />
 
                     </Link>
 
-                    <nav className="hidden lg:flex items-center gap-10">
+                    <nav className="hidden xl:flex items-center gap-5">
 
-                        {navLinks.map(({ href, label }) => {
-                            const isActive = pathname === (href);
+                        {navLinks.map(({ href, labelKey }) => {
+                            const isActive = cleanPath === href;
 
                             return (
                                 <Link
@@ -65,7 +72,7 @@ const Header = () => {
                                     onClick={handleLinkClick}
                                     className={`text-base font-bold transition-default hover:text-primary ${isActive ? "text-primary" : "text-gray"}`}
                                 >
-                                    {label}
+                                    {t(`nav.${labelKey}`)}
                                 </Link>
                             );
                         })}
@@ -74,16 +81,16 @@ const Header = () => {
 
                 </div>
 
-                <div className="hidden lg:flex items-center lg:gap-3 xl:gap-9">
+                <div className="hidden xl:flex items-center lg:gap-3 xl:gap-6">
 
-                    {navContacts.map(({ href, label, telEmail, icon, altText }) => (
+                    {navContacts.map(({ href, labelKey, telEmail, icon, altText }) => (
                         <a key={href} href={href} className="flex items-center gap-[13px]">
 
-                            <Image src={icon as string} alt={altText ?? label} width={40} height={40} />
+                            <Image src={icon as string} alt={altText ?? labelKey} width={40} height={40} />
 
                             <div className="flex flex-col">
 
-                                <span className="text-gray text-sm font-bold">{label}</span>
+                                <span className="text-gray text-sm font-bold">{t(`contacts.${labelKey}`)}</span>
 
                                 <span className="text-ebony lg:text-base xl:text-lg font-normal transition-default hover:text-primary">{telEmail}</span>
 
@@ -92,11 +99,19 @@ const Header = () => {
                         </a>
                     ))}
 
+                    <LocaleSwitcher />
+
                 </div>
 
-                <button onClick={toggleMenu} className="block lg:hidden text-4xl">
-                    {menuOpen ? <IoMdClose /> : <RxHamburgerMenu />}
-                </button>
+                <div className="flex items-center gap-5 xl:hidden">
+
+                    <LocaleSwitcher />
+
+                    <button onClick={toggleMenu} className="block xl:hidden text-4xl">
+                        {menuOpen ? <IoMdClose /> : <RxHamburgerMenu />}
+                    </button>
+
+                </div>
 
             </div>
 
@@ -110,7 +125,7 @@ const Header = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="fixed inset-0 lg:hidden bg-[rgba(0,0,0,.6)] z-40"
+                            className="fixed inset-0 xl:hidden bg-[rgba(0,0,0,.6)] z-40"
                             onClick={toggleMenu}
                         />
 
@@ -120,12 +135,12 @@ const Header = () => {
                             animate={{ x: 0 }}
                             exit={{ x: "-100%" }}
                             transition={{ duration: 0.3 }}
-                            className="fixed top-0 left-0 h-full w-[80%] max-w-[300px] lg:hidden bg-white z-50 shadow-lg p-5 sm:p-[50px] flex flex-col gap-10 overflow-y-auto"
+                            className="fixed top-0 left-0 h-full w-[80%] max-w-[300px] xl:hidden bg-white z-50 shadow-lg p-5 sm:p-[50px] flex flex-col gap-10 overflow-y-auto"
                         >
 
                             <nav className="flex flex-col gap-8">
-                                {navLinks.map(({ href, label }) => {
-                                    const isActive = pathname === (href);
+                                {navLinks.map(({ href, labelKey }) => {
+                                    const isActive = cleanPath === href;
 
                                     return (
                                         <Link
@@ -134,22 +149,22 @@ const Header = () => {
                                             onClick={handleLinkClick}
                                             className={`text-base font-bold transition-default hover:text-primary ${isActive ? "text-primary" : "text-gray"}`}
                                         >
-                                            {label}
+                                            {t(`nav.${labelKey}`)}
                                         </Link>
                                     );
                                 })}
                             </nav>
 
                             <div className="flex flex-col">
-                                {navContacts.map(({ href, label, telEmail, icon, altText }) => (
+                                {navContacts.map(({ href, labelKey, telEmail, icon, altText }) => (
 
                                     <a key={href} href={href} className="flex items-center gap-[13px]">
 
-                                        <Image src={icon as string} alt={altText ?? label} width={40} height={40} />
+                                        <Image src={icon as string} alt={altText ?? labelKey} width={40} height={40} />
 
                                         <div className="flex flex-col gap-[1px]">
 
-                                            <span className="text-gray text-sm font-bold">{label}</span>
+                                            <span className="text-gray text-sm font-bold">{t(`contacts.${labelKey}`)}</span>
 
                                             <span className="text-ebony text-base font-normal transition-default hover:text-primary">{telEmail}</span>
 
