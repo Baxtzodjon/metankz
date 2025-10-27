@@ -10,7 +10,9 @@
         },
         "contacts": {
             "call": "Qo'ng'iroq",
-            "talk": "Bizga yozing"
+            "talk": "Bizga yozing",
+            "emailSubject": "Platforma haqida savol",
+            "emailBody": "Salom, men sizning platformangiz haqida savol bermoqchiman."
         }
     },
     "HeroSlider": {
@@ -31,8 +33,24 @@
             "content": "Butun O'zbekiston bo'ylab zamonaviy AYoQSh tarmog'i. Texnologiya, qulaylik va ekologiya bir joyda."
         },
         "buttons": {
-            "learnMore": "Biz haqimizda batafsil ma’lumot",
+            "learnMore": "Biz haqimizda ma’lumot",
             "submitRequest": "So'rov yuborish"
+        }
+    },
+    "VideoBlock": {
+        "title": "Biz — innovatsion va ekologik kompaniyamiz.",
+        "description": "Biz toza va samarali energiyani rivojlantirayotgan Qozog'istondagi yetakchi metan kompaniyasi sifatida e’tirof etilganmiz."
+    },
+    "MissionBlock": {
+        "title": "Bizning asosiy qadriyatlarimiz",
+        "description": "Bizning maqsadimiz — Qozog'istonni toza, xavfsiz va samarali energiya kelajagiga yetaklash.",
+        "values": {
+            "quality": "Sifat",
+            "qualityDesc": "Metan KZ har bir bosqichda yuqori sifatni ta’minlaydi: CNG ishlab chiqarishdan tortib, butun Qozog'istonda xavfsiz yoqilg'i quyishgacha.",
+            "safety": "Xavfsizlik",
+            "safetyDesc": "Xavfsizlik — bizning eng asosiy ustuvorligimiz. Barcha Metan KZ stansiyalari xalqaro standartlarga mos keladi va har bir haydovchi uchun ishonchli va xavfsiz yoqilg'i quyishni ta’minlaydi.",
+            "comfort": "Qulaylik",
+            "comfortDesc": "Biz toza energiyani qulay va mavjud qilamiz, har bir mijoz uchun Qozog'iston bo'ylab qulaylik va ishonch yaratamiz. Bizning stantsiyalarimiz xavfsiz va tez yonilg'i quyish imkonini beradi."
         }
     }
 }

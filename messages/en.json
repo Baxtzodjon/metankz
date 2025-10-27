@@ -10,7 +10,9 @@
         },
         "contacts": {
             "call": "Call us",
-            "talk": "Talk to us"
+            "talk": "Talk to us",
+            "emailSubject": "Platform question",
+            "emailBody": "Hello, I have a question..."
         }
     },
     "HeroSlider": {
@@ -33,6 +35,22 @@
         "buttons": {
             "learnMore": "Learn More About Us",
             "submitRequest": "Submit Request"
+        }
+    },
+    "VideoBlock": {
+        "title": "We are an innovative, eco-friendly company.",
+        "description": "We are rightfully considered to be the leading CNG company in Kazakhstan, driving clean and efficient energy for the future."
+    },
+    "MissionBlock": {
+        "title": "Our core values",
+        "description": "Our mission is to lead Kazakhstan toward a cleaner, safer and more efficient energy future.",
+        "values": {
+            "quality": "Quality",
+            "qualityDesc": "Metan KZ ensures high quality at every stage: from CNG production to safe refueling across Kazakhstan.",
+            "safety": "Safety",
+            "safetyDesc": "Safety is our top priority. All Metan KZ stations meet international standards, providing reliable and safe refueling for every driver.",
+            "comfort": "Comfort",
+            "comfortDesc": "We make clean energy convenient and accessible, creating comfort and confidence for every customer across Kazakhstan. Our stations provide safe and fast refueling."
         }
     }
 }

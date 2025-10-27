@@ -17,5 +17,5 @@ export const navLinks: HeaderLink[] = [
 
 export const navContacts: HeaderLink[] = [
     { href: "tel:4055550128", labelKey: "call", telEmail: "(405) 555-0128", icon: "/icons/iphone_icon.svg", altText: "Phone Logo" },
-    { href: "mailto:hello@createx.com?subject=Platform question&body=Hello, I have a question...", labelKey: "talk", telEmail: "hello@createx.com", icon: "/icons/chat_icon.svg", altText: "Mail Icon" },
+    { href: "mailto:hello@metankz.com", labelKey: "talk", telEmail: "hello@createx.com", icon: "/icons/chat_icon.svg", altText: "Mail Icon" },
 ];

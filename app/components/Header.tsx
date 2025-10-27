@@ -16,6 +16,8 @@ const Header = () => {
     const [isAnimatingOut, setIsAnimatingOut] = useState(false);
     const pathname = usePathname();
 
+    /* ?subject=Platform question&body=Hello, I have a question... */
+
     const locale = useLocale();
     const t = useTranslations("Header");
 
@@ -83,21 +85,34 @@ const Header = () => {
 
                 <div className="hidden xl:flex items-center lg:gap-3 xl:gap-6">
 
-                    {navContacts.map(({ href, labelKey, telEmail, icon, altText }) => (
-                        <a key={href} href={href} className="flex items-center gap-[13px]">
+                    {navContacts.map(({ href, labelKey, telEmail, icon, altText }) => {
+                        const isEmail = href.startsWith("mailto:");
 
-                            <Image src={icon as string} alt={altText ?? labelKey} width={40} height={40} />
+                        const localizedHref = isEmail
+                            ? (() => {
+                                const email = href.split("?")[0].replace("mailto:", "");
+                                const subject = encodeURIComponent(t("contacts.emailSubject"));
+                                const body = encodeURIComponent(t("contacts.emailBody"));
+                                return `mailto:${email}?subject=${subject}&body=${body}`;
+                            })()
+                            : href;
 
-                            <div className="flex flex-col">
+                        return (
+                            <a key={href} href={localizedHref} className="flex items-center gap-[13px]">
 
-                                <span className="text-gray text-sm font-bold">{t(`contacts.${labelKey}`)}</span>
+                                <Image src={icon as string} alt={altText ?? labelKey} width={40} height={40} />
 
-                                <span className="text-ebony lg:text-base xl:text-lg font-normal transition-default hover:text-primary">{telEmail}</span>
+                                <div className="flex flex-col">
 
-                            </div>
+                                    <span className="text-gray text-sm font-bold">{t(`contacts.${labelKey}`)}</span>
 
-                        </a>
-                    ))}
+                                    <span className="text-ebony lg:text-base xl:text-lg font-normal transition-default hover:text-primary">{telEmail}</span>
+
+                                </div>
+
+                            </a>
+                        )
+                    })}
 
                     <LocaleSwitcher />
 
@@ -156,22 +171,35 @@ const Header = () => {
                             </nav>
 
                             <div className="flex flex-col">
-                                {navContacts.map(({ href, labelKey, telEmail, icon, altText }) => (
+                                {navContacts.map(({ href, labelKey, telEmail, icon, altText }) => {
+                                    const isEmail = href.startsWith("mailto:");
 
-                                    <a key={href} href={href} className="flex items-center gap-[13px]">
+                                    const localizedHref = isEmail
+                                        ? (() => {
+                                            const email = href.split("?")[0].replace("mailto:", "");
+                                            const subject = encodeURIComponent(t("contacts.emailSubject"));
+                                            const body = encodeURIComponent(t("contacts.emailBody"));
+                                            return `mailto:${email}?subject=${subject}&body=${body}`;
+                                        })()
+                                        : href;
 
-                                        <Image src={icon as string} alt={altText ?? labelKey} width={40} height={40} />
+                                    return (
+                                        <a key={href} href={localizedHref} className="flex items-center gap-[13px]">
 
-                                        <div className="flex flex-col gap-[1px]">
+                                            <Image src={icon as string} alt={altText ?? labelKey} width={40} height={40} />
 
-                                            <span className="text-gray text-sm font-bold">{t(`contacts.${labelKey}`)}</span>
+                                            <div className="flex flex-col gap-[1px]">
 
-                                            <span className="text-ebony text-base font-normal transition-default hover:text-primary">{telEmail}</span>
+                                                <span className="text-gray text-sm font-bold">{t(`contacts.${labelKey}`)}</span>
 
-                                        </div>
+                                                <span className="text-ebony text-base font-normal transition-default hover:text-primary">{telEmail}</span>
 
-                                    </a>
-                                ))}
+                                            </div>
+
+                                        </a>
+                                    )
+
+                                })}
                             </div>
 
                         </motion.div>

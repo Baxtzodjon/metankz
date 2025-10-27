@@ -4,8 +4,10 @@ import { useRef, useState } from "react";
 import Texts from "./Texts";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 const VideoBlock = () => {
+    const t = useTranslations("VideoBlock");
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -35,8 +37,7 @@ const VideoBlock = () => {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
 
-                    <Texts title="We are Createx Construction Bureau" description="We&nbsp;are rightfully considered to&nbsp;be&nbsp;the best
-                        construction company in&nbsp;the USA." />
+                    <Texts title={t("title")} description={t("description")} />
 
                 </motion.div>
 
