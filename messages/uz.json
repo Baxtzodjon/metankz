@@ -52,5 +52,94 @@
             "comfort": "Qulaylik",
             "comfortDesc": "Biz toza energiyani qulay va mavjud qilamiz, har bir mijoz uchun Qozog'iston bo'ylab qulaylik va ishonch yaratamiz. Bizning stantsiyalarimiz xavfsiz va tez yonilg'i quyish imkonini beradi."
         }
+    },
+    "KnowForm": {
+        "title": "Ko'proq bilmoqchimisiz? Savol bering:",
+        "fields": {
+            "name": {
+                "label": "Ism",
+                "placeholder": "Ismingiz"
+            },
+            "phone": {
+                "label": "Telefon",
+                "placeholder": "Telefon raqamingiz"
+            },
+            "message": {
+                "label": "Xabar",
+                "placeholder": "Xabaringiz"
+            }
+        },
+        "errors": {
+            "name": {
+                "required": "Ism kiritilishi shart",
+                "pattern": "Ism faqat harflardan iborat bo'lishi kerak"
+            },
+            "phone": {
+                "required": "Telefon raqami kiritilishi shart",
+                "pattern": "Telefon raqami noto'g'ri formatda"
+            },
+            "message": {
+                "minLength": "Xabar kamida 10 ta belgidan iborat bo'lishi kerak"
+            }
+        },
+        "button": "Yuborish"
+    },
+    "ServiceBlock": {
+        "title": "Bizning xizmatlarimiz",
+        "description": "Metan KZ — Qozog'istondagi yetakchi metan yoqilg'isi kompaniyasi bo'lib, mamlakat bo'ylab avtomobillar uchun zamonaviy, xavfsiz va ekologik toza yoqilg'i quyish yechimlarini taqdim etadi.",
+        "values": {
+            "stations": "Shoxobchalar",
+            "conversion": "Moslashtirish",
+            "service": "Xizmat",
+            "energy": "Energiya"
+        },
+        "translBtns": {
+            "btnTitle": "Xizmatlarimiz haqida batafsil ma'lumot",
+            "btnLink": "Barcha xizmatlarni ko'rish"
+        }
+    },
+    "PortfolioSection": {
+        "title": "Butun Qozog'iston bo'ylab CNG loyihalarimizni o'rganing",
+        "viewProject": "Loyihani ko'rish",
+        "btnTitle": "Barcha loyihalarni ko'rish",
+        "btnLink": "Portfelga o'tish",
+        "stationAstana": "Astana stansiyasi",
+        "stationAstanaDesc": "Yuqori quvvatli stansiya",
+        "fleetAlmaty": "Olmaota floti",
+        "fleetAlmatyDesc": "50 yuk mashinasi konversiya qilindi",
+        "maintenanceShymkent": "Chimkent xizmat",
+        "maintenanceShymkentDesc": "Transport xizmatlari",
+        "ecoTransport": "Ekologik transport",
+        "ecoTransportDesc": "CO₂ kamaytirish",
+        "clientFleet": "Mijoz avtoparki",
+        "clientFleetDesc": "To'liq konversiya"
+    },
+    "Partners": {
+        "title": "12+ hamkorlar tomonidan qo'llab-quvvatlanadi"
+    },
+    "Testimonials": {
+        "title": "Mijozlarimiz fikrlari",
+        "items": {
+            "1": {
+                "author": "Erjan Suleymenov",
+                "position": "Bosh direktor, TransKaz Logistics",
+                "text": "Metan KZ bizning logistika kompaniyamizga CNG tizimiga o'tishda yordam berdi. Yoqilg'i xarajatlari 35% ga kamaydi, transportlarimiz esa yanada tinch va ekologik toza ishlayapti."
+            },
+            "2": {
+                "author": "Ainur Qadirova",
+                "position": "Direktor, GreenTaxi Almaty",
+                "text": "Metan KZ bilan 200 dan ortiq taksilarimizni CNG tizimiga o'tkazdik. Natija a’lo darajada! Haydovchilar xavfsizlikdan mamnun, mijozlar esa ekologik yondashuvimizni qadrlashadi."
+            },
+            "3": {
+                "author": "Sergey Petrov",
+                "position": "Texnik direktor, AutoService KZ",
+                "text": "Metan KZ stansiyalari zamonaviy, toza va qulay joylashgan. Texnik xizmatlari tez, xavfsiz va sifatli."
+            },
+            "4": {
+                "author": "Dana Urazbayeva",
+                "position": "Avtopark menejeri, QazOil Group",
+                "text": "Metan KZ bilan avtoparkni metanga o'tkazish loyihasida hamkorlik qildik. Muhandislar juda malakali, xizmat esa yuqori darajada."
+            }
+        }
     }
 }

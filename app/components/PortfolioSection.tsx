@@ -10,44 +10,14 @@ import Image from 'next/image';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import BtnText from './BtnText';
 import { motion } from 'motion/react';
+import { portfolioItems } from '../data/portfolioItems';
+import { useTranslations } from 'next-intl';
 
 const PortfolioSection = () => {
     const swiperRef = useRef<SwiperClass | null>(null);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
-
-    const portfolioItems = [
-        {
-            id: 1,
-            title: 'Red Finger Building',
-            description: 'Business Centers',
-            image: '/images/portfolio_first.jpg',
-        },
-        {
-            id: 2,
-            title: 'Red Finger Building',
-            description: 'Business Centers',
-            image: '/images/portfolio_first.jpg',
-        },
-        {
-            id: 3,
-            title: 'Red Finger Building',
-            description: 'Business Centers',
-            image: '/images/portfolio_first.jpg',
-        },
-        {
-            id: 4,
-            title: 'Red Finger Building',
-            description: 'Business Centers',
-            image: '/images/portfolio_first.jpg',
-        },
-        {
-            id: 5,
-            title: 'Red Finger Building',
-            description: 'Business Centers',
-            image: '/images/portfolio_first.jpg',
-        },
-    ];
+     const t = useTranslations("PortfolioSection");
 
     const onSwiperInit = (swiper: SwiperClass) => {
         swiperRef.current = swiper;
@@ -72,7 +42,7 @@ const PortfolioSection = () => {
                     viewport={{ once: true }}
                     className="flex items-end justify-between flex-wrap sm:flex-nowrap mb-12">
 
-                    <h2 className="max-w-none lg:max-w-[710px] text-ebony text-[28px] sm:text-[40px] lg:text-[46px] leading-10 sm:leading-[55px] lg:leading-[130%] font-bold mb-[15px] pb-0 lg:pb-3 lg:m-0">Browse our selected projects and learn more about our work</h2>
+                    <h2 className="max-w-none lg:max-w-[710px] text-ebony text-[28px] sm:text-[40px] lg:text-[46px] leading-10 sm:leading-[55px] lg:leading-[130%] font-bold mb-[15px] pb-0 lg:pb-3 lg:m-0">{t("title")}</h2>
 
                     <div className="relative flex items-center gap-3 z-[15] select-none translate-x-0 sm:translate-x-3">
 
@@ -150,11 +120,11 @@ const PortfolioSection = () => {
                                             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
                                         >
 
-                                            <h3 className="text-ebony text-lg xl:text-xl leading-[150%] font-bold mb-[5px]">{item.title}</h3>
+                                            <h3 className="text-ebony text-lg xl:text-xl leading-[150%] font-bold mb-[5px]">{t(item.titleKey)}</h3> {/* {t(`PortfolioSection.${item.titleKey}`)} */}
 
-                                            <span className="text-storm text-sm leading-[150%]">{item.description}</span>
+                                            <span className="text-storm text-sm leading-[150%]">{t(item.descriptionKey)}</span>
 
-                                            <div className="mt-6 mb-0 md:mb-[-72px] border border-current rounded pt-[13px] pb-[13px] px-[31px] font-bold text-sm tracking-wider uppercase text-primary group-hover:mb-0 transition-default will-change-[margin]">View Project</div>
+                                            <div className="mt-6 mb-0 md:mb-[-72px] border border-current rounded pt-[13px] pb-[13px] px-[31px] font-bold text-sm tracking-wider uppercase text-primary group-hover:mb-0 transition-default will-change-[margin]">{t("viewProject")}</div>
 
                                         </motion.div>
 
@@ -177,7 +147,7 @@ const PortfolioSection = () => {
 
                 </div> */}
 
-                <BtnText title="Explore all our works" link="View portfolio" className="mt-20" />
+                <BtnText title={t("btnTitle")} link={t("btnLink")} className="mt-20" />
 
             </div>
 

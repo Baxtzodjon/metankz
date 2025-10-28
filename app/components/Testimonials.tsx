@@ -9,35 +9,12 @@ import Image from "next/image";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import Texts from "./Texts";
 import { motion } from "motion/react";
-
-const slidesTestimonials = [
-    {
-        id: 0,
-        author: "Shawn Edwards",
-        position: "CEO, Company Alpha",
-        text: "Ipsum aute sunt aliquip aute et occaecat. Anim minim do cillum eiusmod enim. Consectetur magna cillum consequat minim laboris cillum laboris voluptate minim proident exercitation ullamco."
-    },
-    {
-        id: 1,
-        author: "Jessica Miller",
-        position: "Marketing Manager, Beta Corp",
-        text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    {
-        id: 2,
-        author: "David Lee",
-        position: "Product Owner, Gamma LLC",
-        text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
-    },
-    {
-        id: 3,
-        author: "Emily Johnson",
-        position: "CTO, Delta Inc",
-        text: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-    },
-];
+import { slidesTestimonials } from "../data/testimonials";
+import { useTranslations } from "next-intl";
 
 const Testimonials = () => {
+    const t = useTranslations("Testimonials");
+
     return (
         <section className="py-10 md:pt-[97px] md:pb-0 bg-athens">
 
@@ -52,7 +29,7 @@ const Testimonials = () => {
 
                     {/* <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold mb-[60px]">What our clients are saying</h2> */}
 
-                    <Texts title="What our clients are saying" className="text-start mb-[60px]" />
+                    <Texts title={t("title")} className="text-start mb-[60px]" />
 
                     <Swiper
                         modules={[Navigation, Autoplay]}
@@ -84,17 +61,17 @@ const Testimonials = () => {
 
                                         <div className="overflow-hidden mb-[25px] rounded-full w-[72px] h-[72px]">
 
-                                            <Image src={"/images/portfolio_first.jpg"} alt={`Author ${slide.author}`} width={72} height={72} className="block w-full h-full object-cover" />
+                                            <Image src={slide.image} alt={`Author ${slide.authorKey}`} width={72} height={72} className="block w-full h-full object-cover" />
 
                                         </div>
 
                                         {/* <p className="testimonials-item__descr" dangerouslySetInnerHTML={{ __html: slide.text }}>Ipsum aute sunt aliquip aute et&nbsp;occaecat. Anim minim do&nbsp;cillum eiusmod enim. Consectetur magna cillum consequat minim laboris cillum laboris voluptate minim proident exercitation ullamco.</p> */}
 
-                                        <p className="text-gray text-base leading-[160%] font-normal mb-[25px]">{slide.text}</p>
+                                        <p className="text-gray text-base leading-[160%] font-normal mb-[25px]">{t(slide.textKey)}</p>
 
-                                        <span className="block mb-1 pr-[110px] text-ebony text-base leading-[160%] font-bold">{slide.author}</span>
+                                        <span className="block mb-1 pr-[110px] text-ebony text-base leading-[160%] font-bold">{t(slide.authorKey)}</span>
 
-                                        <span className="block pr-[110px] text-storm text-sm leading-[150%] font-normal">{slide.position}</span>
+                                        <span className="block pr-[110px] text-storm text-sm leading-[150%] font-normal">{t(slide.positionKey)}</span>
 
                                     </div>
 

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Texts from "./Texts";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 const partnersLogo = [
     {
@@ -57,6 +58,8 @@ const itemVariants = {
 };
 
 const Partners = () => {
+    const t = useTranslations();
+    
     return (
         <section className="py-20 bg-athens">
 
@@ -72,7 +75,7 @@ const Partners = () => {
                     className="flex items-center justify-center flex-col gap-6"
                 >
 
-                    <Texts title="Supported by 12+ partners" className="mb-[60px]" />
+                    <Texts title={t("Partners.title")} className="mb-[60px]" />
                     
                 </motion.div>
 

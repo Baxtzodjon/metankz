@@ -1,65 +1,12 @@
 "use client"
 
 import { motion } from "motion/react";
-import { useForm } from "react-hook-form";
-import { RegisterOptions } from "react-hook-form";
-
-type FormData = {
-    name: string;
-    phone: string;
-    message: string;
-};
-
-type FieldConfig = {
-    name: keyof FormData;
-    label: string;
-    type: string;
-    placeholder: string;
-    validation?: RegisterOptions<FormData, keyof FormData>;
-};
-
-const formFields: FieldConfig[] = [
-    {
-        name: "name",
-        label: 'Name',
-        type: 'text',
-        placeholder: 'Your name',
-        validation: {
-            required: "Name is required",
-            pattern: {
-                value: /^[A-Za-zА-Яа-я\s]+$/,
-                message: "Name can only contain letters",
-            },
-        },
-    },
-    {
-        name: "phone",
-        label: 'Phone',
-        type: 'tel',
-        placeholder: 'Your phone',
-        validation: {
-            required: "Phone is required",
-            pattern: {
-                value: /^[\d\s()+-]{7,20}$/,
-                message: "Invalid phone number format",
-            },
-        },
-    },
-    {
-        name: "message",
-        label: 'Message',
-        type: 'text',
-        placeholder: 'Your message',
-        validation: {
-            minLength: {
-                value: 10,
-                message: "Message must be at least 10 characters",
-            },
-        },
-    },
-];
+import { RegisterOptions, useForm } from "react-hook-form";
+import { formFields, FormData } from "../data/formFields";
+import { useTranslations } from "next-intl";
 
 const KnowForm = () => {
+    const t = useTranslations();
     const {
         register,
         handleSubmit,
@@ -94,7 +41,7 @@ const KnowForm = () => {
                     visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-            >Want to know more? Ask us a question:</motion.h2>
+            >{t("KnowForm.title")}</motion.h2>
 
             {/* <div className="flex items-end flex-wrap gap-6">
 
@@ -131,6 +78,20 @@ const KnowForm = () => {
                         wrapperClass = 'w-full sm:w-fit md:w-[48%] lg:w-[260px] xl:w-[414px]';
                     }
 
+                    const validationRules: RegisterOptions<FormData, keyof FormData> = {};
+                    if (field.validation?.required)
+                        validationRules.required = t(field.validation.required);
+                    if (field.validation?.pattern)
+                        validationRules.pattern = {
+                            value: field.validation.pattern.value,
+                            message: t(field.validation.pattern.message),
+                        };
+                    if (field.validation?.minLength)
+                        validationRules.minLength = {
+                            value: field.validation.minLength.value,
+                            message: t(field.validation.minLength.message),
+                        };
+
                     return (
                         <motion.label key={index} className={`flex flex-col ${wrapperClass}`}
                             variants={{
@@ -140,16 +101,16 @@ const KnowForm = () => {
                             transition={{ duration: 0.5, ease: "easeOut" }}
                         >
                             <span className="text-gray text-sm leading-[150%] font-normal mb-2">
-                                {field.label}
+                                {t(field.labelKey)}
                             </span>
                             <input
                                 type={field.type}
-                                placeholder={field.placeholder}
+                                placeholder={t(field.placeholderKey)}
                                 autoComplete={field.name}
-                                {...register(field.name, field.validation)}
+                                {...register(field.name, validationRules)}
                                 className={`w-full h-[44px] bg-[#F4F5F6] border border-[#d7dadd] rounded pl-[15px] outline-none focus:outline-2 focus:outline-primary focus:outline-offset-2 text-sm leading-[150%] font-normal ${errors[field.name]
-                                        ? "border-red-500"
-                                        : "border-[#d7dadd] focus:outline-primary"
+                                    ? "border-red-500"
+                                    : "border-[#d7dadd] focus:outline-primary"
                                     }`}
                             />
 
@@ -171,7 +132,7 @@ const KnowForm = () => {
                     }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                    Send
+                    {t("KnowForm.button")}
                 </motion.button>
 
             </div>

@@ -1,6 +1,6 @@
 export interface MissionItem {
     image: string;
-    titleKey: string; // ключ для перевода (через i18n)
+    titleKey: string;
     descriptionKey: string;
 }
 

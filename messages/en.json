@@ -52,5 +52,94 @@
             "comfort": "Comfort",
             "comfortDesc": "We make clean energy convenient and accessible, creating comfort and confidence for every customer across Kazakhstan. Our stations provide safe and fast refueling."
         }
+    },
+    "KnowForm": {
+        "title": "Want to know more? Ask us a question:",
+        "fields": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Your name"
+            },
+            "phone": {
+                "label": "Phone",
+                "placeholder": "Your phone"
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Your message"
+            }
+        },
+        "errors": {
+            "name": {
+                "required": "Name is required",
+                "pattern": "Name can only contain letters"
+            },
+            "phone": {
+                "required": "Phone is required",
+                "pattern": "Invalid phone number format"
+            },
+            "message": {
+                "minLength": "Message must be at least 10 characters"
+            }
+        },
+        "button": "Send"
+    },
+    "ServiceBlock": {
+        "title": "Our services",
+        "description": "Metan KZ is a leading CNG company in Kazakhstan, providing modern, safe, and eco-friendly refueling solutions for vehicles across the country.",
+        "values": {
+            "stations": "Stations",
+            "conversion": "Conversion",
+            "service": "Service",
+            "energy": "Energy"
+        },
+        "translBtns": {
+            "btnTitle": "Learn more about our services",
+            "btnLink": "View services"
+        }
+    },
+    "PortfolioSection": {
+        "title": "Explore our CNG projects across Kazakhstan",
+        "viewProject": "View Project",
+        "btnTitle": "Explore all our projects",
+        "btnLink": "View portfolio",
+        "stationAstana": "Astana Station",
+        "stationAstanaDesc": "High-capacity CNG station",
+        "fleetAlmaty": "Almaty Fleet",
+        "fleetAlmatyDesc": "50 trucks converted",
+        "maintenanceShymkent": "Shymkent Service",
+        "maintenanceShymkentDesc": "Vehicle maintenance",
+        "ecoTransport": "Eco Transport",
+        "ecoTransportDesc": "Lower CO₂ emissions",
+        "clientFleet": "Client Fleet",
+        "clientFleetDesc": "Full fleet conversion"
+    },
+    "Partners": {
+        "title": "Supported by 12+ partners"
+    },
+    "Testimonials": {
+        "title": "What our clients are saying",
+        "items": {
+            "1": {
+                "author": "Erzhan Suleimenov",
+                "position": "CEO, TransKaz Logistics",
+                "text": "Metan KZ helped our logistics company switch to CNG without interrupting operations. Fuel costs dropped by 35%, and our fleet now runs cleaner and quieter. A truly professional partner in sustainable energy."
+            },
+            "2": {
+                "author": "Ainur Kadyrova",
+                "position": "Director, GreenTaxi Almaty",
+                "text": "We converted over 200 taxis with Metan KZ, and the results are fantastic. Drivers appreciate the safety and efficiency, while our customers value our eco-friendly approach. The best CNG network in Kazakhstan!"
+            },
+            "3": {
+                "author": "Sergey Petrov",
+                "position": "Technical Director, AutoService KZ",
+                "text": "The Metan KZ stations are modern, well-maintained, and easy to access. Our team regularly uses their maintenance services — everything is fast, safe, and meets international standards."
+            },
+            "4": {
+                "author": "Dana Urazbayeva",
+                "position": "Fleet Manager, QazOil Group",
+                "text": "We partnered with Metan KZ for a large-scale fleet conversion project. Their engineers are highly skilled, and the process was smooth from start to finish. Excellent service and great technical support."
+            }
+        }
     }
 }

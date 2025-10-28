@@ -4,31 +4,12 @@ import Image from "next/image";
 import Texts from "./Texts";
 import BtnText from "./BtnText";
 import { motion } from "motion/react";
-
-const services = [
-    {
-        icon: "/icons/icon_construction.svg",
-        title: "Construction",
-        bgImage: 'https://live.verstaem.online/createx/img/services-1.jpg',
-    },
-    {
-        icon: "/icons/icon_plan.svg",
-        title: "Project Development",
-        bgImage: 'https://live.verstaem.online/createx/img/services-1.jpg',
-    },
-    {
-        icon: "/icons/icon_painting.svg",
-        title: "Interior Design",
-        bgImage: 'https://live.verstaem.online/createx/img/services-1.jpg',
-    },
-    {
-        icon: "/icons/icon_painting.svg",
-        title: "Repairs",
-        bgImage: 'https://live.verstaem.online/createx/img/services-1.jpg',
-    },
-];
+import { services } from "../data/services";
+import { useTranslations } from "next-intl";
 
 const ServiceBlock = () => {
+    const t = useTranslations("ServiceBlock");
+
     return (
         <section className="services-section">
 
@@ -41,7 +22,7 @@ const ServiceBlock = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex items-center justify-center flex-col gap-6">
 
-                    <Texts title="Our services" description="Createx Construction Bureau is&nbsp;a&nbsp;construction giant with a&nbsp;full range of&nbsp;construction services." />
+                    <Texts title={t("title")} description={t("description")} />
 
                 </motion.div>
 
@@ -83,7 +64,7 @@ const ServiceBlock = () => {
                                 <div className="relative z-10 flex flex-col items-center">
                                     <Image
                                         src={service.icon}
-                                        alt={`${service.title} Icon`}
+                                        alt={`${service.titleKey} Icon`}
                                         width={52}
                                         height={52}
                                         className="mb-[23px] w-[52px] h-[52px] transition-colors duration-300 ease-in-out"
@@ -91,7 +72,7 @@ const ServiceBlock = () => {
                                     />
 
                                     <h3 className="text-ebony lg:text-lg xl:text-xl leading-[150%] font-bold group-hover:text-light transition-colors duration-300">
-                                        {service.title}
+                                        {t(`values.${service.titleKey}`)}
                                     </h3>
 
                                 </div>
@@ -112,7 +93,7 @@ const ServiceBlock = () => {
 
                 </div> */}
 
-                <BtnText title="Learn more about our services" link="View services" />
+                <BtnText title={t("translBtns.btnTitle")} link={t("translBtns.btnLink")} />
 
             </div>
 
