@@ -3,47 +3,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Texts from "./Texts";
 import { motion } from "motion/react";
-
-// Тип для одного факта
-interface FactItem {
-    percent?: number;
-    full?: number;
-    value: number | string;
-    text: string;
-    progressStroke: string;
-    targetValue: number;
-}
-
-const factsData: FactItem[] = [
-    {
-        percent: 57,
-        value: '57%',
-        text: 'Totally satisfied clients',
-        targetValue: 57,
-        progressStroke: '#f89828'
-    },
-    {
-        full: 50,
-        value: 35,
-        text: 'Years of experience',
-        targetValue: 35,
-        progressStroke: '#f52f6e'
-    },
-    {
-        full: 10000,
-        value: 9452,
-        text: 'Working hours spent',
-        targetValue: 9452,
-        progressStroke: '#5a87fc'
-    },
-    {
-        percent: 100,
-        value: '100%',
-        text: 'Succeeded projects',
-        targetValue: 100,
-        progressStroke: '#03cea4'
-    },
-];
+import { FactItem, factsData } from "../data/factsData";
+import { useTranslations } from "next-intl";
 
 const strokeDasharray = 942.478;
 
@@ -131,6 +92,8 @@ const AnimatedCircle: React.FC<{ fact: FactItem }> = ({ fact }) => {
 };
 
 const Facts: React.FC = () => {
+    const t = useTranslations();
+    
     return (
         <section className="relative overflow-hidden py-10 sm:pt-[180px] sm:pb-[100px] bg-light before:content-[''] before:absolute before:-left-[9px] before:-top-[195px] before:w-[570px] before:h-[1065px] before:bg-[url('/images/facts_bg.png')] before:bg-center before:bg-no-repeat before:bg-cover">
 
@@ -146,7 +109,7 @@ const Facts: React.FC = () => {
                     className="flex items-center justify-center flex-col gap-6"
                 >
 
-                    <Texts title="Some facts and figures" className="mb-[62px]" />
+                    <Texts title={t("Facts.title")} className="mb-[62px]" />
 
                 </motion.div>
 
@@ -174,7 +137,7 @@ const Facts: React.FC = () => {
 
                                 </motion.div>
 
-                                <span className="block text-ebony text-sm leading-[150%] font-normal text-center">{fact.text}</span>
+                                <span className="block text-ebony text-sm leading-[150%] font-normal text-center">{t(fact.textKey)}</span>
 
                             </div>
 

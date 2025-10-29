@@ -141,5 +141,60 @@
                 "text": "We partnered with Metan KZ for a large-scale fleet conversion project. Their engineers are highly skilled, and the process was smooth from start to finish. Excellent service and great technical support."
             }
         }
+    },
+    "Facts": {
+        "title": "Some facts and figures",
+        "clients": "Totally satisfied clients",
+        "experience": "Years of experience",
+        "hours": "Working hours spent",
+        "projects": "Succeeded projects"
+    },
+    "RecentNews": {
+        "title": "Recent News",
+        "btnTitle": "Explore all our news posts",
+        "btnLink": "View all news"
+    },
+    "ContactsSection": {
+        "title": "A quick way to discuss details",
+        "fields": {
+            "name": {
+                "label": "Name*",
+                "placeholder": "Your name"
+            },
+            "phone": {
+                "label": "Phone*",
+                "placeholder": "Your phone number"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Your working email"
+            },
+            "message": {
+                "label": "Message*",
+                "placeholder": "Your message"
+            }
+        },
+        "errors": {
+            "name": {
+                "required": "Name is required",
+                "pattern": "Name can only contain letters"
+            },
+            "phone": {
+                "required": "Phone is required",
+                "pattern": "Invalid phone number format"
+            },
+            "email": {
+                "pattern": "Enter a valid email address"
+            },
+            "message": {
+                "required": "Message is required",
+                "minLength": "Message must be at least 10 characters"
+            },
+            "consent": {
+                "required": "You must agree before submitting."
+            }
+        },
+        "consentText": "I agree to receive communications from Metan KZ.",
+        "button": "Send Request"
     }
 }

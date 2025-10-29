@@ -4,6 +4,7 @@ import Image from "next/image";
 import Texts from "./Texts";
 import BtnText from "./BtnText";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 const articles = [
     {
@@ -46,6 +47,8 @@ const cardVariants = {
 };
 
 const RecentNews = () => {
+    const t = useTranslations("RecentNews");
+
     return (
         <section className="pt-20 pb-[120px] bg-light">
 
@@ -58,7 +61,7 @@ const RecentNews = () => {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
                     
-                    <Texts title="Recent News" className="mb-[60px]" />
+                    <Texts title={t("title")} className="mb-[60px]" />
 
                 </motion.div>
 
@@ -136,7 +139,7 @@ const RecentNews = () => {
 
                 </ul>
 
-                <BtnText title="Explore all our news posts" link="View all news" />
+                <BtnText title={t("btnTitle")} link={t("btnLink")} />
 
             </div>
 

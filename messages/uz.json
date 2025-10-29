@@ -141,5 +141,60 @@
                 "text": "Metan KZ bilan avtoparkni metanga o'tkazish loyihasida hamkorlik qildik. Muhandislar juda malakali, xizmat esa yuqori darajada."
             }
         }
+    },
+    "Facts": {
+        "title": "Ba'zi faktlar va raqamlar",
+        "clients": "To'liq mamnun mijozlar",
+        "experience": "Tajriba yillari",
+        "hours": "Sarflangan ish soatlari",
+        "projects": "Muvaffaqiyatli yakunlangan loyihalar"
+    },
+    "RecentNews": {
+        "title": "So'nggi yangiliklar",
+        "btnTitle": "Barcha yangiliklarimizni ko'rish",
+        "btnLink": "Barcha yangiliklarni ko'rish"
+    },
+    "ContactsSection": {
+        "title": "Tafsilotlarni muhokama qilishning tezkor usuli",
+        "fields": {
+            "name": {
+                "label": "Ism*",
+                "placeholder": "Ismingiz"
+            },
+            "phone": {
+                "label": "Telefon*",
+                "placeholder": "Telefon raqamingiz"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Ishchi emailingiz"
+            },
+            "message": {
+                "label": "Xabar*",
+                "placeholder": "Xabaringiz"
+            }
+        },
+        "errors": {
+            "name": {
+                "required": "Ism kiritilishi shart",
+                "pattern": "Ism faqat harflardan iborat bo'lishi kerak"
+            },
+            "phone": {
+                "required": "Telefon raqami kiritilishi shart",
+                "pattern": "Telefon raqami noto'g'ri formatda"
+            },
+            "email": {
+                "pattern": "To'g'ri email manzilini kiriting"
+            },
+            "message": {
+                "required": "Xabar kiritilishi shart",
+                "minLength": "Xabar kamida 10 ta belgidan iborat bo'lishi kerak"
+            },
+            "consent": {
+                "required": "Jo'natishdan oldin rozilik bildiring."
+            }
+        },
+        "consentText": "Men Metan KZ xabarlari olishga roziman.",
+        "button": "So'rov yuborish"
     }
 }
