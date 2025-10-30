@@ -1,11 +1,11 @@
 import {
     FaWhatsapp,
-    FaFacebookMessenger,
+    FaTelegramPlane,
     FaFacebookF,
-    FaTwitter,
-    FaYoutube,
+    FaInstagram,
+    FaTiktok,
 } from "react-icons/fa";
-
+import { IoLogoWechat } from "react-icons/io5";
 import { IconType } from "react-icons";
 
 export interface SocialLink {
@@ -21,9 +21,9 @@ export const socialLinks: SocialLink[] = [
         label: "WhatsApp",
     },
     {
-        href: "https://facebookmessenger.com",
-        icon: FaFacebookMessenger,
-        label: "Facebook Messenger",
+        href: "https://t.me/metanuzgroup",
+        icon: FaTelegramPlane,
+        label: "Telegram",
     },
     {
         href: "https://facebook.com",
@@ -31,13 +31,13 @@ export const socialLinks: SocialLink[] = [
         label: "Facebook",
     },
     {
-        href: "https://twitter.com",
-        icon: FaTwitter,
-        label: "Twitter",
+        href: "https://www.instagram.com/metanuz?igsh=ZXowdW9iMWQ2eWQ2",
+        icon: FaInstagram,
+        label: "Instagram",
     },
     {
-        href: "https://youtube.com",
-        icon: FaYoutube,
-        label: "YouTube",
+        href: "https://www.tiktok.com/@metankz",
+        icon: FaTiktok,
+        label: "TikTok",
     },
 ];

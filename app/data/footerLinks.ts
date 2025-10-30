@@ -1,26 +1,26 @@
 export interface FooterLink {
-    title: string;
+    titleKey: string;
     links: {
         href: string;
-        label: string;
+        labelKey: string;
     }[];
 }
 
 export const footerLinks: FooterLink[] = [
     {
-        title: "Who we are",
+        titleKey: "Whoweare.title",
         links: [
-            { href: "/about", label: "About Us" },
-            { href: "/available-positions", label: "Available Positions" },
-            { href: "/contact", label: "Contacts" },
+            { href: "/about", labelKey: "Whoweare.AboutUs" },
+            { href: "/available-positions", labelKey: "Whoweare.AvailablePositions" },
+            { href: "/contact", labelKey: "Whoweare.Contacts" },
         ],
     },
     {
-        title: "Our Experience",
+        titleKey: "OurExperience.title",
         links: [
-            { href: "/services", label: "Services" },
-            { href: "/work", label: "Work" },
-            { href: "/news", label: "News" },
+            { href: "/services", labelKey: "OurExperience.Services" },
+            { href: "/work", labelKey: "OurExperience.Work" },
+            { href: "/news", labelKey: "OurExperience.News" },
         ],
     },
 ];

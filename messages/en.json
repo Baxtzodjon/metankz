@@ -196,5 +196,44 @@
         },
         "consentText": "I agree to receive communications from Metan KZ.",
         "button": "Send Request"
+    },
+    "Footer": {
+        "description": "Metan KZ has been successfully operating in the Kazakhstan energy market since 2014. We are proud to provide reliable methane-based solutions and excellent service. Our mission is to set the highest standards in clean and efficient energy.",
+        "stayInTouch": "Let’s stay in touch",
+        "form": {
+            "placeholder": "Your email address",
+            "subscribe": "Subscribe",
+            "emailRequired": "Email is required",
+            "emailInvalid": "Enter a valid email address",
+            "note": "*Subscribe to our newsletter to receive communications and early updates from Metan KZ."
+        },
+        "headOffice": {
+            "title": "Head Office",
+            "addressLabel": "Address:",
+            "addressValue": "Beruniy 37/78, Samarkand, Uzbekistan",
+            "phoneLabel": "Call:",
+            "emailLabel": "Email:",
+            "emailSubject": "Platform question",
+            "emailBody": "Hello, I have a question..."
+        },
+        "links": {
+            "Whoweare": {
+                "title": "Who we are",
+                "AboutUs": "About Us",
+                "AvailablePositions": "Available Positions",
+                "Contacts": "Contacts"
+            },
+            "OurExperience": {
+                "title": "Our Experience",
+                "Services": "Services",
+                "Work": "Work",
+                "News": "News"
+            }
+        },
+        "copyright": "All rights reserved. Made with",
+        "byAuthor": "by Baxtzod"
+    },
+    "ScrollToTop": {
+        "title": "Go to top"
     }
 }

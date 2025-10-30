@@ -1,9 +1,11 @@
 "use client"
 
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 
 const ScrollToTopBtn = () => {
+    const t = useTranslations("ScrollToTop");
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
@@ -45,7 +47,7 @@ const ScrollToTopBtn = () => {
     return (
         <button onClick={scrollToTop} className={`fixed right-5 bottom-5 z-[1000] flex items-end xl:scroll-btn xl:bottom-20 transition-default ${visible ? "opacity-100 visible" : "opacity-0 invisible"}`}>
 
-            <span className="mr-4 text-light text-sm leading-[150%] uppercase" style={{ textShadow: '3px 3px 11px #969696' }}>Go to top</span>
+            <span className="mr-4 text-light text-sm leading-[150%] uppercase" style={{ textShadow: '3px 3px 11px #969696' }}>{t("title")}</span>
 
             <span className="flex items-center justify-center rounded w-10 h-10 bg-primary hover:bg-active transition-default">
 

@@ -9,6 +9,7 @@ import { contactInfo } from "../data/contactInfo";
 import { motion } from "motion/react";
 import { useForm } from "react-hook-form";
 import { RegisterOptions } from "react-hook-form";
+import { useTranslations } from "next-intl";
 
 /* type FooterFormData = {
     email: string;
@@ -37,6 +38,8 @@ const formFields: FooterFieldConfig[] = [
 ]; */
 
 const Footer = () => {
+    const t = useTranslations("Footer");
+
     const {
         register,
         handleSubmit,
@@ -94,7 +97,7 @@ const Footer = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
                             viewport={{ once: true }}
-                        >Createx Construction Bureau has been successfully operating in the USA construction market since 2000. We are proud to offer you quality construction and exemplary service. Our mission is to set the highest standards for construction sphere.</motion.p>
+                        >{t("description")}</motion.p>
 
                     </div>
 
@@ -107,7 +110,7 @@ const Footer = () => {
                         viewport={{ once: true }}
                     >
 
-                        <h4 className="text-white text-2xl font-bold">Let’s stay in touch</h4>
+                        <h4 className="text-white text-2xl font-bold">{t("stayInTouch")}</h4>
 
                         <div className="flex flex-col gap-4">
 
@@ -117,7 +120,7 @@ const Footer = () => {
 
                                     <input
                                         type={"email"}
-                                        {...register("email", { required: "Email is required", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Enter a valid email address" } })} placeholder="Your email address" autoComplete="email" className={`max-w-full w-full sm:w-[364px] md:w-full lg:w-[364px] h-11 bg-[#FFFFFF1F] border ${errors["email"] ? "border-red-500" : "border-[#FFFFFF33]"
+                                        {...register("email", { required: t("form.emailRequired"), pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: t("form.emailInvalid") } })} placeholder={t("form.placeholder")} autoComplete="email" className={`max-w-full w-full sm:w-[364px] md:w-full lg:w-[364px] h-11 bg-[#FFFFFF1F] border ${errors["email"] ? "border-red-500" : "border-[#FFFFFF33]"
                                             } rounded-l pl-4 outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-light text-sm font-normal`} />
 
                                     {errors["email"] && (
@@ -130,11 +133,13 @@ const Footer = () => {
 
                                 <div className="flex flex-col">
 
-                                    <button className="px-[19px] py-[11px] bg-primary rounded-tr-[4px] rounded-br-[4px] text-white text-sm font-bold uppercase transition-default hover:bg-active">subscribe</button>
+                                    <button className="px-[19px] py-[11px] bg-primary rounded-tr-[4px] rounded-br-[4px] text-white text-sm font-bold uppercase transition-default hover:bg-active">{t("form.subscribe")}</button>
 
                                     {errors["email"] && (
                                         <span className="text-red-500 text-xs mt-1 overflow-hidden pointer-events-none opacity-0">
-                                            {(errors["email"]?.message as string) || ""}
+                                            {/* {(errors["email"]?.message as string) || ""} */}
+                                            {/* Enter a valid email address */}
+                                            Email is required
                                         </span>
                                     )}
 
@@ -142,7 +147,7 @@ const Footer = () => {
 
                             </div>
 
-                            <p className="text-white text-xs font-normal leading-[150%] opacity-60">*Subscribe to our newsletter to receive communications and early updates from Createx <br className="hidden sm:block" />Construction Bureau.</p>
+                            <p className="max-w-[480px] text-white text-xs font-normal leading-[150%] opacity-60">{t("form.note")}</p>
 
                         </div>
 
@@ -160,7 +165,7 @@ const Footer = () => {
 
                     <div className="flex flex-col gap-[13px]">
 
-                        <h6 className="text-white text-base font-bold uppercase">Head Office</h6>
+                        <h6 className="text-white text-base font-bold uppercase">{t("headOffice.title")}</h6>
 
                         <div className="flex flex-col gap-1">
 
@@ -188,24 +193,36 @@ const Footer = () => {
 
                             </span> */}
 
-                            {contactInfo.map(({ type, label, value, href }) => (
-                                <span key={type} className="flex gap-1">
-                                    <span className="text-white text-base font-normal">{label}</span>
+                            {contactInfo.map(({ type, labelKey, value, href }) => {
+                                const isEmail = type === "email";
+                                const localizedHref = isEmail
+                                    ? (() => {
+                                        const email = href?.split("?")[0].replace("mailto:", "");
+                                        const subject = encodeURIComponent(t("headOffice.emailSubject"));
+                                        const body = encodeURIComponent(t("headOffice.emailBody"));
+                                        return `mailto:${email}?subject=${subject}&body=${body}`;
+                                    })()
+                                    : href;
 
-                                    {type === "address" ? (
-                                        <address className="sm:max-w-[120px] md:max-w-none text-white text-base font-normal not-italic opacity-60">
-                                            {value}
-                                        </address>
-                                    ) : (
-                                        <a
-                                            href={href}
-                                            className="text-white text-base font-normal opacity-60 transition-default hover:text-white hover:opacity-100"
-                                        >
-                                            {value}
-                                        </a>
-                                    )}
-                                </span>
-                            ))}
+                                return (
+                                    <span key={type} className="flex gap-1">
+                                        <span className="text-white text-base font-normal">{t(`headOffice.${labelKey}`)}</span>
+
+                                        {type === "address" ? (
+                                            <address className="sm:max-w-[120px] md:max-w-none text-white text-base font-normal not-italic opacity-60">
+                                                {t(`headOffice.${value}`)}
+                                            </address>
+                                        ) : (
+                                            <a
+                                                href={localizedHref}
+                                                className="text-white text-base font-normal opacity-60 transition-default hover:text-white hover:opacity-100"
+                                            >
+                                                {value}
+                                            </a>
+                                        )}
+                                    </span>
+                                )
+                            })}
 
                         </div>
 
@@ -245,17 +262,17 @@ const Footer = () => {
 
                     <div className="flex items-center gap-8 lg:gap-[125px]">
 
-                        {footerLinks.map(({ title, links }) => (
-                            <div key={title} className="flex flex-col gap-[13px]">
+                        {footerLinks.map(({ titleKey, links }) => (
+                            <div key={titleKey} className="flex flex-col gap-[13px]">
 
-                                <h6 className="text-white text-base font-bold uppercase">{title}</h6>
+                                <h6 className="text-white text-base font-bold uppercase">{t(`links.${titleKey}`)}</h6>
 
                                 <div className="flex flex-col gap-1">
 
-                                    {links.map(({ href, label }) => (
+                                    {links.map(({ href, labelKey }) => (
 
                                         <Link key={href} href={href} className="text-white text-base font-normal opacity-60 transition-default hover:text-white hover:opacity-100">
-                                            {label}
+                                            {t(`links.${labelKey}`)}
                                         </Link>
 
                                     ))}
@@ -275,8 +292,8 @@ const Footer = () => {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
                     viewport={{ once: true }}
-                >©&nbsp;All rights reserved. Made with
-                    <FaRegHeart className="w-4 h-4 text-primary" /><span>by Baxtzod</span>
+                >©&nbsp;{t("copyright")}
+                    <FaRegHeart className="w-4 h-4 text-primary" /><span>{t("byAuthor")}</span>
                 </motion.small>
 
             </div>

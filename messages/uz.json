@@ -196,5 +196,44 @@
         },
         "consentText": "Men Metan KZ xabarlari olishga roziman.",
         "button": "So'rov yuborish"
+    },
+    "Footer": {
+        "description": "Metan KZ 2014-yildan buyon Qozog'iston energetika bozorida muvaffaqiyatli faoliyat yuritib kelmoqda. Biz metan sohasida ishonchli yechimlar va yuqori sifatli xizmatlar taqdim etishdan faxrlanamiz. Bizning maqsadimiz — toza va samarali energiya sohasida eng yuqori standartlarni o'rnatishdir.",
+        "stayInTouch": "Aloqada bo'ling",
+        "form": {
+            "placeholder": "Sizning elektron pochta manzilingiz",
+            "subscribe": "Obuna bo'lish",
+            "emailRequired": "Elektron pochta manzili kiritilishi kerak",
+            "emailInvalid": "Yaroqli elektron pochta manzilini kiriting",
+            "note": "*Metan KZ yangiliklar va xabarlarni olish uchun bizning axborot byulletenimizga obuna bo'ling."
+        },
+        "headOffice": {
+            "title": "Bosh ofis",
+            "addressLabel": "Manzil:",
+            "addressValue": "Beruniy 37/78, Samarqand, O'zbekiston",
+            "phoneLabel": "Telefon:",
+            "emailLabel": "Email:",
+            "emailSubject": "Platforma bo'yicha savol",
+            "emailBody": "Salom, menda bir savol bor..."
+        },
+        "links": {
+            "Whoweare": {
+                "title": "Biz kimmiz",
+                "AboutUs": "Biz haqimizda",
+                "AvailablePositions": "Bo'sh ish o'rinlari",
+                "Contacts": "Aloqa"
+            },
+            "OurExperience": {
+                "title": "Tajriba",
+                "Services": "Xizmatlar",
+                "Work": "Loyihalar",
+                "News": "Yangiliklar"
+            }
+        },
+        "copyright": "Barcha huquqlar himoyalangan. Yaratuvchi",
+        "byAuthor": "Baxtzod tomonidan"
+    },
+    "ScrollToTop": {
+        "title": "Yuqoriga chiqish"
     }
 }
