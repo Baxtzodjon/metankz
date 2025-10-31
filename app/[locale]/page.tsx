@@ -8,6 +8,7 @@ import Partners from "../components/Partners";
 import Testimonials from "../components/Testimonials";
 import Facts from "../components/Facts";
 import RecentNews from "../components/RecentNews";
+import Preloader from "../components/Preloader";
 
 export default function Home() {
   /* const t = useTranslations('homepage'); */
@@ -16,6 +17,8 @@ export default function Home() {
     <main>
 
       {/* <p>{t('title')}</p> */}
+
+      <Preloader />
 
       <HeroSlider />
 

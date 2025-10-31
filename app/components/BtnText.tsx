@@ -3,13 +3,13 @@
 import React from "react"
 import { motion } from "motion/react";
 
-interface TextsProps {
+interface ButtonsProps {
     title: string;
     link?: string;
     className?: string;
 }
 
-const BtnText: React.FC<TextsProps> = ({ title, link, className }) => {
+const BtnText: React.FC<ButtonsProps> = ({ title, link, className }) => {
     return (
         <>
 
