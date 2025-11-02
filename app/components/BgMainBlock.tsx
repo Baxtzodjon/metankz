@@ -21,18 +21,16 @@ const containerVariants: Variants = {
 const BGMainBlock: React.FC<BgTextssProps> = ({ title, description, image }) => {
     const pathname = usePathname();
 
-    // Список твоих локалей
-    const locales = ["en", "ru", "uz", "kz"];
+    const locales = ["ru", "uz", "en", "kz"];
 
-    // Убираем локаль из URL
     const cleanPath = (() => {
         if (!pathname) return "/";
-        const parts = pathname.split("/").filter(Boolean); // ["en", "about"]
-        // Если первый сегмент — локаль, удаляем его
+        const parts = pathname.split("/").filter(Boolean);
+
         if (locales.includes(parts[0])) {
             parts.shift();
         }
-        return "/" + parts.join("/"); // "/about"
+        return "/" + parts.join("/");
     })();
 
     return (
@@ -43,9 +41,9 @@ const BGMainBlock: React.FC<BgTextssProps> = ({ title, description, image }) => 
             viewport={{ once: true }}
         >
 
-            <Image src={image} alt={"Background About Us"} width={1920} height={600} className="w-full h-[420px] object-cover" priority /> {/* h-[555px] sm:h-[130vh] py-[100px] sm:py-[200px] md:pt-[200px] md:pb-[320px] lg:pt-[220px] lg:pb-[354px] */}
+            <Image src={image} alt={`${title} Image`} width={1920} height={600} className="w-full h-[420px] object-cover" priority />
 
-            <div className="container absolute top-20 lg:left-0 xl:left-[145px] flex flex-col gap-10">
+            <div className="container absolute top-20 left-0 xl:left-[145px] flex flex-col gap-10">
 
                 <motion.div className="flex items-center gap-2"
                     initial={{ opacity: 0, y: -20 }}
