@@ -17,7 +17,7 @@ const PortfolioSection = () => {
     const swiperRef = useRef<SwiperClass | null>(null);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
-     const t = useTranslations("PortfolioSection");
+    const t = useTranslations("PortfolioSection");
 
     const onSwiperInit = (swiper: SwiperClass) => {
         swiperRef.current = swiper;

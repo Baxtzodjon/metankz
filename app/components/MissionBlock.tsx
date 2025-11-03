@@ -6,12 +6,20 @@ import KnowForm from "./KnowForm";
 import { motion } from "motion/react";
 import { missionTexts } from "../data/missionTexts";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
-const MissionBlock = () => {
+interface MisssonBlcProps {
+    className?: string;
+}
+
+const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
     const t = useTranslations("MissionBlock");
+    const pathname = usePathname();
+
+    const hidePaths = ['/about', '/ru/about', '/uz/about', '/en/about', '/kz/about'];
 
     return (
-        <section className="bg-light pt-[120px]">
+        <section className={`pt-[120px] ${className || ""}`}>
 
             <div className="container">
 
@@ -66,16 +74,18 @@ const MissionBlock = () => {
 
                 </motion.ul>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-                >
+                {!hidePaths.includes(pathname) && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                    >
 
-                    <KnowForm />
+                        <KnowForm />
 
-                </motion.div>
+                    </motion.div>
+                )}
 
             </div>
 

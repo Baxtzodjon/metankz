@@ -24,7 +24,7 @@ export default function Home() {
 
       <VideoBlock />
 
-      <MissionBlock />
+      <MissionBlock className="bg-light" />
 
       <ServiceBlock />
 
