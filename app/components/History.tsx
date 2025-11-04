@@ -2,155 +2,125 @@
 
 import Texts from "./Texts";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion } from "motion/react";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 const timeline = [
     {
-        year: "2021",
-        title: "Начало пути",
-        description: "Запуск первого проекта и первые шаги в веб-разработке.",
+        id: Math.random(),
+        title: "Present",
     },
     {
-        year: "2022",
-        title: "Рост и опыт",
-        description: "Работа с крупными клиентами и изучение новых технологий.",
+        id: Math.random(),
+        title: "March 2019",
     },
     {
-        year: "2023",
-        title: "Новые горизонты",
-        description: "Участие в open-source и создание своих библиотек.",
+        id: Math.random(),
+        title: "November 2018",
     },
     {
-        year: "2024",
-        title: "Уверенность и масштаб",
-        description: "Создание масштабируемых приложений и собственных продуктов.",
+        id: Math.random(),
+        title: "July 2015",
+    },
+    {
+        id: Math.random(),
+        title: "August 2010",
+    },
+    {
+        id: Math.random(),
+        title: "February 2007",
+    },
+    {
+        id: Math.random(),
+        title: "May 2004",
+    },
+    {
+        id: Math.random(),
+        title: "October 2001",
+    },
+    {
+        id: Math.random(),
+        title: "June 2000"
     },
 ];
 
 const History = () => {
-    /* const [isBeginning, setIsBeginning] = useState(true);
-    const [isEnd, setIsEnd] = useState(false); */
+    const [isBeginning, setIsBeginning] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
 
     return (
         <section className="bg-athens">
 
-            <div>
+            <div className="container flex justify-between pt-[180px] pb-[100px]">
 
-                <Texts title="Our history" className="text-start" />
+                <div className="hidden lg:flex flex-col gap-[60px]">
 
-                <div></div>
+                    <h2 className="text-ebony text-[38px] xl:text-[46px] leading-10 sm:leading-[130%] font-bold">Our history</h2>
 
-                <h2 className="text-[#9A9CA5] text-[28px] leading-[150%] font-bold transition-default hover:text-primary">March 2019</h2>
-
-            </div>
-
-            <div>
-
-                {/* <div className="relative flex items-center gap-3 z-[15] select-none">
-
-                    <button className={`portfolio-section__prev flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default 
-                        ${isBeginning ? 'opacity-40 pointer-events-none' : 'hover:text-light hover:bg-primary cursor-pointer'}`} aria-label="Previous slide">
-
-                        <FaArrowLeftLong />
-
-                    </button>
-
-                    <button className={`portfolio-section__next flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default 
-                        ${isEnd ? 'opacity-40 pointer-events-none' : 'hover:text-light hover:bg-primary cursor-pointer'}`} aria-label="Next slide">
-
-                        <FaArrowRightLong />
-
-                    </button>
-
-                </div> */}
-
-                <Image src={"/images/portfolio_first.jpg"} alt="Portfolio First image" width={810} height={450} className="max-w-[810px] h-[450px] object-cover" />
-
-                <p className="max-w-[810px] text-gray text-base sm:text-lg leading-[160%] font-normal">Bcelerisque dapibus pharetra nibh semper iaculis duis viverra porttitor in. Eu nec vitae, malesuada vitae egestas integer et morbi. Maecenas sed quis diam posuere malesuada magnis. Bcelerisque dapibus. Eu nec vitae,</p>
-
-            </div>
-
-            <section className="bg-athens">
-                <div>
-                    <Texts title="Our history" className="text-start" />
+                    {/* <h2 className="text-ebony text-[28px] lg:text-[38px] xl:text-[46px] leading-10 sm:leading-[130%] font-bold">Our history</h2> */}
 
                     {/* ТАЙМЛАЙН */}
-                    <div className="relative mx-auto max-w-3xl px-4 py-16">
-                        <div className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+                    <div className="relative py-1"> {/* px-4 */} {/* max-w-3xl */}
+
+                        <div className="absolute top-0 left-0 h-full w-[2px] bg-[#9A9CA5] opacity-50"></div> {/* -translate-x-1/2 */}
 
                         {timeline.map((item, index) => (
                             <motion.div
-                                key={item.year}
+                                key={item.id}
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
                                 viewport={{ once: true }}
-                                className={`mb-10 flex w-full items-center ${index % 2 === 0 ? "justify-start" : "justify-end"
-                                    }`}
+                                className="w-full flex items-center justify-end mb-5"
                             >
-                                <div
-                                    className={`relative w-full max-w-[45%] rounded-lg bg-white/10 p-6 shadow-lg backdrop-blur-md border border-white/20 ${index % 2 === 0 ? "text-left" : "text-right"
-                                        }`}
-                                >
-                                    <span
-                                        className={`absolute top-6 w-4 h-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full shadow-lg ${index % 2 === 0 ? "right-[-35px]" : "left-[-35px]"
-                                            }`}
-                                    ></span>
+                                <div className="relative w-full"> {/* max-w-[45%] */}
 
-                                    <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                                    <p className="text-sm text-gray-300">{item.description}</p>
-                                    <p className="mt-2 text-sm text-blue-400 font-semibold">{item.year}</p>
+                                    <span className="absolute top-4 w-2 h-2 bg-[#9A9CA5] rounded-full left-[-3px]"></span>
+
+                                    <h2 className="text-[#9A9CA5] text-[28px] leading-[150%] font-bold transition-default hover:text-primary cursor-pointer pl-8">{item.title}</h2>
+
                                 </div>
                             </motion.div>
                         ))}
+
                     </div>
 
-                    {/* Подпись после таймлайна */}
-                    <h2 className="text-[#9A9CA5] text-[28px] leading-[150%] font-bold transition-default hover:text-primary">
-                        March 2019
-                    </h2>
                 </div>
 
-                <div>
-                    {/* <div className="relative flex items-center gap-3 z-[15] select-none">
-                        <button
-                            className={`portfolio-section__prev flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default 
-                                ${isBeginning
-                                    ? "opacity-40 pointer-events-none"
-                                    : "hover:text-light hover:bg-primary cursor-pointer"
-                                }`}
-                            aria-label="Previous slide"
-                        >
+                <div className="flex flex-col gap-6 sm:gap-12">
+
+                    <Texts title="Our history" className="block lg:hidden" />
+
+                    <div className="relative flex items-center justify-end gap-3 z-[15] select-none translate-x-0 sm:translate-x-3">
+
+                        <button className={`portfolio-section__prev flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default 
+                        ${isBeginning ? 'opacity-40 pointer-events-none' : 'hover:text-light hover:bg-primary cursor-pointer'}`} aria-label="Previous slide">
+
                             <FaArrowLeftLong />
+
                         </button>
 
-                        <button
-                            className={`portfolio-section__next flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default 
-                                ${isEnd
-                                    ? "opacity-40 pointer-events-none"
-                                    : "hover:text-light hover:bg-primary cursor-pointer"
-                                }`}
-                            aria-label="Next slide"
-                        >
+                        <button className={`portfolio-section__next flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default 
+                        ${isEnd ? 'opacity-40 pointer-events-none' : 'hover:text-light hover:bg-primary cursor-pointer'}`} aria-label="Next slide">
+
                             <FaArrowRightLong />
+
                         </button>
-                    </div> */}
 
-                    <Image
-                        src={"/images/portfolio_first.jpg"}
-                        alt="Portfolio First image"
-                        width={810}
-                        height={450}
-                        className="max-w-[810px] h-[450px] object-cover"
-                    />
+                    </div>
 
-                    <p className="max-w-[810px] text-gray text-base sm:text-lg leading-[160%] font-normal">
-                        Bcelerisque dapibus pharetra nibh semper iaculis duis viverra porttitor in. Eu nec vitae,
-                        malesuada vitae egestas integer et morbi. Maecenas sed quis diam posuere malesuada magnis.
-                        Bcelerisque dapibus. Eu nec vitae,
-                    </p>
+                    <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-9">
+
+                        <Image src={"/images/portfolio_first.jpg"} alt="History image" width={810} height={450} className="w-full lg:max-w-[750px] xl:max-w-[810px] aspect-[16/9] object-cover h-auto rounded" />
+
+                        <p className="w-full lg:max-w-[750px] xl:max-w-[810px] text-gray text-base leading-relaxed font-normal">Bcelerisque dapibus pharetra nibh semper iaculis duis viverra porttitor in. Eu nec vitae, malesuada vitae egestas integer et morbi. Maecenas sed quis diam posuere malesuada magnis. Bcelerisque dapibus. Eu nec vitae,</p>
+
+                    </div>
+
                 </div>
-            </section>
+
+            </div>
 
         </section>
     );

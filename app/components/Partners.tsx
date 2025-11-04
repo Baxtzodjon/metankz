@@ -4,32 +4,21 @@ import Image from "next/image";
 import Texts from "./Texts";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 const partnersLogo = [
-    {
-        id: 1,
-        image: '/icons/partners_logo.png',
-    },
-    {
-        id: 2,
-        image: '/icons/partners_logo.png',
-    },
-    {
-        id: 3,
-        image: '/icons/partners_logo.png',
-    },
-    {
-        id: 4,
-        image: '/icons/partners_logo.png',
-    },
-    {
-        id: 5,
-        image: '/icons/partners_logo.png',
-    },
-    {
-        id: 6,
-        image: '/icons/partners_logo.png',
-    },
+    { id: 1, image: '/icons/partners_logo.png' },
+    { id: 2, image: '/icons/partners_logo.png' },
+    { id: 3, image: '/icons/partners_logo.png' },
+    { id: 4, image: '/icons/partners_logo.png' },
+    { id: 5, image: '/icons/partners_logo.png' },
+    { id: 6, image: '/icons/partners_logo.png' },
+    { id: 7, image: '/icons/partners_logo.png' },
+    { id: 8, image: '/icons/partners_logo.png' },
+    { id: 9, image: '/icons/partners_logo.png' },
+    { id: 10, image: '/icons/partners_logo.png' },
+    { id: 11, image: '/icons/partners_logo.png' },
+    { id: 12, image: '/icons/partners_logo.png' },
 ];
 
 // container variant for staggered animation
@@ -59,7 +48,11 @@ const itemVariants = {
 
 const Partners = () => {
     const t = useTranslations();
-    
+    const pathname = usePathname();
+
+    const isAboutPage = pathname?.match(/^\/((uz|ru|en|kz)\/)?about$/);
+    const logosToShow = isAboutPage ? partnersLogo : partnersLogo.slice(0, 6);
+
     return (
         <section className="py-20 bg-athens">
 
@@ -74,9 +67,15 @@ const Partners = () => {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                     className="flex items-center justify-center flex-col gap-6"
                 >
+                    {isAboutPage ? (
+                        <Texts
+                            title="Our partners"
+                            description="We are supported by 12+ industry bodies and media partners"
+                        />
+                    ) : (
+                        <Texts title={t("Partners.title")} className="mb-[60px]" />
+                    )}
 
-                    <Texts title={t("Partners.title")} className="mb-[60px]" />
-                    
                 </motion.div>
 
                 <motion.ul
@@ -87,7 +86,7 @@ const Partners = () => {
                     viewport={{ once: true, amount: 0.2 }}
                 >
 
-                    {partnersLogo.map((item) => (
+                    {logosToShow.map((item) => (
 
                         <motion.li
                             key={item.id}

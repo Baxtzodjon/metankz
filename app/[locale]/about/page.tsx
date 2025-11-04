@@ -5,6 +5,8 @@ import BGMainBlock from '@/app/components/BgMainBlock';
 import BenefitsSection from '@/app/components/BenefitsSection';
 import FounderCard from '@/app/components/FounderCard';
 import MissionBlock from '@/app/components/MissionBlock';
+import History from '@/app/components/History';
+import Partners from '@/app/components/Partners';
 
 const About = () => {
     return (
@@ -20,9 +22,13 @@ const About = () => {
 
                 <MissionBlock className="bg-athens" />
 
-                {/* <History /> */}
+                <History />
+
+                {/* <HistoryTraining /> */}
 
             </div>
+
+            <Partners />
 
         </main>
     );
