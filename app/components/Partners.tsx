@@ -6,6 +6,10 @@ import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
+interface PartnersProps {
+    className?: string;
+}
+
 const partnersLogo = [
     { id: 1, image: '/icons/partners_logo.png' },
     { id: 2, image: '/icons/partners_logo.png' },
@@ -46,7 +50,7 @@ const itemVariants = {
     },
 };
 
-const Partners = () => {
+const Partners: React.FC<PartnersProps> = ({ className }) => {
     const t = useTranslations();
     const pathname = usePathname();
 
@@ -54,7 +58,7 @@ const Partners = () => {
     const logosToShow = isAboutPage ? partnersLogo : partnersLogo.slice(0, 6);
 
     return (
-        <section className="py-20 bg-athens">
+        <section className={`py-20 ${className || ""}`}>
 
             <div className="container">
 

@@ -30,7 +30,7 @@ export default function Home() {
 
       <PortfolioSection />
 
-      <Partners />
+      <Partners className="bg-athens" />
 
       <Testimonials />
 

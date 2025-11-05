@@ -5,7 +5,6 @@ import {
     FaInstagram,
     FaTiktok,
 } from "react-icons/fa";
-import { IoLogoWechat } from "react-icons/io5";
 import { IconType } from "react-icons";
 
 export interface SocialLink {

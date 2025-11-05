@@ -7,6 +7,7 @@ import FounderCard from '@/app/components/FounderCard';
 import MissionBlock from '@/app/components/MissionBlock';
 import History from '@/app/components/History';
 import Partners from '@/app/components/Partners';
+import TeamBlock from '@/app/components/TeamBlock';
 
 const About = () => {
     return (
@@ -28,7 +29,9 @@ const About = () => {
 
             </div>
 
-            <Partners />
+            <Partners className="bg-light" />
+
+            <TeamBlock />
 
         </main>
     );
