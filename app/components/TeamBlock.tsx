@@ -8,9 +8,9 @@ import TeamSocialLinks from "../containers/TeamSocialLinks";
 
 const TeamBlock = () => {
     return (
-        <section className="py-10 sm:pt-[100px] sm:pb-[120px]">
+        <section className="relative overflow-hidden bg-light before:content-[''] before:absolute before:-left-[9px] before:-bottom-[195px] before:w-[570px] before:h-[1065px] before:bg-[url('/images/facts_bg.png')] before:bg-center before:bg-no-repeat before:bg-cover py-10 sm:pt-[100px] sm:pb-[120px]">
 
-            <div className="container flex items-center justify-center flex-col gap-15">
+            <div className="container flex items-center justify-center flex-col">
 
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}

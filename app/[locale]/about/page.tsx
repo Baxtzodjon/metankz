@@ -8,6 +8,8 @@ import MissionBlock from '@/app/components/MissionBlock';
 import History from '@/app/components/History';
 import Partners from '@/app/components/Partners';
 import TeamBlock from '@/app/components/TeamBlock';
+import Map from '@/app/components/Map';
+import HistoryTraining from '@/app/components/HistoryTraining';
 
 const About = () => {
     return (
@@ -25,13 +27,15 @@ const About = () => {
 
                 <History />
 
-                {/* <HistoryTraining /> */}
+                <HistoryTraining />
 
             </div>
 
             <Partners className="bg-light" />
 
             <TeamBlock />
+
+            <Map />
 
         </main>
     );
