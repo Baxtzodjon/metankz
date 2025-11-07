@@ -1,108 +1,103 @@
-"use client"
+"use client";
 
-import Texts from "./Texts";
 import Image from "next/image";
-import { useState } from "react";
-import { motion } from "motion/react";
+import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperClass } from "swiper";
+import { Navigation, Autoplay } from "swiper/modules";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-
-const timeline = [
-    {
-        id: Math.random(),
-        title: "Present",
-    },
-    {
-        id: Math.random(),
-        title: "March 2019",
-    },
-    {
-        id: Math.random(),
-        title: "November 2018",
-    },
-    {
-        id: Math.random(),
-        title: "July 2015",
-    },
-    {
-        id: Math.random(),
-        title: "August 2010",
-    },
-    {
-        id: Math.random(),
-        title: "February 2007",
-    },
-    {
-        id: Math.random(),
-        title: "May 2004",
-    },
-    {
-        id: Math.random(),
-        title: "October 2001",
-    },
-    {
-        id: Math.random(),
-        title: "June 2000"
-    },
-];
+import { motion } from "motion/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import Texts from "./Texts";
+import { timeline } from "../data/historyInfo";
 
 const History = () => {
-    const [isBeginning, setIsBeginning] = useState(true);
-    const [isEnd, setIsEnd] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const swiperRef = useRef<SwiperClass | null>(null);
+
+    const handleSlideChange = (swiper: SwiperClass) => {
+        setActiveIndex(swiper.realIndex);
+    };
+
+    const handleTimelineClick = (index: number) => {
+        swiperRef.current?.slideToLoop(index);
+    };
 
     return (
-        <section className="bg-athens">
+        <section className="bg-athens overflow-hidden">
 
-            <div className="container flex justify-between pt-[180px] pb-[100px]">
+            <div className="container flex flex-col lg:flex-row justify-between py-10 sm:pt-[180px] sm:pb-[100px]">
 
                 <div className="hidden lg:flex flex-col gap-[60px]">
 
                     <h2 className="text-ebony text-[38px] xl:text-[46px] leading-10 sm:leading-[130%] font-bold">Our history</h2>
 
-                    {/* <h2 className="text-ebony text-[28px] lg:text-[38px] xl:text-[46px] leading-10 sm:leading-[130%] font-bold">Our history</h2> */}
+                    <div className="relative py-1">
 
-                    {/* ТАЙМЛАЙН */}
-                    <div className="relative py-1"> {/* px-4 */} {/* max-w-3xl */}
+                        <div className="absolute top-0 left-0 h-full w-[2px] bg-[#9A9CA5] opacity-50"></div>
 
-                        <div className="absolute top-0 left-0 h-full w-[2px] bg-[#9A9CA5] opacity-50"></div> {/* -translate-x-1/2 */}
+                        <motion.div
+                            className="absolute left-0 w-[2px] bg-primary origin-top"
+                            initial={{ height: 0 }}
+                            animate={{ height: `${((activeIndex + 1) / timeline.length) * 100}%` }}
+                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                        />
 
                         {timeline.map((item, index) => (
                             <motion.div
                                 key={item.id}
+                                onClick={() => handleTimelineClick(index)}
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
                                 viewport={{ once: true }}
-                                className="w-full flex items-center justify-end mb-5"
+                                className="w-full flex items-center justify-end mb-5 cursor-pointer group"
                             >
-                                <div className="relative w-full"> {/* max-w-[45%] */}
+                                <div className="relative w-full">
 
-                                    <span className="absolute top-4 w-2 h-2 bg-[#9A9CA5] rounded-full left-[-3px]"></span>
+                                    <span
+                                        className={`absolute top-4 w-2 h-2 rounded-full left-[-3px] transition-all duration-500
+                                        ${activeIndex === index
+                                                ? "bg-primary scale-125"
+                                                : "bg-[#9A9CA5] group-hover:bg-primary"
+                                            }
+                                        `}
+                                    />
 
-                                    <h2 className="text-[#9A9CA5] text-[28px] leading-[150%] font-bold transition-default hover:text-primary cursor-pointer pl-8">{item.title}</h2>
+                                    <h2
+                                        className={`text-[28px] leading-[150%] font-bold transition-all duration-500 pl-5 xl:pl-8
+                                        ${activeIndex === index
+                                                ? "text-primary translate-x-2"
+                                                : "text-[#9A9CA5] group-hover:text-primary"
+                                            }
+                                        `}
+                                    >
+                                        {item.titleKey}
+                                    </h2>
 
                                 </div>
+
                             </motion.div>
                         ))}
-
+                        
                     </div>
 
                 </div>
 
-                <div className="flex flex-col gap-6 sm:gap-12">
+                <div className="flex flex-col gap-6 sm:gap-12 w-full lg:w-auto">
 
                     <Texts title="Our history" className="block lg:hidden" />
 
                     <div className="relative flex items-center justify-end gap-3 z-[15] select-none translate-x-0 sm:translate-x-3">
 
-                        <button className={`portfolio-section__prev flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default 
-                        ${isBeginning ? 'opacity-40 pointer-events-none' : 'hover:text-light hover:bg-primary cursor-pointer'}`} aria-label="Previous slide">
+                        <button className="custom-prev flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default hover:text-light hover:bg-primary" aria-label="Previous slide">
 
                             <FaArrowLeftLong />
 
                         </button>
 
-                        <button className={`portfolio-section__next flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default 
-                        ${isEnd ? 'opacity-40 pointer-events-none' : 'hover:text-light hover:bg-primary cursor-pointer'}`} aria-label="Next slide">
+                        <button className="custom-next flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default hover:text-light hover:bg-primary" aria-label="Next slide">
 
                             <FaArrowRightLong />
 
@@ -110,11 +105,53 @@ const History = () => {
 
                     </div>
 
-                    <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-9">
+                    <div className="w-full lg:max-w-[750px] xl:max-w-[810px] mx-auto overflow-hidden">
 
-                        <Image src={"/images/portfolio_first.jpg"} alt="History image" width={810} height={450} className="w-full lg:max-w-[750px] xl:max-w-[810px] aspect-[16/9] object-cover h-auto rounded" />
+                        <Swiper
+                            modules={[Navigation, Autoplay]}
+                            onSwiper={(swiper) => (swiperRef.current = swiper)}
+                            onSlideChange={handleSlideChange}
+                            navigation={{
+                                prevEl: ".custom-prev",
+                                nextEl: ".custom-next",
+                            }}
+                            autoplay={{ delay: 5000, disableOnInteraction: false }}
+                            loop={true}
+                            speed={1000}
+                            slidesPerView={1}
+                            spaceBetween={20}
+                            allowTouchMove={true}
+                            breakpoints={{
+                                640: { spaceBetween: 30 },
+                                1024: {
+                                    spaceBetween: 40,
+                                    allowTouchMove: false
+                                },
+                            }}
+                            className="w-full !overflow-hidden"
+                        >
+                            {timeline.map((item) => (
 
-                        <p className="w-full lg:max-w-[750px] xl:max-w-[810px] text-gray text-base leading-relaxed font-normal">Bcelerisque dapibus pharetra nibh semper iaculis duis viverra porttitor in. Eu nec vitae, malesuada vitae egestas integer et morbi. Maecenas sed quis diam posuere malesuada magnis. Bcelerisque dapibus. Eu nec vitae,</p>
+                                <SwiperSlide key={item.id}>
+
+                                    <div className="flex flex-col items-end gap-4 sm:gap-6 md:gap-8 lg:gap-9">
+
+                                        <Image
+                                            src={item.image}
+                                            alt="History image"
+                                            width={810}
+                                            height={450}
+                                            className="w-full aspect-[16/9] object-cover h-auto rounded"
+                                        />
+
+                                        <p className="w-full text-gray text-base leading-relaxed font-normal">{item.textKey}</p>
+
+                                    </div>
+
+                                </SwiperSlide>
+                                
+                            ))}
+                        </Swiper>
 
                     </div>
 

@@ -9,7 +9,6 @@ import History from '@/app/components/History';
 import Partners from '@/app/components/Partners';
 import TeamBlock from '@/app/components/TeamBlock';
 import Map from '@/app/components/Map';
-import HistoryTraining from '@/app/components/HistoryTraining';
 
 const About = () => {
     return (
@@ -26,8 +25,6 @@ const About = () => {
                 <MissionBlock className="bg-athens" />
 
                 <History />
-
-                <HistoryTraining />
 
             </div>
 
