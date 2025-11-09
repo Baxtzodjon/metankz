@@ -13,21 +13,21 @@ export const benefits: BenefitsItem[] = [
     {
         icon: FaRegThumbsUp,
         number: "65%",
-        titleKey: "Клиентов по рекомендации",
+        titleKey: "Benefits.clients",
     },
     {
         icon: IoCarOutline,
         number: "15 000+",
-        titleKey: "Заправлено автомобилей",
+        titleKey: "Benefits.cars",
     },
     {
         icon: LuLeaf,
         number: "1 200 т",
-        titleKey: "Экономия CO₂",
+        titleKey: "Benefits.co2",
     },
     {
         icon: LiaToolsSolid,
         number: "24/7",
-        titleKey: "Техническая поддержка",
+        titleKey: "Benefits.support",
     },
 ];

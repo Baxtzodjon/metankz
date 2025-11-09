@@ -25,13 +25,32 @@ const History = () => {
     };
 
     return (
-        <section className="bg-athens overflow-hidden">
+        <motion.section
+            className="bg-athens overflow-hidden"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+        >
 
             <div className="container flex flex-col lg:flex-row justify-between py-10 sm:pt-[180px] sm:pb-[100px]">
 
-                <div className="hidden lg:flex flex-col gap-[60px]">
+                <motion.div
+                    className="hidden lg:flex flex-col gap-[60px]"
+                    initial={{ opacity: 0, x: -60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                >
 
-                    <h2 className="text-ebony text-[38px] xl:text-[46px] leading-10 sm:leading-[130%] font-bold">Our history</h2>
+                    <motion.h2
+                        className="text-ebony text-[38px] xl:text-[46px] leading-10 sm:leading-[130%] font-bold"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        Our history
+                    </motion.h2>
 
                     <div className="relative py-1">
 
@@ -48,7 +67,7 @@ const History = () => {
                             <motion.div
                                 key={item.id}
                                 onClick={() => handleTimelineClick(index)}
-                                initial={{ opacity: 0, y: 50 }}
+                                initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
                                 viewport={{ once: true }}
@@ -56,7 +75,8 @@ const History = () => {
                             >
                                 <div className="relative w-full">
 
-                                    <span
+                                    <motion.span
+                                        layout
                                         className={`absolute top-4 w-2 h-2 rounded-full left-[-3px] transition-all duration-500
                                         ${activeIndex === index
                                                 ? "bg-primary scale-125"
@@ -65,7 +85,8 @@ const History = () => {
                                         `}
                                     />
 
-                                    <h2
+                                    <motion.h2
+                                        layout
                                         className={`text-[28px] leading-[150%] font-bold transition-all duration-500 pl-5 xl:pl-8
                                         ${activeIndex === index
                                                 ? "text-primary translate-x-2"
@@ -74,22 +95,28 @@ const History = () => {
                                         `}
                                     >
                                         {item.titleKey}
-                                    </h2>
+                                    </motion.h2>
 
                                 </div>
 
                             </motion.div>
                         ))}
-                        
+
                     </div>
 
-                </div>
+                </motion.div>
 
                 <div className="flex flex-col gap-6 sm:gap-12 w-full lg:w-auto">
 
                     <Texts title="Our history" className="block lg:hidden" />
 
-                    <div className="relative flex items-center justify-end gap-3 z-[15] select-none translate-x-0 sm:translate-x-3">
+                    <motion.div
+                        className="relative flex items-center justify-end gap-3 z-[15] select-none translate-x-0 sm:translate-x-3"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        viewport={{ once: true }}
+                    >
 
                         <button className="custom-prev flex items-center justify-center rounded-full w-12 h-12 text-gray text-lg transition-default hover:text-light hover:bg-primary" aria-label="Previous slide">
 
@@ -103,9 +130,15 @@ const History = () => {
 
                         </button>
 
-                    </div>
+                    </motion.div>
 
-                    <div className="w-full lg:max-w-[750px] xl:max-w-[810px] mx-auto overflow-hidden">
+                    <motion.div
+                        className="w-full lg:max-w-[750px] xl:max-w-[810px] mx-auto overflow-hidden"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                    >
 
                         <Swiper
                             modules={[Navigation, Autoplay]}
@@ -134,32 +167,44 @@ const History = () => {
 
                                 <SwiperSlide key={item.id}>
 
-                                    <div className="flex flex-col items-end gap-4 sm:gap-6 md:gap-8 lg:gap-9">
-
+                                    <motion.div
+                                        className="flex flex-col items-end gap-4 sm:gap-6 md:gap-8 lg:gap-9"
+                                        initial={{ opacity: 0, y: 40 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8, ease: "easeOut" }}
+                                        viewport={{ once: true }}
+                                    >
                                         <Image
+                                            className="w-full aspect-[16/9] object-cover h-auto rounded"
                                             src={item.image}
                                             alt="History image"
                                             width={810}
                                             height={450}
-                                            className="w-full aspect-[16/9] object-cover h-auto rounded"
                                         />
 
-                                        <p className="w-full text-gray text-base leading-relaxed font-normal">{item.textKey}</p>
+                                        <motion.p
+                                            className="w-full text-gray text-base leading-relaxed font-normal"
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.8, delay: 0.2 }}
+                                        >
+                                            {item.textKey}
+                                        </motion.p>
 
-                                    </div>
+                                    </motion.div>
 
                                 </SwiperSlide>
-                                
+
                             ))}
                         </Swiper>
 
-                    </div>
+                    </motion.div>
 
                 </div>
 
             </div>
 
-        </section>
+        </motion.section>
     );
 };
 

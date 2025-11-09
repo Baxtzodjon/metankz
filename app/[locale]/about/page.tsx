@@ -9,12 +9,15 @@ import History from '@/app/components/History';
 import Partners from '@/app/components/Partners';
 import TeamBlock from '@/app/components/TeamBlock';
 import Map from '@/app/components/Map';
+import { useTranslations } from 'next-intl';
 
 const About = () => {
+    const t = useTranslations();
+
     return (
         <main>
 
-            <BGMainBlock title="ABOUT US" description="Createx Construction Bureau has been successfully operating in the USA construction market since 2000. We are proud to offer you quality construction and exemplary service." image="/images/about_us_bg.png" />
+            <BGMainBlock title={t("Header.nav.about")} description={t("About.bannerDescription")} image="/images/about_us_bg.png" />
 
             <BenefitsSection />
 

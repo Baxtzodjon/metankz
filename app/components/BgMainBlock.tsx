@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from 'motion/react';
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 interface BgTextssProps {
     title: string;
@@ -20,6 +21,7 @@ const containerVariants: Variants = {
 
 const BGMainBlock: React.FC<BgTextssProps> = ({ title, description, image }) => {
     const pathname = usePathname();
+    const t = useTranslations("Header");
 
     const locales = ["ru", "uz", "en", "kz"];
 
@@ -51,9 +53,9 @@ const BGMainBlock: React.FC<BgTextssProps> = ({ title, description, image }) => 
                     transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
                 >
 
-                    <Link href={"/"} className="text-gray text-sm font-normal leading-[150%] hover:text-[#9A9CA5] transition-default">Homepage</Link>
+                    <Link href={"/"} className="text-gray text-sm font-normal leading-[150%] hover:text-[#9A9CA5] transition-default">{t("nav.home")}</Link>
 
-                    <Link href={cleanPath} className="text-[#9A9CA5] text-sm font-normal leading-[150%] capitalize flex items-center gap-2"><small>/</small> {cleanPath.replace("/", "") || "home"}</Link>
+                    <Link href={cleanPath} className="text-[#9A9CA5] text-sm font-normal leading-[150%] capitalize flex items-center gap-2"><small>/</small> {cleanPath.replace("/", "") || t("nav.home")}</Link>
 
                 </motion.div>
 

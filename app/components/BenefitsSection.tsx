@@ -2,8 +2,14 @@
 
 import { motion } from "motion/react";
 import { benefits } from "../data/benefits";
+import { useLocale, useTranslations } from "next-intl";
 
 const BenefitsSection = () => {
+    const t = useTranslations();
+    const locale = useLocale();
+
+    const tonSymbol = locale === "ru" || locale === "kz" ? "т" : "t";
+
     return (
         <section className="container flex items-center justify-center flex-col gap-15">
 
@@ -52,10 +58,12 @@ const BenefitsSection = () => {
                                     <div className="flex items-center justify-center flex-col gap-2">
 
                                         <h2 className="text-primary text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center">
-                                            {benefit.number}
+                                            {benefit.titleKey === "Benefits.co2"
+                                                ? `${benefit.number.replace("т", tonSymbol)}`
+                                                : benefit.number}
                                         </h2>
 
-                                        <p className="text-ebony text-base sm:text-lg leading-[150%] font-normal text-center mb-[25px] sm:mb-[60px]">{benefit.titleKey}</p>
+                                        <p className="text-ebony text-base sm:text-lg leading-[150%] font-normal text-center mb-[25px] sm:mb-[60px]">{t(benefit.titleKey)}</p>
 
                                         {/* <h2 className={`text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center ${className || ""}`}>{title}</h2>
 

@@ -235,5 +235,20 @@
     },
     "ScrollToTop": {
         "title": "Go to top"
+    },
+    "About": {
+        "bannerDescription": "Metan KZ has been providing clean and affordable fuel solutions across Kazakhstan since 2025. We are committed to offering reliable service, modern refueling stations, and comfort for every driver on the road."
+    },
+    "Benefits": {
+        "clients": "Clients by recommendation",
+        "cars": "Vehicles refueled",
+        "co2": "CO₂ savings",
+        "support": "Technical support"
+    },
+    "Founder": {
+        "quote": "Every day at MetanKZ, we make refueling in Kazakhstan cleaner, faster, and more reliable. Our mission is to provide energy that moves people forward — with care for comfort, safety, and the environment. We strive to make every trip begin with trust and end with confidence.<br /><br />MetanKZ is more than just fuel. It’s attention to detail, modern service, and an honest attitude toward every customer. We are developing infrastructure and technology to ensure a sustainable future where energy serves both people and nature."
+    },
+    "Contact": {
+        "bannerDescription": "Contact us for all your fuel needs. We always welcome any questions and comments."
     }
 }

@@ -3,8 +3,11 @@
 import Image from "next/image";
 import { PiSignatureThin } from "react-icons/pi";
 import { motion } from 'motion/react';
+import { useTranslations } from "next-intl";
 
 const FounderCard = () => {
+    const t = useTranslations();
+
     return (
         <section className="relative overflow-hidden bg-light before:content-[''] before:absolute before:-right-[200px] before:w-[570px] before:h-[1065px] before:bg-[url('/images/facts_bg.png')] before:bg-center before:bg-no-repeat before:bg-cover">
 
@@ -28,7 +31,7 @@ const FounderCard = () => {
                 </motion.div>
 
                 <motion.div
-                    className="w-full lg:w-[560px] xl:w-[735px] bg-light flex lg:items-start justify-center flex-col gap-[51px] shadow-soft-multi lg:absolute bottom-[100px] py-10 lg:py-[50px] lg:right-[15px] xl:right-0 px-3 lg:pl-3 xl:pl-[77px] rounded lg:rounded-none"
+                    className="w-full lg:w-[560px] xl:w-[735px] bg-light flex lg:items-start justify-center flex-col gap-[30px] shadow-soft-multi lg:absolute bottom-[100px] py-10 lg:py-[50px] lg:right-[15px] xl:right-0 px-3 lg:pl-3 xl:pl-[77px] rounded lg:rounded-none"
                     initial={{ opacity: 0, x: 80 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -50,11 +53,8 @@ const FounderCard = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
-                        >
-                            Dapibus nec vitae ante mattis. Aliquam phasellus ac dui augue in. Sed aliquet in egestas hac at proin sed quam. Etiam aliquet sagittis non, massa cum pulvinar. Et in leo, tempus purus vestibulum ut blandit et mi. Odio massa purus vel praesent arcu enim elit felis viverra.
-                            <br /><br />
-                            Magna aliquam interdum mattis ipsum arcu. Elit odio elit viverra quis metus amet eleifend amet. Vet suspendisse faucibus tempor ipsum integer.
-                        </motion.p>
+                            dangerouslySetInnerHTML={{ __html: t("Founder.quote") }}
+                        ></motion.p>
 
                     </div>
 
@@ -72,9 +72,9 @@ const FounderCard = () => {
                                 className="text-ebony text-base leading-[160%] font-bold"
                                 whileHover={{ color: "#FF5A30", scale: 1.05 }}
                                 transition={{ duration: 0.3 }}
-                            >Courtney Alexander</motion.h6>
+                            >Abzoiyotov Bekzod Abzoyitovich</motion.h6>
 
-                            <small className="text-storm text-sm font-normal">CEO - Createx Construction Bureau</small>
+                            <small className="text-storm text-sm font-normal">CEO - Metan KZ</small>
 
                         </div>
 
@@ -85,7 +85,7 @@ const FounderCard = () => {
                             whileHover={{ scale: 1.1, rotate: 3 }}
                             viewport={{ once: true }}
                         >
-                            
+
                             <PiSignatureThin className="text-primary text-8xl" />
 
                         </motion.div>

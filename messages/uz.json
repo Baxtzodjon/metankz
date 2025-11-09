@@ -235,5 +235,20 @@
     },
     "ScrollToTop": {
         "title": "Yuqoriga chiqish"
+    },
+    "About": {
+        "bannerDescription": "Metan KZ 2025-yildan beri Qozog'iston bo'ylab toza va qulay yoqilg'i yechimlarini taqdim etib kelmoqda. Biz haydovchilar uchun zamonaviy, ishonchli va qulay yonilg'i quyish shoxobchalarini taklif etamiz."
+    },
+    "Benefits": {
+        "clients": "Tavsiyalar orqali mijozlar",
+        "cars": "Yonilg'i quyilgan avtomobillar",
+        "co2": "CO₂ tejash",
+        "support": "Texnik yordam"
+    },
+    "Founder": {
+        "quote": "MetanKZ’da biz har kuni Qozog'istonda yoqilg'i quyishni toza, tez va ishonchli qilish uchun ishlaymiz. Bizning maqsadimiz — qulaylik, xavfsizlik va ekologiyani hisobga olgan holda odamlarni oldinga harakatlantiradigan energiyani taqdim etish. Har bir safar ishonch bilan boshlanib, ishonch bilan yakunlanishini istaymiz.<br /><br />MetanKZ — bu shunchaki yoqilg'i emas. Bu e’tibor, zamonaviy xizmat va har bir mijozga halol munosabat. Biz infratuzilma va texnologiyalarni rivojlantirib, energiya odamlar va tabiatga xizmat qiladigan barqaror kelajak yaratamiz."
+    },
+    "Contact": {
+        "bannerDescription": "Yoqilg'i bo'yicha barcha savollar uchun biz bilan bog'laning. Biz har qanday savol va fikr-mulohazalaringizni mamnuniyat bilan qabul qilamiz."
     }
 }
