@@ -73,8 +73,8 @@ const Partners: React.FC<PartnersProps> = ({ className }) => {
                 >
                     {isAboutPage ? (
                         <Texts
-                            title="Our partners"
-                            description="We are supported by 12+ industry bodies and media partners"
+                            title={t("AboutPartners.title")}
+                            description={t("AboutPartners.description")}
                         />
                     ) : (
                         <Texts title={t("Partners.title")} className="mb-[60px]" />

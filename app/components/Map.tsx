@@ -3,8 +3,11 @@
 import Image from "next/image";
 import Texts from "./Texts";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 const Map = () => {
+    const t = useTranslations();
+
     return (
         <section className="w-full bg-[#F4F5F6] py-10 sm:pt-20 sm:pb-[120px]">
 
@@ -17,7 +20,7 @@ const Map = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
 
-                    <Texts title="We work worldwide" />
+                    <Texts title={t("Map.title")} />
 
                 </motion.div>
 

@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 import { useTranslations } from "next-intl";
 
 const FounderCard = () => {
-    const t = useTranslations();
+    const t = useTranslations("Founder");
 
     return (
         <section className="relative overflow-hidden bg-light before:content-[''] before:absolute before:-right-[200px] before:w-[570px] before:h-[1065px] before:bg-[url('/images/facts_bg.png')] before:bg-center before:bg-no-repeat before:bg-cover">
@@ -53,7 +53,7 @@ const FounderCard = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
-                            dangerouslySetInnerHTML={{ __html: t("Founder.quote") }}
+                            dangerouslySetInnerHTML={{ __html: t("quote") }}
                         ></motion.p>
 
                     </div>
@@ -72,9 +72,9 @@ const FounderCard = () => {
                                 className="text-ebony text-base leading-[160%] font-bold"
                                 whileHover={{ color: "#FF5A30", scale: 1.05 }}
                                 transition={{ duration: 0.3 }}
-                            >Abzoiyotov Bekzod Abzoyitovich</motion.h6>
+                            >{t("nameFounder")}</motion.h6>
 
-                            <small className="text-storm text-sm font-normal">CEO - Metan KZ</small>
+                            <small className="text-storm text-sm font-normal">{t("titleFounder")}</small>
 
                         </div>
 

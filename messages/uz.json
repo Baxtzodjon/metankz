@@ -246,7 +246,64 @@
         "support": "Texnik yordam"
     },
     "Founder": {
-        "quote": "MetanKZ’da biz har kuni Qozog'istonda yoqilg'i quyishni toza, tez va ishonchli qilish uchun ishlaymiz. Bizning maqsadimiz — qulaylik, xavfsizlik va ekologiyani hisobga olgan holda odamlarni oldinga harakatlantiradigan energiyani taqdim etish. Har bir safar ishonch bilan boshlanib, ishonch bilan yakunlanishini istaymiz.<br /><br />MetanKZ — bu shunchaki yoqilg'i emas. Bu e’tibor, zamonaviy xizmat va har bir mijozga halol munosabat. Biz infratuzilma va texnologiyalarni rivojlantirib, energiya odamlar va tabiatga xizmat qiladigan barqaror kelajak yaratamiz."
+        "quote": "MetanKZ’da biz har kuni Qozog'istonda yoqilg'i quyishni toza, tez va ishonchli qilish uchun ishlaymiz. Bizning maqsadimiz — qulaylik, xavfsizlik va ekologiyani hisobga olgan holda odamlarni oldinga harakatlantiradigan energiyani taqdim etish. Har bir safar ishonch bilan boshlanib, ishonch bilan yakunlanishini istaymiz.<br /><br />MetanKZ — bu shunchaki yoqilg'i emas. Bu e’tibor, zamonaviy xizmat va har bir mijozga halol munosabat. Biz infratuzilma va texnologiyalarni rivojlantirib, energiya odamlar va tabiatga xizmat qiladigan barqaror kelajak yaratamiz.",
+        "nameFounder": "Abzoiyotov Bekzod Abzoyitovich",
+        "titleFounder": "Bosh direktor — Metan KZ"
+    },
+    "History": {
+        "title": "Bizning tariximiz",
+        "timeline": {
+            "2014": {
+                "title": "2014 Boshlanish",
+                "text": "2014 yilda Metan kompaniyasi tabiiy gaz va siqilgan metan (CNG) texnologiyalari sohasida faoliyatini boshladi. Bu ekologik toza yoqil'g'i rivojlanishining boshlanishi edi."
+            },
+            "2015": {
+                "title": "2015–2018 O'sish",
+                "text": "Kompaniya bozorni o'rganish, ilk CNG stansiyalarini loyihalash va qurishni boshladi. Professional jamoa shakllandi."
+            },
+            "2019": {
+                "title": "2019–2021 Imkoniyatlar",
+                "text": "Metan faoliyatini kengaytirib, sifat va xavfsizlikning yangi standartlarini joriy etdi. Kompaniya transport va logistika sohasida ishonchli hamkor bo'ldi."
+            },
+            "2022": {
+                "title": "2022 Rivojlanish",
+                "text": "Metan yangi CNG stansiyalarini ishga tushirib, raqamli yechimlar va avtomatlashtirilgan tizimlarni joriy qildi."
+            },
+            "2023": {
+                "title": "2023 Kengayish",
+                "text": "Metan KZ loyihasini ishga tushirishga tayyorgarlik boshlandi. Qozog'istonda asosiy joylar tanlandi."
+            },
+            "2024": {
+                "title": "2024 Taraqqiyot",
+                "text": "2024 yilda qurilish ishlari va uskunalarni sinovdan o'tkazish davom etdi. Metan KZ xavfsiz va energiya tejamkor texnologiyalarni joriy qildi."
+            },
+            "2025": {
+                "title": "2025 Hozirgi",
+                "text": "2025 yilda Qozog'istonda Metan KZ stansiyalar tarmog'i ishga tushirildi. Bu mintaqadagi toza energiya rivojlanishida muhim qadam bo'ldi."
+            },
+            "2025_expand": {
+                "title": "2025 Kelajak",
+                "text": "Metan KZ o'z tarmog'ini kengaytirib, aqlli monitoring tizimlarini va energiya tejamkor texnologiyalarni joriy etmoqda."
+            },
+            "future": {
+                "title": "2025+ Oldinga",
+                "text": "Metan KZ Markaziy Osiyoda gaz yoqilg'isi sanoatida yetakchi bo'lishni maqsad qilgan, barqaror va xavfsiz energiya yechimlarini yaratmoqda."
+            }
+        }
+    },
+    "AboutPartners": {
+        "title": "Hamkorlarimiz",
+        "description": "Biz 12+ sanoat tashkilotlari va media hamkorlari tomonidan qo'llab-quvvatlanamiz"
+    },
+    "Team": {
+        "title": "Jamoamiz",
+        "description": "Metan KZ markazida odamlar turadi"
+    },
+    "Map": {
+        "title": "Biz dunyo bo'ylab ishlaymiz"
+    },
+    "Services": {
+        "bannerDescription": "Agar siz to'liq xizmat ko'rsatadigan CNG va gaz infratuzilmasi kompaniyasini izlayotgan bo'lsangiz, Metan KZga murojaat qiling. Biz barcha barqaror energiya va yoqilg'i ehtiyojlaringizda hamkor bo'lishga harakat qilamiz."
     },
     "Contact": {
         "bannerDescription": "Yoqilg'i bo'yicha barcha savollar uchun biz bilan bog'laning. Biz har qanday savol va fikr-mulohazalaringizni mamnuniyat bilan qabul qilamiz."

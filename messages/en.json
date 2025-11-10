@@ -246,7 +246,64 @@
         "support": "Technical support"
     },
     "Founder": {
-        "quote": "Every day at MetanKZ, we make refueling in Kazakhstan cleaner, faster, and more reliable. Our mission is to provide energy that moves people forward — with care for comfort, safety, and the environment. We strive to make every trip begin with trust and end with confidence.<br /><br />MetanKZ is more than just fuel. It’s attention to detail, modern service, and an honest attitude toward every customer. We are developing infrastructure and technology to ensure a sustainable future where energy serves both people and nature."
+        "quote": "Every day at MetanKZ, we make refueling in Kazakhstan cleaner, faster, and more reliable. Our mission is to provide energy that moves people forward — with care for comfort, safety, and the environment. We strive to make every trip begin with trust and end with confidence.<br /><br />MetanKZ is more than just fuel. It’s attention to detail, modern service, and an honest attitude toward every customer. We are developing infrastructure and technology to ensure a sustainable future where energy serves both people and nature.",
+        "nameFounder": "Abzoiyotov Bekzod Abzoyitovich",
+        "titleFounder": "CEO - Metan KZ"
+    },
+    "History": {
+        "title": "Our History",
+        "timeline": {
+            "2014": {
+                "title": "2014 Start",
+                "text": "In 2014, Metan was founded, starting work in the field of natural gas and compressed methane (CNG) technologies. This year marked the beginning of eco-friendly fuel development in Central Asia."
+            },
+            "2015": {
+                "title": "2015–2018 Growth",
+                "text": "The company focused on market analysis, design, and construction of the first CNG stations. The professional team was formed and the technological base established."
+            },
+            "2019": {
+                "title": "2019–2021 Opportunities",
+                "text": "Metan actively expanded operations, introducing new quality and safety standards. The company became a trusted partner for transport and logistics businesses."
+            },
+            "2022": {
+                "title": "2022 Development",
+                "text": "Metan launched new CNG stations and introduced automation and digital solutions to improve service and efficiency."
+            },
+            "2023": {
+                "title": "2023 Expansion",
+                "text": "Preparation began for the launch of Metan KZ, focusing on developing CNG infrastructure in Kazakhstan and selecting key station locations."
+            },
+            "2024": {
+                "title": "2024 Progress",
+                "text": "Throughout 2024, construction and testing of equipment took place, introducing energy-efficient and safe technologies."
+            },
+            "2025": {
+                "title": "2025 Present",
+                "text": "In 2025, Metan KZ officially began operating across Kazakhstan — a milestone toward a clean and sustainable energy future."
+            },
+            "2025_expand": {
+                "title": "2025 Future",
+                "text": "After launch, Metan KZ expanded its network nationwide, integrating smart monitoring systems and energy-efficient equipment."
+            },
+            "future": {
+                "title": "2025+ Forward",
+                "text": "Metan KZ aims to lead Central Asia’s clean-fuel industry, building sustainable, safe, and accessible energy for all."
+            }
+        }
+    },
+    "AboutPartners": {
+        "title": "Our partners",
+        "description": "We are supported by 12+ industry bodies and media partners"
+    },
+    "Team": {
+        "title": "Our team",
+        "description": "People are at the heart of Metan KZ"
+    },
+    "Map": {
+        "title": "We work worldwide"
+    },
+    "Services": {
+        "bannerDescription": "If you are looking for a full-service CNG and gas infrastructure company, look to Metan KZ. We are doing our best to be a partner for all of your sustainable energy and fueling needs."
     },
     "Contact": {
         "bannerDescription": "Contact us for all your fuel needs. We always welcome any questions and comments."

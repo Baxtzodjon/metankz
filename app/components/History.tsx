@@ -11,8 +11,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Texts from "./Texts";
 import { timeline } from "../data/historyInfo";
+import { useTranslations } from "next-intl";
 
 const History = () => {
+    const t = useTranslations();
     const [activeIndex, setActiveIndex] = useState(0);
     const swiperRef = useRef<SwiperClass | null>(null);
 
@@ -49,7 +51,7 @@ const History = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        Our history
+                        {t("History.title")}
                     </motion.h2>
 
                     <div className="relative py-1">
@@ -94,7 +96,7 @@ const History = () => {
                                             }
                                         `}
                                     >
-                                        {item.titleKey}
+                                        {t(item.titleKey)}
                                     </motion.h2>
 
                                 </div>
@@ -188,7 +190,7 @@ const History = () => {
                                             animate={{ opacity: 1, y: 0 }}
                                             transition={{ duration: 0.8, delay: 0.2 }}
                                         >
-                                            {item.textKey}
+                                            {t(item.textKey)}
                                         </motion.p>
 
                                     </motion.div>

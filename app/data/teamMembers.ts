@@ -10,8 +10,8 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
     {
         image: "/images/portfolio_first.jpg",
-        nameKey: "Courtney Alexander",
-        roleKey: "CEO, Co-Founder",
+        nameKey: "Абзоитов Бекзод",
+        roleKey: "Генеральный Директор",
         socials: [
             { platform: "whatsapp", url: "https://wa.me/15551234567" },
             { platform: "telegram", url: "https://t.me/courtneyalex" },
@@ -20,8 +20,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/portfolio_first.jpg",
-        nameKey: "Calvin Fox",
-        roleKey: "CTO, Co-Founder",
+        nameKey: "Турдиев Анвар",
+        roleKey: "Менеджер Продажи",
         socials: [
             { platform: "whatsapp", url: "https://wa.me/15551234567" },
             { platform: "telegram", url: "https://t.me/courtneyalex" },
@@ -30,8 +30,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/portfolio_first.jpg",
-        nameKey: "Johnny Lane",
-        roleKey: "Commercial Manager",
+        nameKey: "Расулов Шерзод",
+        roleKey: "Помощник Менеджера",
         socials: [
             { platform: "whatsapp", url: "https://wa.me/15551234567" },
             { platform: "telegram", url: "https://t.me/courtneyalex" },
@@ -40,8 +40,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/portfolio_first.jpg",
-        nameKey: "Diane Mccoy",
-        roleKey: "Director of Human Resources",
+        nameKey: "Исомиддин",
+        roleKey: "Главный Инженер",
         socials: [
             { platform: "whatsapp", url: "https://wa.me/15551234567" },
             { platform: "telegram", url: "https://t.me/courtneyalex" },
@@ -50,8 +50,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/portfolio_first.jpg",
-        nameKey: "Judith Warren",
-        roleKey: "Lead Accountant",
+        nameKey: "Yahyoev Azamat",
+        roleKey: "Шофер",
         socials: [
             { platform: "whatsapp", url: "https://wa.me/15551234567" },
             { platform: "telegram", url: "https://t.me/courtneyalex" },

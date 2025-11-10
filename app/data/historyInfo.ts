@@ -8,56 +8,56 @@ export interface HistoryItem {
 export const timeline: HistoryItem[] = [
     {
         id: 1,
-        titleKey: "Present",
+        titleKey: "History.timeline.2014.title",
         image: "/images/portfolio_first.jpg",
-        textKey: "Bcelerisque dapibus pharetra nibh semper iaculis duis viverra porttitor in. Eu nec vitae, malesuada vitae egestas integer et morbi. Maecenas sed quis diam posuere malesuada magnis. Bcelerisque dapibus.  Eu nec vitae,"
+        textKey: "History.timeline.2014.text"
     },
     {
         id: 2,
-        titleKey: "March 2019",
+        titleKey: "History.timeline.2015.title",
         image: "/images/portfolio_first.jpg",
-        textKey: "Maecenas sed quis diam posuere malesuada magnis. Eu nec vitae, malesuada vitae egestas integer et morbi."
+        textKey: "History.timeline.2015.text"
     },
     {
         id: 3,
-        titleKey: "November 2018",
+        titleKey: "History.timeline.2019.title",
         image: "/images/portfolio_first.jpg",
-        textKey: "Bcelerisque dapibus pharetra nibh semper iaculis duis viverra porttitor in. Integer et morbi malesuada vitae egestas."
+        textKey: "History.timeline.2019.text"
     },
     {
         id: 4,
-        titleKey: "July 2015",
+        titleKey: "History.timeline.2022.title",
         image: "/images/portfolio_first.jpg",
-        textKey: "Eu nec vitae, malesuada vitae egestas integer et morbi. Maecenas sed quis diam posuere malesuada magnis."
+        textKey: "History.timeline.2022.text"
     },
     {
         id: 5,
-        titleKey: "August 2010",
+        titleKey: "History.timeline.2023.title",
         image: "/images/portfolio_first.jpg",
-        textKey: "Bcelerisque dapibus pharetra nibh semper iaculis duis viverra porttitor in. Eu nec vitae, malesuada vitae egestas integer et morbi."
+        textKey: "History.timeline.2023.text"
     },
     {
         id: 6,
-        titleKey: "February 2007",
+        titleKey: "History.timeline.2024.title",
         image: "/images/portfolio_first.jpg",
-        textKey: "Maecenas sed quis diam posuere malesuada magnis. Eu nec vitae, malesuada vitae egestas integer et morbi."
+        textKey: "History.timeline.2024.text"
     },
     {
         id: 7,
-        titleKey: "May 2004",
+        titleKey: "History.timeline.2025.title",
         image: "/images/portfolio_first.jpg",
-        textKey: "Bcelerisque dapibus pharetra nibh semper iaculis duis viverra porttitor in. Integer et morbi malesuada vitae egestas."
+        textKey: "History.timeline.2025.text"
     },
     {
         id: 8,
-        titleKey: "October 2001",
+        titleKey: "History.timeline.2025_expand.title",
         image: "/images/portfolio_first.jpg",
-        textKey: "Eu nec vitae, malesuada vitae egestas integer et morbi. Maecenas sed quis diam posuere malesuada magnis."
+        textKey: "History.timeline.2025_expand.text"
     },
     {
         id: 9,
-        titleKey: "June 2000",
+        titleKey: "History.timeline.future.title",
         image: "/images/portfolio_first.jpg",
-        textKey: "Eu nec vitae, malesuada vitae egestas integer et morbi. Maecenas sed quis diam posuere malesuada magnis."
+        textKey: "History.timeline.future.text"
     },
 ];

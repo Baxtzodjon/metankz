@@ -5,8 +5,11 @@ import Texts from "./Texts";
 import { motion } from "motion/react";
 import { teamMembers } from "../data/teamMembers";
 import TeamSocialLinks from "../containers/TeamSocialLinks";
+import { useTranslations } from "next-intl";
 
 const TeamBlock = () => {
+    const t = useTranslations("Team");
+
     return (
         <section className="relative overflow-hidden bg-light before:content-[''] before:absolute before:-left-[9px] before:-bottom-[195px] before:w-[570px] before:h-[1065px] before:bg-[url('/images/facts_bg.png')] before:bg-center before:bg-no-repeat before:bg-cover py-10 sm:pt-[100px] sm:pb-[120px]">
 
@@ -19,7 +22,7 @@ const TeamBlock = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex items-center justify-center flex-col gap-6">
 
-                    <Texts title={"Our team"} description={"People are at the heart of Createx Construction Bureau"} />
+                    <Texts title={t("title")} description={t("description")} />
 
                 </motion.div>
 
