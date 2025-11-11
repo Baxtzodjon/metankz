@@ -305,6 +305,27 @@
     "Services": {
         "bannerDescription": "Agar siz to'liq xizmat ko'rsatadigan CNG va gaz infratuzilmasi kompaniyasini izlayotgan bo'lsangiz, Metan KZga murojaat qiling. Biz barcha barqaror energiya va yoqilg'i ehtiyojlaringizda hamkor bo'lishga harakat qilamiz."
     },
+    "Timeline": {
+        "stations": {
+            "title": "Metan zapravkalari",
+            "description": "Metan KZ — bu zamonaviy metan zapravkalari tarmog'i bo'lib, haydovchilarga ekologik toza va tejamkor yoqilg'i taqdim etadi. Biz xavfsizlik va sifatning xalqaro standartlariga muvofiq ishlaymiz."
+        },
+        "equipment": {
+            "title": "Gaz uskunalari",
+            "description": "Biz keng turdagi uskunalarni taklif qilamiz: gaz saqlash idishlari, kompressorlar, zapravka modullari va reduktorlar. Barcha uskunalar sertifikatlangan va sanoat standartlariga mos keladi."
+        },
+        "installation": {
+            "title": "O'rnatish va xizmat ko'rsatish",
+            "description": "Metan KZ mutaxassislari gaz uskunalarini o'rnatish, sozlash va texnik xizmat ko'rsatishni amalga oshiradilar. Biz tizimlarning xavfsiz ishlashini kafolatlaymiz."
+        },
+        "delivery": {
+            "title": "Metan yetkazib berish",
+            "description": "Metan KZ O'zbekiston, Qozog'iston va Markaziy Osiyo bo'ylab siqilgan (CNG) va suyuqlangan metanni (LNG) yetkazib beradi, to'liq logistika va zapravka xizmatlarini taqdim etadi."
+        }
+    },
+    "Common": {
+        "learnMore": "Batafsil ma'lumot"
+    },
     "Contact": {
         "bannerDescription": "Yoqilg'i bo'yicha barcha savollar uchun biz bilan bog'laning. Biz har qanday savol va fikr-mulohazalaringizni mamnuniyat bilan qabul qilamiz."
     }

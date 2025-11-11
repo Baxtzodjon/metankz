@@ -87,7 +87,7 @@ const History = () => {
                                         `}
                                     />
 
-                                    <motion.h2
+                                    <motion.h3
                                         layout
                                         className={`text-[28px] leading-[150%] font-bold transition-all duration-500 pl-5 xl:pl-8
                                         ${activeIndex === index
@@ -97,7 +97,7 @@ const History = () => {
                                         `}
                                     >
                                         {t(item.titleKey)}
-                                    </motion.h2>
+                                    </motion.h3>
 
                                 </div>
 

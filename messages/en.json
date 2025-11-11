@@ -305,6 +305,27 @@
     "Services": {
         "bannerDescription": "If you are looking for a full-service CNG and gas infrastructure company, look to Metan KZ. We are doing our best to be a partner for all of your sustainable energy and fueling needs."
     },
+    "Timeline": {
+        "stations": {
+            "title": "Methane Stations",
+            "description": "Metan KZ is a modern network of methane fueling stations providing drivers with eco-friendly and cost-effective fuel. We operate under international safety and quality standards across Kazakhstan and the Samarkand region."
+        },
+        "equipment": {
+            "title": "Gas Equipment",
+            "description": "We offer a wide range of equipment: gas storage tanks, compressor units, refueling modules, and reducers. All equipment is certified and meets industrial standards."
+        },
+        "installation": {
+            "title": "Installation and Service",
+            "description": "Metan KZ specialists perform installation, commissioning, and maintenance of gas equipment, ensuring reliable and safe operation."
+        },
+        "delivery": {
+            "title": "Methane Delivery",
+            "description": "Metan KZ supplies compressed (CNG) and liquefied methane (LNG) throughout Kazakhstan and Central Asia, providing full logistics and fueling services."
+        }
+    },
+    "Common": {
+        "learnMore": "Learn more"
+    },
     "Contact": {
         "bannerDescription": "Contact us for all your fuel needs. We always welcome any questions and comments."
     }

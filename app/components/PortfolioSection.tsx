@@ -124,7 +124,7 @@ const PortfolioSection = () => {
 
                                             <span className="text-storm text-sm leading-[150%]">{t(item.descriptionKey)}</span>
 
-                                            <div className="mt-6 mb-0 md:mb-[-72px] border border-current rounded pt-[13px] pb-[13px] px-[31px] font-bold text-sm tracking-wider uppercase text-primary group-hover:mb-0 transition-default will-change-[margin]">{t("viewProject")}</div>
+                                            <div className="mt-6 mb-0 md:mb-[-72px] border border-current rounded pt-[13px] pb-[13px] px-[31px] font-bold text-sm tracking-wider uppercase text-primary group-hover:mb-0 transition-default will-change-[margin] hover:bg-primary hover:text-white transition-default">{t("viewProject")}</div>
 
                                         </motion.div>
 
