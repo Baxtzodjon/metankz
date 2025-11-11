@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import Link from "next/link";
-import { timelineData } from "../data/timeLineData";
 import { useTranslations } from "next-intl";
+import { timelineData } from "../data/timelineData";
 
 
 const TimelineBlock = () => {
