@@ -2,8 +2,8 @@
 
 import React from 'react';
 import BGMainBlock from '@/app/components/BgMainBlock';
-import { useTranslations } from 'next-intl';
 import TimelineBlock from '@/app/components/TimelineBlock';
+import { useTranslations } from 'next-intl';
 
 const Services = () => {
     const t = useTranslations();

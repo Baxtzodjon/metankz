@@ -11,7 +11,8 @@ const TimelineBlock = () => {
     const t = useTranslations();
 
     return (
-        <section className="relative overflow-hidden bg-light before:content-[''] before:absolute before:-left-[109px] before:-bottom-[195px] before:w-[570px] before:h-[637px] before:bg-[url('/images/facts_bg.png')] before:bg-center before:bg-no-repeat before:bg-cover py-10 sm:pt-[100px] sm:pb-[120px] lg:pt-[120px] lg:pb-[180px]">
+        <section className="relative overflow-hidden bg-light before:content-[''] before:absolute before:-left-[109px] before:-bottom-[195px] before:w-[570px] before:h-[637px] before:bg-[url('/images/facts_bg.png')] before:bg-center before:bg-no-repeat before:bg-cover after:content-[''] after:absolute after:-right-[270px] after:top-[660px]
+        after:w-[570px] after:h-[637px] after:bg-[url('/images/facts_bg.png')] after:bg-center after:bg-no-repeat after:bg-cover py-10 sm:pt-[100px] sm:pb-[120px] lg:pt-[120px] lg:pb-[180px]">
 
             <div className="container flex flex-col gap-[120px]">
 
@@ -27,7 +28,7 @@ const TimelineBlock = () => {
                             className="w-full md:w-auto"
                         >
 
-                            <Image src={item.image} alt={t(item.titleKey)} width={570} height={420} className="w-full md:max-w-[570px] h-[420px] object-cover" />
+                            <Image src={item.image} alt={t(item.titleKey)} width={570} height={420} className="w-full md:max-w-[570px] h-[420px] object-cover rounded" />
 
                         </motion.div>
 
