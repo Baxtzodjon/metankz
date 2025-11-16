@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { timelineData } from "@/app/data/timelineData";
 import { getTranslations } from "next-intl/server";
 import Suggest from "@/app/components/Suggest";
-import BGMainServerBlock from "@/app/components/BgMainServerBlock";
+import BGMainBlock from "@/app/components/BgMainBlock";
 import HowWeDoIt from "@/app/components/HowWeDoIt";
 import MissionBlock from "@/app/components/MissionBlock";
 import PortfolioSection from "@/app/components/PortfolioSection";
@@ -86,19 +86,21 @@ export default async function ServicePage({ params }: PageProps) {
 
             </section> */}
 
-            <BGMainServerBlock title={t(service.titleKey)} description={t(service.descriptionKey)} image="/images/services_slug_bg.png" />
+            {/* <BGMainServerBlock title={t(service.titleKey)} description={t(service.descriptionKey)} image="/images/services_slug_bg.png" /> */}
+
+            <BGMainBlock title={t(service.titleKey)} description={t(service.descriptionKey)} image="/images/services_slug_bg.png" />
 
             <Suggest />
 
             <HowWeDoIt />
 
-            <MissionBlock className="bg-ebony !pt-20 mb-[34px]" />
+            <MissionBlock className="bg-ebony !pt-20 mb-[34px] h-full lg:h-[565px]" />
 
             <PortfolioSection />
 
             <Table />
 
-            <Partners />
+            <Partners className="bg-athens" />
 
         </main>
     );

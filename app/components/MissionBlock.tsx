@@ -17,15 +17,19 @@ const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
     const t = useTranslations("MissionBlock");
     const pathname = usePathname();
 
-    const hidePaths = ['/about', '/ru/about', '/uz/about', '/en/about', '/kz/about'];
+    /* const hidePaths = ['/about', '/ru/about', '/uz/about', '/en/about', '/kz/about']; */
 
     const segments = pathname.split("/").filter(Boolean);
-    const isSlugPage = segments.length > 1;
 
-    const hideKnowForm = isSlugPage || hidePaths.includes(pathname);
+    const lastSegment = segments[segments.length - 1];
+    const isAboutPage = lastSegment === "about";
+
+    const isSlugPage = segments.length > 1 && !isAboutPage;
+
+    const hideKnowForm = isSlugPage || isAboutPage;
 
     return (
-        <section className={`pt-[120px] ${className || ""}`}>
+        <section className={`pt-10 sm:pt-[60px] md:pt-[120px] ${className || ""}`}>
 
             <div className="container">
 
@@ -132,7 +136,7 @@ const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
                 )}
 
                 {isSlugPage && (
-                    <div className="relative top-5 flex items-center justify-center flex-col gap-2">
+                    <div className="relative top-5 lg:top-[75px] flex items-center justify-center flex-col gap-2">
 
                         <Link href={"/"} className="xl:w-[390px] xl:h-[52px] py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase text-center hover:bg-active transition-default cursor-pointer">Discuss a project</Link>
 
