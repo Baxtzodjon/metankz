@@ -36,7 +36,7 @@ const Suggest = () => {
     };
 
     return (
-        <section className="py-10 sm:pt-[100px] sm:pb-[120px] lg:pt-[120px] lg:pb-[180px]">
+        <section className="py-10 sm:pt-[100px] sm:pb-[120px] lg:pt-[120px] lg:pb-[180px] overflow-hidden">
 
             <div className="container flex items-start justify-between gap-10 flex-col lg:flex-row">
 
@@ -45,7 +45,7 @@ const Suggest = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="w-full lg:max-w-[570px]"
+                    className="w-full lg:max-w-[570px] overflow-hidden"
                 >
 
                     <Image src={"/images/portfolio_first.jpg"} alt={"Portfolio Image"} width={705} height={440} className="w-full h-[420px] object-cover rounded" />
@@ -57,7 +57,7 @@ const Suggest = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
-                    className="flex flex-col gap-[60px]">
+                    className="flex flex-col gap-[60px] overflow-hidden">
 
                     <Texts title="We offer" className="text-start" />
 
@@ -126,7 +126,7 @@ const Suggest = () => {
                                             opacity: openId === item.id ? 1 : 0
                                         }}
                                         transition={{ duration: 0.35, ease: "easeInOut" }}
-                                        className="overflow-hidden"
+                                        className="overflow-hidden w-full"
                                     >
                                         
                                         <motion.p
