@@ -4,8 +4,15 @@ import Texts from "./Texts";
 import { PRICING_COLUMNS, PRICING_ROWS } from "../data/pricingData";
 import { FaCheck } from "react-icons/fa6";
 import { motion } from "motion/react";
+import { useState } from "react";
+import Modal from "./Modal";
 
 const Table = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     return (
         <section className="relative overflow-hidden w-full py-10 sm:pt-20 sm:pb-10 bg-athens before:content-[''] before:absolute before:-left-[9px] before:-top-[195px] before:w-[570px] before:h-[1065px] before:bg-[url('/images/facts_bg.png')] before:bg-center before:bg-no-repeat before:bg-cover before:z-0">
 
@@ -113,8 +120,7 @@ const Table = () => {
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
                                         className="pt-8 pb-8 text-center">
-
-                                        <button className="border border-current rounded w-full md:w-auto py-3 px-6 font-bold text-sm tracking-wider uppercase text-primary transition-colors hover:bg-primary hover:text-white">send request</button>
+                                        <button className="border border-current rounded w-full md:w-auto py-3 px-6 font-bold text-sm tracking-wider uppercase text-primary transition-colors hover:bg-primary hover:text-white" onClick={openModal}>send request</button>
 
                                     </motion.td>
 
@@ -129,6 +135,8 @@ const Table = () => {
                 </div>
 
             </div>
+
+            <Modal isOpen={isModalOpen} onClose={closeModal} />
 
         </section>
     );

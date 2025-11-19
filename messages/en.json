@@ -158,11 +158,11 @@
         "title": "A quick way to discuss details",
         "fields": {
             "name": {
-                "label": "Name*",
+                "label": "Name",
                 "placeholder": "Your name"
             },
             "phone": {
-                "label": "Phone*",
+                "label": "Phone",
                 "placeholder": "Your phone number"
             },
             "email": {
@@ -170,7 +170,7 @@
                 "placeholder": "Your working email"
             },
             "message": {
-                "label": "Message*",
+                "label": "Message",
                 "placeholder": "Your message"
             }
         },
@@ -184,6 +184,7 @@
                 "pattern": "Invalid phone number format"
             },
             "email": {
+                "required": "Email is required",
                 "pattern": "Enter a valid email address"
             },
             "message": {
@@ -195,7 +196,8 @@
             }
         },
         "consentText": "I agree to receive communications from Metan KZ.",
-        "button": "Send Request"
+        "button": "Send Request",
+        "modalTitle": "Send your request"
     },
     "Footer": {
         "description": "Metan KZ has been successfully operating in the Kazakhstan energy market since 2014. We are proud to provide reliable methane-based solutions and excellent service. Our mission is to set the highest standards in clean and efficient energy.",
@@ -308,14 +310,14 @@
     "Timeline": {
         "stations": {
             "title": "Methane Stations",
-            "description": "Metan KZ is a modern network of methane fueling stations providing drivers with eco-friendly and cost-effective fuel. We operate under international safety and quality standards across Kazakhstan and the Samarkand region."
+            "description": "Metan KZ is a modern network of methane fueling stations providing drivers with eco-friendly and cost-effective fuel. We operate under international safety and quality standards."
         },
         "equipment": {
             "title": "Gas Equipment",
             "description": "We offer a wide range of equipment: gas storage tanks, compressor units, refueling modules, and reducers. All equipment is certified and meets industrial standards."
         },
         "installation": {
-            "title": "Installation and Service",
+            "title": "Installation & Service",
             "description": "Metan KZ specialists perform installation, commissioning, and maintenance of gas equipment, ensuring reliable and safe operation."
         },
         "delivery": {
@@ -325,6 +327,25 @@
     },
     "Common": {
         "learnMore": "Learn more"
+    },
+    "HowWeDoIt": {
+        "title": "That's how we do it",
+        "step1": {
+            "title": "Project analysis and calculation",
+            "content": "We inspect the site and determine the optimal technical solution."
+        },
+        "step2": {
+            "title": "Contract and documentation",
+            "content": "We prepare the estimate, agree on conditions, and sign the contract."
+        },
+        "step3": {
+            "title": "Equipment delivery and preparation",
+            "content": "We deliver the equipment and prepare the site for installation."
+        },
+        "step4": {
+            "title": "Installation and commissioning",
+            "content": "We install the system and put the facility into operation."
+        }
     },
     "Contact": {
         "bannerDescription": "Contact us for all your fuel needs. We always welcome any questions and comments."

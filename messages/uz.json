@@ -158,11 +158,11 @@
         "title": "Tafsilotlarni muhokama qilishning tezkor usuli",
         "fields": {
             "name": {
-                "label": "Ism*",
+                "label": "Ism",
                 "placeholder": "Ismingiz"
             },
             "phone": {
-                "label": "Telefon*",
+                "label": "Telefon",
                 "placeholder": "Telefon raqamingiz"
             },
             "email": {
@@ -170,7 +170,7 @@
                 "placeholder": "Ishchi emailingiz"
             },
             "message": {
-                "label": "Xabar*",
+                "label": "Xabar",
                 "placeholder": "Xabaringiz"
             }
         },
@@ -184,6 +184,7 @@
                 "pattern": "Telefon raqami noto'g'ri formatda"
             },
             "email": {
+                "required": "Email kiritilishi shart",
                 "pattern": "To'g'ri email manzilini kiriting"
             },
             "message": {
@@ -195,7 +196,8 @@
             }
         },
         "consentText": "Men Metan KZ xabarlari olishga roziman.",
-        "button": "So'rov yuborish"
+        "button": "So'rov yuborish",
+        "modalTitle": "So'rovingizni yuboring"
     },
     "Footer": {
         "description": "Metan KZ 2014-yildan buyon Qozog'iston energetika bozorida muvaffaqiyatli faoliyat yuritib kelmoqda. Biz metan sohasida ishonchli yechimlar va yuqori sifatli xizmatlar taqdim etishdan faxrlanamiz. Bizning maqsadimiz — toza va samarali energiya sohasida eng yuqori standartlarni o'rnatishdir.",
@@ -315,16 +317,35 @@
             "description": "Biz keng turdagi uskunalarni taklif qilamiz: gaz saqlash idishlari, kompressorlar, zapravka modullari va reduktorlar. Barcha uskunalar sertifikatlangan va sanoat standartlariga mos keladi."
         },
         "installation": {
-            "title": "O'rnatish va xizmat ko'rsatish",
+            "title": "O'rnatish va servis",
             "description": "Metan KZ mutaxassislari gaz uskunalarini o'rnatish, sozlash va texnik xizmat ko'rsatishni amalga oshiradilar. Biz tizimlarning xavfsiz ishlashini kafolatlaymiz."
         },
         "delivery": {
-            "title": "Metan yetkazib berish",
+            "title": "Metan yetkazish",
             "description": "Metan KZ O'zbekiston, Qozog'iston va Markaziy Osiyo bo'ylab siqilgan (CNG) va suyuqlangan metanni (LNG) yetkazib beradi, to'liq logistika va zapravka xizmatlarini taqdim etadi."
         }
     },
     "Common": {
         "learnMore": "Batafsil ma'lumot"
+    },
+    "HowWeDoIt": {
+        "title": "Biz shunday ishlaymiz",
+        "step1": {
+            "title": "Loyiha tahlili va hisoblash",
+            "content": "Ob'ektni ko'zdan kechiramiz va optimal texnik yechimni aniqlaymiz."
+        },
+        "step2": {
+            "title": "Shartnoma va hujjatlar",
+            "content": "Smeta tayyorlaymiz, shartlarni kelishamiz va shartnoma tuzamiz."
+        },
+        "step3": {
+            "title": "Uskuna yetkazish va tayyorgarlik",
+            "content": "Uskunalarni yetkazib beramiz va montaj uchun joyni tayyorlaymiz."
+        },
+        "step4": {
+            "title": "Montaj va ishga tushirish",
+            "content": "Tizimni o'rnatamiz va ob'ektni ishga tushiramiz."
+        }
     },
     "Contact": {
         "bannerDescription": "Yoqilg'i bo'yicha barcha savollar uchun biz bilan bog'laning. Biz har qanday savol va fikr-mulohazalaringizni mamnuniyat bilan qabul qilamiz."

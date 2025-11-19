@@ -3,37 +3,12 @@
 import Image from "next/image";
 import Texts from "./Texts";
 import { motion } from "motion/react";
-
-interface HowDoItItem {
-    id: number;
-    titleKey: string;
-    contentKey: string;
-};
-
-const infoLineData: HowDoItItem[] = [
-    {
-        id: 1,
-        titleKey: "Work Estimate",
-        contentKey: "Culpa nostrud commodo ea consequat aliquip reprehenderit.",
-    },
-    {
-        id: 2,
-        titleKey: "Contract",
-        contentKey: "Laoreet ultrices curabitur luctus quisque consequat. Leo lorem velit imperdiet auctor et tempor.",
-    },
-    {
-        id: 3,
-        titleKey: "Mobilization",
-        contentKey: "Odio massa scelerisque purus arcu sed velit eleifend cursus leo.",
-    },
-    {
-        id: 4,
-        titleKey: "Construction Work",
-        contentKey: "Adipisicing esse aliqua aliquip qui amet. Aute eiusmod dolore dolore et ad et veniam ad deserunt.",
-    },
-];
+import { infoLineData } from "../data/infoLineData";
+import { useTranslations } from "next-intl";
 
 const HowWeDoIt = () => {
+    const t = useTranslations();
+
     return (
         <section className="pb-10 sm:pb-[120px] overflow-hidden">
 
@@ -46,7 +21,7 @@ const HowWeDoIt = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
 
-                    <Texts title="That’s how we do it" className="text-start" />
+                    <Texts title={t("HowWeDoIt.title")} className="text-start" />
 
                 </motion.div>
 
@@ -111,7 +86,7 @@ const HowWeDoIt = () => {
                                         transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.12 + 0.2 }}
                                         className="hidden xl:block overflow-hidden"
                                     >
-                                        <Image src={"/icons/line.svg"} alt={item.titleKey} width={209} height={0} />
+                                        <Image src={"/icons/line.svg"} alt={t(item.titleKey)} width={209} height={0} />
 
                                     </motion.div>
                                 )}
@@ -126,11 +101,11 @@ const HowWeDoIt = () => {
                                 className="flex flex-col gap-2">
 
                                 <h3 className="text-ebony lg:text-lg xl:text-xl leading-[150%] font-bold group-hover:text-primary transition-colors duration-300">
-                                    {item.titleKey}
+                                    {t(item.titleKey)}
                                 </h3>
 
                                 <p className="text-storm text-base leading-relaxed font-normal w-full lg:max-w-[285px]">
-                                    {item.contentKey}
+                                    {t(item.contentKey)}
                                 </p>
 
                             </motion.div>

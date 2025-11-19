@@ -18,7 +18,7 @@ export type ContactsFieldConfig = {
     };
 };
 
-export const contactsFormFields: ContactsFieldConfig[] = [
+export const getContactsFormFields = (type: "section" | "modal"): ContactsFieldConfig[] => [
     {
         name: 'name',
         labelKey: 'ContactsSection.fields.name.label',
@@ -51,6 +51,9 @@ export const contactsFormFields: ContactsFieldConfig[] = [
         type: 'email',
         placeholderKey: 'ContactsSection.fields.email.placeholder',
         validation: {
+            ...(type === "modal"
+                ? { required: "ContactsSection.errors.email.required" }
+                : {}),
             pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                 message: "ContactsSection.errors.email.pattern",
@@ -62,12 +65,19 @@ export const contactsFormFields: ContactsFieldConfig[] = [
         labelKey: 'ContactsSection.fields.message.label',
         type: 'textarea',
         placeholderKey: 'ContactsSection.fields.message.placeholder',
-        validation: {
-            required: "ContactsSection.errors.message.required",
-            minLength: {
-                value: 10,
-                message: "ContactsSection.errors.message.minLength",
-            },
-        },
+        validation:
+            type === "section"
+                ? {
+                    required: "ContactsSection.errors.message.required",
+                    minLength: {
+                        value: 10,
+                        message: "ContactsSection.errors.message.minLength",
+                    },
+                } : {
+                    minLength: {
+                        value: 10,
+                        message: "ContactsSection.errors.message.minLength",
+                    },
+                },
     },
 ];

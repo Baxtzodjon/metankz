@@ -12,12 +12,18 @@ import Image from 'next/image';
 import { motion } from 'motion/react';
 import { useTranslations } from "next-intl";
 import { Slide, slides } from '../data/slides';
+import Link from 'next/link';
+import Modal from './Modal';
 
 const HeroSlider: React.FC = () => {
     const swiperRef = useRef<SwiperClass | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
 
     const t = useTranslations("HeroSlider");
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
     const handlePaginationClick = (index: number) => {
         if (!swiperRef.current) return;
@@ -102,9 +108,9 @@ const HeroSlider: React.FC = () => {
                                         transition={{ duration: 0.8, delay: 0.8 }}
                                     >
 
-                                        <button className="px-[39px] py-[15px] border border-white text-white text-base font-bold uppercase hover:bg-primary hover:border-primary rounded transition-default cursor-pointer">{t('buttons.learnMore')}</button>
+                                        <Link href={"/about"} className="px-[39px] py-[15px] border border-white text-white text-base font-bold uppercase hover:bg-primary hover:border-primary rounded transition-default cursor-pointer">{t('buttons.learnMore')}</Link>
 
-                                        <button className="px-[39px] py-[15px] bg-primary text-white text-base font-bold uppercase hover:bg-[#fc3300] rounded transition-default cursor-pointer">{t('buttons.submitRequest')}</button>
+                                        <button className="px-[39px] py-[15px] bg-primary text-white text-base font-bold uppercase hover:bg-[#fc3300] rounded transition-default cursor-pointer" onClick={openModal}>{t('buttons.submitRequest')}</button>
 
                                     </motion.div>
 
@@ -170,6 +176,8 @@ const HeroSlider: React.FC = () => {
                 </div>
 
             </div>
+
+            <Modal isOpen={isModalOpen} onClose={closeModal} />
 
         </section>
     );

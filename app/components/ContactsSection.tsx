@@ -3,7 +3,7 @@
 import { motion, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 import { RegisterOptions, useForm } from "react-hook-form";
-import { ContactsFormData, contactsFormFields } from "../data/contactsFormFIelds";
+import { ContactsFormData, getContactsFormFields } from "../data/contactsFormFIelds";
 
 const containerVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
@@ -17,6 +17,7 @@ const fieldVariants: Variants = {
 
 const ContactsSection = () => {
     const t = useTranslations();
+    const contactsFormFields = getContactsFormFields("section");
 
     const {
         register,
@@ -74,7 +75,15 @@ const ContactsSection = () => {
                                 variants={fieldVariants}
                             >
 
-                                <span className="mb-2 text-gray-600 text-sm leading-[150%]">{t(field.labelKey)}</span>
+                                <span className="mb-2 text-gray-600 text-sm leading-[150%]">
+                                    
+                                    {t(field.labelKey)}
+
+                                    {field.name !== "email" && (
+                                        <span>*</span>
+                                    )}
+
+                                </span>
 
                                 {field.type === 'textarea' ? (
                                     <textarea

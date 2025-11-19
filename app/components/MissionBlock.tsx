@@ -7,7 +7,8 @@ import { motion } from "motion/react";
 import { missionTexts } from "../data/missionTexts";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { useState } from "react";
+import Modal from "./Modal";
 
 interface MisssonBlcProps {
     className?: string;
@@ -16,6 +17,10 @@ interface MisssonBlcProps {
 const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
     const t = useTranslations("MissionBlock");
     const pathname = usePathname();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
     /* const hidePaths = ['/about', '/ru/about', '/uz/about', '/en/about', '/kz/about']; */
 
@@ -138,7 +143,7 @@ const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
                 {isSlugPage && (
                     <div className="relative top-5 lg:top-[75px] flex items-center justify-center flex-col gap-2">
 
-                        <Link href={"/"} className="xl:w-[390px] xl:h-[52px] py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase text-center hover:bg-active transition-default cursor-pointer">Discuss a project</Link>
+                        <button className="xl:w-[390px] xl:h-[52px] py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase text-center hover:bg-active transition-default cursor-pointer" onClick={openModal}>Discuss a project</button>
 
                     </div>
                 )}
@@ -157,6 +162,8 @@ const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
                 )}
 
             </div>
+
+            <Modal isOpen={isModalOpen} onClose={closeModal} />
 
         </section>
     );
