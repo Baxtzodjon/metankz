@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Modal from "./Modal";
+import { ourBenefitsTexts } from "../data/ourBenefitsTexts";
 
 interface MisssonBlcProps {
     className?: string;
@@ -16,6 +17,7 @@ interface MisssonBlcProps {
 
 const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
     const t = useTranslations("MissionBlock");
+    const tOurBnf = useTranslations();
     const pathname = usePathname();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -51,10 +53,10 @@ const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
 
                     {isSlugPage && (
                         <>
-                            <h2 className="text-light text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center">Our benefits</h2>
+                            <h2 className="text-light text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center">{tOurBnf("OurBenefits.title")}</h2>
 
 
-                            <p className="text-storm text-base sm:text-lg leading-[150%] font-normal text-center mb-[25px] sm:mb-[60px]">{t("description")}</p>
+                            <p className="text-storm text-base sm:text-lg leading-[150%] font-normal text-center mb-[25px] sm:mb-[60px]">{tOurBnf("OurBenefits.description")}</p>
                         </>
                     )}
 
@@ -114,7 +116,7 @@ const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
                         }}
                         className="flex items-center justify-center lg:items-start lg:justify-start flex-wrap gap-[25px] lg:grid grid-cols-1 lg:grid-cols-3 xl:gap-[188px] mb-[27px] relative"
                     >
-                        {missionTexts.map(({ image, titleKey }, idx) => ( /* descriptionKey */
+                        {ourBenefitsTexts.map(({ icon: Icon, titleKey, descriptionKey }, idx) => (
                             <motion.li
                                 key={idx}
                                 variants={{
@@ -124,13 +126,13 @@ const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
                                 className="flex items-center flex-col gap-6 relative text-center after:content-[''] after:absolute after:top-0 after:right-[-94px] after:w-px after:h-full after:bg-no-repeat after:bg-center after:bg-cover after:bg-[url('https://live.verstaem.online/createx/img/divider.svg')] last:after:hidden after:hidden xl:after:block"
                             >
 
-                                <Image src={image} alt={t(`values.${titleKey}`)} width={48} height={48} />
+                                <Icon size={48} color="#ff5a30" />
 
                                 <div className="flex flex-col gap-2">
 
-                                    <h3 className="text-light text-xl leading-[150%] font-bold text-center">Fixed Terms & Cost</h3>
+                                    <h3 className="text-light text-xl leading-[150%] font-bold text-center">{tOurBnf(titleKey)}</h3>
 
-                                    <p className="w-[285px] text-storm text-base leading-[160%] font-normal text-center">Culpa nostrud commodo ea consequat aliquip reprehenderit. Veniam velit nostrud aliquip sunt.</p>
+                                    <p className="w-[285px] text-storm text-base leading-[160%] font-normal text-center">{tOurBnf(descriptionKey)}</p>
 
                                 </div>
 
@@ -141,9 +143,9 @@ const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
                 )}
 
                 {isSlugPage && (
-                    <div className="relative top-5 lg:top-[75px] flex items-center justify-center flex-col gap-2">
+                    <div className="relative top-5 flex items-center justify-center flex-col gap-2">
 
-                        <button className="xl:w-[390px] xl:h-[52px] py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase text-center hover:bg-active transition-default cursor-pointer" onClick={openModal}>Discuss a project</button>
+                        <button className="xl:w-[390px] xl:h-[52px] py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase text-center hover:bg-active transition-default cursor-pointer" onClick={openModal}>{tOurBnf("OurBenefits.button")}</button>
 
                     </div>
                 )}

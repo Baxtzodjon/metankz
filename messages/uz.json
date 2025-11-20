@@ -347,6 +347,17 @@
             "content": "Tizimni o'rnatamiz va ob'ektni ishga tushiramiz."
         }
     },
+    "OurBenefits": {
+        "title": "Bizning afzalliklarimiz",
+        "button": "Loyihani muhokama qilish",
+        "description": "Barqaror metan yetkazib berish, maqbul narx, zamonaviy infratuzilma va 24/7 yordam.",
+        "stable_supply_title": "Barqaror yetkazib berish",
+        "stable_supply_desc": "Biz KZ va UZ standartlariga muvofiq sertifikatlangan metanning barqaror yetkazib berilishini ta’minlaymiz, har bir bosqichda sifat va shaffoflik kafolatlanadi.",
+        "best_price_title": "Maqbul narx",
+        "best_price_desc": "Metanning maqbul narxi o'z infratuzilmamiz va Qozog'iston hamda O'zbekiston o'rtasidagi kengaytirilgan, puxta tashkil etilgan mintaqaviy logistika orqali ta’minlanadi.",
+        "support_title": "24/7 yordam",
+        "support_desc": "Samarqanddagi ofisimiz dam olish kunlarisiz ishlaydi. Biz istalgan vaqtda qo'llab-quvvatlash, maslahat va muammolarni tezkor hal qilish xizmatlarini taqdim etamiz."
+    },
     "Contact": {
         "bannerDescription": "Yoqilg'i bo'yicha barcha savollar uchun biz bilan bog'laning. Biz har qanday savol va fikr-mulohazalaringizni mamnuniyat bilan qabul qilamiz."
     }

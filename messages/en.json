@@ -347,6 +347,17 @@
             "content": "We install the system and put the facility into operation."
         }
     },
+    "OurBenefits": {
+        "title": "Our benefits",
+        "button": "Discuss a project",
+        "description": "Stable methane supply with fair pricing, modern infrastructure, and 24/7 support.",
+        "stable_supply_title": "Stable Supply",
+        "stable_supply_desc": "We provide a stable supply of certified methane according to KZ and UZ standards, ensuring quality and transparency at every stage.",
+        "best_price_title": "Cost Efficiency",
+        "best_price_desc": "The optimal methane price is ensured through our own infrastructure and well-organized, expanded regional logistics between Kazakhstan and Uzbekistan.",
+        "support_title": "24/7 Assistance",
+        "support_desc": "Our office in Samarkand operates without days off. We offer support, consultations, and prompt solutions to any issues at any time."
+    },
     "Contact": {
         "bannerDescription": "Contact us for all your fuel needs. We always welcome any questions and comments."
     }
