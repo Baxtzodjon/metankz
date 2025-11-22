@@ -1,55 +1,55 @@
 interface PlanColumn {
     key: string; // "basic" | "standard" | "business"
-    title: string;
-    price: string;
+    titleKey: string;
+    priceKey: string;
 }
 
 interface TableRow {
-    label: string;
+    labelKey: string;
     values: (boolean | string | null)[];
 }
 
 export const PRICING_COLUMNS: PlanColumn[] = [
-    { key: "basic", title: "BASIC", price: "$20 per m2" },
-    { key: "standard", title: "STANDARD", price: "$30 per m2" },
-    { key: "business", title: "BUSINESS", price: "$40 per m2" },
+    { key: "basic", titleKey: "Pricing.basic_title", priceKey: "Pricing.basic_price" },
+    { key: "standard", titleKey: "Pricing.standard_title", priceKey: "Pricing.standard_price" },
+    { key: "business", titleKey: "Pricing.business_title", priceKey: "Pricing.business_price" },
 ];
 
 export const PRICING_ROWS: TableRow[] = [
     {
-        label: "Installation plan",
+        labelKey: "Pricing.row_design",
         values: [true, true, true],
     },
     {
-        label: "Planning solutions (2-3 options)",
+        labelKey: "Pricing.row_equipment",
         values: [true, true, true],
     },
     {
-        label: "Lighting plan",
+        labelKey: "Pricing.row_storage",
         values: [true, true, true],
     },
     {
-        label: "Flooring plan",
+        labelKey: "Pricing.row_pipelines",
         values: [true, true, true],
     },
     {
-        label: "Heating floor laying scheme",
+        labelKey: "Pricing.row_installation",
         values: [true, true, true],
     },
     {
-        label: "Air conditioner zones layout",
+        labelKey: "Pricing.row_safety",
         values: [true, true, true],
     },
     {
-        label: "3D visualization of all rooms",
-        values: ["simplified", true, true],
+        labelKey: "Pricing.row_visualization",
+        values: ["Pricing.value_limited", true, true],
     },
     {
-        label: "Visualization of each room (3-4 angles)",
+        labelKey: "Pricing.row_monitoring",
         values: [null, null, true],
     },
     {
-        label: "Terms",
-        values: ["10 days", "20 days", "30 days"],
+        labelKey: "Pricing.row_terms",
+        values: ["Pricing.days_15", "Pricing.days_25", "Pricing.days_35"],
     },
 ];

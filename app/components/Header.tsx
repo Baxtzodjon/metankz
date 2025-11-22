@@ -45,6 +45,11 @@ const Header = () => {
         setIsAnimatingOut(false);
     }, [pathname]);
 
+    // Функция определения активного пути (для всех статичных и динамических страниц)
+    const isActiveRoute = (href: string) => {
+        return cleanPath === href || (href !== "/" && cleanPath.startsWith(href));
+    };
+
     return (
         <motion.header
             initial={{ y: -60, opacity: 0 }}
@@ -65,7 +70,7 @@ const Header = () => {
                     <nav className="hidden xl:flex items-center gap-5">
 
                         {navLinks.map(({ href, labelKey }) => {
-                            const isActive = cleanPath === href;
+                            const isActive = isActiveRoute(href);
 
                             return (
                                 <Link
@@ -155,7 +160,7 @@ const Header = () => {
 
                             <nav className="flex flex-col gap-8">
                                 {navLinks.map(({ href, labelKey }) => {
-                                    const isActive = cleanPath === href;
+                                    const isActive = isActiveRoute(href);
 
                                     return (
                                         <Link

@@ -18,8 +18,6 @@ export default function Home() {
 
       {/* <p>{t('title')}</p> */}
 
-      {/* <p>Hello I push text</p> */}
-
       <Preloader />
 
       <HeroSlider />

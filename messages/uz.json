@@ -328,6 +328,41 @@
     "Common": {
         "learnMore": "Batafsil ma'lumot"
     },
+    "Suggest": {
+        "title": "Biz taklif qilamiz",
+        "stations": {
+            "1_title": "AGNKSlari loyihalash va hisoblash",
+            "1_desc": "Metan stansiyalari uchun muhandislik yechimlarini ishlab chiqamiz, aniq hisob-kitoblar va xavfsizlikni ta'minlaymiz.",
+            "2_title": "AGNKSlarga uskunalar yetkazib berish",
+            "2_desc": "Sertifikatlangan kompressorlar, saqlash modullari va gaz tizimlarini yuqori sifat bilan yetkazib beramiz.",
+            "3_title": "Stansiyalarni qurish va ishga tushirish",
+            "3_desc": "Montaj, sozlash va ishga tushirishni bajarib, barqaror va uzluksiz ishlashni ta'minlaymiz."
+        },
+        "equipment": {
+            "1_title": "Metan uchun kompressor uskunalari",
+            "1_desc": "Kam energiya sarfi bilan yuqori unumdor kompressorlar barqaror gaz ta'minotini ta'minlaydi.",
+            "2_title": "Saqlash modullari va gaz ballonlari",
+            "2_desc": "Ishonchli saqlash tizimlari yuqori bosimga chidamli bo'lib, xavfsiz ishlashni ta'minlaydi.",
+            "3_title": "Gaz kolonkalari va bosimni kamaytirish bloklari",
+            "3_desc": "Zamonaviy dozatorlar va regulyatorlar aniq gaz berishni va xavfsiz nazoratni ta'minlaydi."
+        },
+        "installation": {
+            "1_title": "Kompressor tizimlarini o'rnatish",
+            "1_desc": "Uskunalarni xavfsizlik talablari asosida professional tarzda o'rnatamiz.",
+            "2_title": "Gaz quvurlarini yotqizish",
+            "2_desc": "Yuqori bosimli quvurlar va modullarni ishonchli hamda barqaror tarzda montaj qilamiz.",
+            "3_title": "Ishga tushirish va sozlash",
+            "3_desc": "Uskunalarni tekshiramiz, parametrlarni sozlaymiz va barqaror ishlashini nazorat qilamiz."
+        },
+        "delivery": {
+            "1_title": "Uskunalarni xalqaro yetkazib berish",
+            "1_desc": "Markaziy Osiyo bo'ylab xavfsiz va o'z vaqtida yetkazib berishni tashkil qilamiz.",
+            "2_title": "Bojxona rasmiylashtiruvi",
+            "2_desc": "Hujjatlar, sertifikatlar va bojxona jarayonlarini tez va to'g'ri bajarishda yordam beramiz.",
+            "3_title": "Saqlash va qadoqlash",
+            "3_desc": "Uskunalarni ehtiyotlab saqlash, sifatli qadoqlash va to'liq nazoratni ta'minlaymiz."
+        }
+    },
     "HowWeDoIt": {
         "title": "Biz shunday ishlaymiz",
         "step1": {
@@ -357,6 +392,31 @@
         "best_price_desc": "Metanning maqbul narxi o'z infratuzilmamiz va Qozog'iston hamda O'zbekiston o'rtasidagi kengaytirilgan, puxta tashkil etilgan mintaqaviy logistika orqali ta’minlanadi.",
         "support_title": "24/7 yordam",
         "support_desc": "Samarqanddagi ofisimiz dam olish kunlarisiz ishlaydi. Biz istalgan vaqtda qo'llab-quvvatlash, maslahat va muammolarni tezkor hal qilish xizmatlarini taqdim etamiz."
+    },
+    "Pricing": {
+        "title": "Narxlar",
+        "description": "Biz AGNKS uchun uch xil to'plam darajasini taklif qilamiz.",
+        "items_header": "Bandlar",
+        "send_request": "So'rov yuborish",
+        "basic_title": "Basic",
+        "standard_title": "Standard",
+        "business_title": "Business",
+        "basic_price": "20 000 $ dan",
+        "standard_price": "35 000 $ dan",
+        "business_price": "50 000 $ dan",
+        "row_design": "Stansiyani loyihalash",
+        "row_equipment": "Asosiy uskunalarni yetkazib berish",
+        "row_storage": "Gaz saqlash modullari",
+        "row_pipelines": "Yuqori bosimli quvurlarni o'rnatish",
+        "row_installation": "Kompressor tizimini o'rnatish",
+        "row_safety": "Xavfsizlik va avtomatika tizimi",
+        "row_visualization": "Stansiya konfiguratsiyasi (vizual maket)",
+        "row_monitoring": "Masofaviy monitoring tizimi",
+        "row_terms": "Ish bajarish muddati",
+        "value_limited": "cheklangan",
+        "days_15": "15 kun",
+        "days_25": "25 kun",
+        "days_35": "35 kun"
     },
     "Contact": {
         "bannerDescription": "Yoqilg'i bo'yicha barcha savollar uchun biz bilan bog'laning. Biz har qanday savol va fikr-mulohazalaringizni mamnuniyat bilan qabul qilamiz."

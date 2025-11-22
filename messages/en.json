@@ -328,6 +328,41 @@
     "Common": {
         "learnMore": "Learn more"
     },
+    "Suggest": {
+        "title": "We offer",
+        "stations": {
+            "1_title": "Design and engineering of CNG stations",
+            "1_desc": "We develop engineering solutions for CNG stations, ensuring accuracy, safety, and compliance with standards.",
+            "2_title": "Supply of CNG station equipment",
+            "2_desc": "We provide certified compressors, storage modules, and gas systems with guaranteed quality.",
+            "3_title": "Construction and commissioning",
+            "3_desc": "We perform installation, configuration, and commissioning to ensure stable and continuous operation."
+        },
+        "equipment": {
+            "1_title": "Methane compressor systems",
+            "1_desc": "High-performance compressors with low energy consumption ensure stable gas supply.",
+            "2_title": "Storage modules and gas cylinders",
+            "2_desc": "Reliable systems resistant to high pressure ensure safe and long-term operation.",
+            "3_title": "Gas dispensers and pressure regulators",
+            "3_desc": "Modern dispensers and regulators provide accurate gas delivery and full parameter control."
+        },
+        "installation": {
+            "1_title": "Installation of compressor systems",
+            "1_desc": "We professionally install equipment following all engineering and safety requirements.",
+            "2_title": "Gas pipeline installation",
+            "2_desc": "We install high-pressure pipelines and storage modules with reliability and durability.",
+            "3_title": "Commissioning and setup",
+            "3_desc": "We test equipment, adjust parameters, and verify stable system performance."
+        },
+        "delivery": {
+            "1_title": "International equipment delivery",
+            "1_desc": "We organize deliveries across Central Asia, ensuring safety and timely arrival.",
+            "2_title": "Customs support",
+            "2_desc": "We assist with documentation, certification, and customs procedures for smooth logistics.",
+            "3_title": "Storage and packaging",
+            "3_desc": "We provide secure storage, quality packaging, and full control during transportation."
+        }
+    },
     "HowWeDoIt": {
         "title": "That's how we do it",
         "step1": {
@@ -357,6 +392,31 @@
         "best_price_desc": "The optimal methane price is ensured through our own infrastructure and well-organized, expanded regional logistics between Kazakhstan and Uzbekistan.",
         "support_title": "24/7 Assistance",
         "support_desc": "Our office in Samarkand operates without days off. We offer support, consultations, and prompt solutions to any issues at any time."
+    },
+    "Pricing": {
+        "title": "Pricing",
+        "description": "We offer three levels of CNG station configuration.",
+        "items_header": "Items",
+        "send_request": "Send request",
+        "basic_title": "Basic",
+        "standard_title": "Standard",
+        "business_title": "Business",
+        "basic_price": "from $20,000",
+        "standard_price": "from $35,000",
+        "business_price": "from $50,000",
+        "row_design": "Station engineering and design",
+        "row_equipment": "Supply of essential equipment",
+        "row_storage": "Gas storage modules",
+        "row_pipelines": "High-pressure pipeline installation",
+        "row_installation": "Compressor system installation",
+        "row_safety": "Safety and automation system",
+        "row_visualization": "Station configuration (visual layout)",
+        "row_monitoring": "Remote monitoring system",
+        "row_terms": "Completion time",
+        "value_limited": "limited",
+        "days_15": "15 days",
+        "days_25": "25 days",
+        "days_35": "35 days"
     },
     "Contact": {
         "bannerDescription": "Contact us for all your fuel needs. We always welcome any questions and comments."

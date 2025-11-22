@@ -6,8 +6,10 @@ import { FaMinus } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
 import { useState } from "react";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
+import { suggestData } from "@/app/data/suggestData";
 
-type AccordionItem = {
+/* type AccordionItem = {
     id: number;
     titleKey: string;
     contentKey: string;
@@ -26,14 +28,28 @@ const accordionData: AccordionItem[] = [
         contentKey:
             "Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis.",
     },
-];
+]; */
 
-const Suggest = () => {
+interface SuggestProps {
+    slug: string;
+}
+
+const Suggest = ({ slug }: SuggestProps) => {
+    const t = useTranslations();
     const [openId, setOpenId] = useState<number | null>(1);
+    
+    /* const data = suggestData[slug] || []; */
+    /* const [openId, setOpenId] = useState<number | null>(data[0]?.id || null); */
 
     const toggleAccordion = (id: number) => {
         setOpenId(openId === id ? null : id);
     };
+
+    const accordionItems = suggestData[slug]; // <-- динамические данные
+
+    if (!accordionItems) {
+        return null; // защита если slug неверный
+    }
 
     return (
         <section className="py-10 sm:pt-[100px] sm:pb-[120px] lg:pt-[120px] lg:pb-[180px] overflow-hidden">
@@ -59,11 +75,11 @@ const Suggest = () => {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                     className="flex flex-col gap-[60px] overflow-hidden">
 
-                    <Texts title="We offer" className="text-start" />
+                    <Texts title={t("Suggest.title")} className="text-start" />
 
                     <div className="flex flex-col gap-6">
 
-                        {accordionData.map((item) => {
+                        {accordionItems.map((item) => {
                             const isOpen = openId === item.id;
 
                             return (
@@ -83,7 +99,7 @@ const Suggest = () => {
                                             transition={{ duration: 0.3 }}
                                         >
 
-                                            {openId === item.id ? (
+                                            {isOpen ? (
                                                 <FaMinus className="text-primary text-2xl transition-all" />
                                             ) : (
                                                 <FaPlus className="text-primary text-2xl transition-all" />
@@ -91,7 +107,7 @@ const Suggest = () => {
 
                                         </motion.div>
 
-                                        <h2 className="text-ebony text-xl sm:text-[28px] leading-[150%] font-bold">{item.titleKey}</h2>
+                                        <h2 className="text-ebony text-xl sm:text-[28px] leading-[150%] font-bold">{t(item.titleKey)}</h2>
 
                                     </button>
 
@@ -122,22 +138,22 @@ const Suggest = () => {
 
                                     <motion.div
                                         animate={{
-                                            height: openId === item.id ? "auto" : 0,
-                                            opacity: openId === item.id ? 1 : 0
+                                            height: isOpen ? "auto" : 0,
+                                            opacity: isOpen ? 1 : 0
                                         }}
                                         transition={{ duration: 0.35, ease: "easeInOut" }}
                                         className="overflow-hidden w-full"
                                     >
-                                        
+
                                         <motion.p
                                             animate={{
-                                                opacity: openId === item.id ? 1 : 0,
-                                                y: openId === item.id ? 0 : 10
+                                                opacity: isOpen ? 1 : 0,
+                                                y: isOpen ? 0 : 10
                                             }}
                                             transition={{ duration: 0.3 }}
                                             className="text-storm text-base leading-relaxed font-normal w-full lg:max-w-[575px] mt-2"
                                         >
-                                            {item.contentKey}
+                                            {t(item.contentKey)}
                                         </motion.p>
 
                                     </motion.div>

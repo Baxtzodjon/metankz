@@ -90,7 +90,7 @@ export default async function ServicePage({ params }: PageProps) {
 
             <BGMainBlock title={t(service.titleKey)} description={t(service.descriptionKey)} image="/images/services_slug_bg.png" />
 
-            <Suggest />
+            <Suggest slug={slug} />
 
             <HowWeDoIt />
 

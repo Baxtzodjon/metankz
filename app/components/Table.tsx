@@ -6,8 +6,10 @@ import { FaCheck } from "react-icons/fa6";
 import { motion } from "motion/react";
 import { useState } from "react";
 import Modal from "./Modal";
+import { useTranslations } from "next-intl";
 
 const Table = () => {
+    const t = useTranslations();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => setIsModalOpen(true);
@@ -26,7 +28,7 @@ const Table = () => {
                     className="flex items-center justify-center flex-col gap-6"
                 >
 
-                    <Texts title="Pricing" description="We offer you three categories of construction." />
+                    <Texts title={t("Pricing.title")} description={t("Pricing.description")} />
 
                 </motion.div>
 
@@ -48,7 +50,7 @@ const Table = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.4, ease: "easeOut" }}
-                                    className="text-ebony text-lg leading-[150%] font-bold text-left pt-7 sm:pt-11 pl-4 md:pl-6">Items</motion.th>
+                                    className="text-ebony text-lg leading-[150%] font-bold text-left pt-7 sm:pt-11 pl-4 md:pl-6">{t("Pricing.items_header")}</motion.th>
 
                                 {PRICING_COLUMNS.map((col, index) => (
 
@@ -63,9 +65,9 @@ const Table = () => {
 
                                         <div className="flex flex-col items-center">
 
-                                            <span className="text-ebony text-lg sm:text-2xl font-bold leading-tight sm:leading-[150%]">{col.title}</span>
+                                            <span className="text-ebony text-lg sm:text-2xl font-bold leading-tight sm:leading-[150%] uppercase">{t(col.titleKey)}</span>
 
-                                            <span className="text-storm text-sm sm:text-lg font-bold leading-tight sm:leading-[150%]">{col.price}</span>
+                                            <span className="text-storm text-sm sm:text-lg font-bold leading-tight sm:leading-[150%]">{t(col.priceKey)}</span>
 
                                         </div>
 
@@ -87,7 +89,7 @@ const Table = () => {
                                     transition={{ duration: 0.45, ease: "easeOut", delay: rowIndex * 0.08 }}
                                 >
 
-                                    <td className="text-gray text-base font-normal leading-[160%] pl-4 md:pl-6">{row.label}</td>
+                                    <td className="text-gray text-base font-normal leading-[160%] pl-4 md:pl-6">{t(row.labelKey)}</td>
 
                                     {row.values.map((value, colIndex) => (
                                         <td key={colIndex} className="text-center">
@@ -95,7 +97,7 @@ const Table = () => {
                                                 <FaCheck className="text-primary text-2xl mx-auto" />
                                             )}
                                             {typeof value === "string" && (
-                                                <span className="text-gray">{value}</span>
+                                                <span className="text-gray">{t(value)}</span>
                                             )}
                                         </td>
                                     ))}
@@ -120,7 +122,7 @@ const Table = () => {
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
                                         className="pt-8 pb-8 text-center">
-                                        <button className="border border-current rounded w-full md:w-auto py-3 px-6 font-bold text-sm tracking-wider uppercase text-primary transition-colors hover:bg-primary hover:text-white" onClick={openModal}>send request</button>
+                                        <button className="border border-current rounded w-full md:w-auto py-3 px-6 font-bold text-sm tracking-wider uppercase text-primary transition-colors hover:bg-primary hover:text-white" onClick={openModal}>{t("Pricing.send_request")}</button>
 
                                     </motion.td>
 
