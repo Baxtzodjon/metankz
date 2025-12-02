@@ -4,6 +4,7 @@ import React from 'react';
 import BGMainBlock from '@/app/components/BgMainBlock';
 import { useTranslations } from 'next-intl';
 import Offices from '@/app/components/Offices';
+import ContactsForms from '@/app/components/ContactsForms';
 
 const Contact = () => {
     const t = useTranslations();
@@ -12,6 +13,8 @@ const Contact = () => {
         <main>
 
             <BGMainBlock title={t("Header.nav.contact")} description={t("Contact.bannerDescription")} image="/images/contact_bg.png"/>
+
+            <ContactsForms />
 
             <Offices />
 

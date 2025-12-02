@@ -14,8 +14,8 @@ export const contactInfo: ContactInfoItem[] = [
     {
         type: "phone",
         labelKey: "phoneLabel",
-        value: "(405) 555-0128",
-        href: "tel:4055550128",
+        value: "+998 55 702-30-13",
+        href: "tel:+998557023013",
     },
     {
         type: "email",

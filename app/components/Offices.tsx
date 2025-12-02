@@ -3,62 +3,13 @@
 import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
 import Texts from "./Texts";
-import { missionTexts } from "../data/missionTexts";
 import { socialLinks } from "../data/socialLinks";
-
-interface LocationItem {
-    titleKey: string;
-    addressKey: string;
-    mapLink: string;
-}
-
-const locations: LocationItem[] = [
-    {
-        titleKey: "San Francisco, USA",
-        addressKey: "8502 Preston Rd. Inglewood, New York 98380",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=8502+Preston+Rd,+Inglewood,+New+York+98380"
-    },
-    {
-        titleKey: "New Jersey, USA",
-        addressKey: "2464 Royal Ln. Mesa, New Jersey 45463",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=8502+Preston+Rd,+Inglewood,+New+York+98380"
-    },
-    {
-        titleKey: "San Francisco, USA",
-        addressKey: "8502 Preston Rd. Inglewood, San Francisco 98380",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=8502+Preston+Rd,+Inglewood,+New+York+98380"
-    },
-];
-
-interface ContactPageInfoItem {
-    type: "schedule" | "phone" | "email";
-    labelKey: string;
-    value: string;
-    href?: string;
-}
-
-const contactPageInfo: ContactPageInfoItem[] = [
-    {
-        type: "phone",
-        labelKey: "Phone:",
-        value: "(405) 555-0128",
-        href: "tel:4055550128",
-    },
-    {
-        type: "email",
-        labelKey: "Email:",
-        value: "hello@createx.com",
-        href: "mailto:hello@metankz.com",
-    },
-    {
-        type: "schedule",
-        labelKey: "Schedule:",
-        value: "Mon - Sun 6:00 - 00:00",
-    },
-];
+import { locations } from "../data/locations";
+import { contactPageInfo } from "../data/contactPageInfo";
 
 const Offices = () => {
     const t = useTranslations("Footer");
+    const tContactPage = useTranslations();
 
     return (
         <section className="pt-20 pb-[95px] bg-athens">
@@ -75,7 +26,7 @@ const Offices = () => {
                         className="flex items-center justify-center flex-col gap-6"
                     >
 
-                        <Texts title="Our offices" description="Give us a call, send us a note or visit our office. We can’t wait to hear from you!" />
+                        <Texts title={tContactPage("Contact.our_offices_title")} description={tContactPage("Contact.our_offices_description")} />
 
                     </motion.div>
 
@@ -109,13 +60,13 @@ const Offices = () => {
 
                                         <div className="flex flex-col gap-6" key={idx}>
 
-                                            <h2 className="text-ebony text-xl sm:text-[28px] leading-[150%] font-bold text-center sm:text-left">{location.titleKey}</h2>
+                                            <h2 className="text-ebony text-xl sm:text-[28px] leading-[150%] font-bold text-center sm:text-left">{tContactPage(location.titleKey)}</h2>
 
                                             <div className="flex items-start flex-col gap-1">
 
-                                                <address className="max-w-[250px] text-ebony text-base font-normal text-center sm:text-left not-italic"> {location.addressKey}</address> {/* sm: md:max-w-none */}
+                                                <address className="max-w-[250px] text-ebony text-base font-normal text-center sm:text-left not-italic"> {tContactPage(location.addressKey)}</address> {/* sm: md:max-w-none */}
 
-                                                <a target="_blank" href={location.mapLink} className="text-primary text-base font-normal underline transition-default hover:text-ebony mx-auto sm:mx-0">See on the map</a>
+                                                <a target="_blank" href={location.mapLink} className="text-primary text-base font-normal underline transition-default hover:text-ebony mx-auto sm:mx-0">{tContactPage("Contact.see_on_map")}</a>
 
                                             </div>
 
@@ -123,7 +74,7 @@ const Offices = () => {
 
                                         <div className="flex items-center sm:items-start justify-center sm:justify-start flex-col gap-1">
 
-                                            {contactPageInfo.map(({ type, labelKey, value, href }) => {
+                                            {contactPageInfo.map(({ type, labelKey, valueKey, href }) => {
                                                 const isEmail = type === "email";
                                                 const localizedHref = isEmail
                                                     ? (() => {
@@ -137,9 +88,9 @@ const Offices = () => {
                                                 return (
                                                     <span key={type} className="flex gap-1">
 
-                                                        <span className="text-storm text-base font-normal">{labelKey}</span>
+                                                        <span className="text-storm text-base font-normal">{tContactPage(labelKey)}</span>
 
-                                                        <a href={localizedHref} className="text-ebony text-base font-normal transition-default hover:text-primary">{value}</a>
+                                                        <a href={localizedHref} className="text-ebony text-base font-normal transition-default hover:text-primary">{tContactPage(valueKey)}</a>
 
                                                     </span>
                                                 )
@@ -165,7 +116,7 @@ const Offices = () => {
                     viewport={{ once: true }}
                 >
 
-                    <Texts title="Find us at" />
+                    <Texts title={tContactPage("Contact.find_us_at")} />
 
                     <div className="flex items-center gap-6">
 

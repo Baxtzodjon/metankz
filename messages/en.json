@@ -172,6 +172,17 @@
             "message": {
                 "label": "Message",
                 "placeholder": "Your message"
+            },
+            "interest": {
+                "label": "Area of interest",
+                "placeholder": "Choose a topic"
+            },
+            "location": {
+                "label": "Location",
+                "placeholder": "Select your country"
+            },
+            "preferredContactMethod": {
+                "label": "Preferred contact method"
             }
         },
         "errors": {
@@ -193,11 +204,41 @@
             },
             "consent": {
                 "required": "You must agree before submitting."
+            },
+            "interest": {
+                "required": "Please select a topic"
+            },
+            "location": {
+                "required": "Location is required"
+            },
+            "preferredContactMethod": {
+                "required": "Please choose a contact method"
             }
         },
         "consentText": "I agree to receive communications from Metan KZ.",
         "button": "Send Request",
-        "modalTitle": "Send your request"
+        "modalTitle": "Send your request",
+        "titleContactPage": "Contact us",
+        "descriptionContactPage": "Please complete the form. Detailed information will help us to make a tuned offer.",
+        "options": {
+            "interest": {
+                "metanGasSystem": "Metan Gas System",
+                "cylinderInstallation": "Cylinder Installation",
+                "gasAnalyzer": "Gas Analyzer",
+                "technicalConsultation": "Technical Consultation",
+                "partnershipB2B": "Partnership / B2B"
+            },
+            "location": {
+                "uzbekistan": "Uzbekistan",
+                "kazakhstan": "Kazakhstan",
+                "europe": "Europe"
+            },
+            "preferredContactMethod": {
+                "phone": "Phone",
+                "email": "Email",
+                "whatsapp": "WhatsApp"
+            }
+        }
     },
     "Footer": {
         "description": "Metan KZ has been successfully operating in the Kazakhstan energy market since 2014. We are proud to provide reliable methane-based solutions and excellent service. Our mission is to set the highest standards in clean and efficient energy.",
@@ -418,7 +459,131 @@
         "days_25": "25 days",
         "days_35": "35 days"
     },
+    "News": {
+        "bannerDescription": "Stay tuned with our news, expert tips and articles.",
+        "categoryText": "Categories",
+        "categories": {
+            "allNews": "All news",
+            "methane": "Methane",
+            "gas": "Gas",
+            "oil": "Oil",
+            "fuel": "Fuel",
+            "petrol": "Petrol"
+        },
+        "articles": {
+            "1": {
+                "title": "Advances in Methane Capture Technologies",
+                "description": "Methane capture technologies are evolving rapidly, allowing energy companies to reduce greenhouse gas emissions while increasing operational efficiency in natural gas extraction. New methods include advanced chemical absorption, cryogenic separation, and membrane technologies that significantly improve methane recovery rates. These innovations also provide economic benefits by converting methane into a usable energy source, reducing flaring, and contributing to sustainable industrial practices. Ongoing research focuses on scaling these technologies for both onshore and offshore operations, ensuring compliance with stricter environmental regulations and carbon reduction targets.",
+                "dateLabel": "November 15, 2025"
+            },
+            "2": {
+                "title": "Global Gas Market Trends in 2022",
+                "description": "The gas industry sees rising demand across Asia and Europe. Companies are investing in LNG infrastructure and innovative storage solutions to meet the growing global energy needs. Market dynamics are shifting due to geopolitical tensions, technological advancements in extraction and distribution, and the global push for cleaner energy sources. Analysts predict that natural gas will remain a key transition fuel for decades, balancing energy security with environmental commitments. Additionally, the integration of smart monitoring systems and AI-driven demand forecasting is reshaping operational strategies for gas companies worldwide.",
+                "dateLabel": "March 19, 2022"
+            },
+            "3": {
+                "title": "Petroleum Innovations Driving Efficiency",
+                "description": "Petroleum refining and distribution technologies are becoming smarter. New digital monitoring and AI-driven optimizations help reduce operational costs and environmental impact. Advanced catalysts, automated process control, and predictive maintenance systems enable refineries to maximize output while minimizing energy consumption and waste. Additionally, innovations in logistics, including AI-based routing and storage optimization, streamline the supply chain and improve market responsiveness. These combined efforts contribute to a more sustainable petroleum industry that can meet increasing global demand while reducing its carbon footprint.",
+                "dateLabel": "August 5, 2021"
+            },
+            "4": {
+                "title": "Fuel Efficiency Standards for Transport",
+                "description": "New regulations in Central Asia enforce higher fuel efficiency standards for vehicles, aiming to reduce emissions and promote cleaner energy solutions. Manufacturers are adapting by producing hybrid and electric vehicles, optimizing engine performance, and introducing lightweight materials. The policy also encourages fleet operators to adopt energy management practices, regular vehicle maintenance, and driver training programs to further reduce fuel consumption. Over the coming years, these measures are expected to significantly lower urban air pollution and contribute to global climate goals, while simultaneously boosting economic efficiency for transport companies.",
+                "dateLabel": "September 22, 2020"
+            },
+            "5": {
+                "title": "Methane Leak Detection with AI",
+                "description": "AI-powered sensors are now deployed to detect methane leaks in pipelines and storage facilities, helping companies prevent environmental damage and optimize safety. The system uses machine learning algorithms to analyze sensor data in real-time, identify anomalies, and predict potential leak points before they escalate. Integration with automated alert systems allows rapid response and minimizes downtime. This technology not only enhances environmental protection but also improves regulatory compliance and reduces financial losses associated with leaks. Future developments aim to expand coverage, integrate with drones, and provide predictive maintenance insights for critical infrastructure.",
+                "dateLabel": "May 17, 2023"
+            },
+            "6": {
+                "title": "Oil Export Infrastructure Expansion",
+                "description": "Kazakhstan and Uzbekistan expand their oil transport networks, improving export capacity and connecting new markets in Asia and Europe. Projects include modernizing pipelines, constructing new storage terminals, and upgrading port facilities for faster and safer loading. Enhanced infrastructure allows for more reliable supply chains, reduced transportation costs, and increased competitiveness on global markets. Environmental and safety measures are integrated into every stage of construction, ensuring that expansion projects comply with international standards and reduce the risk of spills or accidents.",
+                "dateLabel": "November 9, 2021"
+            },
+            "7": {
+                "title": "Gas Storage Innovations for Winter",
+                "description": "Energy companies invest in advanced gas storage to handle winter peaks, ensuring stable supply while minimizing losses and environmental impact. Technologies include underground storage, liquefied natural gas tanks, and smart grid integration for dynamic distribution. Advanced monitoring systems track pressure, temperature, and consumption patterns to optimize storage efficiency. These measures provide energy security for consumers, reduce the risk of shortages, and enable more flexible pricing models. Collaboration with meteorological agencies allows companies to forecast demand spikes and prepare accordingly, enhancing resilience against extreme weather events.",
+                "dateLabel": "December 2, 2022"
+            },
+            "8": {
+                "title": "Fuel Market Forecast 2023",
+                "description": "The regional fuel market is expected to grow steadily in 2026, driven by increased industrial demand and investment in refining technologies. Analysts highlight opportunities in alternative fuels, renewable blending, and efficiency improvements across the supply chain. Companies are also exploring strategic partnerships to optimize production, reduce environmental impact, and capture emerging markets. Price trends will be influenced by geopolitical developments, technological adoption, and global economic conditions. Businesses that leverage predictive analytics and market intelligence are better positioned to adapt to fluctuations and secure competitive advantages.",
+                "dateLabel": "August 30, 2023"
+            },
+            "9": {
+                "title": "Methane Pipeline Safety Improvements",
+                "description": "Recent upgrades in pipeline monitoring and automatic shutdown systems significantly reduce the risk of methane leaks and accidents. Innovations include real-time pressure sensing, AI-based anomaly detection, and integrated emergency response protocols. These improvements not only protect the environment but also enhance operational efficiency by reducing unplanned downtime and maintenance costs. Training programs for personnel ensure that safety measures are properly implemented, while community engagement initiatives inform local populations about safety standards and emergency procedures. Long-term benefits include enhanced trust with regulators and investors and compliance with stricter environmental legislation.",
+                "dateLabel": "June 12, 2020"
+            },
+            "10": {
+                "title": "Petrol Distribution Network Expansion",
+                "description": "New petrol stations and distribution points are being deployed across Kazakhstan and Uzbekistan to meet rising demand in urban and rural areas. The expansion involves optimizing supply chains, implementing digital inventory management systems, and adopting environmentally friendly construction methods. Enhanced infrastructure ensures reliable fuel delivery, reduces wait times, and supports growing transportation networks. Additionally, companies are investing in alternative fuels and hybrid station models that integrate electric charging points, contributing to a more sustainable energy ecosystem.",
+                "dateLabel": "February 16, 2021"
+            },
+            "11": {
+                "title": "Oil Refinery Efficiency Upgrades",
+                "description": "Refineries in Central Asia adopt new catalysts and automation to boost oil refining efficiency and reduce environmental footprint. Enhanced process control, energy recovery systems, and emission monitoring contribute to cost reduction and regulatory compliance. The integration of AI and predictive maintenance allows for more precise operations, minimizing waste and optimizing resource allocation. These upgrades position refineries for long-term competitiveness while aligning with global sustainability initiatives.",
+                "dateLabel": "May 28, 2022"
+            },
+            "12": {
+                "title": "Gas Industry Investment Opportunities",
+                "description": "Investors are eyeing new projects in gas extraction, storage, and transportation, particularly focusing on sustainable and efficient technologies. The sector offers long-term returns driven by rising demand for cleaner energy sources. Investment strategies include joint ventures, infrastructure modernization, and deployment of smart monitoring systems to reduce operational risk. Global market trends and regulatory frameworks influence project viability, making data-driven decision-making essential for success. Innovative financing models and partnerships with technology providers are enabling faster adoption of next-generation solutions.",
+                "dateLabel": "October 1, 2020"
+            },
+            "13": {
+                "title": "Methane Utilization for Electricity",
+                "description": "New projects convert captured methane into electricity, providing an eco-friendly energy source while reducing greenhouse gas emissions. Combined heat and power plants, gas turbines, and biogas integration allow efficient conversion of methane into usable energy. This approach not only mitigates environmental impact but also contributes to energy security and local economic development. Researchers are exploring advanced storage methods and hybrid systems that integrate renewable energy sources for continuous, stable power supply. The projects showcase how methane can become a sustainable contributor to the regional energy mix.",
+                "dateLabel": "April 20, 2023"
+            },
+            "14": {
+                "title": "Fuel Storage Safety Regulations",
+                "description": "Regulatory authorities enforce stricter safety measures for fuel storage facilities to prevent accidents and improve worker safety. Updated guidelines include automated monitoring, fire suppression systems, and regular safety audits. Companies must ensure compliance with environmental and safety standards, implement emergency response plans, and provide staff training. The regulations aim to minimize risk, protect communities, and maintain operational continuity. Adoption of new technologies and proactive risk management strategies helps fuel storage facilities operate safely and efficiently in the long term.",
+                "dateLabel": "April 8, 2021"
+            },
+            "15": {
+                "title": "Petrol Technology for Modern Vehicles",
+                "description": "Innovations in petrol engines improve fuel consumption and reduce harmful emissions in modern cars and commercial vehicles. Technologies include variable valve timing, direct injection systems, turbocharging, and hybrid integration. Enhanced engine diagnostics, AI-powered tuning, and predictive maintenance tools optimize performance while lowering costs. These developments not only meet stricter emission regulations but also provide consumers with more reliable, efficient, and environmentally friendly vehicles. Collaboration with research institutions accelerates innovation and supports the adoption of clean transport solutions on a larger scale.",
+                "dateLabel": "March 10, 2022"
+            },
+            "16": {
+                "title": "Advanced Methane Storage Solutions",
+                "description": "New methane storage technologies are being deployed to improve safety, efficiency, and environmental sustainability. Innovations include high-pressure tanks with advanced insulation, underground storage caverns, and AI-driven monitoring systems. These solutions minimize leak risks, optimize storage capacity, and allow flexible supply for industrial and energy applications. Research is ongoing into hybrid storage methods that combine renewable energy integration and methane capture, further reducing carbon footprints. Companies adopting these solutions benefit from enhanced regulatory compliance, cost reduction, and improved public trust.",
+                "dateLabel": "January 22, 2025"
+            },
+            "17": {
+                "title": "Oil Pipeline Maintenance Innovations",
+                "description": "Pipeline operators are implementing AI-powered inspection drones, smart sensors, and predictive maintenance algorithms to prevent leaks and reduce downtime. Advanced coating materials and corrosion monitoring extend pipeline lifespan, while real-time data analytics allow quick response to anomalies. By combining traditional engineering expertise with digital solutions, companies improve operational efficiency, safety, and environmental compliance. This proactive approach reduces emergency repair costs and strengthens supply reliability for both domestic and international markets.",
+                "dateLabel": "July 14, 2025"
+            },
+            "18": {
+                "title": "Fuel Innovations for Industrial Efficiency",
+                "description": "Industrial plants are adopting next-generation fuels and hybrid energy systems to reduce emissions and increase efficiency. Technologies include biofuel blending, hydrogen-enriched fuels, and AI-controlled combustion optimization. Combined with energy recovery and heat reuse systems, these innovations significantly cut operational costs while meeting stricter environmental regulations. Companies also leverage digital twins to simulate fuel performance and forecast consumption, ensuring better planning and minimal waste. These efforts contribute to sustainable industry growth and align with global energy transition goals.",
+                "dateLabel": "March 5, 2025"
+            }
+        }
+    },
     "Contact": {
-        "bannerDescription": "Contact us for all your fuel needs. We always welcome any questions and comments."
+        "bannerDescription": "Contact us for all your fuel needs. We always welcome any questions and comments.",
+        "find_us_at": "Find us at",
+        "our_offices_title": "Our offices",
+        "our_offices_description": "Give us a call, send us a note or visit our office. We can’t wait to hear from you!",
+        "see_on_map": "See on the map",
+        "locations": {
+            "samarkand_title": "Samarkand, Uzbekistan",
+            "samarkand_address": "Beruniy 37/78, Samarkand, Uzbekistan",
+            "dossor_title": "Dossor, Kazakhstan",
+            "dossor_address": "HX39+MPF, Dossor, Kazakhstan",
+            "almaty_title": "Almaty, Kazakhstan",
+            "almaty_address": "212 Raiymbek Avenue, Almaty 050061, Kazakhstan"
+        },
+        "contact": {
+            "phone_label": "Phone:",
+            "phone_value": "+998 55 702-30-13",
+            "email_label": "Email:",
+            "email_value": "hello@createx.com",
+            "schedule_label": "Schedule:",
+            "schedule_24_7": "Open 24/7"
+        }
     }
 }

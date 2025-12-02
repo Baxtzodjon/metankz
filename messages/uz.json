@@ -172,6 +172,17 @@
             "message": {
                 "label": "Xabar",
                 "placeholder": "Xabaringiz"
+            },
+            "interest": {
+                "label": "Qiziqish sohasi",
+                "placeholder": "Mavzuni tanlang"
+            },
+            "location": {
+                "label": "Joylashuv",
+                "placeholder": "Mamlakatingizni tanlang"
+            },
+            "preferredContactMethod": {
+                "label": "Afzal ko'rilgan aloqa usuli"
             }
         },
         "errors": {
@@ -193,11 +204,41 @@
             },
             "consent": {
                 "required": "Jo'natishdan oldin rozilik bildiring."
+            },
+            "interest": {
+                "required": "Iltimos, mavzuni tanlang"
+            },
+            "location": {
+                "required": "Joylashuv kiritilishi shart"
+            },
+            "preferredContactMethod": {
+                "required": "Iltimos, aloqa usulini tanlang"
             }
         },
         "consentText": "Men Metan KZ xabarlari olishga roziman.",
         "button": "So'rov yuborish",
-        "modalTitle": "So'rovingizni yuboring"
+        "modalTitle": "So'rovingizni yuboring",
+        "titleContactPage": "Biz bilan bog'laning",
+        "descriptionContactPage": "Iltimos, shaklni to'ldiring. Batafsil ma’lumot bizga moslashtirilgan taklif tayyorlashda yordam beradi.",
+        "options": {
+            "interest": {
+                "metanGasSystem": "Metan gaz tizimi",
+                "cylinderInstallation": "Balon o'rnatish",
+                "gasAnalyzer": "Gaz analizatori",
+                "technicalConsultation": "Texnik maslahat",
+                "partnershipB2B": "Hamkorlik / B2B"
+            },
+            "location": {
+                "uzbekistan": "O'zbekiston",
+                "kazakhstan": "Qozog'iston",
+                "europe": "Yevropa"
+            },
+            "preferredContactMethod": {
+                "phone": "Telefon",
+                "email": "Email",
+                "whatsapp": "WhatsApp"
+            }
+        }
     },
     "Footer": {
         "description": "Metan KZ 2014-yildan buyon Qozog'iston energetika bozorida muvaffaqiyatli faoliyat yuritib kelmoqda. Biz metan sohasida ishonchli yechimlar va yuqori sifatli xizmatlar taqdim etishdan faxrlanamiz. Bizning maqsadimiz — toza va samarali energiya sohasida eng yuqori standartlarni o'rnatishdir.",
@@ -418,7 +459,131 @@
         "days_25": "25 kun",
         "days_35": "35 kun"
     },
+    "News": {
+        "bannerDescription": "Yangiliklarimiz, ekspert maslahatlarimiz va maqolalarimizdan xabardor bo'lib boring.",
+        "categoryText": "Kategoriyalar",
+        "categories": {
+            "allNews": "Barcha yangiliklar",
+            "methane": "Metan",
+            "gas": "Gaz",
+            "oil": "Neft",
+            "fuel": "Yoqilg'i",
+            "petrol": "Benzin"
+        },
+        "articles": {
+            "1": {
+                "title": "Metanni ushlash texnologiyalaridagi yutuqlar",
+                "description": "Metanni ushlash texnologiyalari tez sur’atlarda rivojlanib bormoqda. Bu energiya kompaniyalariga issiqxona gazlari chiqindilarini kamaytirish va tabiiy gaz qazib olish samaradorligini oshirish imkonini beradi. Yangi usullar kimyoviy absorbsiya, kriogen ajratish va membrana texnologiyalarini o'z ichiga olib, metan ajratib olish darajasini sezilarli oshiradi. Ushbu innovatsiyalar metanni energiya manbaiga aylantirish hisobiga iqtisodiy foyda keltiradi, alangada yoqish miqdorini kamaytiradi va barqaror sanoat amaliyotlarini qo'llab-quvvatlaydi. Tadqiqotlar texnologiyalarni quruqlik va dengizdagi operatsiyalar uchun keng ko'lamda qo'llashga qaratilgan bo'lib, ekologik me’yorlar va chiqindilarni qisqartirish bo'yicha talablar bajarilishini ta’minlaydi.",
+                "dateLabel": "15 noyabr, 2025"
+            },
+            "2": {
+                "title": "2022 yildagi global gaz bozori tendensiyalari",
+                "description": "Gaz sanoati Osiyo va Yevropada talabning oshishini kuzatmoqda. Kompaniyalar LNG infratuzilmasi va innovatsion saqlash yechimlariga sarmoya kiritib, global energiya ehtiyojini qondirishga intilmoqda. Bozor dinamikasi geosiyosiy omillar, qazib olish va taqsimlash texnologiyalaridagi o'sish hamda toza energiya manbalariga global o'tish tufayli o'zgarib bormoqda. Mutaxassislarning fikricha, tabiiy gaz energetika xavfsizligi va ekologik majburiyatlar o'rtasida muvozanatni ta’minlab, yana bir necha o'n yillar davomida asosiy “o'tish yoqilg'isi” bo'lib qoladi. Bundan tashqari, aqlli monitoring tizimlari va sun’iy intellektga asoslangan talabni bashorat qilish texnologiyalari gaz kompaniyalarining operatsion strategiyalarini tubdan o'zgartirmoqda.",
+                "dateLabel": "19 mart, 2022"
+            },
+            "3": {
+                "title": "Neftni qayta ishlashdagi samaradorlikni oshiruvchi innovatsiyalar",
+                "description": "Neftni qayta ishlash va taqsimlash texnologiyalari tobora aqlliroq bo'lib bormoqda. Raqamli monitoring va sun’iy intellektga asoslangan optimizatsiya xarajatlarni kamaytirish va ekologik ta’sirni pasaytirishga yordam beradi. Zamonaviy katalizatorlar, jarayonlarni avtomatik boshqarish va texnik xizmatni bashorat qilish tizimlari zavodlarga ishlab chiqarish hajmini oshirish, energiya sarfini kamaytirish va chiqindilarni minimallashtirish imkonini beradi. Logistikadagi innovatsiyalar — AI asosidagi yo'nalishlarni optimallashtirish va saqlash boshqaruvi — ta’minot zanjiri samaradorligini oshiradi. Bu chora-tadbirlar neft sanoatining barqaror rivojlanishiga xizmat qilib, global talabning ortib borishini qondirishga imkon yaratadi.",
+                "dateLabel": "5 avgust, 2021"
+            },
+            "4": {
+                "title": "Transport uchun yoqilg'i tejamkorligi standartlari",
+                "description": "Markaziy Osiyoda joriy etilgan yangi qoidalar transport vositalari uchun yoqilg'i samaradorligini oshirishni talab qiladi. Bu choralar chiqindilarni kamaytiradi va toza energiya yechimlarining rivojlanishini qo'llab-quvvatlaydi. Ishlab chiqaruvchilar gibrid va elektr avtomobillarni ishlab chiqish, dvigatel samaradorligini oshirish va yengil materiallardan foydalanish orqali moslashmoqda. Siyosat, shuningdek, transport kompaniyalarini energiya menejmentini joriy etishga, muntazam texnik xizmat ko'rsatishga va haydovchilarni o'qitishga undaydi. Yaqin yillarda bu tadbirlar shahar havo ifloslanishini sezilarli kamaytirishi, global iqlim maqsadlariga hissa qo'shishi va transport korxonalarining iqtisodiy samaradorligini oshirishi kutilmoqda.",
+                "dateLabel": "22 sentabr, 2020"
+            },
+            "5": {
+                "title": "AI yordamida metan sizib chiqishini aniqlash",
+                "description": "Sun’iy intellektga asoslangan sensorlar gaz quvurlari va saqlash inshootlarida metan sizib chiqishini aniqlash uchun qo'llanilmoqda. Tizim real vaqt rejimida sensor ma’lumotlarini tahlil qilib, anomaliyalarni aniqlaydi va ehtimoliy nosozlik joylarini oldindan bashorat qiladi. Avtomatlashtirilgan ogohlantirish tizimlari bilan integratsiya tezkor javob berishga va ish to'xtab qolish vaqtini kamaytirishga yordam beradi. Bu texnologiya ekologiyani muhofaza qilishni kuchaytiradi, me’yoriy talablar bajarilishini ta’minlaydi va yo'qotishlarni kamaytiradi. Kelajakda dronlar bilan integratsiya va yanada chuqur prediktiv texnik xizmat funksiyalari joriy etilishi rejalashtirilgan.",
+                "dateLabel": "17 may, 2023"
+            },
+            "6": {
+                "title": "Neft eksporti infratuzilmasini kengaytirish",
+                "description": "Qozog'iston va O'zbekiston neftni tashish tarmoqlarini kengaytirib, eksport quvvatini oshirmoqda va Osiyo hamda Yevropa bozorlariga yangi yo'nalishlar ochmoqda. Loyihalar quvurlarni modernizatsiya qilish, yangi omborlar qurish va port infratuzilmasini yaxshilashni o'z ichiga oladi. Bu esa ta’minot zanjirlarini ishonchli qiladi, transport xarajatlarini kamaytiradi va global bozorlarda raqobatbardoshlikni oshiradi. Har bir bosqichda ekologik xavfsizlik choralari qo'llanilib, to'kilish yoki avariya xavfi minimallashtirilmoqda.",
+                "dateLabel": "9 noyabr, 2021"
+            },
+            "7": {
+                "title": "Qish mavsumi uchun gaz saqlashda innovatsiyalar",
+                "description": "Energetika kompaniyalari qish mavsumida barqaror ta’minotni ta’minlash va yo'qotishlarni minimallashtirish uchun zamonaviy gaz saqlash texnologiyalariga sarmoya kirmoqda. Texnologiyalar yer osti omborlari, suyultirilgan gaz rezervuarlari va aqlli tarmoqlar bilan integratsiyani o'z ichiga oladi. Monitoring tizimlari bosim, harorat va iste’molni kuzatib, saqlash samaradorligini oshiradi. Bu choralar energiya xavfsizligini ta’minlaydi, taqchillik xavfini kamaytiradi va narx siyosatini moslashuvchan qiladi. Ob-havo idoralari bilan hamkorlik kompaniyalarga talabning keskin o'zgarishlarini oldindan ko'rish imkonini beradi.",
+                "dateLabel": "2 dekabr, 2022"
+            },
+            "8": {
+                "title": "2023 yil uchun yoqilg'i bozori prognozi",
+                "description": "Hududiy yoqilg'i bozori 2026 yilga qadar barqaror o'sishi kutilmoqda. Bu sanoat ehtiyojining ortishi va qayta ishlash texnologiyalariga investitsiyalar bilan bog'liq. Tahlilchilar muqobil yoqilg'ilar, aralash yoqilg'ilar va ta’minot zanjiridagi samaradorlikni oshirish bo'yicha yirik imkoniyatlar mavjudligini ta’kidlamoqda. Kompaniyalar ishlab chiqarishni optimallashtirish, ekologik ta’sirni kamaytirish va yangi bozorlarni egallash uchun strategik hamkorliklarni o'rganmoqda. Narx dinamikasi geosiyosiy omillar, texnologik taraqqiyot va global iqtisodiy sharoitlarga bog'liq bo'ladi.",
+                "dateLabel": "30 avgust, 2023"
+            },
+            "9": {
+                "title": "Metan quvurlarida xavfsizlikning yaxshilanishi",
+                "description": "Quvurlarni monitoring qilish va avtomatik o'chirish tizimlaridagi yangilanishlar metan sizib chiqishi va avariya xavfini sezilarli kamaytiradi. Innovatsiyalar real vaqt rejimidagi bosim sensorlari, AI asosidagi anomaliya aniqlash tizimlari va favqulodda vaziyatlarga javob berish protokollarini o'z ichiga oladi. Bu yechimlar ekologiyani himoya qiladi, ish samaradorligini oshiradi va texnik xizmat xarajatlarini kamaytiradi. Xodimlarni o'qitish dasturlari xavfsizlik choralarining to'g'ri bajarilishini ta’minlaydi, aholi bilan muloqot esa xavfsizlik standartlari haqida xabardorlikni oshiradi.",
+                "dateLabel": "12 iyun, 2020"
+            },
+            "10": {
+                "title": "Benzin taqsimoti tarmog'ini kengaytirish",
+                "description": "Qozog'iston va O'zbekistonda shaharlarda hamda qishloq hududlarida ortib borayotgan talabni qondirish uchun yangi YXSkalar va taqsimlash punktlari qurilmoqda. Tarmoqni kengaytirish jarayoni ta’minot zanjirini optimallashtirish, raqamli inventarizatsiya tizimlarini joriy etish va ekologik qurilish usullaridan foydalanishni o'z ichiga oladi. Yaxshilangan infratuzilma ishonchli yoqilg'i yetkazib berishni, navbatlarning qisqarishini va transport tizimining rivojlanishini ta’minlaydi. Kompaniyalar, shuningdek, muqobil yoqilg'ilar va elektr quvvatlash nuqtalariga ega gibrid YXSkalarga investitsiya kirmoqda.",
+                "dateLabel": "16 fevral, 2021"
+            },
+            "11": {
+                "title": "Neftni qayta ishlash zavodlarida samaradorlikni oshirish",
+                "description": "Markaziy Osiyo neftni qayta ishlash zavodlari samaradorlikni oshirish va ekologik ta’sirni kamaytirish uchun yangi katalizatorlar va avtomatlashtirilgan boshqaruv tizimlarini joriy etmoqda. Jarayonlarni yanada aniq boshqarish, energiyani qayta tiklash tizimlari va chiqarindilarni monitoring qilish xarajatlarni kamaytirishga yordam beradi. Sun’iy intellekt va prediktiv texnik xizmat integratsiyasi ishlab chiqarish jarayonlarini yanada optimallashtiradi va chiqindilarni minimallashtiradi.",
+                "dateLabel": "28 may, 2022"
+            },
+            "12": {
+                "title": "Gaz sanoatidagi investitsiya imkoniyatlari",
+                "description": "Investorlar gaz qazib olish, saqlash va transport qilish bo'yicha yangi loyihalarga qiziqish bildirmoqda. E’tibor asosan barqaror va samarali texnologiyalarga qaratilmoqda. Gaz sanoati toza energiyaga bo'lgan talabning ortib borishi tufayli uzoq muddatli investitsiyalar uchun jozibador hisoblanadi. Investitsiya strategiyalariga qo'shma korxonalar, infratuzilmani modernizatsiya qilish va xavflarni kamaytirishga xizmat qiluvchi aqlli monitoring tizimlarini joriy etish kiradi.",
+                "dateLabel": "1 oktabr, 2020"
+            },
+            "13": {
+                "title": "Metandan elektr energiyasi ishlab chiqarish",
+                "description": "Yangi loyihalar ushlangan metanni elektr energiyasiga aylantirib, ekologik toza energiya manbaini yaratmoqda va issiqxona gazlari chiqindilarini kamaytirmoqda. Gaz turbinalari, kogeneratsiya tizimlari va biogaz texnologiyalari metanni samarali energiyaga aylantirishga imkon beradi. Bu yondashuv energiya xavfsizligini ta’minlaydi va mahalliy iqtisodiyot rivojiga hissa qo'shadi. Tadqiqotchilar energiya manbalarining barqarorligini oshirish uchun yangilangan saqlash texnologiyalari va gibrid tizimlarni o'rganmoqda.",
+                "dateLabel": "20 aprel, 2023"
+            },
+            "14": {
+                "title": "Yoqilg'i saqlash bo'yicha xavfsizlik qoidalari",
+                "description": "Regulyatorlar yoqilg'i saqlash obyektlarida xavfsizlikni oshirish maqsadida yangi talablarni joriy etmoqda. Qoidalarga avtomatlashtirilgan monitoring tizimlari, yong'inga qarshi himoya, muntazam auditlar va favqulodda vaziyat rejalari kiradi. Kompaniyalar ekologik talablarni bajarishi, xodimlarni o'qitishi va xavflarni boshqarish bo'yicha chora-tadbirlarni amalga oshirishi lozim. Bu tadbirlar avariyalar xavfini kamaytiradi, aholi xavfsizligini ta’minlaydi va korxonalar uzluksiz ishlashiga yordam beradi.",
+                "dateLabel": "8 aprel, 2021"
+            },
+            "15": {
+                "title": "Zamonaviy avtomobillar uchun benzin texnologiyalari",
+                "description": "Benzin dvigatellari bo'yicha innovatsiyalar zamonaviy avtomobillarda yoqilg'i sarfini kamaytiradi va zararli chiqindilarni pasaytiradi. Texnologiyalar o'zgaruvchan gaz taqsimoti tizimi, to'g''idan-to'g'ri yonilg'i purkash, turbokompressorlash va gibrid tizimlarni o'z ichiga oladi. Aqlli diagnostika, AI asosida sozlash va prediktiv texnik xizmat ko'rsatish xarajatlarni kamaytiradi va avtomobil samaradorligini oshiradi.",
+                "dateLabel": "10 mart, 2022"
+            },
+            "16": {
+                "title": "Metanni saqlash bo'yicha zamonaviy yechimlar",
+                "description": "Metanni saqlashda xavfsizlik, samaradorlik va ekologik barqarorlikni oshiruvchi yangi texnologiyalar joriy etilmoqda. Innovatsiyalar kuchaytirilgan izolyatsiyaga ega yuqori bosimli rezervuarlar, yer osti omborlari va aqlli monitoring tizimlarini o'z ichiga oladi. Bu yechimlar sizib chiqish xavfini kamaytiradi, saqlash hajmini optimallashtiradi va sanoat hamda energetika ehtiyojlari uchun mos keladi.",
+                "dateLabel": "22 yanvar, 2025"
+            },
+            "17": {
+                "title": "Neft quvurlarini texnik xizmat ko'rsatish bo'yicha innovatsiyalar",
+                "description": "Quvur operatorlari sun’iy intellektga asoslangan dronlar, aqlli sensorlar va prediktiv texnik xizmat algoritmlarini qo'llab, sizib chiqishlarning oldini olish va to'xtab qolishlarni kamaytirmoqda. Zamonaviy qoplamalar va korroziya monitoring tizimlari quvurlar xizmat muddatini uzaytiradi, real vaqt tahlili esa muammolarga tezkor javob berish imkonini yaratadi.",
+                "dateLabel": "14 iyul, 2025"
+            },
+            "18": {
+                "title": "Sanoat samaradorligi uchun yoqilg'i innovatsiyalari",
+                "description": "Sanoat korxonalari chiqindilarni kamaytirish va energiya samaradorligini oshirish maqsadida yangi avlod yoqilg'i turlari va gibrid energiya tizimlarini joriy etmoqda. Texnologiyalar bioyoqilg'i aralashmalari, vodorod qo'shilgan yoqilg'ilar va sun’iy intellekt yordamida boshqariladigan yonish optimallashtirish tizimlarini o'z ichiga oladi. Energiya qayta tiklash va issiqlikdan foydalanish texnologiyalari bilan birgalikda bu innovatsiyalar xarajatlarni sezilarli kamaytiradi va ekologik talablarni bajarishga yordam beradi.",
+                "dateLabel": "5 mart, 2025"
+            }
+        }
+    },
     "Contact": {
-        "bannerDescription": "Yoqilg'i bo'yicha barcha savollar uchun biz bilan bog'laning. Biz har qanday savol va fikr-mulohazalaringizni mamnuniyat bilan qabul qilamiz."
+        "bannerDescription": "Yoqilg'i bilan bog'liq barcha savollar bo'yicha biz bilan bog'laning. Har doim savollaringiz va izohlaringizni kutamiz.",
+        "find_us_at": "Bizni toping",
+        "our_offices_title": "Ofislarimiz",
+        "our_offices_description": "Bizga qo'ng'iroq qiling, xabar yuboring yoki ofisimizga tashrif buyuring. Siz bilan uchrashishni intiqlik bilan kutamiz!",
+        "see_on_map": "Xaritada ko'rish",
+        "locations": {
+            "samarkand_title": "Samarqand, O'zbekiston",
+            "samarkand_address": "Beruniy 37/78, Samarqand, O'zbekiston",
+            "dossor_title": "Dossor, Qozog'iston",
+            "dossor_address": "HX39+MPF, Dossor, Qozog'iston",
+            "almaty_title": "Olmaota, Qozog'iston",
+            "almaty_address": "Raiymbek ko'chasi 212, Olmaota 050061, Qozog'iston"
+        },
+        "contact": {
+            "phone_label": "Telefon:",
+            "phone_value": "+998 55 702-30-13",
+            "email_label": "Elektron pochta:",
+            "email_value": "hello@createx.com",
+            "schedule_label": "Ish vaqti:",
+            "schedule_24_7": "24/7 ishlaymiz"
+        }
     }
 }
