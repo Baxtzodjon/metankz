@@ -585,5 +585,11 @@
             "schedule_label": "Ish vaqti:",
             "schedule_24_7": "24/7 ishlaymiz"
         }
+    },
+    "NotFound": {
+        "error": "404 Xato",
+        "title": "404 Topilmadi",
+        "description": "Siz tashrif buyurgan sahifa topilmadi. Siz bosh sahifaga qaytishingiz mumkin.",
+        "button": "Bosh sahifaga qaytish"
     }
 }

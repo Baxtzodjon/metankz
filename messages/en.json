@@ -585,5 +585,11 @@
             "schedule_label": "Schedule:",
             "schedule_24_7": "Open 24/7"
         }
+    },
+    "NotFound": {
+        "error": "404 Error",
+        "title": "404 Not Found",
+        "description": "Your visited page not found. You may go home page.",
+        "button": "Back to home page"
     }
 }
