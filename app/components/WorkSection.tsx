@@ -20,7 +20,7 @@ const WorkSection = () => {
 
                         <motion.a
                             key={item.id}
-                            href="#"
+                            href={`/work/${item.slug}`} 
                             className="group flex flex-col overflow-hidden rounded shadow-soft-multi_sec bg-light transition-default"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ const WorkSection = () => {
                         >
 
                             <Image
-                                className="w-full h-[345px] object-cover"
+                                className="w-full h-[345px] object-contain"
                                 src={item.images[0]}
                                 alt={item.titleKey}
                                 width={390}
