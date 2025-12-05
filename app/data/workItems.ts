@@ -1,6 +1,6 @@
 export interface WorkItem {
     id: number;
-    slug: string;  
+    slug: string;
     titleKey: string;
     descriptionKey: string;
     images: string[];
@@ -40,55 +40,55 @@ export const workItems: WorkItem[] = [
         slug: "gas-dispenser",
         titleKey: 'Газораздаточная колонка',
         descriptionKey: 'Заправка автомобилей метаном',
-        images: ['/images/metan/dispenser_1.jpg', '/images/metan/dispenser_1b.jpg', '/images/metan/dispenser_1c.jpg'],
+        images: ['/work/dispenser_fir.png', '/work/dispenser_sec.png', '/work/dispenser_thr.png'],
     },
     {
         id: 6,
         slug: "pressure-regulator",
         titleKey: 'Регулятор давления',
         descriptionKey: 'Система редуцирования давления газа',
-        images: ['/images/metan/regulator_1.jpg', '/images/metan/regulator_1b.jpg', '/images/metan/regulator_1c.jpg'],
+        images: ['/work/regulator_fir.png', '/work/regulator_sec.png', '/work/regulator_thr.png'],
     },
     {
         id: 7,
         slug: "accumulator-block",
         titleKey: 'Аккумуляторный блок',
         descriptionKey: 'Блок хранения газа в баллонах',
-        images: ['/images/metan/accumulator_1.jpg', '/images/metan/accumulator_1b.jpg', '/images/metan/accumulator_1c.jpg'],
+        images: ['/work/accumulator_fir.png', '/work/accumulator_sec.png', '/work/accumulator_thr.png'],
     },
     {
         id: 8,
         slug: "safety-valve",
         titleKey: 'Предохранительный клапан',
         descriptionKey: 'Обеспечение безопасности станции',
-        images: ['/images/metan/safety_valve_1.jpg', '/images/metan/safety_valve_1b.jpg', '/images/metan/safety_valve_1c.jpg'],
+        images: ['/work/safety_valve_fir.png', '/work/safety_valve_sec.png', '/work/safety_valve_thr.png'],
     },
     {
         id: 9,
-        slug: "gas-piping",
-        titleKey: 'Трубопроводная сеть',
-        descriptionKey: 'Обвязка и разводка газа по станции',
-        images: ['/images/metan/piping_1.jpg', '/images/metan/piping_1b.jpg', '/images/metan/piping_1c.jpg'],
+        slug: "gas-distribution-block",
+        titleKey: 'Газораспределительная рампа',
+        descriptionKey: 'Блок для распределения газа по станции',
+        images: ['/work/gas_distribution_fir.png', '/work/gas_distribution_sec.png', '/work/gas_distribution_thr.png'],
     },
     {
         id: 10,
         slug: "compressor-module",
         titleKey: 'Компрессорный модуль',
         descriptionKey: 'Модуль с компрессором и фильтрацией газа',
-        images: ['/images/metan/compressor_module_1.jpg', '/images/metan/compressor_module_1b.jpg', '/images/metan/compressor_module_1c.jpg'],
+        images: ['/work/compressor_module_fir.png', '/work/compressor_module_sec.png', '/work/compressor_module_thr.png'],
     },
     {
         id: 11,
         slug: "gas-cylinder",
         titleKey: 'Газовый цилиндр',
         descriptionKey: 'Цилиндр для хранения и транспортировки газа',
-        images: ['/images/metan/cylinder_1.jpg', '/images/metan/cylinder_1b.jpg', '/images/metan/cylinder_1c.jpg'],
+        images: ['/work/cylinder_fir.png', '/work/cylinder_sec.png', '/work/cylinder_thr.png'],
     },
     {
         id: 12,
         slug: "control-cabinet",
         titleKey: 'Щит управления',
         descriptionKey: 'Электроуправление станцией и оборудованием',
-        images: ['/images/metan/control_cabinet_1.jpg', '/images/metan/control_cabinet_1b.jpg', '/images/metan/control_cabinet_1c.jpg'],
+        images: ['/work/control_cabinet_fir.png', '/work/control_cabinet_sec.png', '/work/control_cabinet_thr.png'],
     },
 ];
