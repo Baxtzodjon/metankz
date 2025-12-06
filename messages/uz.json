@@ -459,6 +459,10 @@
         "days_25": "25 kun",
         "days_35": "35 kun"
     },
+     "Work": {
+        "bannerTitle": "Bizning ishlarimiz",
+        "bannerDescription": "Bizning portfoliyamiz metan (CNG) texnologiyalari sohasidagi 12 yillik tajribamizni aks ettiradi — metan yoqilg'i stansiyalaridan tortib maxsus uskunalar va asboblarga qadar."
+    },
     "News": {
         "bannerDescription": "Yangiliklarimiz, ekspert maslahatlarimiz va maqolalarimizdan xabardor bo'lib boring.",
         "categoryText": "Kategoriyalar",

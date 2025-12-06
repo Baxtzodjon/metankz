@@ -459,6 +459,10 @@
         "days_25": "25 days",
         "days_35": "35 days"
     },
+    "Work": {
+        "bannerTitle": "Our work",
+        "bannerDescription": "Our portfolio represents 12 years of expertise in methane (CNG) technologies — from methane fueling stations to specialized equipment and tools."
+    },
     "News": {
         "bannerDescription": "Stay tuned with our news, expert tips and articles.",
         "categoryText": "Categories",

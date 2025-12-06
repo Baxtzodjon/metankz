@@ -77,7 +77,7 @@ export default function NewsBlock({
     const prevPage = data.previousPage; */
 
     return (
-        <section className="pb-[180px] bg-light">
+        <section className="pb-10 sm:pb-[120px] lg:pb-[180px] bg-light">
 
             <div className="container">
 

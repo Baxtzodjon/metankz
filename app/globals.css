@@ -65,6 +65,15 @@ body {
 }
 
 @layer utilities {
+  .shadow-soft-multi-active {
+    box-shadow: 0px 4px 4px -4px #1E212C0D,
+      0px 12px 10px -6px #FF5A3014,
+      0px 26px 24px -10px #FF5A301A,
+      0px 60px 80px -20px #FF5A3029;
+  }
+}
+
+@layer utilities {
   .shadow-soft-multi_sec {
     box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.08),
       0 30px 24px -10px rgba(154, 156, 165, 0.05),

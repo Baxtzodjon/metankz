@@ -4,6 +4,8 @@ export interface WorkItem {
     titleKey: string;
     descriptionKey: string;
     images: string[];
+    category: "Work.categories.all" | "Work.categories.storage" | "Work.categories.compressor" | "Work.categories.filtration" | "Work.categories.distribution" | "Work.categories.dispensing" | "Work.categories.safety" | "Work.categories.control";
+    query: "all" | "storage" | "compressor" | "filtration" | "distribution" | "dispensing" | "safety" | "control";
 }
 
 export const workItems: WorkItem[] = [
@@ -13,6 +15,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Резервуар для газа',
         descriptionKey: 'Ёмкость для хранения сжатого метана',
         images: ['/work/storage_tank_fir.png', '/work/storage_tank_sec.png', '/work/storage_tank_thr.png'],
+        category: 'Work.categories.storage',
+        query: 'storage'
     },
     {
         id: 2,
@@ -20,6 +24,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Компрессорная установка',
         descriptionKey: 'Сжатие газа до рабочей температуры и давления',
         images: ['/work/compressor_fir.png', '/work/compressor_sec.png', '/work/compressor_thr.png'],
+        category: 'Work.categories.compressor',
+        query: 'compressor'
     },
     {
         id: 3,
@@ -27,6 +33,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Сепаратор газа',
         descriptionKey: 'Очистка газа от примесей и влаги',
         images: ['/work/separator_fir.png', '/work/separator_sec.png', '/work/separator_thr.png'],
+        category: 'Work.categories.filtration',
+        query: 'filtration'
     },
     {
         id: 4,
@@ -34,6 +42,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Осушитель / фильтр',
         descriptionKey: 'Удаление влаги и конденсата из газа',
         images: ['/work/filter_fir.png', '/work/filter_sec.png', '/work/filter_thr.png'],
+        category: 'Work.categories.filtration',
+        query: 'filtration'
     },
     {
         id: 5,
@@ -41,6 +51,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Газораздаточная колонка',
         descriptionKey: 'Заправка автомобилей метаном',
         images: ['/work/dispenser_fir.png', '/work/dispenser_sec.png', '/work/dispenser_thr.png'],
+        category: 'Work.categories.dispensing',
+        query: 'dispensing'
     },
     {
         id: 6,
@@ -48,6 +60,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Регулятор давления',
         descriptionKey: 'Система редуцирования давления газа',
         images: ['/work/regulator_fir.png', '/work/regulator_sec.png', '/work/regulator_thr.png'],
+        category: 'Work.categories.distribution',
+        query: 'distribution'
     },
     {
         id: 7,
@@ -55,6 +69,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Аккумуляторный блок',
         descriptionKey: 'Блок хранения газа в баллонах',
         images: ['/work/accumulator_fir.png', '/work/accumulator_sec.png', '/work/accumulator_thr.png'],
+        category: 'Work.categories.storage',
+        query: 'storage'
     },
     {
         id: 8,
@@ -62,6 +78,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Предохранительный клапан',
         descriptionKey: 'Обеспечение безопасности станции',
         images: ['/work/safety_valve_fir.png', '/work/safety_valve_sec.png', '/work/safety_valve_thr.png'],
+        category: 'Work.categories.safety',
+        query: 'safety'
     },
     {
         id: 9,
@@ -69,6 +87,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Газораспределительная рампа',
         descriptionKey: 'Блок для распределения газа по станции',
         images: ['/work/gas_distribution_fir.png', '/work/gas_distribution_sec.png', '/work/gas_distribution_thr.png'],
+        category: 'Work.categories.distribution',
+        query: 'distribution'
     },
     {
         id: 10,
@@ -76,6 +96,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Компрессорный модуль',
         descriptionKey: 'Модуль с компрессором и фильтрацией газа',
         images: ['/work/compressor_module_fir.png', '/work/compressor_module_sec.png', '/work/compressor_module_thr.png'],
+        category: 'Work.categories.compressor',
+        query: 'compressor'
     },
     {
         id: 11,
@@ -83,6 +105,8 @@ export const workItems: WorkItem[] = [
         titleKey: 'Газовый цилиндр',
         descriptionKey: 'Цилиндр для хранения и транспортировки газа',
         images: ['/work/cylinder_fir.png', '/work/cylinder_sec.png', '/work/cylinder_thr.png'],
+        category: 'Work.categories.storage',
+        query: 'storage'
     },
     {
         id: 12,
@@ -90,5 +114,7 @@ export const workItems: WorkItem[] = [
         titleKey: 'Щит управления',
         descriptionKey: 'Электроуправление станцией и оборудованием',
         images: ['/work/control_cabinet_fir.png', '/work/control_cabinet_sec.png', '/work/control_cabinet_thr.png'],
+        category: 'Work.categories.control',
+        query: 'control'
     },
 ];
