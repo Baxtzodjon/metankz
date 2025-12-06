@@ -13,7 +13,7 @@ interface WorkPageProps {
 export default async function Work({ searchParams }: WorkPageProps) {
     const t = await getTranslations();
     const params = await searchParams;
-    const page = Number(params?.page) || 1;
+    /* const page = Number(params?.page) || 1; */
     const category = params?.category || "all";
 
     return (

@@ -1,5 +1,4 @@
 "use client"
-import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
 import { IoIosHome } from "react-icons/io";
 import { FaBoxes, FaCogs, FaFilter, FaProjectDiagram, FaGasPump, FaShieldAlt, FaDesktop } from 'react-icons/fa';
@@ -17,7 +16,7 @@ export const WorkCat = [
 ];
 
 const CategoriesWork = ({ activeCategory }: { activeCategory: string }) => {
-    const t = useTranslations(); /* ServiceBlock */
+    /* const t = useTranslations(); */ /* ServiceBlock */
 
     return (
         <motion.section
