@@ -18,6 +18,8 @@ export default function Home() {
 
       {/* <p>{t('title')}</p> */}
 
+      {/* <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error earum necessitatibus alias ullam dolor harum quos. Enim voluptatum dolorum aut magnam quam adipisci doloribus, molestiae impedit quae eligendi beatae ad.</p> */}
+
       <Preloader />
 
       <HeroSlider />
