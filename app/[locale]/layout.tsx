@@ -9,6 +9,7 @@ import { NextIntlClientProvider } from "next-intl";
 import React from "react";
 import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
+import { Toaster } from "sonner";
 
 export const ubuntu = Ubuntu({
   subsets: ['latin'],
@@ -80,6 +81,8 @@ export default async function RootLayout({
           <Header />
 
           {children}
+          
+          <Toaster position="top-right" richColors closeButton />
 
           <ConditionalContacts />
 

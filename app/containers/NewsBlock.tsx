@@ -155,7 +155,7 @@ export default function NewsBlock({
                                     <div className="mb-[17px] text-storm text-sm leading-[150%] font-normal">
 
                                         <Link
-                                            href={`/news/${item.id}`}
+                                            href={`/news?category=${item.query}`}
                                             className="relative mr-[21px] capitalize hover:text-primary transition-default after:content-[''] after:absolute after:-right-[13px] after:top-[2px] after:w-[1px] after:h-[11px] after:bg-current after:transition-default group-hover:after:bg-primary"
                                         >
                                             {t(item.category)}

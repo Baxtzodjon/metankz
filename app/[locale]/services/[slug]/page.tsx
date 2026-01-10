@@ -36,17 +36,17 @@ export async function generateMetadata({ params }: PageProps) {
     const description = t(service.descriptionKey);
 
     return {
-        title: `${title} | MetanKZ`,
+        title: `${title} | Metan KZ`,
         description,
         openGraph: {
-            title: `${title} | MetanKZ`,
+            title: `${title} | Metan KZ`,
             description,
             images: [service.image],
             type: "website",
         },
         twitter: {
             card: "summary_large_image",
-            title: `${title} | MetanKZ`,
+            title: `${title} | Metan KZ`,
             description,
             images: [service.image],
         },
@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: PageProps) {
 
             <MissionBlock className="bg-ebony !pt-20 mb-[34px] h-full lg:h-[565px]" />
 
-            <PortfolioSection />
+            <PortfolioSection mode="related" serviceSlug={slug} />
 
             <Table />
 

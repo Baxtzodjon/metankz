@@ -10,6 +10,8 @@ import { motion } from "motion/react";
 import { useForm } from "react-hook-form";
 import { RegisterOptions } from "react-hook-form";
 import { useTranslations } from "next-intl";
+import { toast } from "sonner";
+import { useState } from "react";
 
 /* type FooterFormData = {
     email: string;
@@ -39,6 +41,7 @@ const formFields: FooterFieldConfig[] = [
 
 const Footer = () => {
     const t = useTranslations("Footer");
+    const [isLoading, setIsLoading] = useState(false);
 
     const {
         register,
@@ -47,9 +50,40 @@ const Footer = () => {
         reset,
     } = useForm({ mode: "onChange" });
 
-    const onSubmit = (data: RegisterOptions) => {
-        console.log("✅ Form submitted:", data);
-        reset();
+    const onSubmit = async (data: RegisterOptions) => {
+        if (isLoading) return;
+
+        setIsLoading(true);
+        const toastId = toast.loading(t("StatusNewsletter.sending"));
+
+        try {
+            const res = await fetch("/api/forms/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    formType: "subscribeForm",
+                    data,
+                    honeypot: "",
+                }),
+            });
+
+            const result = await res.json();
+
+            if (!res.ok || !result.success) throw new Error("Failed to send");
+
+            toast.success(t("StatusNewsletter.success"), { id: toastId });
+            reset();
+        } catch (error) {
+            console.error("❌ Email error:", error);
+            toast.error(t("StatusNewsletter.error"), { id: toastId });
+        } finally {
+            setIsLoading(false);
+        }
+
+        /* console.log("✅ Form submitted:", data);
+        reset(); */
     };
 
     return (
@@ -75,7 +109,7 @@ const Footer = () => {
                             viewport={{ once: true }}
                         >
 
-                            <Link href="/"><Image src="/icons/createx_white_logo.svg" alt="Createx Logo" width={130} height={22} className="max-w-full lg:w-[100px] lg:h-[17px] xl:w-[130px] xl:h-[22px]" /></Link>
+                            <Link href="/"><Image src="/icons/logo.png" alt="Logo" width={72} height={24} /></Link> {/* className="max-w-full lg:w-[100px] lg:h-[17px] xl:w-[130px] xl:h-[22px]" */}
 
                             <div className="flex items-center gap-4">
 
@@ -120,11 +154,11 @@ const Footer = () => {
 
                                     <input
                                         type={"email"}
-                                        {...register("email", { required: t("form.emailRequired"), pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: t("form.emailInvalid") } })} placeholder={t("form.placeholder")} autoComplete="email" className={`max-w-full w-full sm:w-[364px] md:w-full lg:w-[364px] h-11 bg-[#FFFFFF1F] border ${errors["email"] ? "border-red-500" : "border-[#FFFFFF33]"
+                                        {...register("email", { required: t("form.emailRequired"), pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: t("form.emailInvalid") } })} placeholder={t("form.placeholder")} autoComplete="email" className={`max-w-full w-full sm:w-[364px] md:w-full lg:w-[364px] h-11 bg-[#FFFFFF1F] border ${errors["email"] ? "border-error" : "border-[#FFFFFF33]"
                                             } rounded-l pl-4 outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-light text-sm font-normal`} />
 
                                     {errors["email"] && (
-                                        <span className="text-red-500 text-xs mt-1">
+                                        <span className="text-error text-xs mt-1">
                                             {(errors["email"]?.message as string) || ""}
                                         </span>
                                     )}
@@ -133,10 +167,47 @@ const Footer = () => {
 
                                 <div className="flex flex-col">
 
-                                    <button className="px-[19px] py-[11px] bg-primary rounded-tr-[4px] rounded-br-[4px] text-white text-sm font-bold uppercase transition-default hover:bg-active">{t("form.subscribe")}</button>
+                                    <button
+                                        type="submit"
+                                        disabled={isLoading}
+                                        className={`px-[19px] py-[11px] rounded-tr-[4px] rounded-br-[4px] text-white text-sm font-bold uppercase transition-default
+                                            ${isLoading ? "bg-storm cursor-not-allowed" : "bg-primary hover:bg-active"}
+                                            `}
+                                    >
+                                        {isLoading ? (
+                                            <span className="flex items-center justify-center gap-2">
+                                                <svg
+                                                    className="h-4 w-4 animate-spin"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                >
+                                                    <defs>
+                                                        <linearGradient id="spinner-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                            <stop offset="0%" stopColor="rgba(255,255,255,0.2)" />
+                                                            <stop offset="100%" stopColor="white" />
+                                                        </linearGradient>
+                                                    </defs>
+
+                                                    <circle
+                                                        cx="12"
+                                                        cy="12"
+                                                        r="10"
+                                                        stroke="url(#spinner-gradient)"
+                                                        strokeWidth="4"
+                                                        strokeLinecap="round"
+                                                    />
+                                                </svg>
+
+                                                {t("StatusNewsletter.sendingShort")}
+
+                                            </span>
+                                        ) : (
+                                            t("form.subscribe")
+                                        )}
+                                    </button>
 
                                     {errors["email"] && (
-                                        <span className="text-red-500 text-xs mt-1 overflow-hidden pointer-events-none opacity-0">
+                                        <span className="text-error text-xs mt-1 overflow-hidden pointer-events-none opacity-0">
                                             {/* {(errors["email"]?.message as string) || ""} */}
                                             {/* Enter a valid email address */}
                                             Email is required
@@ -260,7 +331,7 @@ const Footer = () => {
 
                     </div> */}
 
-                    <div className="flex items-center gap-8 lg:gap-[125px]">
+                    <div className="flex gap-8 lg:gap-[125px]"> {/* items-center */}
 
                         {footerLinks.map(({ titleKey, links }) => (
                             <div key={titleKey} className="flex flex-col gap-[13px]">

@@ -77,7 +77,9 @@ const HeroSlider: React.FC = () => {
                             transition={{ duration: 1 }}
                         >
 
-                            <div className="container h-[555px] sm:h-[130vh] py-[100px] sm:py-[200px] md:pt-[200px] md:pb-[320px] lg:pt-[220px] lg:pb-[354px]">
+                            <div className="absolute inset-0 bg-gray/50"></div>
+
+                            <div className="container h-[555px] sm:h-[130vh] py-[100px] sm:py-[200px] md:pt-[200px] md:pb-[320px] lg:pt-[220px] lg:pb-[354px] relative z-10">
 
                                 <motion.div className="flex flex-col gap-[61px]"
                                     initial={{ opacity: 0, y: 50 }}
@@ -110,7 +112,7 @@ const HeroSlider: React.FC = () => {
 
                                         <Link href={"/about"} className="px-[39px] py-[15px] border border-white text-white text-base font-bold uppercase hover:bg-primary hover:border-primary rounded transition-default cursor-pointer">{t('buttons.learnMore')}</Link>
 
-                                        <button className="px-[39px] py-[15px] bg-primary text-white text-base font-bold uppercase hover:bg-[#fc3300] rounded transition-default cursor-pointer" onClick={openModal}>{t('buttons.submitRequest')}</button>
+                                        <button className="px-[39px] py-[15px] bg-primary text-white text-base font-bold uppercase hover:bg-active rounded transition-default cursor-pointer" onClick={openModal}>{t('buttons.submitRequest')}</button>
 
                                     </motion.div>
 

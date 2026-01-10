@@ -1,14 +1,14 @@
 "use client"
 
-import Image from "next/image";
 import Texts from "./Texts";
 import BtnText from "./BtnText";
 import { motion } from "motion/react";
 import { services } from "../data/services";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const ServiceBlock = () => {
-    const t = useTranslations("ServiceBlock");
+    const t = useTranslations();
 
     return (
         <section className="services-section">
@@ -22,7 +22,7 @@ const ServiceBlock = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex items-center justify-center flex-col gap-6">
 
-                    <Texts title={t("title")} description={t("description")} />
+                    <Texts title={t("ServiceBlock.title")} description={t("ServiceBlock.description")} />
 
                 </motion.div>
 
@@ -37,7 +37,7 @@ const ServiceBlock = () => {
                             },
                         },
                     }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px] mb-20">
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px] w-full mb-20">
 
                     {services.map((service, index) => (
 
@@ -48,7 +48,7 @@ const ServiceBlock = () => {
                                 visible: { opacity: 1, scale: 1, y: 0 },
                             }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="relative group block max-w-full w-[285px] h-[285px] rounded-[4px] border border-[#e5e8ed] bg-white shadow-soft-multi overflow-hidden"
+                            className="relative group block max-w-full w-full xl:w-[285px] h-[285px] rounded-[4px] border border-[#e5e8ed] bg-white shadow-soft-multi overflow-hidden"
                         >
                             {/* Затемнение (имитация ::after) */}
                             <div className="absolute inset-0 z-[5] bg-[rgba(30,33,44,0.6)] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 pointer-events-none"></div>
@@ -59,25 +59,35 @@ const ServiceBlock = () => {
                                 style={{ backgroundImage: `url(${service.bgImage})` }}
                             ></div>
 
-                            <a href="#" className="block relative z-10 px-[10px] pt-[87px] pb-[90px]">
+                            <Link href={service.link} className="block relative z-10 px-[10px] pt-[87px] pb-[90px]">
 
                                 <div className="relative z-10 flex flex-col items-center">
-                                    <Image
+                                    {/* <Image
                                         src={service.icon}
                                         alt={`${service.titleKey} Icon`}
                                         width={52}
                                         height={52}
                                         className="mb-[23px] w-[52px] h-[52px] transition-colors duration-300 ease-in-out"
                                         aria-hidden="true"
-                                    />
+                                    /> */}
+
+                                    {(() => {
+                                        const Icon = service.icon;
+                                        return (
+                                            <Icon
+                                                className="mb-[23px] w-[52px] h-[52px] text-primary group-hover:text-light transition-colors duration-300 ease-in-out"
+                                                aria-hidden="true"
+                                            />
+                                        );
+                                    })()}
 
                                     <h3 className="text-ebony lg:text-lg xl:text-xl leading-[150%] font-bold group-hover:text-light transition-colors duration-300">
-                                        {t(`values.${service.titleKey}`)}
+                                        {t(`${service.titleKey}`)} {/* values. */}
                                     </h3>
 
                                 </div>
 
-                            </a>
+                            </Link>
 
                         </motion.li>
 
@@ -93,7 +103,7 @@ const ServiceBlock = () => {
 
                 </div> */}
 
-                <BtnText title={t("translBtns.btnTitle")} link={t("translBtns.btnLink")} />
+                <BtnText title={t("ServiceBlock.translBtns.btnTitle")} link="/services" linkTitle={t("ServiceBlock.translBtns.btnLink")} />
 
             </div>
 

@@ -6,6 +6,8 @@ import { RegisterOptions, useForm } from "react-hook-form";
 import { extraContactsFormData, extraContactsFormFields } from "../data/extraContactFields";
 import Image from "next/image";
 import Texts from "./Texts";
+import { toast } from "sonner";
+import { useState } from "react";
 
 const containerVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
@@ -19,6 +21,7 @@ const fieldVariants: Variants = {
 
 const ContactsForms = () => {
     const t = useTranslations();
+    const [isLoading, setIsLoading] = useState(false);
     const contactsFormFields = extraContactsFormFields();
 
     const {
@@ -33,9 +36,40 @@ const ContactsForms = () => {
         },
     });
 
-    const onSubmit = (data: extraContactsFormData) => {
-        console.log("✅ Form submitted:", data);
-        reset();
+    const onSubmit = async (data: extraContactsFormData) => {
+        if (isLoading) return;
+
+        setIsLoading(true);
+        const toastId = toast.loading(t("StatusForm.sending"));
+
+        try {
+            const res = await fetch("/api/forms/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    formType: "contactPageForm",
+                    data,
+                    honeypot: "",
+                }),
+            });
+
+            const result = await res.json();
+
+            if (!res.ok || !result.success) throw new Error("Failed to send");
+
+            toast.success(t("StatusForm.success"), { id: toastId });
+            reset();
+        } catch (error) {
+            console.error("❌ Email error:", error);
+            toast.error(t("StatusForm.error"), { id: toastId });
+        } finally {
+            setIsLoading(false);
+        }
+
+        /* console.log("✅ Form submitted:", data);
+        reset(); */
     };
 
     const validationRulesFor = <K extends keyof extraContactsFormData>(name: K): RegisterOptions<extraContactsFormData, K> => {
@@ -120,10 +154,10 @@ const ContactsForms = () => {
                                     type="text"
                                     {...register("name", validationRulesFor("name"))}
                                     placeholder={t("ContactsSection.fields.name.placeholder")}
-                                    className={`bg-athens border ${errors.name ? "border-red-500" : "border-[#d7dadd]"} rounded pl-[15px] h-[52px] outline-none focus:outline-primary focus:outline-2`}
+                                    className={`bg-athens border ${errors.name ? "border-error" : "border-[#d7dadd]"} rounded pl-[15px] h-[52px] outline-none focus:outline-primary focus:outline-2`}
                                 />
 
-                                {errors.name && <span className="text-red-500 text-xs mt-1">{errors.name.message}</span>}
+                                {errors.name && <span className="text-error text-xs mt-1">{errors.name.message}</span>}
 
                             </div>
 
@@ -137,7 +171,7 @@ const ContactsForms = () => {
                                 <select
                                     id="interest"
                                     {...register("interest", validationRulesFor("interest"))}
-                                    className={`h-[52px] bg-athens border ${errors.interest ? "border-red-500" : "border-[#d7dadd]"
+                                    className={`h-[52px] bg-athens border ${errors.interest ? "border-error" : "border-[#d7dadd]"
                                         } rounded pl-[10px] text-sm outline-none focus:outline-primary focus:outline-2`}
                                 >
 
@@ -149,7 +183,7 @@ const ContactsForms = () => {
 
                                 </select>
 
-                                {errors.interest && <span className="text-red-500 text-xs mt-1">{errors.interest.message}</span>}
+                                {errors.interest && <span className="text-error text-xs mt-1">{errors.interest.message}</span>}
 
                             </div>
 
@@ -171,10 +205,10 @@ const ContactsForms = () => {
                                     type="tel"
                                     {...register("phone", validationRulesFor("phone"))}
                                     placeholder={t("ContactsSection.fields.phone.placeholder")}
-                                    className={`bg-athens border ${errors.phone ? "border-red-500" : "border-[#d7dadd]"} rounded pl-[15px] h-[52px] outline-none focus:outline-primary focus:outline-2`}
+                                    className={`bg-athens border ${errors.phone ? "border-error" : "border-[#d7dadd]"} rounded pl-[15px] h-[52px] outline-none focus:outline-primary focus:outline-2`}
                                 />
 
-                                {errors.phone && <span className="text-red-500 text-xs mt-1">{errors.phone.message}</span>}
+                                {errors.phone && <span className="text-error text-xs mt-1">{errors.phone.message}</span>}
 
                             </div>
 
@@ -188,7 +222,7 @@ const ContactsForms = () => {
                                 <select
                                     id="location"
                                     {...register("location", validationRulesFor("location"))}
-                                    className={`h-[52px] bg-athens border ${errors.location ? "border-red-500" : "border-[#d7dadd]"
+                                    className={`h-[52px] bg-athens border ${errors.location ? "border-error" : "border-[#d7dadd]"
                                         } rounded pl-[10px] text-sm outline-none focus:outline-primary focus:outline-2`}
                                 >
 
@@ -200,7 +234,7 @@ const ContactsForms = () => {
 
                                 </select>
 
-                                {errors.location && <span className="text-red-500 text-xs mt-1">{errors.location.message}</span>}
+                                {errors.location && <span className="text-error text-xs mt-1">{errors.location.message}</span>}
 
                             </div>
 
@@ -221,10 +255,10 @@ const ContactsForms = () => {
                                     type="email"
                                     {...register("email", validationRulesFor("email"))}
                                     placeholder={t("ContactsSection.fields.email.placeholder")}
-                                    className={`bg-athens border ${errors.email ? "border-red-500" : "border-[#d7dadd]"} rounded pl-[15px] h-[52px] outline-none focus:outline-primary focus:outline-2`}
+                                    className={`bg-athens border ${errors.email ? "border-error" : "border-[#d7dadd]"} rounded pl-[15px] h-[52px] outline-none focus:outline-primary focus:outline-2`}
                                 />
 
-                                {errors.email && <span className="text-red-500 text-xs mt-1">{errors.email.message}</span>}
+                                {errors.email && <span className="text-error text-xs mt-1">{errors.email.message}</span>}
 
                             </div>
 
@@ -262,7 +296,7 @@ const ContactsForms = () => {
                                 </div>
 
                                 {errors.preferredContactMethod && (
-                                    <span className="text-red-500 text-xs mt-1">
+                                    <span className="text-error text-xs mt-1">
                                         {errors.preferredContactMethod.message}
                                     </span>
                                 )}
@@ -282,11 +316,11 @@ const ContactsForms = () => {
                                 id="message"
                                 {...register("message", validationRulesFor("message"))}
                                 placeholder={t("ContactsSection.fields.message.placeholder")}
-                                className={`bg-athens border ${errors.message ? "border-red-500" : "border-[#d7dadd]"
+                                className={`bg-athens border ${errors.message ? "border-error" : "border-[#d7dadd]"
                                     } rounded pt-[10px] pl-[15px] w-full h-[128px] outline-none focus:outline-primary focus:outline-2 text-sm leading-[150%] resize-none`}
                             />
 
-                            {errors.message && <span className="text-red-500 text-xs mt-1">{errors.message.message}</span>}
+                            {errors.message && <span className="text-error text-xs mt-1">{errors.message.message}</span>}
 
                         </motion.div>
 
@@ -316,7 +350,7 @@ const ContactsForms = () => {
                                 </span>
 
                                 {errors.consent && (
-                                    <span className="block text-xs text-red-500 mt-1">{errors.consent.message}</span>
+                                    <span className="block text-xs text-error mt-1">{errors.consent.message}</span>
                                 )}
 
                             </motion.label> */}
@@ -332,7 +366,7 @@ const ContactsForms = () => {
                                 <span className="relative inline-block pl-[27px] text-gray text-sm leading-[150%] before:content-[''] before:absolute before:-left-[1px] before:top-[1px] before:inline-block before:border before:border-primary before:rounded-[3px] before:w-4 before:h-4 before:transition-default peer-checked:before:bg-primary after:content-[''] after:absolute after:-left-[1px] after:top-[1px] after:w-4 after:h-4 after:bg-[url('/icons/check.svg')] after:bg-center after:bg-[length:10px_8px] after:bg-no-repeat after:opacity-0 after:transition-default peer-checked:after:opacity-100 w-[287px]">{t("ContactsSection.consentText", { site: "MetanKz" })}</span>
 
                                 {errors.consent && (
-                                    <span className="block text-xs text-red-500 mt-1 ml-[27px]">
+                                    <span className="block text-xs text-error mt-1 ml-[27px]">
                                         {(errors.consent?.message as string) || ""}
                                     </span>
                                 )}
@@ -340,12 +374,42 @@ const ContactsForms = () => {
                             </motion.label>
 
                             <motion.div variants={fieldVariants}>
-
+                                
                                 <button
                                     type="submit"
+                                    disabled={isLoading}
                                     className="py-[12px] px-[31px] bg-primary rounded text-light text-sm leading-5 tracking-wider font-bold uppercase hover:bg-active transition-default"
                                 >
-                                    {t("ContactsSection.button")}
+                                    {isLoading ? (
+                                        <span className="flex items-center justify-center gap-2">
+                                            <svg
+                                                className="h-4 w-4 animate-spin"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <defs>
+                                                    <linearGradient id="spinner-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                        <stop offset="0%" stopColor="rgba(255,255,255,0.2)" />
+                                                        <stop offset="100%" stopColor="white" />
+                                                    </linearGradient>
+                                                </defs>
+
+                                                <circle
+                                                    cx="12"
+                                                    cy="12"
+                                                    r="10"
+                                                    stroke="url(#spinner-gradient)"
+                                                    strokeWidth="4"
+                                                    strokeLinecap="round"
+                                                />
+                                            </svg>
+
+                                            {t("StatusForm.sending")}
+
+                                        </span>
+                                    ) : (
+                                        t("ContactsSection.button")
+                                    )}
                                 </button>
 
                             </motion.div>

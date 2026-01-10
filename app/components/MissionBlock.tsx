@@ -126,7 +126,7 @@ const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
                                 className="flex items-center flex-col gap-6 relative text-center after:content-[''] after:absolute after:top-0 after:right-[-94px] after:w-px after:h-full after:bg-no-repeat after:bg-center after:bg-cover after:bg-[url('https://live.verstaem.online/createx/img/divider.svg')] last:after:hidden after:hidden xl:after:block"
                             >
 
-                                <Icon size={48} color="#ff5a30" />
+                                <Icon size={48} color="#0A4FA3" />
 
                                 <div className="flex flex-col gap-2">
 

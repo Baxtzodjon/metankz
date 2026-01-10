@@ -1,22 +1,23 @@
-"use client"
+import { createMetadata } from "@/app/lib/seo";
+import ServicesClient from "./ServicesClient";
 
-import React from 'react';
-import BGMainBlock from '@/app/components/BgMainBlock';
-import TimelineBlock from '@/app/components/TimelineBlock';
-import { useTranslations } from 'next-intl';
+interface PageProps {
+    params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps) {
+    const { locale } = await params;
+
+    return createMetadata({
+        locale,
+        namespace: "ServicesSEO",
+        path: "/services",
+        image: "/og/services.png",
+    });
+}
 
 const Services = () => {
-    const t = useTranslations();
-
-    return (
-        <main>
-
-            <BGMainBlock title={t("Header.nav.services")} description={t("Services.bannerDescription")} image="/images/services_bg.png" />
-
-            <TimelineBlock />
-
-        </main>
-    );
+    return <ServicesClient />;
 };
 
 export default Services;

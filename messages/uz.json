@@ -1,4 +1,28 @@
 {
+    "HomeSEO": {
+        "title": "Metan KZ — Qozog'istondagi ekologik toza metan yoqilg'isi",
+        "description": "Metan KZ — Qozog'iston bo'ylab zamonaviy metan gaz quyish shoxobchalari tarmog'i. Toza, xavfsiz va tejamkor."
+    },
+    "AboutSEO": {
+        "title": "Metan KZ haqida — Qozog'istondagi metan zapravkalari",
+        "description": "Metan KZ — Qozog'istonda joylashgan zamonaviy metan yoqilg'i quyish shoxobchalari tarmog'i. Bizning maqsadimiz — ekologik toza, xavfsiz va tejamkor yoqilg'i."
+    },
+    "ServicesSEO": {
+        "title": "Metan KZ xizmatlari — Metan zapravkalari va servis",
+        "description": "Metan bilan yoqilg'i quyish, zamonaviy zapravkalar, ekologik toza yoqilg'i va Qozog'iston bo'ylab ishonchli servis."
+    },
+    "WorkSEO": {
+        "title": "Metan KZ loyihalari — Metan zapravkalari",
+        "description": "Metan KZ tomonidan amalga oshirilgan loyihalar: Qozog'istonning turli hududlaridagi zamonaviy metan zapravkalari."
+    },
+    "NewsSEO": {
+        "title": "Metan KZ yangiliklari — Metan va ekologiya",
+        "description": "Metan KZ yangiliklari: metan zapravkalari rivoji, ekologik toza yoqilg'i va Qozog'istondagi kompaniya tashabbuslari."
+    },
+    "ContactSEO": {
+        "title": "Metan KZ kontaktlari — Metan zapravkalari",
+        "description": "Metan KZ bilan bog'laning. Qozog'iston bo'ylab metan zapravkalari manzillari, telefonlar va mijozlarni qo'llab-quvvatlash xizmati."
+    },
     "Header": {
         "nav": {
             "home": "Bosh sahifa",
@@ -100,6 +124,8 @@
     },
     "PortfolioSection": {
         "title": "Butun Qozog'iston bo'ylab CNG loyihalarimizni o'rganing",
+        "relatedTitle": "Tegishli loyihalar",
+        "similarTitle": "O'xshash loyihalar",
         "viewProject": "Loyihani ko'rish",
         "btnTitle": "Barcha loyihalarni ko'rish",
         "btnLink": "Portfelga o'tish",
@@ -274,7 +300,13 @@
             }
         },
         "copyright": "Barcha huquqlar himoyalangan. Yaratuvchi",
-        "byAuthor": "Baxtzod tomonidan"
+        "byAuthor": "Baxtzod tomonidan",
+        "StatusNewsletter": {
+            "sending": "Sizni yangiliklar xabarnomasiga obuna qilmoqdamiz...",
+            "sendingShort": "Obuna...",
+            "success": "Rahmat! Siz yangiliklar xabarnomasiga muvaffaqiyatli obuna bo'ldingiz.",
+            "error": "Obuna bo'lishda xatolik yuz berdi. Iltimos, keyinroq urinib ko'ring."
+        }
     },
     "ScrollToTop": {
         "title": "Yuqoriga chiqish"
@@ -459,9 +491,210 @@
         "days_25": "25 kun",
         "days_35": "35 kun"
     },
-     "Work": {
+    "Work": {
         "bannerTitle": "Bizning ishlarimiz",
-        "bannerDescription": "Bizning portfoliyamiz metan (CNG) texnologiyalari sohasidagi 12 yillik tajribamizni aks ettiradi — metan yoqilg'i stansiyalaridan tortib maxsus uskunalar va asboblarga qadar."
+        "bannerDescription": "Bizning portfoliyamiz metan (CNG) texnologiyalari sohasidagi 12 yillik tajribamizni aks ettiradi — metan yoqilg'i stansiyalaridan tortib maxsus uskunalar va asboblarga qadar.",
+        "projectEquipmentText": "Loyiha uskunalari",
+        "categories": {
+            "all": "Barchasi",
+            "storage": "Saqlash",
+            "compressor": "Kompressorlar",
+            "filtration": "Filtrlash",
+            "distribution": "Taqsimlash",
+            "dispensing": "Berish",
+            "safety": "Xavfsizlik",
+            "control": "Boshqaruv"
+        },
+        "detailsLabels": {
+            "object": "Obyekt",
+            "location": "Joylashuv",
+            "client": "Mijoz",
+            "purpose": "Maqsad",
+            "specs": "Texnik ko'rsatkichlar",
+            "status": "Holati",
+            "year": "Yil"
+        },
+        "items": {
+            "storage-tank": {
+                "title": "Gaz saqlash rezervuari",
+                "description": "Siqilgan metanni saqlash uchun idish",
+                "details": {
+                    "object": "CNG saqlash rezervuari",
+                    "location": "Olmaota, Qozog'iston",
+                    "client": "Xususiy CNG stansiyasi",
+                    "purpose": "Siqilgan gazni uzoq muddat saqlash",
+                    "specs": "Hajmi 950–1500 L, bosim 250 bar",
+                    "status": "Ekspluatatsiyada",
+                    "year": "2024"
+                },
+                "projectEquipment": "950–1500 L hajmga ega zamonaviy gaz saqlash rezervuari yaratildi. Bosim nazorati va yuqori xavfsizlik bilan jihozlangan. Uzoq muddatli saqlash, minimal sizib chiqish va texnik xizmat ko'rsatishni osonlashtirishga e’tibor qaratilgan."
+            },
+            "compressor-unit": {
+                "title": "Kompressor qurilmasi",
+                "description": "Gazni ishchi bosimgacha siqish",
+                "details": {
+                    "object": "Yuqori bosimli gaz kompressori",
+                    "location": "Toshkent, O'zbekiston",
+                    "client": "Maxsus texnika avtoparki",
+                    "purpose": "Gazni 200–250 bar bosimgacha siqish",
+                    "specs": "Ishlab chiqarish quvvati 500–1500 m³/soat",
+                    "status": "O'rnatilgan",
+                    "year": "2024"
+                },
+                "projectEquipment": "Tabiiy gazni 200–250 bar bosimgacha siqish uchun kompressor bloki o'rnatildi. Tizim barqaror ish, energiya yo'qotishining minimal darajasi va xavfsizlik standartlariga to'liq moslikni ta’minlaydi."
+            },
+            "gas-separator": {
+                "title": "Gaz separator",
+                "description": "Gazni namlik va qo'shimchalardan tozalash",
+                "details": {
+                    "object": "CNG separator-quritkich",
+                    "location": "Qarag'anda, Qozog'iston",
+                    "client": "Gaz taqsimlash stansiyasi",
+                    "purpose": "Namlik va mexanik qo'shimchalarni olib tashlash",
+                    "specs": "Ishlab chiqarish quvvati 300–1200 m³/soat",
+                    "status": "Ekspluatatsiyada",
+                    "year": "2023"
+                },
+                "projectEquipment": "Separator-quritkich siqilgan gazdan namlik va mexanik qo'shimchalarni olib tashlash uchun mo'ljallangan. Uskunani himoya qiladi va tarmoq bo'ylab xavfsiz transport uchun gaz sifatini yaxshilaydi."
+            },
+            "gas-filter": {
+                "title": "Quritkich / filtr",
+                "description": "Gazdan namlik va kondensatni olib tashlash",
+                "details": {
+                    "object": "Filtrlash-quritish moduli",
+                    "location": "Samarqand, O'zbekiston",
+                    "client": "Avtomobil CNG stansiyasi",
+                    "purpose": "Gazni -50°C shudring nuqtasigacha quritish",
+                    "specs": "Ish bosimi 250 bar gacha",
+                    "status": "Montaj qilingan",
+                    "year": "2023"
+                },
+                "projectEquipment": "Filtrlash-quritish moduli gazdan kondensat va namlikni -50°C gacha olib tashlaydi. Gaz sifatini yaxshilaydi va stansiya uskunasining xizmat muddatini uzaytiradi."
+            },
+            "gas-dispenser": {
+                "title": "Gaz quyish kolonkasi",
+                "description": "Avtomobillarni metan bilan to'ldirish",
+                "details": {
+                    "object": "CNG berish kolonkasi",
+                    "location": "Qostanay, Qozog'iston",
+                    "client": "Yengil avtomobillar uchun CNG stansiyasi",
+                    "purpose": "Avtomobillarni metan bilan to'ldirish",
+                    "specs": "Ikki shlang, 200–250 bar",
+                    "status": "Ishga tushirilgan",
+                    "year": "2024"
+                },
+                "projectEquipment": "Metan quyish kolonkasi avtomobillarga xavfsiz va tez yoqilg'i quyishni ta’minlaydi. 200–250 bar bosimni qo'llab-quvvatlaydi va samarali ishlash uchun ikki shlang bilan jihozlangan."
+            },
+            "pressure-regulator": {
+                "title": "Bosim regulyatori",
+                "description": "Gaz bosimini pasaytirish tizimi",
+                "details": {
+                    "object": "Bosimni pasaytirish tuguni",
+                    "location": "Andijon, O'zbekiston",
+                    "client": "Sanoat gaz liniyasi",
+                    "purpose": "Bosimni barqarorlashtirish",
+                    "specs": "Kirish 250 bar, chiqish 5–25 bar",
+                    "status": "O'rnatilgan",
+                    "year": "2023"
+                },
+                "projectEquipment": "Bosim regulyatori kirish va chiqish bosimini barqarorlashtiradi, 5–25 bar diapazonida optimal ishni ta’minlaydi. Sanoat gaz tarmoqlarining ishonchli ishlashiga yordam beradi."
+            },
+            "accumulator-block": {
+                "title": "Akkumulyator bloki",
+                "description": "Balonlarda gazni saqlash bloki",
+                "details": {
+                    "object": "Yuqori bosimli balonlar bloki",
+                    "location": "Pavlodar, Qozog'iston",
+                    "client": "CNG stansiyalari va mobil tizimlar",
+                    "purpose": "Gazni bufer saqlash",
+                    "specs": "12–18 ta balon, 80–100 L",
+                    "status": "Ekspluatatsiyada",
+                    "year": "2024"
+                },
+                "projectEquipment": "Akkumulyator bloki 12–18 ta yuqori bosimli balonlarda gazni bufer tarzda saqlashni ta’minlaydi. Mobil va statsionar stansiyalar bilan tez ulanish imkonini beradi."
+            },
+            "safety-valve": {
+                "title": "Xavfsizlik klapani",
+                "description": "Stansiya xavfsizligini ta’minlash",
+                "details": {
+                    "object": "Favqulodda bosimni tushirish klapani",
+                    "location": "Taldiko'rg'on, Qozog'iston",
+                    "client": "Gaz to'ldirish infratuzilmasi",
+                    "purpose": "Ortiqcha bosimdan himoya",
+                    "specs": "Sozlash 240–260 bar",
+                    "status": "O'rnatilgan",
+                    "year": "2024"
+                },
+                "projectEquipment": "Xavfsizlik klapani stansiyani ortiqcha bosimdan himoya qiladi. Tanqidiy bosim darajasida avtomatik ravishda gazni chiqarib yuboradi, uskunalar va xodimlar uchun xavfni kamaytiradi."
+            },
+            "gas-distribution-block": {
+                "title": "Gaz taqsimlash rampasi",
+                "description": "Stansiya bo'yicha gazni taqsimlash bloki",
+                "details": {
+                    "object": "Gaz taqsimlash rampasi",
+                    "location": "O'skemen, Qozog'iston",
+                    "client": "Gaz stansiyasi",
+                    "purpose": "Gazni liniyalar bo'yicha taqsimlash",
+                    "specs": "3–6 ta chiqish konturi",
+                    "status": "Ekspluatatsiyada",
+                    "year": "2023"
+                },
+                "projectEquipment": "Gaz taqsimlash rampasi stansiya liniyalari bo'yicha gazning aniq va xavfsiz taqsimlanishini ta’minlaydi. Oqim va bosimni optimallashtiradi."
+            },
+            "compressor-module": {
+                "title": "Kompressor moduli",
+                "description": "Kompressor va gaz filtrlash moduli",
+                "details": {
+                    "object": "Gazni siqish va tayyorlash moduli",
+                    "location": "Turkiston, Qozog'iston",
+                    "client": "Xususiy CNG stansiyasi",
+                    "purpose": "Gazni siqish va filtrlash",
+                    "specs": "1000–2500 m³/soat",
+                    "status": "Ishga tushirilgan",
+                    "year": "2024"
+                },
+                "projectEquipment": "Kompressor moduli 2500 m³/soatgacha gazni siqish va filtrlashni ta’minlaydi. Barqaror bosim va yuqori sifatli gaz oqimini ta’minlaydi."
+            },
+            "gas-cylinder": {
+                "title": "Gaz baloni",
+                "description": "Gazni saqlash va tashish uchun balon",
+                "details": {
+                    "object": "Yuqori bosimli balon",
+                    "location": "Taraz, Qozog'iston",
+                    "client": "CNG saqlash va tashish",
+                    "purpose": "Siqilgan gazni tashish",
+                    "specs": "80–120 L, 250 bar",
+                    "status": "Ekspluatatsiyada",
+                    "year": "2024"
+                },
+                "projectEquipment": "Gaz baloni siqilgan gazni xavfsiz saqlash va tashishni ta’minlaydi. 250 bar bosimgacha bardosh beradi va mobil hamda statsionar obyektlar uchun mos."
+            },
+            "control-cabinet": {
+                "title": "Boshqaruv shchiti",
+                "description": "Stansiya va uskunalarni elektr boshqaruvi",
+                "details": {
+                    "object": "Stansiya boshqaruv paneli",
+                    "location": "Buxoro, O'zbekiston",
+                    "client": "CNG stansiyasini avtomatlashtirish",
+                    "purpose": "Kompressorlar va klapanlarni boshqarish",
+                    "specs": "Siemens/Oven PLC, ogohlantirish va monitoring",
+                    "status": "Montaj qilingan",
+                    "year": "2023"
+                },
+                "projectEquipment": "Boshqaruv shchiti kompressorlar, klapanlar va sensorlarni markazlashgan boshqarishni ta’minlaydi. Monitoring, avtomatlashtirish va SCADA tizimlariga integratsiyani qo'llab-quvvatlaydi."
+            }
+        }
+    },
+    "DecisionsBlock": {
+        "title": "Samarali yechimlar",
+        "items": {
+            "decision1": "Metan bilan to'ldirish tizimlari barqaror ishlash, xavfsizlik nazorati va gazni samarali taqsimlashni ta’minlaydi.",
+            "decision2": "Zahira idoralarini boshqarish uchun avtomatlashtirilgan yechimlar: bosim monitoringi, hajm nazorati va real vaqt ishonchliligi.",
+            "decision3": "Yuqori samarali filtratsiya qurilmalari gaz tozaligi, uskuna himoyasi va uzoq muddatli barqarorlikni ta’minlaydi.",
+            "decision4": "Zamonaviy gaz quvurlari aniq yonilg'i yetkazib berish, chidamlilik va doimiy ishlash uchun mo'ljallangan.",
+            "decision5": "Markazlashtirilgan monitoring, diagnostika va metan bilan to'ldirish jarayonlarini optimallashtirishni ta’minlaydigan ilg'or boshqaruv tizimlari.",
+            "decision6": "Sertifikatlangan to'ldirish vositalari va komponentlari sanoat standartlariga mos, xavfsiz va samarali."
+        }
     },
     "News": {
         "bannerDescription": "Yangiliklarimiz, ekspert maslahatlarimiz va maqolalarimizdan xabardor bo'lib boring.",
@@ -595,5 +828,10 @@
         "title": "404 Topilmadi",
         "description": "Siz tashrif buyurgan sahifa topilmadi. Siz bosh sahifaga qaytishingiz mumkin.",
         "button": "Bosh sahifaga qaytish"
+    },
+    "StatusForm": {
+        "sending": "Ma'lumotlar yuborilmoqda...",
+        "success": "So'rov muvaffaqiyatli yuborildi. Tez orada siz bilan bog'lanamiz.",
+        "error": "Yuborishda xatolik yuz berdi. Iltimos, keyinroq urinib ko'ring."
     }
 }

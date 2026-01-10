@@ -9,7 +9,7 @@ export interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
     {
-        image: "/images/portfolio_first.jpg",
+        image: "/images/team_member_fst.jpg",
         nameKey: "Абзоитов Бекзод",
         roleKey: "Генеральный Директор",
         socials: [
@@ -19,7 +19,7 @@ export const teamMembers: TeamMember[] = [
         ],
     },
     {
-        image: "/images/portfolio_first.jpg",
+        image: "/images/team_member_snd.jpg",
         nameKey: "Турдиев Анвар",
         roleKey: "Менеджер Продажи",
         socials: [
@@ -49,7 +49,7 @@ export const teamMembers: TeamMember[] = [
         ],
     },
     {
-        image: "/images/portfolio_first.jpg",
+        image: "/images/team_member_fif.jpg",
         nameKey: "Yahyoev Azamat",
         roleKey: "Шофер",
         socials: [
@@ -59,7 +59,7 @@ export const teamMembers: TeamMember[] = [
         ],
     },
     {
-        image: "/images/portfolio_first.jpg",
+        image: "/images/team_member_sth.jpg",
         nameKey: "Floyd Simmmons",
         roleKey: "Finacial Director",
         socials: [

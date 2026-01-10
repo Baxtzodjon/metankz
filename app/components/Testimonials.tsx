@@ -108,7 +108,7 @@ const Testimonials = () => {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                 >
 
-                    <Image src={"/images/portfolio_first.jpg"} alt="Testimonials Image" width={495} height={550} aria-hidden="true" className="max-w-full w-[300px] h-[527px] lg:w-[380px] lg:h-[441px] xl:w-[495px] xl:h-[550px] object-cover relative z-[5] -mb-[60px]" />
+                    <Image src={"/images/testimonials_image.jpg"} alt="Testimonials Image" width={495} height={550} aria-hidden="true" className="max-w-full w-[300px] h-[527px] lg:w-[380px] lg:h-[441px] xl:w-[495px] xl:h-[550px] object-cover relative z-[5] -mb-[60px]" />
 
                 </motion.div>
 

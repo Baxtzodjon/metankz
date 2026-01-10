@@ -7,12 +7,12 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #fff;
     --foreground: #424551;
   }
-}
+} */
 
 body {
   color: var(--foreground);
@@ -22,11 +22,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */
 
 @layer utilities {
   .transition-default {
@@ -67,9 +67,9 @@ body {
 @layer utilities {
   .shadow-soft-multi-active {
     box-shadow: 0px 4px 4px -4px #1E212C0D,
-      0px 12px 10px -6px #FF5A3014,
-      0px 26px 24px -10px #FF5A301A,
-      0px 60px 80px -20px #FF5A3029;
+      0px 12px 10px -6px #0A4FA314,
+      0px 26px 24px -10px #0A4FA31A,
+      0px 60px 80px -20px #0A4FA329;
   }
 }
 
@@ -122,4 +122,21 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.thumb-slide {
+  opacity: 0.6;
+  transition: opacity .2s ease;
+}
+
+.thumb-slide.swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.slider-btn-prev.swiper-button-disabled,
+.slider-btn-next.swiper-button-disabled {
+  opacity: 0.4 !important;
+  /* filter: blur(2px); */
+  cursor: default !important;
+  pointer-events: none !important;
 }

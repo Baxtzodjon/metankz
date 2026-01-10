@@ -11,18 +11,18 @@ interface PartnersProps {
 }
 
 const partnersLogo = [
-    { id: 1, image: '/icons/partners_logo.png' },
-    { id: 2, image: '/icons/partners_logo.png' },
-    { id: 3, image: '/icons/partners_logo.png' },
-    { id: 4, image: '/icons/partners_logo.png' },
-    { id: 5, image: '/icons/partners_logo.png' },
-    { id: 6, image: '/icons/partners_logo.png' },
-    { id: 7, image: '/icons/partners_logo.png' },
-    { id: 8, image: '/icons/partners_logo.png' },
-    { id: 9, image: '/icons/partners_logo.png' },
-    { id: 10, image: '/icons/partners_logo.png' },
-    { id: 11, image: '/icons/partners_logo.png' },
-    { id: 12, image: '/icons/partners_logo.png' },
+    { id: 1, image: '/icons/houpe_logo.png', link: "https://houpugroup.com/" },
+    { id: 2, image: '/icons/qazaq_oil_logo.png', link: "https://qazaqoil.kz/ru" },
+    { id: 3, image: '/icons/kaz_munay_gas_logo.png', link: "https://www.kmg.kz/" },
+    { id: 4, image: '/icons/uzbekneftgaz_logo.png', link: "https://www.ung.uz/" },
+    { id: 5, image: '/icons/global_gas_group_logo.png', link: "https://www.globalgases.com/" },
+    { id: 6, image: '/icons/nafta_oil_logo.png', link: "https://nafta.uz/" },
+    { id: 7, image: '/icons/qazaqgaz_logo.png', link: "https://qazaqgaz.kz/" },
+    { id: 8, image: '/icons/khilal_logo.png', link: "https://khilal.uz/" },
+    { id: 9, image: '/icons/gasprom_logo.png', link: "https://gazoraspredelenie.gazprom.ru/" },
+    { id: 10, image: '/icons/tcologoa_logo.png', link: "https://www.tengizchevroil.com/" },
+    { id: 11, image: '/icons/geojade_logo.png', link: "https://www.geojade.com/" },
+    { id: 12, image: '/icons/royal_petrol_logo.png', link: "https://royal-petrol.kz/" },
 ];
 
 // container variant for staggered animation
@@ -94,9 +94,9 @@ const Partners: React.FC<PartnersProps> = ({ className }) => {
 
                         <motion.li
                             key={item.id}
-                            variants={itemVariants} className="flex justify-center col-span-3 xl:col-span-1">
+                            variants={itemVariants} className="flex items-center justify-center col-span-3 xl:col-span-1">
 
-                            <a href="#">
+                            <a href={item.link} target="_blank">
 
                                 <Image src={item.image} alt="Logo" width={120} height={64} className="max-w-full grayscale hover:grayscale-0 scale-100 hover:scale-105 transition-default" loading="lazy" />
 

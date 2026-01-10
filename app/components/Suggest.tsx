@@ -31,13 +31,25 @@ const accordionData: AccordionItem[] = [
 ]; */
 
 interface SuggestProps {
-    slug: string;
+    slug: keyof typeof suggestData;
 }
 
 const Suggest = ({ slug }: SuggestProps) => {
     const t = useTranslations();
-    const [openId, setOpenId] = useState<number | null>(1);
-    
+
+    const category = suggestData[slug];
+
+    if (!category) {
+        return null;
+    }
+
+    const { image, items } = category;
+
+    const [openId, setOpenId] = useState<number | null>(
+        items[0]?.id ?? null
+    );
+    /* const [openId, setOpenId] = useState<number | null>(1); */
+
     /* const data = suggestData[slug] || []; */
     /* const [openId, setOpenId] = useState<number | null>(data[0]?.id || null); */
 
@@ -45,11 +57,11 @@ const Suggest = ({ slug }: SuggestProps) => {
         setOpenId(openId === id ? null : id);
     };
 
-    const accordionItems = suggestData[slug]; // <-- динамические данные
+    /* const accordionItems = suggestData[slug]; */ // <-- динамические данные
 
-    if (!accordionItems) {
+    /* if (!accordionItems) {
         return null; // защита если slug неверный
-    }
+    } */
 
     return (
         <section className="py-10 sm:pt-[100px] sm:pb-[120px] lg:pt-[120px] lg:pb-[180px] overflow-hidden">
@@ -64,7 +76,7 @@ const Suggest = ({ slug }: SuggestProps) => {
                     className="w-full lg:max-w-[570px] overflow-hidden"
                 >
 
-                    <Image src={"/images/portfolio_first.jpg"} alt={"Portfolio Image"} width={705} height={440} className="w-full h-[420px] object-cover rounded" />
+                    <Image src={image} alt={String(slug)} width={705} height={440} priority className="w-full h-[420px] object-cover rounded" />
 
                 </motion.div>
 
@@ -79,7 +91,7 @@ const Suggest = ({ slug }: SuggestProps) => {
 
                     <div className="flex flex-col gap-6">
 
-                        {accordionItems.map((item) => {
+                        {items.map((item) => {
                             const isOpen = openId === item.id;
 
                             return (

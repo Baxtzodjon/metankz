@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { IoIosHome } from "react-icons/io";
 import { FaBoxes, FaCogs, FaFilter, FaProjectDiagram, FaGasPump, FaShieldAlt, FaDesktop } from 'react-icons/fa';
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export const WorkCat = [
     { id: "all", link: "Work.categories.all", query: "all", icon: IoIosHome },
@@ -16,7 +17,7 @@ export const WorkCat = [
 ];
 
 const CategoriesWork = ({ activeCategory }: { activeCategory: string }) => {
-    /* const t = useTranslations(); */ /* ServiceBlock */
+    const t = useTranslations(); /* ServiceBlock */
 
     return (
         <motion.section
@@ -52,7 +53,7 @@ const CategoriesWork = ({ activeCategory }: { activeCategory: string }) => {
                                 <Icon className={`w-12 h-12 transition-colors duration-300 ${isActive ? "text-light" : "text-primary group-hover:text-light"}`} />
 
                                 <h3 className={`text-[#9A9CA5] lg:text-lg xl:text-xl leading-[150%] font-bold transition-colors duration-300 ${isActive ? "text-light" : "text-[#9A9CA5] group-hover:text-light"}`}>
-                                    All Projects{/* {t(`values.${cat.link}`)} */}
+                                    {t(cat.link)}
                                 </h3>
 
                             </div>

@@ -17,9 +17,9 @@ export const factsData: FactItem[] = [
     },
     {
         full: 50,
-        value: 35,
+        value: 12,
         textKey: 'Facts.experience',
-        targetValue: 35,
+        targetValue: 12,
         progressStroke: '#f52f6e'
     },
     {

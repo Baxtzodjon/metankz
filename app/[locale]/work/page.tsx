@@ -1,13 +1,28 @@
-import React from 'react';
 import BGMainBlock from '@/app/components/BgMainBlock';
 import Testimonials from '@/app/components/Testimonials';
 import Partners from '@/app/components/Partners';
 import WorkSection from '@/app/containers/WorkSection';
 import { getTranslations } from 'next-intl/server';
 import CategoriesWork from '@/app/containers/CategoriesWork';
+import { createMetadata } from '@/app/lib/seo';
+
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
 
 interface WorkPageProps {
     searchParams?: Promise<{ page?: string; category?: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps) {
+    const { locale } = await params;
+
+    return createMetadata({
+        locale,
+        namespace: "WorkSEO",
+        path: "/work",
+        image: "/og/work.png",
+    });
 }
 
 export default async function Work({ searchParams }: WorkPageProps) {

@@ -1,4 +1,28 @@
 {
+    "HomeSEO": {
+        "title": "Metan KZ — Eco-Friendly Methane Fuel in Kazakhstan",
+        "description": "Metan KZ is a network of modern methane fueling stations across Kazakhstan. Clean, safe, and cost-effective."
+    },
+    "AboutSEO": {
+        "title": "About Metan KZ — Methane Fuel Stations in Kazakhstan",
+        "description": "Metan KZ is a modern network of methane fuel stations in Kazakhstan. Our mission is to provide eco-friendly, safe, and cost-effective fuel solutions."
+    },
+    "ServicesSEO": {
+        "title": "Metan KZ Services — Methane Fuel Stations & Service",
+        "description": "Methane refueling, modern fuel stations, eco-friendly fuel, and reliable service for your vehicles across Kazakhstan."
+    },
+    "WorkSEO": {
+        "title": "Metan KZ Projects — Our Methane Fuel Stations",
+        "description": "Metan KZ completed projects: modern methane fuel stations across different regions of Kazakhstan."
+    },
+    "NewsSEO": {
+        "title": "Metan KZ News — Methane & Sustainability",
+        "description": "Latest Metan KZ news: development of methane fuel stations, eco-friendly fuel solutions, and company initiatives in Kazakhstan."
+    },
+    "ContactSEO": {
+        "title": "Contact Metan KZ — Methane Fuel Stations",
+        "description": "Get in touch with Metan KZ. Addresses of methane fuel stations, phone numbers, and customer support across Kazakhstan."
+    },
     "Header": {
         "nav": {
             "home": "Home",
@@ -100,6 +124,8 @@
     },
     "PortfolioSection": {
         "title": "Explore our CNG projects across Kazakhstan",
+        "relatedTitle": "Related projects",
+        "similarTitle": "Similar projects",
         "viewProject": "View Project",
         "btnTitle": "Explore all our projects",
         "btnLink": "View portfolio",
@@ -274,7 +300,13 @@
             }
         },
         "copyright": "All rights reserved. Made with",
-        "byAuthor": "by Baxtzod"
+        "byAuthor": "by Baxtzod",
+        "StatusNewsletter": {
+            "sending": "Subscribing you to the newsletter...",
+            "sendingShort": "Subscribing...",
+            "success": "Thank you! You have successfully subscribed to our newsletter.",
+            "error": "Subscription failed. Please try again later."
+        }
     },
     "ScrollToTop": {
         "title": "Go to top"
@@ -461,7 +493,208 @@
     },
     "Work": {
         "bannerTitle": "Our work",
-        "bannerDescription": "Our portfolio represents 12 years of expertise in methane (CNG) technologies — from methane fueling stations to specialized equipment and tools."
+        "bannerDescription": "Our portfolio represents 12 years of expertise in methane (CNG) technologies — from methane fueling stations to specialized equipment and tools.",
+        "projectEquipmentText": "Project Equipment",
+        "categories": {
+            "all": "All",
+            "storage": "Storage",
+            "compressor": "Compressors",
+            "filtration": "Filtration",
+            "distribution": "Distribution",
+            "dispensing": "Dispensing",
+            "safety": "Safety",
+            "control": "Control"
+        },
+        "detailsLabels": {
+            "object": "Object",
+            "location": "Location",
+            "client": "Client",
+            "purpose": "Purpose",
+            "specs": "Specifications",
+            "status": "Status",
+            "year": "Year"
+        },
+        "items": {
+            "storage-tank": {
+                "title": "Gas Storage Tank",
+                "description": "Container for storing compressed methane",
+                "details": {
+                    "object": "CNG Storage Tank",
+                    "location": "Almaty, Kazakhstan",
+                    "client": "Private CNG Station",
+                    "purpose": "Long-term storage of compressed gas",
+                    "specs": "Volume 950–1500 L, pressure 250 bar",
+                    "status": "In operation",
+                    "year": "2024"
+                },
+                "projectEquipment": "A modern gas storage tank with a volume of 950–1500 L was created, featuring pressure control and high operational safety. The focus is on long-term storage, minimal leakage, and easy maintenance."
+            },
+            "compressor-unit": {
+                "title": "Compressor Unit",
+                "description": "Gas compression to operating pressure",
+                "details": {
+                    "object": "High-pressure Gas Compressor",
+                    "location": "Tashkent, Uzbekistan",
+                    "client": "Special-purpose vehicle fleet",
+                    "purpose": "Compressing gas to 200–250 bar",
+                    "specs": "Capacity 500–1500 m³/h",
+                    "status": "Installed",
+                    "year": "2024"
+                },
+                "projectEquipment": "A compressor block was installed for compressing natural gas to 200–250 bar. The system ensures stable operation, minimal energy loss, and full compliance with safety standards."
+            },
+            "gas-separator": {
+                "title": "Gas Separator",
+                "description": "Gas purification from impurities and moisture",
+                "details": {
+                    "object": "CNG Separator-Dryer",
+                    "location": "Karaganda, Kazakhstan",
+                    "client": "Gas Distribution Station",
+                    "purpose": "Removing moisture and mechanical impurities",
+                    "specs": "Capacity 300–1200 m³/h",
+                    "status": "In operation",
+                    "year": "2023"
+                },
+                "projectEquipment": "The separator-dryer is designed to remove moisture and mechanical impurities from compressed gas. It protects equipment and improves gas quality for safe transportation."
+            },
+            "gas-filter": {
+                "title": "Dryer / Filter",
+                "description": "Moisture and condensate removal from gas",
+                "details": {
+                    "object": "Filtration-Drying Module",
+                    "location": "Samarkand, Uzbekistan",
+                    "client": "Automotive CNG station",
+                    "purpose": "Drying gas to -50°C dew point",
+                    "specs": "Working pressure up to 250 bar",
+                    "status": "Installed",
+                    "year": "2023"
+                },
+                "projectEquipment": "The filtration-drying module removes condensate and moisture from gas down to -50°C. It optimizes gas quality and extends equipment service life."
+            },
+            "gas-dispenser": {
+                "title": "Gas Dispenser",
+                "description": "Vehicle methane refueling",
+                "details": {
+                    "object": "CNG Dispenser",
+                    "location": "Kostanay, Kazakhstan",
+                    "client": "CNG station for cars",
+                    "purpose": "Vehicle methane refueling",
+                    "specs": "Two hoses, 200–250 bar",
+                    "status": "Launched",
+                    "year": "2024"
+                },
+                "projectEquipment": "The methane dispenser provides safe and fast vehicle refueling. Supports 200–250 bar pressure and features dual hoses for efficient station operation."
+            },
+            "pressure-regulator": {
+                "title": "Pressure Regulator",
+                "description": "Gas pressure reduction system",
+                "details": {
+                    "object": "Pressure Reduction Unit",
+                    "location": "Andijan, Uzbekistan",
+                    "client": "Industrial gas line",
+                    "purpose": "Pressure stabilization",
+                    "specs": "Input 250 bar, output 5–25 bar",
+                    "status": "Installed",
+                    "year": "2023"
+                },
+                "projectEquipment": "The pressure regulator stabilizes inlet and outlet pressure, maintaining an optimal range of 5–25 bar. Ensures reliable operation of industrial gas lines."
+            },
+            "accumulator-block": {
+                "title": "Accumulator Block",
+                "description": "Gas storage block with cylinders",
+                "details": {
+                    "object": "High-pressure Cylinder Block",
+                    "location": "Pavlodar, Kazakhstan",
+                    "client": "CNG stations and mobile systems",
+                    "purpose": "Buffer gas storage",
+                    "specs": "12–18 cylinders of 80–100 L",
+                    "status": "In operation",
+                    "year": "2024"
+                },
+                "projectEquipment": "The accumulator block provides buffer gas storage in 12–18 high-pressure cylinders. Ensures safe operation and quick integration with stationary and mobile stations."
+            },
+            "safety-valve": {
+                "title": "Safety Valve",
+                "description": "Station safety device",
+                "details": {
+                    "object": "Emergency Relief Valve",
+                    "location": "Taldykorgan, Kazakhstan",
+                    "client": "Gas filling infrastructure",
+                    "purpose": "Overpressure protection",
+                    "specs": "Setpoint 240–260 bar",
+                    "status": "Installed",
+                    "year": "2024"
+                },
+                "projectEquipment": "The safety valve protects the station from overpressure. Automatically releases pressure at critical levels, reducing risks for equipment and personnel."
+            },
+            "gas-distribution-block": {
+                "title": "Gas Distribution Ramp",
+                "description": "Gas distribution block for station",
+                "details": {
+                    "object": "Gas Distribution Ramp",
+                    "location": "Ust-Kamenogorsk, Kazakhstan",
+                    "client": "Gas station",
+                    "purpose": "Gas distribution across lines",
+                    "specs": "3–6 outlet circuits",
+                    "status": "In operation",
+                    "year": "2023"
+                },
+                "projectEquipment": "The gas distribution ramp ensures accurate and safe distribution of gas across station lines, optimizing flow and pressure."
+            },
+            "compressor-module": {
+                "title": "Compressor Module",
+                "description": "Module with compressor and gas filtration",
+                "details": {
+                    "object": "Gas Compression and Conditioning Module",
+                    "location": "Turkestan, Kazakhstan",
+                    "client": "Private CNG station",
+                    "purpose": "Gas compression and filtration",
+                    "specs": "1000–2500 m³/h",
+                    "status": "Launched",
+                    "year": "2024"
+                },
+                "projectEquipment": "The compressor module provides gas compression and filtration up to 2500 m³/h. Ensures stable pressure and high gas purity for distribution."
+            },
+            "gas-cylinder": {
+                "title": "Gas Cylinder",
+                "description": "Cylinder for gas storage and transportation",
+                "details": {
+                    "object": "High-pressure Cylinder",
+                    "location": "Taraz, Kazakhstan",
+                    "client": "CNG transportation and storage",
+                    "purpose": "Compressed gas transportation",
+                    "specs": "80–120 L, 250 bar",
+                    "status": "In operation",
+                    "year": "2024"
+                },
+                "projectEquipment": "The gas cylinder ensures safe compressed gas storage and transportation. Withstands up to 250 bar and suits mobile and stationary stations."
+            },
+            "control-cabinet": {
+                "title": "Control Cabinet",
+                "description": "Electrical control of station and equipment",
+                "details": {
+                    "object": "Station Control Panel",
+                    "location": "Bukhara, Uzbekistan",
+                    "client": "CNG station automation",
+                    "purpose": "Control of compressors and valves",
+                    "specs": "Siemens/Oven PLC, alarms and monitoring",
+                    "status": "Installed",
+                    "year": "2023"
+                },
+                "projectEquipment": "The control cabinet provides centralized control of compressors, sensors, and valves. Supports monitoring and automation, and integrates with SCADA systems."
+            }
+        }
+    },
+    "DecisionsBlock": {
+        "title": "Effective Solutions",
+        "items": {
+            "decision1": "Integrated methane refueling systems designed for stable operation, safety control, and efficient gas distribution at all stages.",
+            "decision2": "Automated reservoir management solutions providing pressure monitoring, volume control, and real-time operational reliability.",
+            "decision3": "High-performance filtration units ensuring gas purity, equipment protection, and long-term stability of refueling infrastructure.",
+            "decision4": "Modern gas dispensing columns engineered for accurate fuel delivery, durability, and continuous operation under load.",
+            "decision5": "Advanced control systems enabling centralized monitoring, diagnostics, and optimization of methane refueling processes.",
+            "decision6": "Certified refueling tools and components meeting industry standards, safe and efficient in operation."
+        }
     },
     "News": {
         "bannerDescription": "Stay tuned with our news, expert tips and articles.",
@@ -595,5 +828,10 @@
         "title": "404 Not Found",
         "description": "Your visited page not found. You may go home page.",
         "button": "Back to home page"
+    },
+    "StatusForm": {
+        "sending": "Sending your request...",
+        "success": "Your request has been sent successfully. We will contact you soon.",
+        "error": "Failed to send the form. Please try again later."
     }
 }

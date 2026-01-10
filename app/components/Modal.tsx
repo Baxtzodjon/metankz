@@ -4,6 +4,7 @@ import { motion, AnimatePresence, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 import { RegisterOptions, useForm } from "react-hook-form";
 import { ContactsFormData, getContactsFormFields } from "../data/contactsFormFIelds";
+import { toast } from "sonner";
 
 const fieldVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -26,10 +27,34 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
         reset,
     } = useForm<ContactsFormData>({ mode: "onChange" });
 
-    const onSubmit = (data: ContactsFormData) => {
-        console.log("✅ Form submitted:", data);
-        reset();
-        onClose();
+    const onSubmit = async (data: ContactsFormData) => {
+        const toastId = toast.loading(t("StatusForm.sending"));
+
+        try {
+            const res = await fetch("/api/forms/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    formType: "contactForm",
+                    data,
+                    honeypot: "",
+                }),
+            });
+
+            const result = await res.json();
+
+            if (!res.ok || !result.success) throw new Error("Failed to send");
+
+            toast.success(t("StatusForm.success"), { id: toastId });
+            reset();
+            onClose();
+        } catch (error) {
+            console.error("❌ Email error:", error);
+            toast.error(t("StatusForm.error"), { id: toastId });
+        }
+
+        /* onClose(); */
+        /* console.log("✅ Form submitted:", data); */
     };
 
     return (
@@ -108,7 +133,7 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
                                                 <textarea
                                                     {...register(field.name, validationRules)}
                                                     placeholder={t(field.placeholderKey)}
-                                                    className={`bg-athens border ${errors[field.name] ? "border-red-500" : "border-[#d7dadd]"
+                                                    className={`bg-athens border ${errors[field.name] ? "border-error" : "border-[#d7dadd]"
                                                         } rounded pt-[10px] pl-[15px] w-full h-[66px] outline-none focus:outline-2 focus:outline-primary focus:outline-offset-2 text-sm leading-[150%] font-normal resize-none`}
                                                 />
                                             ) : (
@@ -117,13 +142,13 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
                                                     {...register(field.name, validationRules)}
                                                     placeholder={t(field.placeholderKey)}
                                                     autoComplete={field.name}
-                                                    className={`bg-athens border ${errors[field.name] ? "border-red-500" : "border-[#d7dadd]"
+                                                    className={`bg-athens border ${errors[field.name] ? "border-error" : "border-[#d7dadd]"
                                                         } rounded pl-[15px] w-full h-11 outline-none focus:outline-2 focus:outline-primary focus:outline-offset-2 text-sm leading-[150%] font-normal`}
                                                 />
                                             )}
 
                                             {errors[field.name] && (
-                                                <span className="text-red-500 text-xs mt-1">
+                                                <span className="text-error text-xs mt-1">
                                                     {(errors[field.name]?.message as string) || ""}
                                                 </span>
                                             )}
@@ -137,27 +162,36 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
                                     <button className="py-[12px] px-[31px] bg-primary rounded text-light text-sm leading-5 tracking-wider font-bold uppercase hover:bg-active transition-default mt-5"
                                         type="submit" disabled={isSubmitting}
                                     >
-                                        {isSubmitting ? <svg
-                                            className="animate-spin h-5 w-5 text-light mx-auto"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <circle
-                                                className="opacity-25"
-                                                cx="12"
-                                                cy="12"
-                                                r="10"
-                                                stroke="currentColor"
-                                                strokeWidth="4"
-                                            ></circle>
-                                            <path
-                                                className="opacity-75"
-                                                fill="currentColor"
-                                                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                                            ></path>
-                                        </svg>
-                                            : t("ContactsSection.button")} {/* t("ContactsSection.sending") */}
+                                        {isSubmitting ? (
+                                            <span className="flex items-center justify-center gap-2">
+                                                <svg
+                                                    className="h-4 w-4 animate-spin"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                >
+                                                    <defs>
+                                                        <linearGradient id="spinner-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                            <stop offset="0%" stopColor="rgba(255,255,255,0.2)" />
+                                                            <stop offset="100%" stopColor="white" />
+                                                        </linearGradient>
+                                                    </defs>
+
+                                                    <circle
+                                                        cx="12"
+                                                        cy="12"
+                                                        r="10"
+                                                        stroke="url(#spinner-gradient)"
+                                                        strokeWidth="4"
+                                                        strokeLinecap="round"
+                                                    />
+                                                </svg>
+
+                                                {t("StatusForm.sending")}
+
+                                            </span>
+                                        ) : (
+                                            t("ContactsSection.button") /* t("ContactsSection.sending") */
+                                        )}
                                     </button>
 
                                 </motion.div>

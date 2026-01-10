@@ -13,7 +13,7 @@ const TeamBlock = () => {
     return (
         <section className="relative overflow-hidden bg-light before:content-[''] before:absolute before:-left-[9px] before:-bottom-[195px] before:w-[570px] before:h-[1065px] before:bg-[url('/images/facts_bg.png')] before:bg-center before:bg-no-repeat before:bg-cover py-10 sm:pt-[100px] sm:pb-[120px]">
 
-            <div className="container flex items-center justify-center flex-col">
+            <div className="container"> {/* flex items-center justify-center flex-col */}
 
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -37,7 +37,7 @@ const TeamBlock = () => {
                             },
                         },
                     }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px] mb-20">
+                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] mb-20">
 
                     {teamMembers.map((teamMember, index) => (
 
@@ -48,7 +48,7 @@ const TeamBlock = () => {
                                 visible: { opacity: 1, scale: 1, y: 0 },
                             }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="relative group block max-w-full w-[285px] h-[416px] rounded bg-light overflow-hidden"
+                            className="relative group block max-w-full w-full xl:w-[285px] h-[416px] rounded bg-light overflow-hidden"
                         >
                             <div className="relative z-10 flex items-center flex-col gap-4">
 

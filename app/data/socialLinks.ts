@@ -15,7 +15,7 @@ export interface SocialLink {
 
 export const socialLinks: SocialLink[] = [
     {
-        href: "https://whatsapp.com",
+        href: "https://wa.me/998970000110",
         icon: FaWhatsapp,
         label: "WhatsApp",
     },

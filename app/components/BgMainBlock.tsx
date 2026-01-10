@@ -35,6 +35,8 @@ const BGMainBlock: React.FC<BgTextssProps> = ({ title, description, image }) => 
         return "/" + parts.join("/");
     })();
 
+    const isServiceSlugPage = cleanPath.startsWith("/services/");
+
     return (
         <motion.section className="relative top-0 left-0 overflow-hidden"
             variants={containerVariants}
@@ -57,7 +59,16 @@ const BGMainBlock: React.FC<BgTextssProps> = ({ title, description, image }) => 
 
                         <Link href={"/"} className="text-gray text-sm font-normal leading-[150%] hover:text-[#9A9CA5] transition-default">{t("nav.home")}</Link>
 
-                        <Link href={cleanPath} className="text-[#9A9CA5] text-sm font-normal leading-[150%] capitalize flex items-center gap-2"><small>/</small> {cleanPath.replace("/", "") || t("nav.home")}</Link>
+                        {isServiceSlugPage && (
+                            <Link
+                                href="/services"
+                                className="text-gray text-sm font-normal leading-[150%] hover:text-[#9A9CA5] transition-default flex items-center gap-2"
+                            >
+                                <small>/</small> {t("nav.services")}
+                            </Link>
+                        )}
+
+                        <Link href={cleanPath} className="text-[#9A9CA5] text-sm font-normal leading-[150%] capitalize flex items-center gap-2"><small>/</small> {title}</Link> {/* {cleanPath.replace("/", "") || t("nav.home")} */}
 
                     </motion.div>
 

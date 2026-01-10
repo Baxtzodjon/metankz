@@ -24,17 +24,17 @@ export async function generateMetadata({ params }: PageProps) {
     const description = t(article.descriptionKey);
 
     return {
-        title: `${title} | MetanKZ`,
+        title: `${title} | Metan KZ`,
         description,
         openGraph: {
-            title: `${title} | MetanKZ`,
+            title: `${title} | Metan KZ`,
             description,
             images: [article.image],
             type: "website",
         },
         twitter: {
             card: "summary_large_image",
-            title: `${title} | MetanKZ`,
+            title: `${title} | Metan KZ`,
             description,
             images: [article.image],
         },

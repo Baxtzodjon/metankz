@@ -63,7 +63,7 @@ const Header = () => {
 
                     <Link href={"/"}>
 
-                        <Image src={"/icons/createx_logo.svg"} alt="Createx Logo" width={130} height={22} className="max-w-full xl:w-[130px] xl:h-[22px]" />
+                        <Image src={"/icons/logo.png"} alt="Logo" width={60} height={22} /> {/* className="max-w-full xl:w-[130px] xl:h-[22px]" */}
 
                     </Link>
 

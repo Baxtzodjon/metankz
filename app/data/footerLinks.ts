@@ -11,7 +11,7 @@ export const footerLinks: FooterLink[] = [
         titleKey: "Whoweare.title",
         links: [
             { href: "/about", labelKey: "Whoweare.AboutUs" },
-            { href: "/available-positions", labelKey: "Whoweare.AvailablePositions" },
+            /* { href: "/available-positions", labelKey: "Whoweare.AvailablePositions" }, */
             { href: "/contact", labelKey: "Whoweare.Contacts" },
         ],
     },

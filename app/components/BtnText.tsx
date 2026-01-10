@@ -2,14 +2,16 @@
 
 import React from "react"
 import { motion } from "motion/react";
+import Link from "next/link";
 
 interface ButtonsProps {
     title: string;
-    link?: string;
+    linkTitle: string; /* ? */
+    link: string;
     className?: string;
 }
 
-const BtnText: React.FC<ButtonsProps> = ({ title, link, className }) => {
+const BtnText: React.FC<ButtonsProps> = ({ title, linkTitle, link, className }) => {
     return (
         <>
 
@@ -23,13 +25,37 @@ const BtnText: React.FC<ButtonsProps> = ({ title, link, className }) => {
                     viewport={{ once: true }}
                 >{title}</motion.h4>
 
-                <motion.a
+                {/* <motion.a
                     href="#"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
                     viewport={{ once: true }}
-                    className="py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-active transition-default cursor-pointer">{link}</motion.a>
+                    className="py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-active transition-default cursor-pointer">{link}</motion.a> */}
+
+                {link && linkTitle && (
+                    <motion.button
+                        className="py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-active transition-default cursor-pointer"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+                        viewport={{ once: true }}
+                    >
+
+                        <Link href={link}>{linkTitle}</Link>
+
+                    </motion.button>
+                )}
+
+                {/* <motion.div
+                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+                >
+
+                    <button className="py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-active transition-default cursor-pointer"><Link href={"/"}>{t("NotFound.button")}</Link></button>
+
+                </motion.div> */}
 
             </div>
 
