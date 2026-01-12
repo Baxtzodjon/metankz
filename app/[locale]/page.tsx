@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
     image: "/og/home.png",
   });
 }
+/* git commit --allow-empty -m "redeploy project" - git push */
 
 export default function Home() {
   /* const t = useTranslations('homepage'); */
