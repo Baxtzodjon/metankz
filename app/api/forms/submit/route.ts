@@ -8,6 +8,7 @@ import { canSendAutoReply } from "@/app/lib/autoReplyGuard";
 import { contactFormTemplate } from "@/app/lib/templates/contact";
 import { contactPageFormTemplate } from "@/app/lib/templates/contactPageForm";
 import { validateContactForm } from "@/app/lib/validators";
+import { subscribeEmail } from "@/app/lib/newsletter";
 
 export async function POST(req: Request) {
     try {
@@ -119,6 +120,15 @@ export async function POST(req: Request) {
                     { success: false, message: "Invalid email" },
                     { status: 400 }
                 );
+            }
+
+            const { isNew } = await subscribeEmail(data.email);
+
+            if (!isNew) {
+                return NextResponse.json({
+                    success: false,
+                    message: "ALREADY_SUBSCRIBED",
+                });
             }
 
             // письмо админу
