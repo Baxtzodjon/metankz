@@ -305,7 +305,8 @@
             "sending": "Subscribing you to the newsletter...",
             "sendingShort": "Subscribing...",
             "success": "Thank you! You have successfully subscribed to our newsletter.",
-            "error": "Subscription failed. Please try again later."
+            "error": "Subscription failed. Please try again later.",
+            "alreadySubscribed": "You are already subscribed to the newsletter."
         }
     },
     "ScrollToTop": {
@@ -321,7 +322,7 @@
         "support": "Technical support"
     },
     "Founder": {
-        "quote": "Every day at MetanKZ, we make refueling in Kazakhstan cleaner, faster, and more reliable. Our mission is to provide energy that moves people forward — with care for comfort, safety, and the environment. We strive to make every trip begin with trust and end with confidence.<br /><br />MetanKZ is more than just fuel. It’s attention to detail, modern service, and an honest attitude toward every customer. We are developing infrastructure and technology to ensure a sustainable future where energy serves both people and nature.",
+        "quote": "Every day at Metan KZ, we make refueling in Kazakhstan cleaner, faster, and more reliable. Our mission is to provide energy that moves people forward — with care for comfort, safety, and the environment. We strive to make every trip begin with trust and end with confidence.<br /><br />Metan KZ is more than just fuel. It’s attention to detail, modern service, and an honest attitude toward every customer. We are developing infrastructure and technology to ensure a sustainable future where energy serves both people and nature.",
         "nameFounder": "Abzoiyotov Bekzod Abzoyitovich",
         "titleFounder": "CEO - Metan KZ"
     },
@@ -330,7 +331,7 @@
         "timeline": {
             "2014": {
                 "title": "2014 Start",
-                "text": "In 2014, Metan was founded, starting work in the field of natural gas and compressed methane (CNG) technologies. This year marked the beginning of eco-friendly fuel development in Central Asia."
+                "text": "In 2014, Metan KZ was founded, starting work in the field of natural gas and compressed methane (CNG) technologies. This year marked the beginning of eco-friendly fuel development in Central Asia."
             },
             "2015": {
                 "title": "2015–2018 Growth",
@@ -338,11 +339,11 @@
             },
             "2019": {
                 "title": "2019–2021 Opportunities",
-                "text": "Metan actively expanded operations, introducing new quality and safety standards. The company became a trusted partner for transport and logistics businesses."
+                "text": "Metan KZ actively expanded operations, introducing new quality and safety standards. The company became a trusted partner for transport and logistics businesses."
             },
             "2022": {
                 "title": "2022 Development",
-                "text": "Metan launched new CNG stations and introduced automation and digital solutions to improve service and efficiency."
+                "text": "Metan KZ launched new CNG stations and introduced automation and digital solutions to improve service and efficiency."
             },
             "2023": {
                 "title": "2023 Expansion",
@@ -350,7 +351,7 @@
             },
             "2024": {
                 "title": "2024 Progress",
-                "text": "Throughout 2024, construction and testing of equipment took place, introducing energy-efficient and safe technologies."
+                "text": "Throughout 2024, Metan KZ conducted construction and testing of equipment, introducing energy-efficient and safe technologies."
             },
             "2025": {
                 "title": "2025 Present",

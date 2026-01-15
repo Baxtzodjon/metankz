@@ -26,7 +26,7 @@ const FounderCard = () => {
                     viewport={{ once: true }}
                 >
 
-                    <Image src={"/images/portfolio_first.jpg"} alt="Portfolio First image" width={525} height={580} className="w-full lg:w-[525px] h-auto sm:h-[580px] object-cover rounded lg:rounded-none" />
+                    <Image src={"/images/founder.jpeg"} alt="Founder of the company image" width={525} height={580} className="w-full lg:w-[525px] h-auto sm:h-[580px] object-cover rounded lg:rounded-none" />
 
                 </motion.div>
 

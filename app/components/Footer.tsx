@@ -77,7 +77,7 @@ const Footer = () => {
             if (!res.ok) throw new Error("Failed to send");
 
             if (result.message === "ALREADY_SUBSCRIBED") {
-                toast.error("Вы уже подписаны на рассылку", { id: toastId });
+                toast.error(t("StatusNewsletter.alreadySubscribed"), { id: toastId });
                 return; // ✅ останавливаем выполнение, письмо не шлём
             }
 

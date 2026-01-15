@@ -20,7 +20,7 @@ export const contactInfo: ContactInfoItem[] = [
     {
         type: "email",
         labelKey: "emailLabel",
-        value: "hello@createx.com",
-        href: "mailto:hello@metankz.com",
+        value: "hello@metankz.com",
+        href: "mailto:metankz@gmail.com", // hello@metankz.com
     },
 ];

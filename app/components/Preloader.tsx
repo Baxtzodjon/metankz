@@ -25,7 +25,7 @@ const Preloader = () => {
     return (
         <div className="fixed inset-0 z-[1001] flex items-center justify-center bg-ebony">
 
-            <Image src={"/icons/createx_white_logo.svg"} alt={"Preloader"} width={400} height={400} className="w-48 sm:w-64 md:w-80 lg:w-96 h-auto animate-pulse" />
+            <Image src={"/icons/logo.png"} alt={"Preloader"} width={400} height={400} className="w-48 sm:w-64 md:w-80 lg:w-96 h-auto animate-pulse" />
 
         </div>
     );

@@ -25,7 +25,7 @@ export const socialLinks: SocialLink[] = [
         label: "Telegram",
     },
     {
-        href: "https://facebook.com",
+        href: "https://www.facebook.com/anvar.turdiev.54",
         icon: FaFacebookF,
         label: "Facebook",
     },
