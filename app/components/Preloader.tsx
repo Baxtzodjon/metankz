@@ -15,7 +15,7 @@ const Preloader = () => {
             const timer = setTimeout(() => {
                 setVisible(false);
                 sessionStorage.setItem("preloaderShown", "true");
-            }, 2000);
+            }, 4000);
             return () => clearTimeout(timer);
         }
     }, []);
