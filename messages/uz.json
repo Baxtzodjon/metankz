@@ -834,5 +834,9 @@
         "sending": "Ma'lumotlar yuborilmoqda...",
         "success": "So'rov muvaffaqiyatli yuborildi. Tez orada siz bilan bog'lanamiz.",
         "error": "Yuborishda xatolik yuz berdi. Iltimos, keyinroq urinib ko'ring."
+    },
+    "UnavailableSocials": {
+        "unavailableTitle": "Ijtimoiy tarmoqlar vaqtincha mavjud emas",
+        "unavailableDescription": "Jamoa a’zolari hali o'z profillariga havolalarni taqdim etishmagan."
     }
 }

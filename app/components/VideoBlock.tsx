@@ -18,12 +18,12 @@ const VideoBlock = () => {
         }
     };
 
-    const handlePause = () => {
+    /* const handlePause = () => {
         if (videoRef.current) {
             videoRef.current.pause();
             setIsPlaying(false);
         }
-    };
+    }; */
 
     return (
         <section className="bg-light pt-[120px] pb-[60px]">
@@ -76,7 +76,7 @@ const VideoBlock = () => {
                         </div>
                     )}
 
-                    <video ref={videoRef} className="w-full h-full object-cover" src="https://live.verstaem.online/createx/about-video.mp4" muted loop controls={isPlaying} preload="metadata" onClick={handlePause} onPause={() => setIsPlaying(false)}></video>
+                    <video ref={videoRef} className="w-full h-full object-cover" src="/videos/about_video.mp4" loop controls={isPlaying} preload="metadata" onPause={() => setIsPlaying(false)} onPlay={() => setIsPlaying(true)}></video>
 
                 </motion.div>
 

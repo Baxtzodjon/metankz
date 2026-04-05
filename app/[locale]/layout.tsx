@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Metan KZ",
     images: [
       {
-        url: "/og/home.png",
+        url: "https://metankz.vercel.app/og/home.png", /* /og/home.png */
         width: 1200,
         height: 630,
         alt: "Metan KZ Open Graph Image",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Metan KZ — Метановые заправки в Казахстане",
     description: "Экологичное и выгодное топливо для вашего авто. Metan KZ — заправляйся умно!",
-    images: ["/og/home.png"],
+    images: ["https://metankz.vercel.app/og/home.png"], /* /og/home.png */
     creator: "@metankz",
   },
   metadataBase: new URL("https://metankz.com"),

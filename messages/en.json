@@ -834,5 +834,9 @@
         "sending": "Sending your request...",
         "success": "Your request has been sent successfully. We will contact you soon.",
         "error": "Failed to send the form. Please try again later."
+    },
+    "UnavailableSocials": {
+        "unavailableTitle": "Social networks are temporarily unavailable",
+        "unavailableDescription": "Team members have not yet provided links to their profiles."
     }
 }
