@@ -10,8 +10,8 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
     {
         image: "/images/team_member_fst.png",
-        nameKey: "Абзоитов Бекзод",
-        roleKey: "Генеральный Директор",
+        nameKey: "members.bekzod_abzoitov",
+        roleKey: "roles.ceo",
         socials: [
             { platform: "whatsapp", url: "https://www.whatsapp.com/" },
             { platform: "telegram", url: "https://telegram.org/" },
@@ -20,8 +20,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/team_member_snd.png",
-        nameKey: "Турдиев Анвар",
-        roleKey: "Менеджер Продажи",
+        nameKey: "members.anvar_turdiev",
+        roleKey: "roles.sales_manager",
         socials: [
             { platform: "whatsapp", url: "https://www.whatsapp.com/" },
             { platform: "telegram", url: "https://telegram.org/" },
@@ -30,8 +30,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/team_member_thr.png",
-        nameKey: "Расулов Шерзод",
-        roleKey: "Помощник Менеджера",
+        nameKey: "members.sherzod_rasulov",
+        roleKey: "roles.assistant_manager",
         socials: [
             { platform: "whatsapp", url: "https://www.whatsapp.com/" },
             { platform: "telegram", url: "https://telegram.org/" },
@@ -40,8 +40,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/team_member_frt.jpg",
-        nameKey: "Исомиддин Вохобов",
-        roleKey: "Главный Инженер",
+        nameKey: "members.vohobov_isomiddin",
+        roleKey: "roles.chief_engineer",
         socials: [
             { platform: "whatsapp", url: "https://www.whatsapp.com/" },
             { platform: "telegram", url: "https://telegram.org/" },
@@ -50,8 +50,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/team_member_fif.png",
-        nameKey: "Yahyoev Azamat",
-        roleKey: "Шофер",
+        nameKey: "members.azamat_yahyoev",
+        roleKey: "roles.driver",
         socials: [
             { platform: "whatsapp", url: "https://www.whatsapp.com/" },
             { platform: "telegram", url: "https://telegram.org/" },
@@ -60,8 +60,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/team_member_sth.png",
-        nameKey: "Sharipov Ulug'bek",
-        roleKey: "Техник",
+        nameKey: "members.ulugbek_sharipov",
+        roleKey: "roles.technician",
         socials: [
             { platform: "whatsapp", url: "https://www.whatsapp.com/" },
             { platform: "telegram", url: "https://telegram.org/" },
@@ -70,8 +70,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/team_member_svt.png",
-        nameKey: "Karimov Azizbek",
-        roleKey: "Оператор Станции",
+        nameKey: "members.azizbek_karimov",
+        roleKey: "roles.station_operator",
         socials: [
             { platform: "whatsapp", url: "https://www.whatsapp.com/" },
             { platform: "telegram", url: "https://telegram.org/" },
@@ -80,8 +80,8 @@ export const teamMembers: TeamMember[] = [
     },
     {
         image: "/images/team_member_eih.png",
-        nameKey: "Bekzod Tursunov",
-        roleKey: "Ведущий Инженер",
+        nameKey: "members.bekzod_tursunov",
+        roleKey: "roles.lead_engineer",
         socials: [
             { platform: "whatsapp", url: "https://www.whatsapp.com/" },
             { platform: "telegram", url: "https://telegram.org/" },

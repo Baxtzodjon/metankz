@@ -168,6 +168,9 @@
             }
         }
     },
+    "Clients": {
+        "title": "Bizning mijozlarimiz"
+    },
     "Facts": {
         "title": "Ba'zi faktlar va raqamlar",
         "clients": "To'liq mamnun mijozlar",
@@ -373,7 +376,27 @@
     },
     "Team": {
         "title": "Jamoamiz",
-        "description": "Metan KZ markazida odamlar turadi"
+        "description": "Metan KZ markazida odamlar turadi",
+        "members": {
+            "bekzod_abzoitov": "Abzoitov Bekzod",
+            "anvar_turdiev": "Turdiev Anvar",
+            "sherzod_rasulov": "Rasulov Sherzod",
+            "vohobov_isomiddin": "Vohobov Isomiddin",
+            "azamat_yahyoev": "Yahyoev Azamat",
+            "ulugbek_sharipov": "Sharipov Ulug'bek",
+            "azizbek_karimov": "Karimov Azizbek",
+            "bekzod_tursunov": "Tursunov Bekzod"
+        },
+        "roles": {
+            "ceo": "Bosh direktor",
+            "sales_manager": "Sotuv menejeri",
+            "assistant_manager": "Menejer yordamchisi",
+            "chief_engineer": "Bosh muhandis",
+            "driver": "Haydovchi",
+            "technician": "Texnik",
+            "station_operator": "Stansiya operatori",
+            "lead_engineer": "Yetakchi muhandis"
+        }
     },
     "Map": {
         "title": "Biz dunyo bo'ylab ishlaymiz"
@@ -819,7 +842,7 @@
             "phone_label": "Telefon:",
             "phone_value": "+998 55 702-30-13",
             "email_label": "Elektron pochta:",
-            "email_value": "hello@createx.com",
+            "email_value": "hello@metankz.com",
             "schedule_label": "Ish vaqti:",
             "schedule_24_7": "24/7 ishlaymiz"
         }

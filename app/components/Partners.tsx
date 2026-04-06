@@ -56,6 +56,7 @@ const Partners: React.FC<PartnersProps> = ({ className }) => {
 
     const isAboutPage = pathname?.match(/^\/((uz|ru|en|kz)\/)?about$/);
     const logosToShow = isAboutPage ? partnersLogo : partnersLogo.slice(0, 6);
+    const isWorkPage = pathname?.match(/^\/((uz|ru|en|kz)\/)?work$/);
 
     return (
         <section className={`py-20 ${className || ""}`}>
@@ -75,6 +76,11 @@ const Partners: React.FC<PartnersProps> = ({ className }) => {
                         <Texts
                             title={t("AboutPartners.title")}
                             description={t("AboutPartners.description")}
+                        />
+                    ) : isWorkPage ? (
+                        <Texts
+                            title={t("Clients.title")}
+                            className="mb-[60px]"
                         />
                     ) : (
                         <Texts title={t("Partners.title")} className="mb-[60px]" />

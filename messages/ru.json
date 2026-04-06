@@ -168,6 +168,9 @@
             }
         }
     },
+    "Clients": {
+        "title": "Наши клиенты"
+    },
     "Facts": {
         "title": "Некоторые факты и цифры",
         "clients": "Полностью довольные клиенты",
@@ -373,7 +376,27 @@
     },
     "Team": {
         "title": "Наша команда",
-        "description": "Люди — в центре внимания Metan KZ"
+        "description": "Люди — в центре внимания Metan KZ",
+        "members": {
+            "bekzod_abzoitov": "Абзоитов Бекзод",
+            "anvar_turdiev": "Турдиев Анвар",
+            "sherzod_rasulov": "Расулов Шерзод",
+            "vohobov_isomiddin": "Вохобов Исомиддин",
+            "azamat_yahyoev": "Яхьёев Азамат",
+            "ulugbek_sharipov": "Шарипов Улугбек",
+            "azizbek_karimov": "Каримов Азизбек",
+            "bekzod_tursunov": "Турсунов Бекзод"
+        },
+        "roles": {
+            "ceo": "Генеральный директор",
+            "sales_manager": "Менеджер продаж",
+            "assistant_manager": "Помощник менеджера",
+            "chief_engineer": "Главный инженер",
+            "driver": "Водитель",
+            "technician": "Техник",
+            "station_operator": "Оператор станции",
+            "lead_engineer": "Ведущий инженер"
+        }
     },
     "Map": {
         "title": "Мы работаем по всему миру"
@@ -819,7 +842,7 @@
             "phone_label": "Телефон:",
             "phone_value": "+998 55 702-30-13",
             "email_label": "Эл. почта:",
-            "email_value": "hello@createx.com",
+            "email_value": "hello@metankz.com",
             "schedule_label": "График работы:",
             "schedule_24_7": "Круглосуточно"
         }

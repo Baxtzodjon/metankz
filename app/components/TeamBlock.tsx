@@ -55,7 +55,7 @@ const TeamBlock = () => {
                                 <div className="relative w-full h-[340px] rounded overflow-hidden">
                                     <Image
                                         src={teamMember.image}
-                                        alt={`${teamMember.nameKey} Image`}
+                                        alt={`${t(teamMember.nameKey)} Image`}
                                         width={285}
                                         height={340}
                                         className="w-full h-full object-cover transition-colors duration-300 ease-in-out"
@@ -80,10 +80,10 @@ const TeamBlock = () => {
                                 <div className="flex items-center justify-center flex-col gap-1">
 
                                     <h3 className="text-ebony lg:text-lg xl:text-xl leading-[150%] font-bold group-hover:text-primary transition-colors duration-300">
-                                        {teamMember.nameKey}
+                                        {t(teamMember.nameKey)}
                                     </h3>
 
-                                    <p className="text-storm text-base leading-[160%] font-normal">{teamMember.roleKey}</p>
+                                    <p className="text-storm text-base leading-[160%] font-normal">{t(teamMember.roleKey)}</p>
 
                                 </div>
 
