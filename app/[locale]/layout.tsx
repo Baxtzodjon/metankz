@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   title: "Metan KZ — Экологичные метановые заправки в Казахстане",
   description: "Metan KZ — сеть современных автозаправочных станций, специализирующихся на экологичном метане. Чистое топливо для вашего транспорта по всей территории Казахстана.",
   keywords: ["Metan KZ", "метан заправка Казахстан", "экологичное топливо", "газовые заправки", "метан АЗС", "автозаправка Алматы", "альтернативное топливо"],
-  authors: [{ name: "Metan KZ Web Team", url: "https://metankz.com" }],
+  authors: [{ name: "Metan KZ Web Team", url: "https://metankz.vercel.app/" }], /* https://metankz.com */
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: "Metan KZ — Экологичное топливо для умного движения",
     description: "Современные метановые заправки в Казахстане. Эффективно. Чисто. Безопасно.",
-    url: "https://metankz.com",
+    url: "https://metankz.vercel.app/",  /* https://metankz.com */
     siteName: "Metan KZ",
     images: [
       {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     images: ["/og/home.png"],
     creator: "@metankz",
   },
-  metadataBase: new URL("https://metankz.com"),
+  metadataBase: new URL("https://metankz.vercel.app/"), // https://metankz.com
 };
 
 export function generateStaticParams() {
