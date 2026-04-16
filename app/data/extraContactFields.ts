@@ -4,7 +4,7 @@ export type extraContactsFormData = {
     email: string;
     message: string;
     consent: boolean;
-    interest: string; // NOT REQUIRED
+    interest: string;
     location: string;
     preferredContactMethod: "phone" | "email" | "whatsapp";
 };

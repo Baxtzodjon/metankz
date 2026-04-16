@@ -26,7 +26,6 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default function Home() {
-  /* const t = useTranslations('homepage'); */
 
   return (
     <main>

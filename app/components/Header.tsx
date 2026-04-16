@@ -16,8 +16,6 @@ const Header = () => {
     const [isAnimatingOut, setIsAnimatingOut] = useState(false);
     const pathname = usePathname();
 
-    /* ?subject=Platform question&body=Hello, I have a question... */
-
     const locale = useLocale();
     const t = useTranslations("Header");
 
@@ -63,7 +61,7 @@ const Header = () => {
 
                     <Link href={"/"}>
 
-                        <Image src={"/icons/logo.png"} alt="Logo" width={60} height={22} /> {/* className="max-w-full xl:w-[130px] xl:h-[22px]" */}
+                        <Image src={"/icons/logo.png"} alt="Logo" width={60} height={22} />
 
                     </Link>
 
@@ -208,8 +206,6 @@ const Header = () => {
                             </div>
 
                         </motion.div>
-
-                        {/* <div className={`fixed top-0 left-0 h-full w-[80%] lg:hidden bg-white z-50 shadow-lg p-5 sm:p-[50px] flex flex-col gap-10 ${isAnimatingOut ? 'animate-slide-out-left' : 'animate-slide-in-left'}`}></div> */}
                     </>
                 )}
 

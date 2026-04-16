@@ -8,33 +8,6 @@ import { useTranslations } from "next-intl";
 import { articles as allArticles } from "@/app/data/newsData";
 import Link from "next/link";
 
-/* const articles = [
-    {
-        title: "How to Build Climate Change-Resilient Infrastructure",
-        date: "2020-06-24",
-        dateLabel: "June 24, 2020",
-        image: "/images/recent_article_fir.jpg",
-        category: "Industry News",
-        paragraphVisible: true,
-    },
-    {
-        title: "How Construction Can Help Itself",
-        date: "2020-06-12",
-        dateLabel: "June 12, 2020",
-        image: "/images/recent_article_sec.jpg",
-        category: "Innovation",
-        paragraphVisible: false,
-    },
-    {
-        title: "Types of Flooring Materials",
-        date: "2019-12-01",
-        dateLabel: "December 1, 2019",
-        image: "/images/recent_article_thr.jpg",
-        category: "Company News",
-        paragraphVisible: false,
-    },
-]; */
-
 const cardVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: (i: number) => ({
@@ -101,14 +74,6 @@ const RecentNews = () => {
                         >
                             <article className="overflow-hidden rounded h-full shadow-soft-multi_sec bg-light">
 
-                                {/*  <Image
-                                    src={article.image}
-                                    alt={`article ${index + 1}`}
-                                    width={index === 0 ? 705 : 495}
-                                    height={index === 0 ? 360 : 156}
-                                    className={`max-w-full w-full object-cover lg:object-fill`}
-                                /> */}
-
                                 <div
                                     className={`relative w-full ${index === 0 ? "h-[360px]" : "h-[156px]"
                                         }`}
@@ -132,11 +97,6 @@ const RecentNews = () => {
                                             href={`/news/${article.id}`}
                                             className="text-ebony text-xl leading-[150%] font-bold hover:text-primary transition-default"
                                         >
-                                            {/* {article.title} */}
-                                            {/* {index === 0
-                                                ? article.title
-                                                : article.title.substring(0, 30) + "..."
-                                            } */}
 
                                             {/* до lg и xl+ — полный заголовок */}
                                             <span className="block lg:hidden">

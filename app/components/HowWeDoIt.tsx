@@ -38,22 +38,6 @@ const HowWeDoIt = () => {
 
                             <div className="flex items-center gap-[23px]">
 
-                                {/* <div className="flex items-center justify-center hover:w-[84px] hover:h-[84px] rounded-full hover:bg-primary hover:opacity-30">
-
-                                    <Texts title={String(item.id).padStart(2, "0")} className="text-[#D7DADD] text-start z-10 hover:text-primary transition-default" />
-
-                                </div> */}
-
-                                {/* <div className="relative items-center justify-center p-3 rounded-full transition-default hover:scale-110 hover:bg-primary/5 group">
-
-                                    <div className="relative flex items-center justify-center p-2 rounded-full transition-default hover:scale-110 hover:bg-primary/10 group">
-
-                                        <Texts title={String(item.id).padStart(2, "0")} className="text-[#D7DADD] text-start z-10 transition-default group-hover:text-primary" />
-
-                                    </div>
-                                    
-                                </div> */}
-
                                 <motion.div
                                     initial={{ scale: 0.8, opacity: 0 }}
                                     whileInView={{ scale: 1, opacity: 1 }}

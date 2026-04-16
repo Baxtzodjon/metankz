@@ -25,8 +25,6 @@ const Decisions = ({ hasSimilarProjects = true }: DecisionsProps) => {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                 >
 
-                    {/* <Image src={"/images/decisions_image.jpg"} alt="Decisions Image" width={495} height={550} aria-hidden="true" className="max-w-full w-[300px] h-[527px] sm:w-[380px] sm:h-[441px] lg:w-[380px] lg:h-[441px] xl:w-[495px] xl:h-[550px] object-cover relative z-[5] -mb-[60px]" /> */}
-
                     <Image src={"/images/decisions_image.jpg"} alt="Decisions Image" width={495} height={550} aria-hidden="true" className="max-w-full w-full xl:w-[495px] h-[550px] object-cover lg:relative lg:z-[5] lg:-mb-[60px]" />
 
                 </motion.div>
@@ -51,22 +49,6 @@ const Decisions = ({ hasSimilarProjects = true }: DecisionsProps) => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, ease: "easeOut" }}>
-
-                                {/* <div>
-
-                                <div className="overflow-hidden mb-[25px] rounded-full w-[72px] h-[72px]">
-
-                                    <Image src={slide.image} alt={`Author ${slide.authorKey}`} width={72} height={72} className="block w-full h-full object-cover" />
-
-                                </div>
-
-                                <p className="text-gray text-base leading-[160%] font-normal mb-[25px]">{t(slide.textKey)}</p>
-
-                                <span className="block mb-1 pr-[110px] text-ebony text-base leading-[160%] font-bold">{t(slide.authorKey)}</span>
-
-                                <span className="block pr-[110px] text-storm text-sm leading-[150%] font-normal">{t(slide.positionKey)}</span>
-
-                            </div> */}
 
                                 <Image src={"/icons/check_icon.svg"} alt="Check Icon" width={20} height={20} />
 

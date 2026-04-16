@@ -58,8 +58,6 @@ const ContactsSection = () => {
         } finally {
             setIsLoading(false);
         }
-
-        /* console.log("✅ Form submitted:", data); */
     };
 
     return (

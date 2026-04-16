@@ -1,77 +1,3 @@
-/* "use client"
-
-import { useState } from "react";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperClass } from "swiper";
-import { Navigation, Thumbs } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
-
-const images = [
-    "/images/portfolio_first.jpg",
-    "/images/portfolio_first.jpg",
-    "/images/portfolio_first.jpg",
-    "/images/portfolio_first.jpg",
-];
-
-const Carousel = () => {
-    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
-
-    return (
-        <section>
-
-            <div className="container">
-
-                <div className="flex flex-col gap-5">
-
-                    <Swiper
-                        modules={[Navigation, Thumbs]}
-                        navigation
-                        thumbs={{ swiper: thumbsSwiper }}
-                        className="w-full h-[500px] select-none"
-                    >
-                        {images.map((src, index) => (
-                            <SwiperSlide key={index}>
-
-                                <Image src={src} alt={`Portfolio image ${index + 1}`} width={1230} height={500} className="w-full h-full object-cover rounded select-none" /> lg:w-[1200px] h-auto md:h-[500px]
-
-                            </SwiperSlide>
-                        ))}
-
-                    </Swiper>
-
-                    <Swiper
-                        onSwiper={setThumbsSwiper}
-                        modules={[Thumbs]}
-                        spaceBetween={10}
-                        slidesPerView={3}
-                        watchSlidesProgress
-                        className="flex gap-5 w-full select-none"
-                    >
-                        {images.map((src, index) => (
-                            <SwiperSlide key={index} className="cursor-pointer select-none">
-
-                                <div className="flex gap-5 overflow-x-auto scrollbar-thin scrollbar-thumb-error"></div>
-
-                                <Image src={src} alt={`Thumbnail ${index + 1}`} width={100} height={100} className="w-[100px] h-[100px] object-cover rounded select-none" />
-
-                            </SwiperSlide>
-                        ))}
-
-                    </Swiper>
-
-                </div>
-
-            </div>
-
-        </section>
-    );
-};
-
-export default Carousel; */
-
 "use client";
 
 import { useState } from "react";
@@ -89,23 +15,12 @@ import Texts from "./Texts";
 import { WorkDetails, workItems } from "../data/workItems";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
-/* const images = [
-    "/images/portfolio_first.jpg",
-    "/images/portfolio_first.jpg",
-    "/images/portfolio_first.jpg",
-]; */
-
 const Carousel = ({ slug }: { slug: string }) => {
     const t = useTranslations();
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
     const [magnifier, setMagnifier] = useState({ x: 0, y: 0, visible: false, src: "" });
     const [modalSrc, setModalSrc] = useState<string | null>(null);
     const zoom = 5;
-
-    // 🔥 Находим item по slug
-    /* const item = workItems.find(w => w.slug === slug);
-
-    if (!item) return <p>Not Found</p>; */
 
     const item = workItems.find((w) => w.slug === slug);
     if (!item) return null;
@@ -128,8 +43,6 @@ const Carousel = ({ slug }: { slug: string }) => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                /* whileInView="show"
-                viewport={{ once: true }} */
                 >
 
                     <motion.div className="flex items-center gap-2"
@@ -170,42 +83,6 @@ const Carousel = ({ slug }: { slug: string }) => {
                             </motion.div>
 
                         </div>
-
-                        {/* <div className="flex items-center justify-between flex-wrap gap-3 sm:gap-0">
-
-                            <div className="flex items-center gap-1">
-
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8, delay: 0.6 }}
-                                >
-
-                                    <Link href={`/work`} className="relative mr-[21px] capitalize text-primary text-base font-bold transition-default after:content-[''] after:absolute after:-right-[13px] after:top-1 after:w-[1px] after:h-[11px] after:bg-current after:transition-default group-hover:after:bg-primary">Hello</Link>
-
-                                </motion.div>
-
-                                <motion.time className="flex items-center gap-2 text-storm text-base sm:leading-[160%] font-normal" dateTime={"Time"}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8, delay: 0.6 }}
-                                ><Image src={"/icons/clock_news.svg"} alt="Clock Id Page" width={20} height={20} />Time</motion.time>
-
-                            </div>
-
-                            <div className="flex items-center gap-3">
-
-                                {socialLinks.map(({ href, icon: Icon, label }) => (
-                                    <a key={href} href={href} target="_blank" aria-label={label}>
-
-                                        <Icon className="w-6 h-6 text-storm transition-default hover:text-primary" />
-
-                                    </a>
-                                ))}
-
-                            </div>
-
-                        </div> */}
 
                     </div>
 
@@ -272,8 +149,6 @@ const Carousel = ({ slug }: { slug: string }) => {
 
                             <button className="slider-btn-prev flex items-center justify-center w-12 h-12 bg-primary hover:bg-active rounded-full cursor-pointer">
 
-                                {/* <Image src="/icons/prev_arrow.svg" alt="Previous" width={24} height={24} /> */}
-
                                 <FaArrowLeftLong className="text-light" />
 
                             </button>
@@ -287,8 +162,6 @@ const Carousel = ({ slug }: { slug: string }) => {
                             className="hidden xl:block xl:absolute inset-y-1/2 right-8 z-10 -translate-y-1/2">
 
                             <button className="slider-btn-next flex items-center justify-center w-12 h-12 bg-primary hover:bg-active rounded-full cursor-pointer">
-
-                                {/* <Image src="/icons/next_arrow.svg" alt="Next" width={24} height={24} /> */}
 
                                 <FaArrowRightLong className="text-light" />
 
@@ -319,7 +192,7 @@ const Carousel = ({ slug }: { slug: string }) => {
                             modules={[Thumbs]}
                             slidesPerView="auto"  // чтобы миниатюры занимали ровно столько места, сколько нужно 
                             watchSlidesProgress
-                            className="w-full select-none" /* flex items-start justify-start gap-5 */
+                            className="w-full select-none"
                         >
                             {item.images.map((src, index) => (
                                 <SwiperSlide
@@ -409,41 +282,6 @@ const Carousel = ({ slug }: { slug: string }) => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                     >
-
-                        {/* {
-                            workItems.map((detail, index) => (
-                                <div>
-
-                                    <div className="flex items-center justify-between">
-
-                                        <h3 className="text-ebony text-base font-bold">{detail.details.location}</h3>
-
-                                        <p className="text-storm text-base leading-relaxed font-normal">2464 Royal Ln. Mesa, New Jersey</p>
-
-                                    </div>
-
-                                    <div className="flex items-center justify-between">
-
-                                        <h3 className="text-ebony text-base font-bold">LOCATION</h3>
-
-                                        <p className="text-storm text-base leading-relaxed font-normal">2464 Royal Ln. Mesa, New Jersey</p>
-
-                                    </div>
-
-                                </div>
-                            ))
-                        } */}
-
-                        {/* {Object.entries(item.details).map(([key, value]) => (
-
-                            <div key={key} className="flex items-center justify-between">
-
-                                <h3 className="text-ebony text-base font-bold">{t(value + ".value")}</h3>
-                                
-                                <p className="text-storm text-base leading-relaxed font-normal">{t(value)}</p>
-
-                            </div>
-                        ))} */}
 
                         {Object.entries(item.details).map(([key, value]) => {
                             const typedKey = key as keyof WorkDetails; // ✅ фикс

@@ -4,15 +4,6 @@ import Texts from "../components/Texts";
 import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
 
-/* const NewsCat = [
-    { id: "1", link: "All News" },
-    { id: "2", link: "Company News" },
-    { id: "3", link: "Innovation" },
-    { id: "4", link: "Industry News" },
-    { id: "5", link: "Expert Tips" },
-    { id: "6", link: "Marketing" },
-]; */
-
 const NewsCat = [
     { id: "all", link: "News.categories.allNews", query: "all" },
     { id: "methane", link: "News.categories.methane", query: "methane" },
@@ -34,8 +25,6 @@ const CategoriesNews = ({ activeCategory }: { activeCategory: string }) => {
         >
 
             <div className="container flex items-center justify-center flex-col gap-10">
-
-                {/* <Link key={categories.id} href={"/"} className="max-w-full w-[205px] h-[46px] text-[#9A9CA5] text-base font-bold leading-[160%] transition-default hover:text-primary hover:border-2 hover:border-solid hover:border-primary rounded flex items-center justify-center">{categories.link}</Link> borders потом при клике чтобы понять становиться и active и как обычный hover effect свой останеться */}
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

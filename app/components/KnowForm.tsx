@@ -43,44 +43,12 @@ const KnowForm = () => {
 
             toast.success(t("StatusForm.success"), { id: toastId });
             reset();
-            /* alert("✅ Email sent"); */
         } catch (error) {
             console.error("❌ Email error:", error);
-            /* alert("❌ Ошибка при отправке"); */
             toast.error(t("StatusForm.error"), { id: toastId });
         } finally {
             setIsLoading(false);
         }
-
-        /* try {
-            const res = await fetch("/api/send-email", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-            });
-
-            if (!res.ok) throw new Error("Send failed");
-
-            reset();
-            alert("✅ Данные успешно отправлены");
-        } catch (error) {
-            console.error(error);
-            alert("❌ Ошибка при отправке");
-        } */
-
-        /* fetch('/api/send-email', {
-            method: 'POST',
-            cache: 'no-cache',
-            body: JSON.stringify(data),
-            headers: { "Content-Type": "application/json" }
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            }); */
-
-        /* console.log("✅ Form data:", data);
-        reset(); */
     };
 
     return (
@@ -106,30 +74,6 @@ const KnowForm = () => {
                 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >{t("KnowForm.title")}</motion.h2>
-
-            {/* <div className="flex items-end flex-wrap gap-6">
-
-                {formFields.map((field, index) => {
-                    const inputWidthClass = index === 2 ? 'w-full xl:w-[414px]' : 'w-full lg:w-[260px]';
-
-                    return (
-                        <label className="flex flex-col" key={index}>
-
-                            <span className="text-gray text-sm leading-[150%] font-normal mb-2">{field.label}</span>
-
-                            <input
-                                className={`${inputWidthClass} h-[44px] bg-[#F4F5F6] border border-solid border-[#d7dadd] rounded pl-[15px] outline-none focus:outline-2 focus:outline-solid focus:outline-primary focus:outline-offset-2 text-sm leading-[150%] font-normal`}
-                                type={field.type}
-                                placeholder={field.placeholder}
-                            />
-
-                        </label>
-                    );
-                })}
-
-                <button className="w-[49%] py-[11px] lg:px-[29px] bg-primary rounded text-light text-sm font-bold uppercase hover:bg-active transition-default cursor-pointer" type="submit">Send</button>
-
-            </div> */}
 
             <div className="flex items-center justify-center flex-wrap lg:flex-nowrap gap-6">
 

@@ -10,24 +10,11 @@ import "swiper/css";
 
 export default function WorkSection({ category }: { category: string }) {
     const t = useTranslations();
-    /* const ITEMS_PER_PAGE = 12; */
 
-    // 1) FILTER by category
     const filtered =
         category === "all"
             ? allArticles
             : allArticles.filter((item) => item.query === category);
-
-    // 2) PAGINATION
-    /* const startIndex = (page - 1) * ITEMS_PER_PAGE;
-    const paginated = filtered.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-    const nextPage =
-        startIndex + ITEMS_PER_PAGE < filtered.length ? page + 1 : null;
-
-    const prevPage = page > 1 ? page - 1 : null;
-
-    const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE); */
 
     return (
         <section className="bg-light py-10 sm:py-[120px]">
@@ -37,7 +24,7 @@ export default function WorkSection({ category }: { category: string }) {
                 {/* GRID вместо flex */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
 
-                    {filtered.map((item, index) => ( /* workItems */
+                    {filtered.map((item, index) => (
 
                         <motion.div
                             key={item.id + category}
@@ -55,14 +42,6 @@ export default function WorkSection({ category }: { category: string }) {
 
                                     {item.images.map((src, idx) => (
                                         <SwiperSlide key={idx}>
-
-                                            {/* <Image
-                                                className="w-full h-[345px] object-contain"
-                                                src={item.images[0]}
-                                                alt={item.titleKey}
-                                                width={390}
-                                                height={345}
-                                            /> */}
 
                                             <Image
                                                 src={src}
@@ -108,22 +87,6 @@ export default function WorkSection({ category }: { category: string }) {
                     ))}
 
                 </div>
-
-                {/* <button
-                    className="flex items-center gap-4 text-gray text-base font-bold hover:text-primary transition"
-                >
-                    <span className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></span>
-
-                    <Image
-                        className="reverse-spin"
-                        src={"/icons/spinner_work_block.svg"}
-                        alt={"Spinner"}
-                        width={24}
-                        height={24}
-                    />
-
-                    Load More
-                </button> */} {/* не надо */}
 
             </div>
 

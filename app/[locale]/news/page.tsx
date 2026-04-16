@@ -25,8 +25,6 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function News({ searchParams }: NewsPageProps) {
     const t = await getTranslations();
-    /* const searchParams = useSearchParams();
-    const category = searchParams.get("category") || "all"; // default "all" */
 
     const params = await searchParams;
     const page = Number(params?.page) || 1;

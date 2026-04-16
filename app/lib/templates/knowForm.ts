@@ -15,13 +15,6 @@ const EMOJI: Record<keyof KnowFormData, string> = {
   message: "💬",
 };
 
-/* Новая заявка (Know Form) */
-
-/*<h2>Новый запрос с сайта</h2>
-  <p><b>Имя:</b> ${data.name}</p>
-  <p><b>Телефон:</b> ${data.phone}</p>
-  <p><b>Сообщение:</b> ${data.message || "-"}</p> */
-
 export function knowFormTemplate(data: KnowFormData) {
   return `
     <div style="

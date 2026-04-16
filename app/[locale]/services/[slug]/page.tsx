@@ -9,11 +9,6 @@ import PortfolioSection from "@/app/components/PortfolioSection";
 import Table from "@/app/components/Table";
 import Partners from "@/app/components/Partners";
 
-/* interface ServicePageProps {
-    params: Promise<{ slug: string }>;
-    locale: string;
-} */
-
 interface PageParams {
   slug: string;
   locale?: string;
@@ -77,16 +72,6 @@ export default async function ServicePage({ params }: PageProps) {
 
     return (
         <main>
-
-            {/* <section className="container py-20">
-
-                <h1 className="text-3xl font-bold mb-6">{t(service.titleKey)}</h1>
-
-                <p className="text-lg text-storm max-w-2xl">{t(service.descriptionKey)}</p>
-
-            </section> */}
-
-            {/* <BGMainServerBlock title={t(service.titleKey)} description={t(service.descriptionKey)} image="/images/services_slug_bg.png" /> */}
 
             <BGMainBlock title={t(service.titleKey)} description={t(service.descriptionKey)} image="/images/services_slug_bg.png" />
 

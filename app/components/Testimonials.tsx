@@ -27,8 +27,6 @@ const Testimonials = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 className="w-full max-w-none sm:max-w-[450px] lg:max-w-[612px]">
 
-                    {/* <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold mb-[60px]">What our clients are saying</h2> */}
-
                     <Texts title={t("title")} className="text-start mb-[60px]" />
 
                     <Swiper

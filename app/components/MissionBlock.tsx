@@ -24,8 +24,6 @@ const MissionBlock: React.FC<MisssonBlcProps> = ({ className }) => {
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
-    /* const hidePaths = ['/about', '/ru/about', '/uz/about', '/en/about', '/kz/about']; */
-
     const segments = pathname.split("/").filter(Boolean);
 
     const lastSegment = segments[segments.length - 1];

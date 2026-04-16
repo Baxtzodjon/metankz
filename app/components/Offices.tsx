@@ -44,8 +44,6 @@ const Offices = () => {
                         className="flex items-center justify-center flex-wrap gap-[60px] lg:gap-[120px] lg:grid grid-cols-1 lg:grid-cols-3 xl:gap-[188px] relative"
                     >
                         {locations.map((location, idx) => {
-                            /* const location = locations[idx]; */
-
                             return (
                                 <motion.li
                                     key={idx}
@@ -64,7 +62,7 @@ const Offices = () => {
 
                                             <div className="flex items-start flex-col gap-1">
 
-                                                <address className="max-w-[250px] text-ebony text-base font-normal text-center sm:text-left not-italic"> {tContactPage(location.addressKey)}</address> {/* sm: md:max-w-none */}
+                                                <address className="max-w-[250px] text-ebony text-base font-normal text-center sm:text-left not-italic"> {tContactPage(location.addressKey)}</address>
 
                                                 <a target="_blank" href={location.mapLink} className="text-primary text-base font-normal underline transition-default hover:text-ebony mx-auto sm:mx-0">{tContactPage("Contact.see_on_map")}</a>
 

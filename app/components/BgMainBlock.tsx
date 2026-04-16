@@ -11,7 +11,6 @@ interface BgTextssProps {
     title: string;
     description: string;
     image: string;
-    /* className?: string; */
 }
 
 const containerVariants: Variants = {
@@ -68,7 +67,7 @@ const BGMainBlock: React.FC<BgTextssProps> = ({ title, description, image }) => 
                             </Link>
                         )}
 
-                        <Link href={cleanPath} className="text-[#9A9CA5] text-sm font-normal leading-[150%] capitalize flex items-center gap-2"><small>/</small> {title}</Link> {/* {cleanPath.replace("/", "") || t("nav.home")} */}
+                        <Link href={cleanPath} className="text-[#9A9CA5] text-sm font-normal leading-[150%] capitalize flex items-center gap-2"><small>/</small> {title}</Link>
 
                     </motion.div>
 

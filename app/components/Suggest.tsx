@@ -9,27 +9,6 @@ import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { suggestData } from "@/app/data/suggestData";
 
-/* type AccordionItem = {
-    id: number;
-    titleKey: string;
-    contentKey: string;
-};
-
-const accordionData: AccordionItem[] = [
-    {
-        id: 1,
-        titleKey: "Interior design of apartments",
-        contentKey:
-            "Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis.",
-    },
-    {
-        id: 2,
-        titleKey: "Interior design of private houses",
-        contentKey:
-            "Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis.",
-    },
-]; */
-
 interface SuggestProps {
     slug: keyof typeof suggestData;
 }
@@ -48,20 +27,10 @@ const Suggest = ({ slug }: SuggestProps) => {
     const [openId, setOpenId] = useState<number | null>(
         items[0]?.id ?? null
     );
-    /* const [openId, setOpenId] = useState<number | null>(1); */
-
-    /* const data = suggestData[slug] || []; */
-    /* const [openId, setOpenId] = useState<number | null>(data[0]?.id || null); */
 
     const toggleAccordion = (id: number) => {
         setOpenId(openId === id ? null : id);
     };
-
-    /* const accordionItems = suggestData[slug]; */ // <-- динамические данные
-
-    /* if (!accordionItems) {
-        return null; // защита если slug неверный
-    } */
 
     return (
         <section className="py-10 sm:pt-[100px] sm:pb-[120px] lg:pt-[120px] lg:pb-[180px] overflow-hidden">
@@ -122,31 +91,6 @@ const Suggest = ({ slug }: SuggestProps) => {
                                         <h2 className="text-ebony text-xl sm:text-[28px] leading-[150%] font-bold">{t(item.titleKey)}</h2>
 
                                     </button>
-
-                                    {/* <AnimatePresence initial={false}>
-
-                                        <motion.div
-                                            key="content"
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.35, ease: "easeInOut" }}
-                                            className={`overflow-hidden transition-default ${openId === item.id ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                                                }`}
-                                        >
-
-                                            <motion.p
-                                                initial={{ opacity: 0, y: 10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, y: 10 }}
-                                                transition={{ duration: 0.3 }}
-                                                className="text-storm text-base leading-relaxed font-normal w-full lg:max-w-[575px] mt-2">
-                                                {item.contentKey}
-                                            </motion.p>
-
-                                        </motion.div>
-
-                                    </AnimatePresence> */}
 
                                     <motion.div
                                         animate={{

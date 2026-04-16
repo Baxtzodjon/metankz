@@ -62,14 +62,6 @@ const ServiceBlock = () => {
                             <Link href={service.link} className="block relative z-10 px-[10px] pt-[87px] pb-[90px]">
 
                                 <div className="relative z-10 flex flex-col items-center">
-                                    {/* <Image
-                                        src={service.icon}
-                                        alt={`${service.titleKey} Icon`}
-                                        width={52}
-                                        height={52}
-                                        className="mb-[23px] w-[52px] h-[52px] transition-colors duration-300 ease-in-out"
-                                        aria-hidden="true"
-                                    /> */}
 
                                     {(() => {
                                         const Icon = service.icon;
@@ -94,14 +86,6 @@ const ServiceBlock = () => {
                     ))}
 
                 </motion.ul>
-
-                {/* <div className="flex items-center justify-start sm:justify-center flex-wrap sm:flex-nowrap gap-[10px] md:gap-10">
-
-                    <h4 className="max-w-none sm:max-w-[50%] md:max-w-none text-ebony text-[28px] font-bold">Learn more about our services</h4>
-
-                    <a href="#" className="py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-active transition-default cursor-pointer">View services</a>
-
-                </div> */}
 
                 <BtnText title={t("ServiceBlock.translBtns.btnTitle")} link="/services" linkTitle={t("ServiceBlock.translBtns.btnLink")} />
 

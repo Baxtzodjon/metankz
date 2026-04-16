@@ -67,9 +67,6 @@ const ContactsForms = () => {
         } finally {
             setIsLoading(false);
         }
-
-        /* console.log("✅ Form submitted:", data);
-        reset(); */
     };
 
     const validationRulesFor = <K extends keyof extraContactsFormData>(name: K): RegisterOptions<extraContactsFormData, K> => {
@@ -101,7 +98,7 @@ const ContactsForms = () => {
             whileInView="show"
             viewport={{ once: true }}
         >
-            <div className="container"> {/* flex flex-col items-center gap-[60px] */}
+            <div className="container">
 
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -117,7 +114,7 @@ const ContactsForms = () => {
 
                 </motion.div>
 
-                <div className="flex items-center justify-between flex-wrap lg:flex-nowrap gap-10 md:gap-20 lg:gap-0"> {/* lg:gap-[135px]  xl:gap-[220px] */}
+                <div className="flex items-center justify-between flex-wrap lg:flex-nowrap gap-10 md:gap-20 lg:gap-0">
 
                     <div className="w-full">
 
@@ -126,7 +123,7 @@ const ContactsForms = () => {
                             alt="Woman image"
                             width={495}
                             height={586}
-                            className="w-full h-fit lg:w-auto lg:h-[570px] xl:h-[586px] object-cover" /* lg:h-auto xl:h-[586px] */
+                            className="w-full h-fit lg:w-auto lg:h-[570px] xl:h-[586px] object-cover"
                         />
 
                     </div>
@@ -326,34 +323,6 @@ const ContactsForms = () => {
 
                         {/* Consent + Submit */}
                         <div className="flex justify-between flex-wrap sm:flex-nowrap gap-[22px] sm:gap-0 mt-0 lg:mt-4">
-
-                            {/* <motion.label
-                                htmlFor="consent"
-                                className="flex flex-col gap-2 cursor-pointer focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-1"
-                                variants={fieldVariants}
-                            >
-
-                                <input
-                                    id="consent"
-                                    type="checkbox"
-                                    {...register("consent", { required: t("ContactsSection.errors.consent.required") })}
-                                    className="peer absolute opacity-0"
-                                />
-
-                                <span className="relative inline-block pl-[27px] text-gray text-sm leading-[150%]
-                                    before:content-[''] before:absolute before:-left-[1px] before:top-[1px] before:inline-block 
-                                    before:border before:border-primary before:rounded-[3px] before:w-4 before:h-4 
-                                    peer-checked:before:bg-primary after:content-[''] after:absolute after:-left-[1px] after:top-[1px]
-                                    after:w-4 after:h-4 after:bg-[url('/icons/check.svg')] after:bg-center after:bg-[length:10px_8px]
-                                    after:bg-no-repeat after:opacity-0 peer-checked:after:opacity-100 transition-default">
-                                    {t("ContactsSection.consentText", { site: "MetanKz" })}
-                                </span>
-
-                                {errors.consent && (
-                                    <span className="block text-xs text-error mt-1">{errors.consent.message}</span>
-                                )}
-
-                            </motion.label> */}
 
                             <motion.label className="focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-1"
                                 variants={fieldVariants}

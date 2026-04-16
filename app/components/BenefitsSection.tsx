@@ -44,14 +44,6 @@ const BenefitsSection = () => {
                             <div className="px-[10px] pt-[87px] pb-[90px]">
 
                                 <div className="flex flex-col items-center">
-                                    {/* <Image
-                                        src={service.icon}
-                                        alt={`${service.titleKey} Icon`}
-                                        width={52}
-                                        height={52}
-                                        className="mb-[23px] w-[52px] h-[52px] transition-colors duration-300 ease-in-out"
-                                        aria-hidden="true"
-                                    /> */}
 
                                     <Icon className="text-[#9A9CA5] w-12 h-12 mb-6" />
 
@@ -64,12 +56,6 @@ const BenefitsSection = () => {
                                         </h2>
 
                                         <p className="text-ebony text-base sm:text-lg leading-[150%] font-normal text-center mb-[25px] sm:mb-[60px]">{t(benefit.titleKey)}</p>
-
-                                        {/* <h2 className={`text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center ${className || ""}`}>{title}</h2>
-
-                                            {description && (
-                                                <p className="text-storm text-base sm:text-lg leading-[150%] font-normal text-center mb-[25px] sm:mb-[60px]">{description}</p>
-                                            )} */}
 
                                     </div>
 

@@ -17,12 +17,6 @@ const EMOJI: Record<keyof ContactFormData, string> = {
   message: "💬",
 };
 
-/* <h2>Новая заявка(Contact Form)</h2>
-  <p><b>Имя:</b> ${data.name}</p>
-  <p><b>Телефон:</b> ${data.phone}</p>
-  <p><b>Email:</b> ${data.email || "-"}</p>
-  <p><b>Сообщение:</b><br/> ${data.message || "-"}</p> */
-
 export function contactFormTemplate(data: ContactFormData) {
   return `
     <div style="

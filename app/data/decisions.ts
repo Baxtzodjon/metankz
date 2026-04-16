@@ -24,8 +24,4 @@ export const decisions: DecisionItem[] = [
         id: 5,
         textKey: "DecisionsBlock.items.decision5"
     },
-    /* {
-        id: 6,
-        text: "Certified refueling tools and components developed to meet industrial standards, operational safety, and technical efficiency."
-    }, */
 ];

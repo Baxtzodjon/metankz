@@ -99,8 +99,6 @@ const Facts: React.FC = () => {
 
             <div className="container">
 
-                {/* <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center mb-[62px]">Some facts and figures</h2> */}
-
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}

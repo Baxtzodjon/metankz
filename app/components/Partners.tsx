@@ -63,8 +63,6 @@ const Partners: React.FC<PartnersProps> = ({ className }) => {
 
             <div className="container">
 
-                {/* <h2 className="text-ebony text-[28px] sm:text-[46px] leading-10 sm:leading-[130%] font-bold text-center mb-[60px]">Supported by 12+ partners</h2> */}
-
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}

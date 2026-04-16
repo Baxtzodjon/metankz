@@ -31,8 +31,6 @@ const NewsId = ({ id }: NewsIdProps) => {
                     variants={containerVariants}
                     initial="hidden"
                     animate="show"
-                /* whileInView="show"
-                viewport={{ once: true }} */
                 >
 
                     <motion.div className="flex items-center gap-2"

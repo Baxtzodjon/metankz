@@ -48,17 +48,6 @@ const PortfolioSection = ({
     const [isLocked, setIsLocked] = useState(false);
     const t = useTranslations();
 
-    /* const onSwiperInit = (swiper: SwiperClass) => {
-        swiperRef.current = swiper;
-        setIsBeginning(swiper.isBeginning);
-        setIsEnd(swiper.isEnd);
-
-        swiper.on('slideChange', () => {
-            setIsBeginning(swiper.isBeginning);
-            setIsEnd(swiper.isEnd);
-        });
-    }; */
-
     const onSwiperInit = (swiper: SwiperClass) => {
         swiperRef.current = swiper;
 
@@ -200,14 +189,6 @@ const PortfolioSection = ({
                                                 {item.images.map((src, idx) => (
                                                     <SwiperSlide key={idx}>
 
-                                                        {/* <Image
-                                                            className="max-w-full w-full"
-                                                            src={src}
-                                                            alt={item.titleKey}
-                                                            width={390}
-                                                            height={245}
-                                                        /> */}
-
                                                         <Image
                                                             src={src}
                                                             alt={item.titleKey}
@@ -229,7 +210,7 @@ const PortfolioSection = ({
                                                 transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
                                             >
 
-                                                <h3 className="text-ebony text-lg xl:text-xl leading-[150%] font-bold mb-[5px] text-center">{t(item.titleKey)}</h3> {/* {t(`PortfolioSection.${item.titleKey}`)} */}
+                                                <h3 className="text-ebony text-lg xl:text-xl leading-[150%] font-bold mb-[5px] text-center">{t(item.titleKey)}</h3>
 
                                                 <span className="text-storm text-sm leading-[150%] text-center">{t(item.descriptionKey)}</span>
 
@@ -249,14 +230,6 @@ const PortfolioSection = ({
                     </div>
 
                 </div>
-
-                {/* <div className="flex items-center justify-start sm:justify-center flex-wrap sm:flex-nowrap gap-[10px] md:gap-10 mt-20">
-
-                    <h4 className="max-w-none sm:max-w-[50%] md:max-w-none text-ebony text-[28px] font-bold">Explore all our works</h4>
-
-                    <a href="#" className="py-[15px] px-[39px] bg-primary rounded text-light text-base leading-[20px] tracking-wider font-bold uppercase hover:bg-active transition-default cursor-pointer">View portfolio</a>
-
-                </div> */}
 
                 <BtnText title={t("PortfolioSection.btnTitle")} link="/work" linkTitle={t("PortfolioSection.btnLink")} className="mt-20" />
 

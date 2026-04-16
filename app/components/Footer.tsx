@@ -13,32 +13,6 @@ import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { useState } from "react";
 
-/* type FooterFormData = {
-    email: string;
-};
-
-type FooterFieldConfig = {
-    name: keyof FooterFormData;
-    type: "email";
-    placeholder: string;
-    validation?: RegisterOptions<FooterFormData, keyof FooterFormData>;
-};
-
-const formFields: FooterFieldConfig[] = [
-    {
-        name: 'email',
-        type: 'email',
-        placeholder: 'Your email address',
-        validation: {
-            required: "Email is required",
-            pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Enter a valid email address",
-            },
-        },
-    },
-]; */
-
 const Footer = () => {
     const t = useTranslations("Footer");
     const [isLoading, setIsLoading] = useState(false);
@@ -71,8 +45,6 @@ const Footer = () => {
 
             const result = await res.json();
 
-            // if (!res.ok || !result.success) throw new Error("Failed to send");
-
             // ⚡ Новая проверка для KV
             if (!res.ok) throw new Error("Failed to send");
 
@@ -91,9 +63,6 @@ const Footer = () => {
         } finally {
             setIsLoading(false);
         }
-
-        /* console.log("✅ Form submitted:", data);
-        reset(); */
     };
 
     return (
@@ -119,7 +88,7 @@ const Footer = () => {
                             viewport={{ once: true }}
                         >
 
-                            <Link href="/"><Image src="/icons/logo.png" alt="Logo" width={72} height={24} /></Link> {/* className="max-w-full lg:w-[100px] lg:h-[17px] xl:w-[130px] xl:h-[22px]" */}
+                            <Link href="/"><Image src="/icons/logo.png" alt="Logo" width={72} height={24} /></Link>
 
                             <div className="flex items-center gap-4">
 
@@ -250,30 +219,6 @@ const Footer = () => {
 
                         <div className="flex flex-col gap-1">
 
-                            {/* <span className="flex items-center gap-1">
-
-                                <span className="text-white text-base font-normal">Address:</span>
-
-                                <address className="text-white text-base font-normal not-italic opacity-60">8502 Preston Rd. Inglewood, New York</address>
-
-                            </span>
-
-                            <span className="flex items-center gap-1">
-
-                                <span className="text-white text-base font-normal">Call:</span>
-
-                                <a href="tel:4055550128" className="text-white text-base font-normal opacity-60">(405) 555-0128</a>
-
-                            </span>
-
-                            <span className="flex items-center gap-1">
-
-                                <span className="text-white text-base font-normal">Email:</span>
-
-                                <a href="mailto:hello@createx.com?subject=Platform question&body=Hello, I have a question..." className="text-white text-base font-normal opacity-60">hello@createx.com</a>
-
-                            </span> */}
-
                             {contactInfo.map(({ type, labelKey, value, href }) => {
                                 const isEmail = type === "email";
                                 const localizedHref = isEmail
@@ -309,39 +254,7 @@ const Footer = () => {
 
                     </div>
 
-                    {/* <div className="flex flex-col gap-[13px]">
-
-                        <h6 className="text-white text-base font-bold uppercase">Who we are</h6>
-
-                        <div className="flex flex-col gap-1">
-
-                            <Link href={"/about"} className="text-white text-base font-normal opacity-60">About Us</Link>
-
-                            <Link href={"/available-positions"} className="text-white text-base font-normal opacity-60">Available Positions</Link>
-
-                            <Link href={"/contacts"} className="text-white text-base font-normal opacity-60">Contacts</Link>
-
-                        </div>
-
-                    </div>
-
-                    <div className="flex flex-col gap-[13px]">
-
-                        <h6 className="text-white text-base font-bold uppercase">Our Experience</h6>
-
-                        <div className="flex flex-col gap-1">
-
-                            <Link href={"/services"} className="text-white text-base font-normal opacity-60">Services</Link>
-
-                            <Link href={"/work"} className="text-white text-base font-normal opacity-60">Work</Link>
-
-                            <Link href={"/news"} className="text-white text-base font-normal opacity-60">News</Link>
-
-                        </div>
-
-                    </div> */}
-
-                    <div className="flex gap-8 lg:gap-[125px]"> {/* items-center */}
+                    <div className="flex gap-8 lg:gap-[125px]">
 
                         {footerLinks.map(({ titleKey, links }) => (
                             <div key={titleKey} className="flex flex-col gap-[13px]">

@@ -10,25 +10,25 @@ export interface ServicesItem {
 
 export const services: ServicesItem[] = [
     {
-        icon: FaGasPump, // "/icons/icon_construction.svg"
+        icon: FaGasPump,
         titleKey: "Timeline.stations.title", // stations
         bgImage: '/images/methane_stations.png',
         link: "/services/stations",
     },
     {
-        icon: FaTools, // "/icons/icon_plan.svg"
+        icon: FaTools,
         titleKey: "Timeline.equipment.title", // conversion
         bgImage: '/images/gas_equipment.png',
         link: "/services/equipment",
     },
     {
-        icon: FaWrench, // "/icons/icon_painting.svg"
+        icon: FaWrench,
         titleKey: "Timeline.installation.title", // service
         bgImage: '/images/installation_and_service.png',
         link: "/services/installation",
     },
     {
-        icon: FaTruck, // "/icons/icon_painting.svg"
+        icon: FaTruck,
         titleKey: "Timeline.delivery.title", // energy
         bgImage: '/images/methane_delivery.png',
         link: "/services/delivery",

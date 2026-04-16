@@ -47,18 +47,6 @@ export async function POST(req: Request) {
                 html: knowFormTemplate(data),
                 replyTo: data.email,
             });
-
-            // 🔥 автоответ клиенту
-            // if (data.email && canSendAutoReply(data.email)) {
-            //     await sendMail({
-            //         to: data.email,
-            //         subject: "Мы получили вашу заявку",
-            //         html: autoReplyTemplate({ name: data.name }),
-            //     });
-            // }
-
-            // // временный console.log
-            // console.log(data.email, canSendAutoReply(data.email))
         }
 
         if (formType === "contactForm") {

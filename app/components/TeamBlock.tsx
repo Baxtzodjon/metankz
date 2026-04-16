@@ -13,7 +13,7 @@ const TeamBlock = () => {
     return (
         <section className="relative overflow-hidden bg-light before:content-[''] before:absolute before:-left-[9px] before:-bottom-[195px] before:w-[570px] before:h-[1065px] before:bg-[url('/images/facts_bg.png')] before:bg-center before:bg-no-repeat before:bg-cover py-10 sm:pt-[100px] sm:pb-[120px]">
 
-            <div className="container"> {/* flex items-center justify-center flex-col */}
+            <div className="container">
 
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -61,17 +61,6 @@ const TeamBlock = () => {
                                         className="w-full h-full object-cover transition-colors duration-300 ease-in-out"
                                         aria-hidden="true"
                                     />
-
-                                    {/* <div className="absolute bottom-0 left-0 bg-primary/70 w-full h-[60px] rounded-b flex items-center justify-center gap-3 translate-y-full group-hover:translate-y-0
-                                    transition-transform duration-500 ease-out">
-
-                                        <a href={"#"} target="_blank" rel="noopener noreferrer"><FaWhatsapp className="text-light text-xl" /></a>
-
-                                        <a href={"#"} target="_blank" rel="noopener noreferrer"><FaTelegramPlane className="text-light text-xl" /></a>
-
-                                        <a href={"#"} target="_blank" rel="noopener noreferrer"><FaInstagram className="text-light text-xl" /></a>
-
-                                    </div> */}
 
                                     <TeamSocialLinks links={teamMember.socials} />
 

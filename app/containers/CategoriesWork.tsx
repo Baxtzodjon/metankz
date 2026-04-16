@@ -17,7 +17,7 @@ export const WorkCat = [
 ];
 
 const CategoriesWork = ({ activeCategory }: { activeCategory: string }) => {
-    const t = useTranslations(); /* ServiceBlock */
+    const t = useTranslations();
 
     return (
         <motion.section
@@ -31,7 +31,7 @@ const CategoriesWork = ({ activeCategory }: { activeCategory: string }) => {
                     },
                 },
             }}
-            className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 sm:mt-[120px]"> {/* mb-20 */}
+            className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 sm:mt-[120px]">
 
             {WorkCat.map((cat, index) => {
                 const Icon = cat.icon;

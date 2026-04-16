@@ -52,9 +52,6 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
             console.error("❌ Email error:", error);
             toast.error(t("StatusForm.error"), { id: toastId });
         }
-
-        /* onClose(); */
-        /* console.log("✅ Form submitted:", data); */
     };
 
     return (
@@ -88,7 +85,7 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
                                 initial="hidden"
                                 animate="show"
                                 onSubmit={handleSubmit(onSubmit)}
-                            > {/* items-start border border-solid border-[#e5e8ed] rounded p-[15px] sm:py-12 sm:px-10 max-w-[495px] contacts_shadow */}
+                            >
 
                                 <motion.h3 className="mb-6 w-full text-[28px] leading-[150%] font-bold text-center text-ebony">{t("ContactsSection.modalTitle")}</motion.h3>
 
@@ -120,8 +117,6 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
                                             <span className="mb-2 text-gray-600 text-sm leading-[150%]">
 
                                                 {t(field.labelKey)}
-
-                                                {/* {field.name === "email" ? " *" : ""} */}
 
                                                 {field.name !== "message" && (
                                                     <span>*</span>
@@ -190,7 +185,7 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
 
                                             </span>
                                         ) : (
-                                            t("ContactsSection.button") /* t("ContactsSection.sending") */
+                                            t("ContactsSection.button")
                                         )}
                                     </button>
 
