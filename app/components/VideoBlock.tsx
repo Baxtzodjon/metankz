@@ -69,7 +69,7 @@ const VideoBlock = () => {
                         </div>
                     )}
 
-                    <video ref={videoRef} className="w-full h-full object-cover" src="/videos/about_video.mp4" loop controls preload="metadata" onPause={() => setIsPlaying(false)} onPlay={() => setIsPlaying(true)}></video>
+                    <video ref={videoRef} className="w-full h-full object-cover" src="/videos/about_video.mp4" loop controls={isPlaying} preload="metadata" onPause={() => setIsPlaying(false)} onPlay={() => setIsPlaying(true)}></video>
 
                 </motion.div>
 
