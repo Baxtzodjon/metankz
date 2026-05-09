@@ -1,5 +1,5 @@
 {
-  "id": "/?source=pwa",
+  "id": "1.0.3",
   "name": "Metan KZ — Метановые заправки",
   "short_name": "Metan KZ",
   "description": "Сеть современных метановых заправок в Казахстане. Экологичное и выгодное топливо для вашего автомобиля.",
@@ -68,7 +68,7 @@
     {
       "name": "Контакты",
       "short_name": "Контакты",
-      "url": "/contacts",
+      "url": "/contact",
       "icons": [
         {
           "src": "/icons/contacts.png",

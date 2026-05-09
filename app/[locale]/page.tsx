@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
     path: "/",
     image: "/og/home.png",
   });
-}
+} /* /?source=pwa - id manifest.json */
 
 export default function Home() {
 
