@@ -731,6 +731,9 @@
             "fuel": "Yoqilg'i",
             "petrol": "Benzin"
         },
+        "share": {
+            "title": "Ulashish:"
+        },
         "articles": {
             "1": {
                 "title": "Metanni ushlash texnologiyalaridagi yutuqlar",
@@ -861,5 +864,12 @@
     "UnavailableSocials": {
         "unavailableTitle": "Ijtimoiy tarmoqlar vaqtincha mavjud emas",
         "unavailableDescription": "Jamoa a’zolari hali o'z profillariga havolalarni taqdim etishmagan."
+    },
+    "Pwa": {
+        "updateAvailable": "Yangi versiya mavjud",
+        "updateButton": "Yangilash",
+        "install_text": "Ilovani o'rnatish",
+        "install_ios_step1": "«Ulashish» tugmasini bosing",
+        "install_ios_step2": "«Bosh ekranga qo'shish»ni tanlang"
     }
 }

@@ -731,6 +731,9 @@
             "fuel": "Fuel",
             "petrol": "Petrol"
         },
+        "share": {
+            "title": "Share:"
+        },
         "articles": {
             "1": {
                 "title": "Advances in Methane Capture Technologies",
@@ -861,5 +864,12 @@
     "UnavailableSocials": {
         "unavailableTitle": "Social networks are temporarily unavailable",
         "unavailableDescription": "Team members have not yet provided links to their profiles."
+    },
+    "Pwa": {
+        "updateAvailable": "New version available",
+        "updateButton": "Update",
+        "install_text": "Install App",
+        "install_ios_step1": "Tap “Share”",
+        "install_ios_step2": "Select “Add to Home Screen”"
     }
 }

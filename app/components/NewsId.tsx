@@ -126,7 +126,7 @@ const NewsId = ({ id }: NewsIdProps) => {
 
                     <div className="flex items-center gap-3">
 
-                        <span className="text-ebony text-base leading-[160%] font-bold">Share:</span>
+                        <span className="text-ebony text-base leading-[160%] font-bold">{t("News.share.title")}</span>
 
                         {socialLinks.map(({ href, icon: Icon, label }) => (
                             <a key={href} href={href} target="_blank" aria-label={label}>

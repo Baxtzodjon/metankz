@@ -1,0 +1,81 @@
+{
+  "id": "/?source=pwa",
+  "name": "Metan KZ — Метановые заправки",
+  "short_name": "Metan KZ",
+  "description": "Сеть современных метановых заправок в Казахстане. Экологичное и выгодное топливо для вашего автомобиля.",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#1e212c",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "categories": [
+    "business",
+    "utilities"
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile.png",
+      "sizes": "531x817",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/desktop.png",
+      "sizes": "1900x918",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Найти заправку",
+      "short_name": "Заправки",
+      "url": "/services/stations",
+      "icons": [
+        {
+          "src": "/icons/map.png",
+          "sizes": "160x160",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Контакты",
+      "short_name": "Контакты",
+      "url": "/contacts",
+      "icons": [
+        {
+          "src": "/icons/contacts.png",
+          "sizes": "160x160",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

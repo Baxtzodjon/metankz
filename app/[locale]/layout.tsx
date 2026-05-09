@@ -10,6 +10,8 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import { Toaster } from "sonner";
+import InstallPWAButton from "../components/InstallPWAButton";
+import PWAUpdatePrompt from "../components/PWAUpdatePrompt";
 
 export const ubuntu = Ubuntu({
   subsets: ['latin'],
@@ -22,9 +24,18 @@ export const metadata: Metadata = {
   title: "Metan KZ — Экологичные метановые заправки в Казахстане",
   description: "Metan KZ — сеть современных автозаправочных станций, специализирующихся на экологичном метане. Чистое топливо для вашего транспорта по всей территории Казахстана.",
   keywords: ["Metan KZ", "метан заправка Казахстан", "экологичное топливо", "газовые заправки", "метан АЗС", "автозаправка Алматы", "альтернативное топливо"],
+  manifest: "/manifest.json",
+  appleWebApp: {
+    title: "Metan KZ",
+  },
   authors: [{ name: "Metan KZ Web Team", url: "https://metankz.vercel.app/" }], /* https://metankz.com */
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: "Metan KZ — Экологичное топливо для умного движения",
@@ -88,7 +99,11 @@ export default async function RootLayout({
 
           <ScrollToTopBtn />
 
+          <InstallPWAButton />
+
           <Footer />
+
+          <PWAUpdatePrompt />
         </NextIntlClientProvider>
       </body>
     </html>
