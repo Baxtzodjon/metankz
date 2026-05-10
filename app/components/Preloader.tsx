@@ -3,19 +3,37 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+const isPWA = () => {
+    if (typeof window === "undefined") return false;
+
+    return (
+        window.matchMedia("(display-mode: standalone)").matches ||
+        // iOS Safari
+        (window.navigator as any).standalone === true
+    );
+};
+
 const Preloader = () => {
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
+        // Если приложение открыто как PWA —
+        // вообще не показываем прелоадер
+        if (isPWA()) {
+            return;
+        }
+
         // Проверяем: был ли уже показан прелоадер
         const hasShown = sessionStorage.getItem("preloaderShown");
 
         if (!hasShown) {
             setVisible(true);
+
             const timer = setTimeout(() => {
                 setVisible(false);
                 sessionStorage.setItem("preloaderShown", "true");
-            }, 4000);
+            }, 2000); // 4000
+
             return () => clearTimeout(timer);
         }
     }, []);
