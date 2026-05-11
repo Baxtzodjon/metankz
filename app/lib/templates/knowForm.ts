@@ -7,7 +7,7 @@ type KnowFormData = {
 const BASE_URL =
   process.env.NODE_ENV === "production"
     ? process.env.NEXT_PUBLIC_SITE_URL || "https://metankz.com"
-    : "http://localhost:3000";
+    : "https://metankz.vercel.app/"; /* http://localhost:3000 */
 
 const EMOJI: Record<keyof KnowFormData, string> = {
   name: "🧑",
