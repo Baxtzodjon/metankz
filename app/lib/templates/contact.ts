@@ -8,7 +8,7 @@ type ContactFormData = {
 const BASE_URL =
   process.env.NODE_ENV === "production"
     ? process.env.NEXT_PUBLIC_SITE_URL || "https://metankz.com"
-    : "https://metankz.vercel.app";
+    : "http://localhost:3000";
 
 const EMOJI: Record<keyof ContactFormData, string> = {
   name: "🧑",
