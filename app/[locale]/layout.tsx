@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     title: "Metan KZ",
   },
-  authors: [{ name: "Metan KZ Web Team", url: "https://metankz.vercel.app/" }], /* https://metankz.com */
+  authors: [{ name: "Metan KZ Web Team", url: "https://metankz.com" }], /* https://metankz.vercel.app/ */
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Metan KZ — Экологичное топливо для умного движения",
     description: "Современные метановые заправки в Казахстане. Эффективно. Чисто. Безопасно.",
-    url: "https://metankz.vercel.app/",  /* https://metankz.com */
+    url: "https://metankz.com",  /* https://metankz.vercel.app/ */
     siteName: "Metan KZ",
     images: [
       {

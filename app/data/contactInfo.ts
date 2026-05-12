@@ -21,6 +21,6 @@ export const contactInfo: ContactInfoItem[] = [
         type: "email",
         labelKey: "emailLabel",
         value: "hello@metankz.com",
-        href: "mailto:metankz@gmail.com", // hello@metankz.com
+        href: "mailto:metankz01@gmail.com", // hello@metankz.com
     },
 ];

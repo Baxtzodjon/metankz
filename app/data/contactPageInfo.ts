@@ -16,7 +16,7 @@ export const contactPageInfo: ContactPageInfoItem[] = [
         type: "email",
         labelKey: "Contact.contact.email_label",
         valueKey: "Contact.contact.email_value",
-        href: "mailto:metankz@gmail.com", /* hello@metankz.com */
+        href: "mailto:metankz01@gmail.com", /* hello@metankz.com */
     },
     {
         type: "schedule",
