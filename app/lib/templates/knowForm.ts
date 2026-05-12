@@ -4,10 +4,10 @@ type KnowFormData = {
   message?: string;
 };
 
-const BASE_URL =
+/* const BASE_URL =
   process.env.NODE_ENV === "production"
     ? process.env.NEXT_PUBLIC_SITE_URL || "https://metankz.com"
-    : "https://metankz.vercel.app"; /* https://metankz.vercel.app */ /* ${BASE_URL}/icons/logo.png */
+    : "https://metankz.vercel.app"; */ /* https://metankz.vercel.app */ /* ${BASE_URL}/icons/logo.png */
 
 const EMOJI: Record<keyof KnowFormData, string> = {
   name: "🧑",
@@ -38,7 +38,7 @@ export function knowFormTemplate(data: KnowFormData) {
           text-align: center;
         ">
           <img
-            src="${BASE_URL}/icons/logo.png"
+            src="https://metankz.com/icons/logo.png"
             alt="Logo"
             width="120"
             style="

@@ -5,10 +5,10 @@ type ContactFormData = {
   message?: string;
 };
 
-const BASE_URL =
+/* const BASE_URL =
   process.env.NODE_ENV === "production"
     ? process.env.NEXT_PUBLIC_SITE_URL || "https://metankz.com"
-    : "http://localhost:3000";
+    : "https://metankz.vercel.app"; */
 
 const EMOJI: Record<keyof ContactFormData, string> = {
   name: "🧑",
@@ -40,7 +40,7 @@ export function contactFormTemplate(data: ContactFormData) {
           text-align: center;
         ">
           <img
-            src="${BASE_URL}/icons/logo.png"
+            src="https://metankz.com/icons/logo.png"
             alt="Logo"
             width="120"
             style="

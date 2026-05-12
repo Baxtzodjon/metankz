@@ -10,10 +10,10 @@ export type ContactPageFormData = {
   preferredContactMethod: "phone" | "email" | "whatsapp";
 };
 
-const BASE_URL =
+/* const BASE_URL =
   process.env.NODE_ENV === "production"
     ? process.env.NEXT_PUBLIC_SITE_URL || "https://metankz.com"
-    : "https://metankz.vercel.app";
+    : "https://metankz.vercel.app"; */
 
 const EMOJI: Record<keyof ContactPageFormData, string> = {
   name: "🧑",
@@ -64,7 +64,7 @@ export function contactPageFormTemplate(data: ContactPageFormData, locale: keyof
           text-align: center;
         ">
           <img
-            src="${BASE_URL}/icons/logo.png"
+            src="https://metankz.com/icons/logo.png"
             alt="Logo"
             width="120"
             style="
