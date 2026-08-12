@@ -70,7 +70,7 @@ const FounderCard = () => {
 
                             <motion.h6
                                 className="text-ebony text-base leading-[160%] font-bold"
-                                whileHover={{ color: "#FF5A30", scale: 1.05 }}
+                                whileHover={{ color: "#0A4FA3", scale: 1.05 }} /* #FF5A30 */
                                 transition={{ duration: 0.3 }}
                             >{t("nameFounder")}</motion.h6>
 

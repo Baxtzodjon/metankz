@@ -110,7 +110,7 @@ const History = () => {
 
                 <div className="flex flex-col gap-6 sm:gap-12 w-full lg:w-auto">
 
-                    <Texts title="Our history" className="block lg:hidden" />
+                    <Texts title={t("History.title")} className="block lg:hidden" />
 
                     <motion.div
                         className="relative flex items-center justify-end gap-3 z-[15] select-none translate-x-0 sm:translate-x-3"
